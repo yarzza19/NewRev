@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <title>NewRev - Panel de Administración</title>
+    <style>
+        body {
+            font-family: 'Outfit', system-ui, sans-serif;
+            background: #1a1a2e;
+            color: #f5f5f7;
+            padding: 40px;
+            margin: 0;
+        }
+
+        h1 {
+            color: #eec681;
+            margin-bottom: 30px;
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            background: rgba(255, 255, 255, 0.05);
+            border-radius: 8px;
+            overflow: hidden;
+        }
+
+        th,
+        td {
+            padding: 15px;
+            text-align: left;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+        }
+
+        th {
+            background: rgba(255, 255, 255, 0.1);
+            color: #eec681;
+        }
+
+        select,
+        button {
+            padding: 8px 12px;
+            border-radius: 4px;
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            background: #2a2a4a;
+            color: white;
+            cursor: pointer;
+        }
+
+        button:hover {
+            background: #eec681;
+            color: #1a1a2e;
+        }
+
+        .estado-verificada {
+            color: #4ade80;
+            font-weight: bold;
+        }
+
+        .estado-rechazada {
+            color: #f87171;
+            font-weight: bold;
+        }
+
+        .estado-no_revisada {
+            color: #fbbf24;
+            font-weight: bold;
+        }
+    </style>
+</head>
+
+<body>
+
+    <h1>Panel de Administración: Piezas de la Comunidad</h1>
+
+    <table>
+        <thead>
+            <tr>
+                <th>ID</th>
+                <th>Pieza</th>
+                <th>Coche</th>
+                <th>Estado Actual</th>
+                <th>Acción</th>
+            </tr>
+        </thead>
+        <tbody id="admin-tbody">
+            <tr>
+                <td colspan="5">Cargando datos...</td>
+            </tr>
+        </tbody>
+    </table>
+
+    <script>
+        async function loadPiezas() {
+            try {
+                const res = await fetch('/api/comunidad');
+                const piezas = await res.json();
+
+                const tbody = document.getElementById('admin-tbody');
+                tbody.innerHTML = '';
+
+                if (piezas.length === 0) {
+                    tbody.innerHTML = '<tr><td colspan="5">No hay piezas subidas.</td></tr>';
+                    return;
+                }
+
+                piezas.forEach(p => {
+                    const tr = document.createElement('tr');
+
+                    tr.innerHTML = `
+                        <td>${p.id}</td>
+                        <td>${p.nombre_pieza}</td>
+                        <td>${p.coche_marca} ${p.coche_modelo} (${p.coche_anio})</td>
+                        <td class="estado-${p.estado}">${p.estado}</td>
+                        <td>
+                            <select id="select-${p.id}">
+                                <option value="no_revisada" ${p.estado === 'no_revisada' ? 'selected' : ''}>No Revisada</option>
+                                <option value="verificada" ${p.estado === 'verificada' ? 'selected' : ''}>Verificada</option>
+                                <option value="rechazada" ${p.estado === 'rechazada' ? 'selected' : ''}>Rechazada</option>
+                            </select>
+                            <button onclick="cambiarEstado(${p.id})">Guardar</button>
+                        </td>
+                    `;
+                    tbody.appendChild(tr);
+                });
+            } catch (err) {
+                console.error(err);
+                document.getElementById('admin-tbody').innerHTML = '<tr><td colspan="5">Error al cargar datos.</td></tr>';
+            }
+        }
+
+        async function cambiarEstado(id) {
+            const select = document.getElementById(`select-${id}`);
+            const nuevoEstado = select.value;
+
+            try {
+                const res = await fetch('/admin/cambiar-estado', {
+                    method: 'POST',
+                    headers: { 'Content-Type': 'application/json' },
+                    body: JSON.stringify({ id, estado: nuevoEstado })
+                });
+
+                const data = await res.json();
+
+                if (data.ok) {
+                    alert('¡Estado actualizado correctamente!');
+                    loadPiezas(); // Recargar la tabla
+                } else {
+                    alert('Error al actualizar: ' + data.error);
+                }
+            } catch (e) {
+                alert('Hubo un error de conexión');
+            }
+        }
+
+        // Cargar al inicio
+        loadPiezas();
+    </script>
+</body>
+
+</html>

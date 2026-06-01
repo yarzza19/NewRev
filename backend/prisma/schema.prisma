@@ -1,0 +1,56 @@
+datasource db {
+  provider = "postgresql"
+  url      = env("DATABASE_URL")
+}
+
+generator client {
+  provider = "prisma-client-js"
+}
+
+// Representa a un usuario de la plataforma (puede ser cliente o creador)
+model User {
+  id             String    @id @default(uuid())
+  email          String    @unique
+  name           String
+  role           String    @default("creator") // "creator" o "admin"
+  balance        Float     @default(0.0) // Saldo acumulado para gastar en NewRev
+  designs        Design[]  // Relación con sus diseños
+  sales          Sale[]    // Historial de ganancias
+}
+
+// Representa un modelo 3D subido por un creador
+model Design {
+  id               String   @id @default(uuid())
+  title            String
+  description      String?
+  
+  // AQUÍ ESTÁ EL CAMPO CLAVE: id_creador (referencia al autor)
+  creatorId        String   
+  creator          User     @relation(fields: [creatorId], references: [id])
+  
+  // Archivo original seguro (STL/STEP) guardado en el Bucket Privado S3
+  originalFilePath String   
+  
+  // Archivo reducido/optimizado para la web (ej. un .GLB low-poly) - Accesible públicamente
+  viewableFilePath String?  
+  
+  price            Float    // Precio de venta de la pieza física
+  commissionRate   Float    @default(0.15) // Ejemplo: 15% de royalty para el creador
+  sales            Sale[]
+  createdAt        DateTime @default(now())
+}
+
+// Representa una venta física completada
+model Sale {
+  id               String   @id @default(uuid())
+  designId         String
+  design           Design   @relation(fields: [designId], references: [id])
+  
+  // Referencia a quién se le pagará la comisión de esta venta
+  creatorId        String
+  creator          User     @relation(fields: [creatorId], references: [id])
+  
+  salePrice        Float    // Precio al que se vendió
+  commissionEarned Float    // Dinero que se suma al Creador por esta venta
+  createdAt        DateTime @default(now())
+}

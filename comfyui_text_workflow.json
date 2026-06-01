@@ -1,0 +1,66 @@
+{
+  "3": {
+    "inputs": {
+      "text": "Describe esta pieza de coche con detalle. ¿Qué es y de qué coche podría ser?",
+      "clip": [
+        "4",
+        1
+      ]
+    },
+    "class_type": "CLIPTextEncode",
+    "_meta": {
+      "title": "CLIP Text Encode (Prompt)"
+    }
+  },
+  "4": {
+    "inputs": {
+      "ckpt_name": "llava_v1.5_7b_q4_k.gguf"
+    },
+    "class_type": "CheckpointLoaderSimple",
+    "_meta": {
+      "title": "Load Checkpoint (LLaVA/Vision Model)"
+    }
+  },
+  "5": {
+    "inputs": {
+      "image": "example.png"
+    },
+    "class_type": "LoadImage",
+    "_meta": {
+      "title": "Load Image (Entrada Web)"
+    }
+  },
+  "6": {
+    "inputs": {
+      "text": "",
+      "model": [
+        "4",
+        0
+      ],
+      "image": [
+        "5",
+        0
+      ],
+      "prompt": [
+        "3",
+        0
+      ]
+    },
+    "class_type": "ImageToText",
+    "_meta": {
+      "title": "Analizar Imagen (Vision to Text)"
+    }
+  },
+  "7": {
+    "inputs": {
+      "text": [
+        "6",
+        0
+      ]
+    },
+    "class_type": "SaveTextOutputNode",
+    "_meta": {
+      "title": "Guardar Texto (Output para Node.js)"
+    }
+  }
+}

@@ -1,0 +1,74 @@
+[
+  {
+    "id": 1,
+    "nombre_pieza": "Clips Soporte Paragolpes",
+    "coche_marca": "BMW",
+    "coche_modelo": "E46",
+    "coche_anio": 2002,
+    "medidas_exteriores": "30x15x15 mm",
+    "material_recomendado": "Nylon Fuerte",
+    "funcion": "Sustituto impreso en 3D para los clips frágiles laterales del paragolpes M3.",
+    "url_archivo_3d": "#",
+    "estado": "verificada"
+  },
+  {
+    "id": 2,
+    "nombre_pieza": "Adaptador de Filtro Cónico",
+    "coche_marca": "Honda",
+    "coche_modelo": "Civic",
+    "coche_anio": 1998,
+    "medidas_exteriores": "120x120x80 mm",
+    "material_recomendado": "ABS / ASA",
+    "funcion": "Adaptador MAF a filtro cónico de 3 pulgadas.",
+    "url_archivo_3d": "#",
+    "estado": "verificada"
+  },
+  {
+    "id": 1772563814192,
+    "nombre_pieza": "Culata biscuter",
+    "coche_marca": "Biscuter",
+    "coche_modelo": "Biscuter",
+    "coche_anio": 1953,
+    "medidas_exteriores": "150x20x45",
+    "material_recomendado": "Aluminio",
+    "funcion": "Culata",
+    "url_archivo_3d": "/uploads/1772563814190_culata.STL",
+    "estado": "no_revisada"
+  },
+  {
+    "id": 1772637447322,
+    "nombre_pieza": "Culata biscuter",
+    "coche_marca": "Biscuter",
+    "coche_modelo": "b",
+    "coche_anio": 1953,
+    "medidas_exteriores": "150x20x45",
+    "material_recomendado": "Aluminio",
+    "funcion": "prueba1",
+    "url_archivo_3d": "/uploads/1772637447321_pieza_jornada_1.STEP",
+    "estado": "no_revisada"
+  },
+  {
+    "id": 1772637691482,
+    "nombre_pieza": "Culata biscuter",
+    "coche_marca": "Biscuter",
+    "coche_modelo": "c",
+    "coche_anio": 2000,
+    "medidas_exteriores": "150x20x45",
+    "material_recomendado": "Aluminio",
+    "funcion": "prueba2",
+    "url_archivo_3d": "/uploads/1772637691441_pieza_jornada_1.STEP",
+    "estado": "no_revisada"
+  },
+  {
+    "id": 1772638024737,
+    "nombre_pieza": "Culata biscuter",
+    "coche_marca": "Biscuter",
+    "coche_modelo": "Biscuter",
+    "coche_anio": 1999,
+    "medidas_exteriores": "150x20x45",
+    "material_recomendado": "Aluminio",
+    "funcion": "prueba c",
+    "url_archivo_3d": "[ARCHIVO_PROTEGIDO_EN_BOVEDA]",
+    "estado": "no_revisada"
+  }
+]

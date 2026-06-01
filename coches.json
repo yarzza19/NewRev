@@ -1,0 +1,6399 @@
+[
+  {
+    "brand": "Biscúter",
+    "url": "",
+    "models": [
+      {
+        "name": "Biscúter",
+        "image": "/assets/img/Serie_over_Spanje,_Bestanddeelnr_911-6501.jpg",
+        "specs": {
+          "Fabricación": "1953 - 1960",
+          "Motor": "197 cc, 1 cilindro 2 tiempos",
+          "Potencia": "9 CV a 4800 rpm",
+          "Velocidad Máx.": "75 km/h",
+          "Peso": "240 kg",
+          "Tracción": "Delantera"
+        },
+        "parts": [
+          {
+            "name": "Culata",
+            "description": "Culata original del motor Hispano Villiers de 197cc.",
+            "stlUrl": "/assets/models/biscúter/culata.glb",
+            "price": "3000 €"
+          },
+          {
+            "name": "Pieza motor tubo",
+            "description": "Componente tubular del bloque motor.",
+            "stlUrl": "/assets/models/biscúter/Pieza motor tubo.glb",
+            "price": "135 €"
+          },
+          {
+            "name": "Pieza arranque motor",
+            "description": "Engranaje y sistema de arranque del motor.",
+            "stlUrl": "/assets/models/biscúter/Pieza arranque motor.glb",
+            "price": "450 €"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "brand": "Volvo",
+    "url": "https://www.car.info/en-se/volvo",
+    "models": []
+  },
+  {
+    "brand": "Volkswagen",
+    "url": "https://www.car.info/en-se/volkswagen",
+    "models": []
+  },
+  {
+    "brand": "Toyota",
+    "url": "https://www.car.info/en-se/toyota",
+    "models": []
+  },
+  {
+    "brand": "Mercedes-Benz",
+    "url": "https://www.car.info/en-se/mercedes-benz",
+    "models": []
+  },
+  {
+    "brand": "Ford",
+    "url": "https://www.car.info/en-se/ford",
+    "models": []
+  },
+  {
+    "brand": "BMW",
+    "url": "https://www.car.info/en-se/bmw",
+    "models": []
+  },
+  {
+    "brand": "Kia",
+    "url": "https://www.car.info/en-se/kia",
+    "models": []
+  },
+  {
+    "brand": "Audi",
+    "url": "https://www.car.info/en-se/audi",
+    "models": []
+  },
+  {
+    "brand": "Renault",
+    "url": "https://www.car.info/en-se/renault",
+    "models": [
+      {
+        "name": "Clio",
+        "type": "category",
+        "submodels": [
+          {
+            "name": "Clio 1",
+            "type": "category",
+            "submodels": [
+              {
+                "name": "Gasolina",
+                "image": "/assets/img/clio-red.jpg",
+                "specs": {
+                  "Fabricación": "1990 - 1998",
+                  "Motor": "1.1L - 1.8L",
+                  "Carrocería": "Hatchback"
+                }
+              },
+              {
+                "name": "Diesel",
+                "image": "/assets/img/clio-red.jpg",
+                "specs": {
+                  "Fabricación": "1990 - 1998",
+                  "Motor": "1.9D",
+                  "Carrocería": "Hatchback"
+                }
+              },
+              {
+                "name": "Clio Williams",
+                "image": "https://www.carscoops.com/wp-content/uploads/2023/02/Renault-Clio-Williams-1-1536x1058.jpg",
+                "specs": {
+                  "Fabricación": "1993 - 1996",
+                  "Motor": "2.0 16v 150cv",
+                  "Carrocería": "Hatchback 3p"
+                }
+              }
+            ]
+          },
+          {
+            "name": "Clio 2",
+            "type": "category",
+            "submodels": [
+              {
+                "name": "Gasolina",
+                "image": "https://images.unsplash.com/photo-1542282088-fe8426682b8f?auto=format&fit=crop&q=80&w=800",
+                "specs": {
+                  "Fabricación": "1998 - 2005",
+                  "Motor": "1.2L - 1.6L"
+                }
+              },
+              {
+                "name": "Diesel",
+                "image": "https://images.unsplash.com/photo-1502877338535-766e1452684a?auto=format&fit=crop&q=80&w=800",
+                "specs": {
+                  "Fabricación": "1998 - 2005",
+                  "Motor": "1.5 dCi"
+                }
+              },
+              {
+                "name": "RS Sport",
+                "image": "https://images.unsplash.com/photo-1541899481282-d53bffe3c35d?auto=format&fit=crop&q=80&w=800",
+                "specs": {
+                  "Fabricación": "2000 - 2005",
+                  "Motor": "2.0 16v 172cv"
+                }
+              }
+            ]
+          },
+          {
+            "name": "Clio 3",
+            "type": "category",
+            "submodels": [
+              {
+                "name": "Gasolina",
+                "image": "https://images.unsplash.com/photo-1552519507-da3b142c6e3d?auto=format&fit=crop&q=80&w=800",
+                "specs": {
+                  "Fabricación": "2005 - 2012",
+                  "Motor": "1.2L - 1.6L"
+                }
+              },
+              {
+                "name": "Diesel",
+                "image": "https://images.unsplash.com/photo-1617469767053-d3b523a0b982?auto=format&fit=crop&q=80&w=800",
+                "specs": {
+                  "Fabricación": "2005 - 2012",
+                  "Motor": "1.5 dCi"
+                }
+              },
+              {
+                "name": "RS Sport",
+                "image": "https://images.unsplash.com/photo-1583121274602-3e2820c69888?auto=format&fit=crop&q=80&w=800",
+                "specs": {
+                  "Fabricación": "2006 - 2012",
+                  "Motor": "2.0 16v 197cv"
+                }
+              }
+            ]
+          },
+          {
+            "name": "Clio V6",
+            "type": "category",
+            "submodels": [
+              {
+                "name": "Fase 1",
+                "image": "https://images.unsplash.com/photo-1503376712344-c361309852f8?auto=format&fit=crop&q=80&w=800",
+                "specs": {
+                  "Fabricación": "2001 - 2003",
+                  "Motor": "3.0 V6 230cv",
+                  "Carrocería": "Motor Central"
+                }
+              },
+              {
+                "name": "Fase 2",
+                "image": "https://images.unsplash.com/photo-1510480373809-fb4d87213459?auto=format&fit=crop&q=80&w=800",
+                "specs": {
+                  "Fabricación": "2003 - 2005",
+                  "Motor": "3.0 V6 255cv",
+                  "Carrocería": "Motor Central"
+                }
+              }
+            ]
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "brand": "Škoda",
+    "url": "https://www.car.info/en-se/skoda",
+    "models": []
+  },
+  {
+    "brand": "Peugeot",
+    "url": "https://www.car.info/en-se/peugeot",
+    "models": []
+  },
+  {
+    "brand": "Saab",
+    "url": "https://www.car.info/en-se/saab",
+    "models": []
+  },
+  {
+    "brand": "Nissan",
+    "url": "https://www.car.info/en-se/nissan",
+    "models": []
+  },
+  {
+    "brand": "Opel",
+    "url": "https://www.car.info/en-se/opel",
+    "models": []
+  },
+  {
+    "brand": "Hyundai",
+    "url": "https://www.car.info/en-se/hyundai",
+    "models": []
+  },
+  {
+    "brand": "Citroën",
+    "url": "https://www.car.info/en-se/citroen",
+    "models": []
+  },
+  {
+    "brand": "Mazda",
+    "url": "https://www.car.info/en-se/mazda",
+    "models": []
+  },
+  {
+    "brand": "Subaru",
+    "url": "https://www.car.info/en-se/subaru",
+    "models": []
+  },
+  {
+    "brand": "Chevrolet",
+    "url": "https://www.car.info/en-se/chevrolet",
+    "models": []
+  },
+  {
+    "brand": "Tesla",
+    "url": "https://www.car.info/en-se/tesla",
+    "models": []
+  },
+  {
+    "brand": "Mitsubishi",
+    "url": "https://www.car.info/en-se/mitsubishi",
+    "models": []
+  },
+  {
+    "brand": "SEAT",
+    "url": "https://www.car.info/en-se/seat",
+    "models": []
+  },
+  {
+    "brand": "Honda",
+    "url": "https://www.car.info/en-se/honda",
+    "models": []
+  },
+  {
+    "brand": "Fiat",
+    "url": "https://www.car.info/en-se/fiat",
+    "models": []
+  },
+  {
+    "brand": "Suzuki",
+    "url": "https://www.car.info/en-se/suzuki",
+    "models": []
+  },
+  {
+    "brand": "Dacia",
+    "url": "https://www.car.info/en-se/dacia",
+    "models": []
+  },
+  {
+    "brand": "Porsche",
+    "url": "https://www.car.info/en-se/porsche",
+    "models": []
+  },
+  {
+    "brand": "MINI",
+    "url": "https://www.car.info/en-se/mini",
+    "models": []
+  },
+  {
+    "brand": "Ski-Doo",
+    "url": "https://www.car.info/en-se/ski-doo",
+    "models": []
+  },
+  {
+    "brand": "Polaris",
+    "url": "https://www.car.info/en-se/polaris",
+    "models": []
+  },
+  {
+    "brand": "MG",
+    "url": "https://www.car.info/en-se/mg",
+    "models": []
+  },
+  {
+    "brand": "Lexus",
+    "url": "https://www.car.info/en-se/lexus",
+    "models": []
+  },
+  {
+    "brand": "Polestar",
+    "url": "https://www.car.info/en-se/polestar",
+    "models": []
+  },
+  {
+    "brand": "Land Rover",
+    "url": "https://www.car.info/en-se/land-rover",
+    "models": []
+  },
+  {
+    "brand": "CUPRA",
+    "url": "https://www.car.info/en-se/cupra",
+    "models": []
+  },
+  {
+    "brand": "Jeep",
+    "url": "https://www.car.info/en-se/jeep",
+    "models": []
+  },
+  {
+    "brand": "Chrysler",
+    "url": "https://www.car.info/en-se/chrysler",
+    "models": []
+  },
+  {
+    "brand": "Dodge",
+    "url": "https://www.car.info/en-se/dodge",
+    "models": []
+  },
+  {
+    "brand": "Jaguar",
+    "url": "https://www.car.info/en-se/jaguar",
+    "models": []
+  },
+  {
+    "brand": "Iveco",
+    "url": "https://www.car.info/en-se/iveco",
+    "models": []
+  },
+  {
+    "brand": "Cadillac",
+    "url": "https://www.car.info/en-se/cadillac",
+    "models": []
+  },
+  {
+    "brand": "Isuzu",
+    "url": "https://www.car.info/en-se/isuzu",
+    "models": []
+  },
+  {
+    "brand": "Pontiac",
+    "url": "https://www.car.info/en-se/pontiac",
+    "models": []
+  },
+  {
+    "brand": "Alfa Romeo",
+    "url": "https://www.car.info/en-se/alfa-romeo",
+    "models": []
+  },
+  {
+    "brand": "RAM",
+    "url": "https://www.car.info/en-se/ram",
+    "models": []
+  },
+  {
+    "brand": "Bürstner",
+    "url": "https://www.car.info/en-se/burstner",
+    "models": []
+  },
+  {
+    "brand": "KTM",
+    "url": "https://www.car.info/en-se/ktm",
+    "models": []
+  },
+  {
+    "brand": "Buick",
+    "url": "https://www.car.info/en-se/buick",
+    "models": []
+  },
+  {
+    "brand": "BYD",
+    "url": "https://www.car.info/en-se/byd",
+    "models": []
+  },
+  {
+    "brand": "Lynk & Co",
+    "url": "https://www.car.info/en-se/lynk-co",
+    "models": []
+  },
+  {
+    "brand": "Ligier",
+    "url": "https://www.car.info/en-se/ligier",
+    "models": []
+  },
+  {
+    "brand": "Lifan",
+    "url": "https://www.car.info/en-se/lifan",
+    "models": []
+  },
+  {
+    "brand": "Oldsmobile",
+    "url": "https://www.car.info/en-se/oldsmobile",
+    "models": []
+  },
+  {
+    "brand": "Plymouth",
+    "url": "https://www.car.info/en-se/plymouth",
+    "models": []
+  },
+  {
+    "brand": "Austin",
+    "url": "https://www.car.info/en-se/austin",
+    "models": []
+  },
+  {
+    "brand": "Zhongyu",
+    "url": "https://www.car.info/en-se/zhongyu",
+    "models": []
+  },
+  {
+    "brand": "GMC",
+    "url": "https://www.car.info/en-se/gmc",
+    "models": []
+  },
+  {
+    "brand": "Smart",
+    "url": "https://www.car.info/en-se/smart",
+    "models": []
+  },
+  {
+    "brand": "Zeekr",
+    "url": "https://www.car.info/en-se/zeekr",
+    "models": []
+  },
+  {
+    "brand": "Eura Mobil",
+    "url": "https://www.car.info/en-se/eura-mobil",
+    "models": []
+  },
+  {
+    "brand": "Hyosung",
+    "url": "https://www.car.info/en-se/hyosung",
+    "models": []
+  },
+  {
+    "brand": "Triumph",
+    "url": "https://www.car.info/en-se/triumph",
+    "models": []
+  },
+  {
+    "brand": "Rover",
+    "url": "https://www.car.info/en-se/rover",
+    "models": []
+  },
+  {
+    "brand": "Maxus",
+    "url": "https://www.car.info/en-se/maxus",
+    "models": []
+  },
+  {
+    "brand": "McLouis",
+    "url": "https://www.car.info/en-se/mclouis",
+    "models": []
+  },
+  {
+    "brand": "LMC Caravan",
+    "url": "https://www.car.info/en-se/lmc-caravan",
+    "models": []
+  },
+  {
+    "brand": "Lancia",
+    "url": "https://www.car.info/en-se/lancia",
+    "models": []
+  },
+  {
+    "brand": "Lincoln",
+    "url": "https://www.car.info/en-se/lincoln",
+    "models": []
+  },
+  {
+    "brand": "Mercury",
+    "url": "https://www.car.info/en-se/mercury",
+    "models": []
+  },
+  {
+    "brand": "Arctic Cat",
+    "url": "https://www.car.info/en-se/arctic-cat",
+    "models": []
+  },
+  {
+    "brand": "XPENG",
+    "url": "https://www.car.info/en-se/xpeng",
+    "models": []
+  },
+  {
+    "brand": "Ferrari",
+    "url": "https://www.car.info/en-se/ferrari",
+    "models": []
+  },
+  {
+    "brand": "Willys",
+    "url": "https://www.car.info/en-se/willys",
+    "models": []
+  },
+  {
+    "brand": "Pössl",
+    "url": "https://www.car.info/en-se/possl",
+    "models": []
+  },
+  {
+    "brand": "Microcar",
+    "url": "https://www.car.info/en-se/microcar",
+    "models": []
+  },
+  {
+    "brand": "Morris",
+    "url": "https://www.car.info/en-se/morris",
+    "models": []
+  },
+  {
+    "brand": "Lada",
+    "url": "https://www.car.info/en-se/lada",
+    "models": []
+  },
+  {
+    "brand": "Frankia",
+    "url": "https://www.car.info/en-se/frankia",
+    "models": []
+  },
+  {
+    "brand": "SsangYong",
+    "url": "https://www.car.info/en-se/ssangyong",
+    "models": []
+  },
+  {
+    "brand": "Elnagh",
+    "url": "https://www.car.info/en-se/elnagh",
+    "models": []
+  },
+  {
+    "brand": "Silverstone",
+    "url": "https://www.car.info/en-se/silverstone",
+    "models": []
+  },
+  {
+    "brand": "Nilsson",
+    "url": "https://www.car.info/en-se/nilsson",
+    "models": []
+  },
+  {
+    "brand": "Vento",
+    "url": "https://www.car.info/en-se/vento",
+    "models": []
+  },
+  {
+    "brand": "Caravans International",
+    "url": "https://www.car.info/en-se/caravans-international",
+    "models": []
+  },
+  {
+    "brand": "Rimor",
+    "url": "https://www.car.info/en-se/rimor",
+    "models": []
+  },
+  {
+    "brand": "Lotus",
+    "url": "https://www.car.info/en-se/lotus",
+    "models": []
+  },
+  {
+    "brand": "Datsun",
+    "url": "https://www.car.info/en-se/datsun",
+    "models": []
+  },
+  {
+    "brand": "Maserati",
+    "url": "https://www.car.info/en-se/maserati",
+    "models": []
+  },
+  {
+    "brand": "Renault Trucks",
+    "url": "https://www.car.info/en-se/renault-trucks",
+    "models": []
+  },
+  {
+    "brand": "DS",
+    "url": "https://www.car.info/en-se/ds",
+    "models": []
+  },
+  {
+    "brand": "Bentley",
+    "url": "https://www.car.info/en-se/bentley",
+    "models": []
+  },
+  {
+    "brand": "Vauxhall",
+    "url": "https://www.car.info/en-se/vauxhall",
+    "models": []
+  },
+  {
+    "brand": "Abarth",
+    "url": "https://www.car.info/en-se/abarth",
+    "models": []
+  },
+  {
+    "brand": "Chatenet",
+    "url": "https://www.car.info/en-se/chatenet",
+    "models": []
+  },
+  {
+    "brand": "Daihatsu",
+    "url": "https://www.car.info/en-se/daihatsu",
+    "models": []
+  },
+  {
+    "brand": "ORA",
+    "url": "https://www.car.info/en-se/ora",
+    "models": []
+  },
+  {
+    "brand": "DAF",
+    "url": "https://www.car.info/en-se/daf",
+    "models": []
+  },
+  {
+    "brand": "Rolls-Royce",
+    "url": "https://www.car.info/en-se/rolls-royce",
+    "models": []
+  },
+  {
+    "brand": "Daewoo",
+    "url": "https://www.car.info/en-se/daewoo",
+    "models": []
+  },
+  {
+    "brand": "Morgan",
+    "url": "https://www.car.info/en-se/morgan",
+    "models": []
+  },
+  {
+    "brand": "MAN",
+    "url": "https://www.car.info/en-se/man",
+    "models": []
+  },
+  {
+    "brand": "Roller Team",
+    "url": "https://www.car.info/en-se/roller-team",
+    "models": []
+  },
+  {
+    "brand": "ABT",
+    "url": "https://www.car.info/en-se/abt",
+    "models": []
+  },
+  {
+    "brand": "DeSoto",
+    "url": "https://www.car.info/en-se/desoto",
+    "models": []
+  },
+  {
+    "brand": "Imperial",
+    "url": "https://www.car.info/en-se/imperial",
+    "models": []
+  },
+  {
+    "brand": "Lamborghini",
+    "url": "https://www.car.info/en-se/lamborghini",
+    "models": []
+  },
+  {
+    "brand": "Aston Martin",
+    "url": "https://www.car.info/en-se/aston-martin",
+    "models": []
+  },
+  {
+    "brand": "Grecav",
+    "url": "https://www.car.info/en-se/grecav",
+    "models": []
+  },
+  {
+    "brand": "Can-Am",
+    "url": "https://www.car.info/en-se/can-am",
+    "models": []
+  },
+  {
+    "brand": "Austin-Healey",
+    "url": "https://www.car.info/en-se/austin-healey",
+    "models": []
+  },
+  {
+    "brand": "AMC",
+    "url": "https://www.car.info/en-se/amc",
+    "models": []
+  },
+  {
+    "brand": "NIO",
+    "url": "https://www.car.info/en-se/nio",
+    "models": []
+  },
+  {
+    "brand": "Leyland",
+    "url": "https://www.car.info/en-se/leyland",
+    "models": []
+  },
+  {
+    "brand": "DKW",
+    "url": "https://www.car.info/en-se/dkw",
+    "models": []
+  },
+  {
+    "brand": "Hummer",
+    "url": "https://www.car.info/en-se/hummer",
+    "models": []
+  },
+  {
+    "brand": "Simca",
+    "url": "https://www.car.info/en-se/simca",
+    "models": []
+  },
+  {
+    "brand": "Edsel",
+    "url": "https://www.car.info/en-se/edsel",
+    "models": []
+  },
+  {
+    "brand": "UGBEST",
+    "url": "https://www.car.info/en-se/ugbest",
+    "models": []
+  },
+  {
+    "brand": "Casalini",
+    "url": "https://www.car.info/en-se/casalini",
+    "models": []
+  },
+  {
+    "brand": "ALPINA",
+    "url": "https://www.car.info/en-se/alpina",
+    "models": []
+  },
+  {
+    "brand": "Concorde",
+    "url": "https://www.car.info/en-se/concorde",
+    "models": []
+  },
+  {
+    "brand": "Niesmann+Bischoff",
+    "url": "https://www.car.info/en-se/niesmann",
+    "models": []
+  },
+  {
+    "brand": "Nordic",
+    "url": "https://www.car.info/en-se/nordic",
+    "models": []
+  },
+  {
+    "brand": "Goupil",
+    "url": "https://www.car.info/en-se/goupil",
+    "models": []
+  },
+  {
+    "brand": "Auto Union",
+    "url": "https://www.car.info/en-se/auto-union",
+    "models": []
+  },
+  {
+    "brand": "Bedford",
+    "url": "https://www.car.info/en-se/bedford",
+    "models": []
+  },
+  {
+    "brand": "Daimler",
+    "url": "https://www.car.info/en-se/daimler",
+    "models": []
+  },
+  {
+    "brand": "VAZ",
+    "url": "https://www.car.info/en-se/vaz",
+    "models": []
+  },
+  {
+    "brand": "Studebaker",
+    "url": "https://www.car.info/en-se/studebaker",
+    "models": []
+  },
+  {
+    "brand": "Borgward",
+    "url": "https://www.car.info/en-se/borgward",
+    "models": []
+  },
+  {
+    "brand": "Morelo",
+    "url": "https://www.car.info/en-se/morelo",
+    "models": []
+  },
+  {
+    "brand": "Hudson",
+    "url": "https://www.car.info/en-se/hudson",
+    "models": []
+  },
+  {
+    "brand": "McLaren",
+    "url": "https://www.car.info/en-se/mclaren",
+    "models": []
+  },
+  {
+    "brand": "JDM",
+    "url": "https://www.car.info/en-se/jdm",
+    "models": []
+  },
+  {
+    "brand": "Infiniti",
+    "url": "https://www.car.info/en-se/infiniti",
+    "models": []
+  },
+  {
+    "brand": "AC Cars",
+    "url": "https://www.car.info/en-se/ac-cars",
+    "models": []
+  },
+  {
+    "brand": "Rambler",
+    "url": "https://www.car.info/en-se/rambler",
+    "models": []
+  },
+  {
+    "brand": "Trabant",
+    "url": "https://www.car.info/en-se/trabant",
+    "models": []
+  },
+  {
+    "brand": "INEOS",
+    "url": "https://www.car.info/en-se/ineos-automotive",
+    "models": []
+  },
+  {
+    "brand": "Challenger",
+    "url": "https://www.car.info/en-se/challenger",
+    "models": []
+  },
+  {
+    "brand": "Kalmar Verkstad",
+    "url": "https://www.car.info/en-se/kalmar-verkstad",
+    "models": []
+  },
+  {
+    "brand": "Fisker",
+    "url": "https://www.car.info/en-se/fisker",
+    "models": []
+  },
+  {
+    "brand": "TVR",
+    "url": "https://www.car.info/en-se/tvr",
+    "models": []
+  },
+  {
+    "brand": "Messerschmitt",
+    "url": "https://www.car.info/en-se/messerschmitt",
+    "models": []
+  },
+  {
+    "brand": "Packard",
+    "url": "https://www.car.info/en-se/packard",
+    "models": []
+  },
+  {
+    "brand": "Sunbeam",
+    "url": "https://www.car.info/en-se/sunbeam",
+    "models": []
+  },
+  {
+    "brand": "De Tomaso",
+    "url": "https://www.car.info/en-se/de-tomaso",
+    "models": []
+  },
+  {
+    "brand": "Mobilvetta",
+    "url": "https://www.car.info/en-se/mobilvetta",
+    "models": []
+  },
+  {
+    "brand": "NSU",
+    "url": "https://www.car.info/en-se/nsu",
+    "models": []
+  },
+  {
+    "brand": "Wolseley",
+    "url": "https://www.car.info/en-se/wolseley",
+    "models": []
+  },
+  {
+    "brand": "AIWAYS",
+    "url": "https://www.car.info/en-se/aiways",
+    "models": []
+  },
+  {
+    "brand": "Hillman",
+    "url": "https://www.car.info/en-se/hillman",
+    "models": []
+  },
+  {
+    "brand": "Valiant",
+    "url": "https://www.car.info/en-se/valiant",
+    "models": []
+  },
+  {
+    "brand": "Hongqi",
+    "url": "https://www.car.info/en-se/hongqi",
+    "models": []
+  },
+  {
+    "brand": "Jensen",
+    "url": "https://www.car.info/en-se/jensen",
+    "models": []
+  },
+  {
+    "brand": "Shelby",
+    "url": "https://www.car.info/en-se/shelby",
+    "models": []
+  },
+  {
+    "brand": "Tri-Star",
+    "url": "https://www.car.info/en-se/tri-star",
+    "models": []
+  },
+  {
+    "brand": "Heinkel",
+    "url": "https://www.car.info/en-se/heinkel",
+    "models": []
+  },
+  {
+    "brand": "Matra",
+    "url": "https://www.car.info/en-se/matra",
+    "models": []
+  },
+  {
+    "brand": "Standard",
+    "url": "https://www.car.info/en-se/standard",
+    "models": []
+  },
+  {
+    "brand": "Lloyd",
+    "url": "https://www.car.info/en-se/lloyd",
+    "models": []
+  },
+  {
+    "brand": "DFSK",
+    "url": "https://www.car.info/en-se/dfsk",
+    "models": []
+  },
+  {
+    "brand": "Nash",
+    "url": "https://www.car.info/en-se/nash",
+    "models": []
+  },
+  {
+    "brand": "KGM",
+    "url": "https://www.car.info/en-se/kgm",
+    "models": []
+  },
+  {
+    "brand": "Caterham",
+    "url": "https://www.car.info/en-se/caterham",
+    "models": []
+  },
+  {
+    "brand": "Autobianchi",
+    "url": "https://www.car.info/en-se/autobianchi",
+    "models": []
+  },
+  {
+    "brand": "Riley",
+    "url": "https://www.car.info/en-se/riley",
+    "models": []
+  },
+  {
+    "brand": "Alpine",
+    "url": "https://www.car.info/en-se/alpine",
+    "models": []
+  },
+  {
+    "brand": "GAZ",
+    "url": "https://www.car.info/en-se/gaz",
+    "models": []
+  },
+  {
+    "brand": "Marcos",
+    "url": "https://www.car.info/en-se/marcos",
+    "models": []
+  },
+  {
+    "brand": "Checker",
+    "url": "https://www.car.info/en-se/checker",
+    "models": []
+  },
+  {
+    "brand": "Talbot",
+    "url": "https://www.car.info/en-se/talbot",
+    "models": []
+  },
+  {
+    "brand": "AJS",
+    "url": "https://www.car.info/en-se/ajs",
+    "models": []
+  },
+  {
+    "brand": "Glas",
+    "url": "https://www.car.info/en-se/glas",
+    "models": []
+  },
+  {
+    "brand": "Irisbus",
+    "url": "https://www.car.info/en-se/irisbus",
+    "models": []
+  },
+  {
+    "brand": "Acura",
+    "url": "https://www.car.info/en-se/acura",
+    "models": []
+  },
+  {
+    "brand": "Iveco Bus",
+    "url": "https://www.car.info/en-se/iveco-bus",
+    "models": []
+  },
+  {
+    "brand": "Excalibur",
+    "url": "https://www.car.info/en-se/excalibur",
+    "models": []
+  },
+  {
+    "brand": "Le Voyageur",
+    "url": "https://www.car.info/en-se/le-voyageur",
+    "models": []
+  },
+  {
+    "brand": "Bellier",
+    "url": "https://www.car.info/en-se/bellier",
+    "models": []
+  },
+  {
+    "brand": "DeLorean",
+    "url": "https://www.car.info/en-se/delorean",
+    "models": []
+  },
+  {
+    "brand": "Kewet",
+    "url": "https://www.car.info/en-se/kewet",
+    "models": []
+  },
+  {
+    "brand": "Wartburg",
+    "url": "https://www.car.info/en-se/wartburg",
+    "models": []
+  },
+  {
+    "brand": "Alvis",
+    "url": "https://www.car.info/en-se/alvis",
+    "models": []
+  },
+  {
+    "brand": "Neckar",
+    "url": "https://www.car.info/en-se/neckar",
+    "models": []
+  },
+  {
+    "brand": "Reliant",
+    "url": "https://www.car.info/en-se/reliant",
+    "models": []
+  },
+  {
+    "brand": "Tamlans",
+    "url": "https://www.car.info/en-se/tamlans",
+    "models": []
+  },
+  {
+    "brand": "LEVC",
+    "url": "https://www.car.info/en-se/levc",
+    "models": []
+  },
+  {
+    "brand": "LaSalle",
+    "url": "https://www.car.info/en-se/lasalle",
+    "models": []
+  },
+  {
+    "brand": "JAC",
+    "url": "https://www.car.info/en-se/jac",
+    "models": []
+  },
+  {
+    "brand": "Panhard",
+    "url": "https://www.car.info/en-se/panhard",
+    "models": []
+  },
+  {
+    "brand": "Adler",
+    "url": "https://www.car.info/en-se/adler",
+    "models": []
+  },
+  {
+    "brand": "Jösse Car",
+    "url": "https://www.car.info/en-se/josse-car",
+    "models": []
+  },
+  {
+    "brand": "Kaiser",
+    "url": "https://www.car.info/en-se/kaiser",
+    "models": []
+  },
+  {
+    "brand": "Roush",
+    "url": "https://www.car.info/en-se/roush",
+    "models": []
+  },
+  {
+    "brand": "Think",
+    "url": "https://www.car.info/en-se/think",
+    "models": []
+  },
+  {
+    "brand": "Mahindra",
+    "url": "https://www.car.info/en-se/mahindra",
+    "models": []
+  },
+  {
+    "brand": "Humber",
+    "url": "https://www.car.info/en-se/humber",
+    "models": []
+  },
+  {
+    "brand": "Bertone",
+    "url": "https://www.car.info/en-se/bertone",
+    "models": []
+  },
+  {
+    "brand": "Ginetta",
+    "url": "https://www.car.info/en-se/ginetta",
+    "models": []
+  },
+  {
+    "brand": "Saleen",
+    "url": "https://www.car.info/en-se/saleen",
+    "models": []
+  },
+  {
+    "brand": "International Harvester",
+    "url": "https://www.car.info/en-se/international-harvester",
+    "models": []
+  },
+  {
+    "brand": "Micro",
+    "url": "https://www.car.info/en-se/micro",
+    "models": []
+  },
+  {
+    "brand": "Pininfarina",
+    "url": "https://www.car.info/en-se/pininfarina",
+    "models": []
+  },
+  {
+    "brand": "Scion",
+    "url": "https://www.car.info/en-se/scion",
+    "models": []
+  },
+  {
+    "brand": "UAZ",
+    "url": "https://www.car.info/en-se/uaz",
+    "models": []
+  },
+  {
+    "brand": "Singer",
+    "url": "https://www.car.info/en-se/singer",
+    "models": []
+  },
+  {
+    "brand": "Tatra",
+    "url": "https://www.car.info/en-se/tatra",
+    "models": []
+  },
+  {
+    "brand": "Bugatti",
+    "url": "https://www.car.info/en-se/bugatti",
+    "models": []
+  },
+  {
+    "brand": "IFA",
+    "url": "https://www.car.info/en-se/ifa",
+    "models": []
+  },
+  {
+    "brand": "Moskvich",
+    "url": "https://www.car.info/en-se/moskvitch",
+    "models": []
+  },
+  {
+    "brand": "Armstrong Siddeley",
+    "url": "https://www.car.info/en-se/armstrong-siddeley",
+    "models": []
+  },
+  {
+    "brand": "Essex",
+    "url": "https://www.car.info/en-se/essex",
+    "models": []
+  },
+  {
+    "brand": "Koenigsegg",
+    "url": "https://www.car.info/en-se/koenigsegg",
+    "models": []
+  },
+  {
+    "brand": "Meteor",
+    "url": "https://www.car.info/en-se/meteor",
+    "models": []
+  },
+  {
+    "brand": "Steyr-Daimler-Puch",
+    "url": "https://www.car.info/en-se/steyr-daimler-puch",
+    "models": []
+  },
+  {
+    "brand": "Ariel",
+    "url": "https://www.car.info/en-se/ariel",
+    "models": []
+  },
+  {
+    "brand": "EV Adapt",
+    "url": "https://www.car.info/en-se/ev-adapt",
+    "models": []
+  },
+  {
+    "brand": "Jowett",
+    "url": "https://www.car.info/en-se/jowett",
+    "models": []
+  },
+  {
+    "brand": "Solifer",
+    "url": "https://www.car.info/en-se/solifer",
+    "models": []
+  },
+  {
+    "brand": "Zastava",
+    "url": "https://www.car.info/en-se/zastava",
+    "models": []
+  },
+  {
+    "brand": "Iso",
+    "url": "https://www.car.info/en-se/iso",
+    "models": []
+  },
+  {
+    "brand": "Skywell",
+    "url": "https://www.car.info/en-se/skywell",
+    "models": []
+  },
+  {
+    "brand": "Fordson",
+    "url": "https://www.car.info/en-se/fordson",
+    "models": []
+  },
+  {
+    "brand": "Polar",
+    "url": "https://www.car.info/en-se/polar",
+    "models": []
+  },
+  {
+    "brand": "Eagle",
+    "url": "https://www.car.info/en-se/eagle",
+    "models": []
+  },
+  {
+    "brand": "Henry J",
+    "url": "https://www.car.info/en-se/henry-j",
+    "models": []
+  },
+  {
+    "brand": "Amphicar",
+    "url": "https://www.car.info/en-se/amphicar",
+    "models": []
+  },
+  {
+    "brand": "Auburn",
+    "url": "https://www.car.info/en-se/auburn",
+    "models": []
+  },
+  {
+    "brand": "Carbodies",
+    "url": "https://www.car.info/en-se/carbodies",
+    "models": []
+  },
+  {
+    "brand": "ECar",
+    "url": "https://www.car.info/en-se/ecar",
+    "models": []
+  },
+  {
+    "brand": "Fargo",
+    "url": "https://www.car.info/en-se/fargo",
+    "models": []
+  },
+  {
+    "brand": "FSO",
+    "url": "https://www.car.info/en-se/fso",
+    "models": []
+  },
+  {
+    "brand": "Sunlight",
+    "url": "https://www.car.info/en-se/sunlight",
+    "models": []
+  },
+  {
+    "brand": "Wey",
+    "url": "https://www.car.info/en-se/wey",
+    "models": []
+  },
+  {
+    "brand": "Monarch",
+    "url": "https://www.car.info/en-se/monarch",
+    "models": []
+  },
+  {
+    "brand": "Panther",
+    "url": "https://www.car.info/en-se/panther",
+    "models": []
+  },
+  {
+    "brand": "Amilcar",
+    "url": "https://www.car.info/en-se/amilcar",
+    "models": []
+  },
+  {
+    "brand": "Hupmobile",
+    "url": "https://www.car.info/en-se/hupmobile",
+    "models": []
+  },
+  {
+    "brand": "Saturn",
+    "url": "https://www.car.info/en-se/saturn",
+    "models": []
+  },
+  {
+    "brand": "Whippet",
+    "url": "https://www.car.info/en-se/whippet",
+    "models": []
+  },
+  {
+    "brand": "ZAZ",
+    "url": "https://www.car.info/en-se/zaz",
+    "models": []
+  },
+  {
+    "brand": "Zimmer",
+    "url": "https://www.car.info/en-se/zimmer",
+    "models": []
+  },
+  {
+    "brand": "BAW",
+    "url": "https://www.car.info/en-se/baw",
+    "models": []
+  },
+  {
+    "brand": "Erskine",
+    "url": "https://www.car.info/en-se/erskine",
+    "models": []
+  },
+  {
+    "brand": "Lusitano",
+    "url": "https://www.car.info/en-se/lusitano",
+    "models": []
+  },
+  {
+    "brand": "AEC",
+    "url": "https://www.car.info/en-se/aec",
+    "models": []
+  },
+  {
+    "brand": "Bristol",
+    "url": "https://www.car.info/en-se/bristol",
+    "models": []
+  },
+  {
+    "brand": "Frazer",
+    "url": "https://www.car.info/en-se/frazer",
+    "models": []
+  },
+  {
+    "brand": "Ghia",
+    "url": "https://www.car.info/en-se/ghia",
+    "models": []
+  },
+  {
+    "brand": "Holden",
+    "url": "https://www.car.info/en-se/holden",
+    "models": []
+  },
+  {
+    "brand": "Lagonda",
+    "url": "https://www.car.info/en-se/lagonda",
+    "models": []
+  },
+  {
+    "brand": "LTI",
+    "url": "https://www.car.info/en-se/lti",
+    "models": []
+  },
+  {
+    "brand": "NEVS",
+    "url": "https://www.car.info/en-se/nevs",
+    "models": []
+  },
+  {
+    "brand": "Pollmann",
+    "url": "https://www.car.info/en-se/pollmann",
+    "models": []
+  },
+  {
+    "brand": "Trojan",
+    "url": "https://www.car.info/en-se/trojan",
+    "models": []
+  },
+  {
+    "brand": "VIS",
+    "url": "https://www.car.info/en-se/vis",
+    "models": []
+  },
+  {
+    "brand": "Allard",
+    "url": "https://www.car.info/en-se/allard",
+    "models": []
+  },
+  {
+    "brand": "Bond",
+    "url": "https://www.car.info/en-se/bond",
+    "models": []
+  },
+  {
+    "brand": "Brabus",
+    "url": "https://www.car.info/en-se/brabus",
+    "models": []
+  },
+  {
+    "brand": "Goliath",
+    "url": "https://www.car.info/en-se/goliath",
+    "models": []
+  },
+  {
+    "brand": "Horch",
+    "url": "https://www.car.info/en-se/horch",
+    "models": []
+  },
+  {
+    "brand": "REO",
+    "url": "https://www.car.info/en-se/reo",
+    "models": []
+  },
+  {
+    "brand": "Santana",
+    "url": "https://www.car.info/en-se/santana",
+    "models": []
+  },
+  {
+    "brand": "Seres",
+    "url": "https://www.car.info/en-se/seres",
+    "models": []
+  },
+  {
+    "brand": "Wanderer",
+    "url": "https://www.car.info/en-se/wanderer",
+    "models": []
+  },
+  {
+    "brand": "AM General",
+    "url": "https://www.car.info/en-se/am-general",
+    "models": []
+  },
+  {
+    "brand": "Cord",
+    "url": "https://www.car.info/en-se/cord",
+    "models": []
+  },
+  {
+    "brand": "Delahaye",
+    "url": "https://www.car.info/en-se/delahaye",
+    "models": []
+  },
+  {
+    "brand": "EMW",
+    "url": "https://www.car.info/en-se/emw",
+    "models": []
+  },
+  {
+    "brand": "Fram-King",
+    "url": "https://www.car.info/en-se/fram-king",
+    "models": []
+  },
+  {
+    "brand": "Geely",
+    "url": "https://www.car.info/en-se/geely",
+    "models": []
+  },
+  {
+    "brand": "Graham-Paige",
+    "url": "https://www.car.info/en-se/graham-paige",
+    "models": []
+  },
+  {
+    "brand": "Radical",
+    "url": "https://www.car.info/en-se/radical",
+    "models": []
+  },
+  {
+    "brand": "Thulin",
+    "url": "https://www.car.info/en-se/thulin",
+    "models": []
+  },
+  {
+    "brand": "Vanden Plas",
+    "url": "https://www.car.info/en-se/vanden-plas",
+    "models": []
+  },
+  {
+    "brand": "Vespa",
+    "url": "https://www.car.info/en-se/vespa",
+    "models": []
+  },
+  {
+    "brand": "Bitter",
+    "url": "https://www.car.info/en-se/bitter",
+    "models": []
+  },
+  {
+    "brand": "Clipper",
+    "url": "https://www.car.info/en-se/clipper",
+    "models": []
+  },
+  {
+    "brand": "Facel Vega",
+    "url": "https://www.car.info/en-se/facel-vega",
+    "models": []
+  },
+  {
+    "brand": "Geo",
+    "url": "https://www.car.info/en-se/geo",
+    "models": []
+  },
+  {
+    "brand": "Karma",
+    "url": "https://www.car.info/en-se/karma",
+    "models": []
+  },
+  {
+    "brand": "KVAB",
+    "url": "https://www.car.info/en-se/kvab",
+    "models": []
+  },
+  {
+    "brand": "Lanchester",
+    "url": "https://www.car.info/en-se/lanchester",
+    "models": []
+  },
+  {
+    "brand": "Leapmotor",
+    "url": "https://www.car.info/en-se/leap-motor",
+    "models": []
+  },
+  {
+    "brand": "RUF",
+    "url": "https://www.car.info/en-se/ruf",
+    "models": []
+  },
+  {
+    "brand": "SILCCO",
+    "url": "https://www.car.info/en-se/silcco",
+    "models": []
+  },
+  {
+    "brand": "SS Car",
+    "url": "https://www.car.info/en-se/ss-car",
+    "models": []
+  },
+  {
+    "brand": "Wiesmann",
+    "url": "https://www.car.info/en-se/wiesmann",
+    "models": []
+  },
+  {
+    "brand": "Avanti",
+    "url": "https://www.car.info/en-se/avanti",
+    "models": []
+  },
+  {
+    "brand": "BAC",
+    "url": "https://www.car.info/en-se/bac",
+    "models": []
+  },
+  {
+    "brand": "Brilliance",
+    "url": "https://www.car.info/en-se/brilliance",
+    "models": []
+  },
+  {
+    "brand": "BSA Motorcycles",
+    "url": "https://www.car.info/en-se/bsa-motorcycles",
+    "models": []
+  },
+  {
+    "brand": "Callaway",
+    "url": "https://www.car.info/en-se/callaway",
+    "models": []
+  },
+  {
+    "brand": "Ford Trucks",
+    "url": "https://www.car.info/en-se/ford-trucks",
+    "models": []
+  },
+  {
+    "brand": "Hansa",
+    "url": "https://www.car.info/en-se/hansa",
+    "models": []
+  },
+  {
+    "brand": "Innocenti",
+    "url": "https://www.car.info/en-se/innocenti",
+    "models": []
+  },
+  {
+    "brand": "Lea-Francis",
+    "url": "https://www.car.info/en-se/lea-francis",
+    "models": []
+  },
+  {
+    "brand": "Lombardi",
+    "url": "https://www.car.info/en-se/lombardi",
+    "models": []
+  },
+  {
+    "brand": "Maruti Suzuki",
+    "url": "https://www.car.info/en-se/maruti",
+    "models": []
+  },
+  {
+    "brand": "Noble",
+    "url": "https://www.car.info/en-se/noble",
+    "models": []
+  },
+  {
+    "brand": "Oakland",
+    "url": "https://www.car.info/en-se/oakland",
+    "models": []
+  },
+  {
+    "brand": "Scania-Vabis",
+    "url": "https://www.car.info/en-se/scania-vabis",
+    "models": []
+  },
+  {
+    "brand": "Spectre",
+    "url": "https://www.car.info/en-se/spectre",
+    "models": []
+  },
+  {
+    "brand": "Stutz",
+    "url": "https://www.car.info/en-se/stutz",
+    "models": []
+  },
+  {
+    "brand": "Suecia",
+    "url": "https://www.car.info/en-se/suecia",
+    "models": []
+  },
+  {
+    "brand": "Ultima",
+    "url": "https://www.car.info/en-se/ultima",
+    "models": []
+  },
+  {
+    "brand": "Viotti",
+    "url": "https://www.car.info/en-se/viotti",
+    "models": []
+  },
+  {
+    "brand": "AGA",
+    "url": "https://www.car.info/en-se/aga",
+    "models": []
+  },
+  {
+    "brand": "American Bantam",
+    "url": "https://www.car.info/en-se/american-bantam",
+    "models": []
+  },
+  {
+    "brand": "Asia",
+    "url": "https://www.car.info/en-se/asia",
+    "models": []
+  },
+  {
+    "brand": "Avions Voisin",
+    "url": "https://www.car.info/en-se/avions-voisin",
+    "models": []
+  },
+  {
+    "brand": "B.S.A.",
+    "url": "https://www.car.info/en-se/bsa",
+    "models": []
+  },
+  {
+    "brand": "Barkas",
+    "url": "https://www.car.info/en-se/barkas",
+    "models": []
+  },
+  {
+    "brand": "Caresto",
+    "url": "https://www.car.info/en-se/caresto",
+    "models": []
+  },
+  {
+    "brand": "Clénet",
+    "url": "https://www.car.info/en-se/clenet",
+    "models": []
+  },
+  {
+    "brand": "CMC",
+    "url": "https://www.car.info/en-se/cmc",
+    "models": []
+  },
+  {
+    "brand": "Commer",
+    "url": "https://www.car.info/en-se/commer",
+    "models": []
+  },
+  {
+    "brand": "Crossley",
+    "url": "https://www.car.info/en-se/crossley",
+    "models": []
+  },
+  {
+    "brand": "De Dion-Bouton",
+    "url": "https://www.car.info/en-se/de-dion-bouton",
+    "models": []
+  },
+  {
+    "brand": "Franklin",
+    "url": "https://www.car.info/en-se/franklin",
+    "models": []
+  },
+  {
+    "brand": "HEICO",
+    "url": "https://www.car.info/en-se/heico",
+    "models": []
+  },
+  {
+    "brand": "Hennessey",
+    "url": "https://www.car.info/en-se/hennessey",
+    "models": []
+  },
+  {
+    "brand": "Kleinschnittger",
+    "url": "https://www.car.info/en-se/kleinschnittger",
+    "models": []
+  },
+  {
+    "brand": "LDV",
+    "url": "https://www.car.info/en-se/ldv",
+    "models": []
+  },
+  {
+    "brand": "Leopard",
+    "url": "https://www.car.info/en-se/leopard",
+    "models": []
+  },
+  {
+    "brand": "Lomax",
+    "url": "https://www.car.info/en-se/lomax",
+    "models": []
+  },
+  {
+    "brand": "Maybach",
+    "url": "https://www.car.info/en-se/maybach",
+    "models": []
+  },
+  {
+    "brand": "Panther Motorcycles",
+    "url": "https://www.car.info/en-se/panther-motorcycles",
+    "models": []
+  },
+  {
+    "brand": "Proton",
+    "url": "https://www.car.info/en-se/proton",
+    "models": []
+  },
+  {
+    "brand": "Puma",
+    "url": "https://www.car.info/en-se/puma",
+    "models": []
+  },
+  {
+    "brand": "RGNT",
+    "url": "https://www.car.info/en-se/rgnt",
+    "models": []
+  },
+  {
+    "brand": "RTR",
+    "url": "https://www.car.info/en-se/rtr",
+    "models": []
+  },
+  {
+    "brand": "Star",
+    "url": "https://www.car.info/en-se/star",
+    "models": []
+  },
+  {
+    "brand": "Vest",
+    "url": "https://www.car.info/en-se/vest",
+    "models": []
+  },
+  {
+    "brand": "Zhidou",
+    "url": "https://www.car.info/en-se/zhidou",
+    "models": []
+  },
+  {
+    "brand": "Aero",
+    "url": "https://www.car.info/en-se/aero",
+    "models": []
+  },
+  {
+    "brand": "Arnolt",
+    "url": "https://www.car.info/en-se/arnolt",
+    "models": []
+  },
+  {
+    "brand": "ASC",
+    "url": "https://www.car.info/en-se/asc",
+    "models": []
+  },
+  {
+    "brand": "Asquith Motors",
+    "url": "https://www.car.info/en-se/asquith-motors",
+    "models": []
+  },
+  {
+    "brand": "Autozam",
+    "url": "https://www.car.info/en-se/autozam",
+    "models": []
+  },
+  {
+    "brand": "AWZ",
+    "url": "https://www.car.info/en-se/awz",
+    "models": []
+  },
+  {
+    "brand": "Baker Electric",
+    "url": "https://www.car.info/en-se/baker-electric",
+    "models": []
+  },
+  {
+    "brand": "Belsize",
+    "url": "https://www.car.info/en-se/belsize",
+    "models": []
+  },
+  {
+    "brand": "Berliet",
+    "url": "https://www.car.info/en-se/berliet",
+    "models": []
+  },
+  {
+    "brand": "BINZ",
+    "url": "https://www.car.info/en-se/binz",
+    "models": []
+  },
+  {
+    "brand": "Bizzarrini",
+    "url": "https://www.car.info/en-se/bizzarrini",
+    "models": []
+  },
+  {
+    "brand": "Bob",
+    "url": "https://www.car.info/en-se/bob",
+    "models": []
+  },
+  {
+    "brand": "Bricklin",
+    "url": "https://www.car.info/en-se/bricklin",
+    "models": []
+  },
+  {
+    "brand": "Chalmers",
+    "url": "https://www.car.info/en-se/chalmers",
+    "models": []
+  },
+  {
+    "brand": "Chandler",
+    "url": "https://www.car.info/en-se/chandler",
+    "models": []
+  },
+  {
+    "brand": "Columbia Motors",
+    "url": "https://www.car.info/en-se/columbia-motors",
+    "models": []
+  },
+  {
+    "brand": "Commonwealth",
+    "url": "https://www.car.info/en-se/commonwealth",
+    "models": []
+  },
+  {
+    "brand": "Cottereau",
+    "url": "https://www.car.info/en-se/cottereau",
+    "models": []
+  },
+  {
+    "brand": "Darracq",
+    "url": "https://www.car.info/en-se/darracq",
+    "models": []
+  },
+  {
+    "brand": "Delage",
+    "url": "https://www.car.info/en-se/delage",
+    "models": []
+  },
+  {
+    "brand": "Delin",
+    "url": "https://www.car.info/en-se/delin",
+    "models": []
+  },
+  {
+    "brand": "Denzel",
+    "url": "https://www.car.info/en-se/denzel",
+    "models": []
+  },
+  {
+    "brand": "Donkervoort",
+    "url": "https://www.car.info/en-se/donkervoort",
+    "models": []
+  },
+  {
+    "brand": "Dreamer",
+    "url": "https://www.car.info/en-se/dreamer",
+    "models": []
+  },
+  {
+    "brand": "E-M-F",
+    "url": "https://www.car.info/en-se/e-m-f",
+    "models": []
+  },
+  {
+    "brand": "Emgrand",
+    "url": "https://www.car.info/en-se/emgrand",
+    "models": []
+  },
+  {
+    "brand": "ERL",
+    "url": "https://www.car.info/en-se/erl",
+    "models": []
+  },
+  {
+    "brand": "Frazer Nash-BMW",
+    "url": "https://www.car.info/en-se/frazer-nash-bmw",
+    "models": []
+  },
+  {
+    "brand": "Fuldamobil",
+    "url": "https://www.car.info/en-se/fuldamobil",
+    "models": []
+  },
+  {
+    "brand": "Genesis",
+    "url": "https://www.car.info/en-se/genesis",
+    "models": []
+  },
+  {
+    "brand": "Giottiline",
+    "url": "https://www.car.info/en-se/giottiline",
+    "models": []
+  },
+  {
+    "brand": "Great Wall",
+    "url": "https://www.car.info/en-se/great-wall",
+    "models": []
+  },
+  {
+    "brand": "Healey",
+    "url": "https://www.car.info/en-se/healey",
+    "models": []
+  },
+  {
+    "brand": "Henney",
+    "url": "https://www.car.info/en-se/henney",
+    "models": []
+  },
+  {
+    "brand": "Hoffmann",
+    "url": "https://www.car.info/en-se/hoffmann",
+    "models": []
+  },
+  {
+    "brand": "Holsman",
+    "url": "https://www.car.info/en-se/holsman",
+    "models": []
+  },
+  {
+    "brand": "Hotchkiss",
+    "url": "https://www.car.info/en-se/hotchkiss-et-cie",
+    "models": []
+  },
+  {
+    "brand": "HRG",
+    "url": "https://www.car.info/en-se/hrg",
+    "models": []
+  },
+  {
+    "brand": "Kleemann",
+    "url": "https://www.car.info/en-se/kleemann",
+    "models": []
+  },
+  {
+    "brand": "Lenham",
+    "url": "https://www.car.info/en-se/lenham",
+    "models": []
+  },
+  {
+    "brand": "Lola",
+    "url": "https://www.car.info/en-se/lola",
+    "models": []
+  },
+  {
+    "brand": "Lorraine-Dietrich",
+    "url": "https://www.car.info/en-se/lorraine-dietrich",
+    "models": []
+  },
+  {
+    "brand": "Lucid Motors",
+    "url": "https://www.car.info/en-se/lucid-motors",
+    "models": []
+  },
+  {
+    "brand": "MAF",
+    "url": "https://www.car.info/en-se/maf",
+    "models": []
+  },
+  {
+    "brand": "Marmon",
+    "url": "https://www.car.info/en-se/marmon",
+    "models": []
+  },
+  {
+    "brand": "Meteor (US)",
+    "url": "https://www.car.info/en-se/meteor-us",
+    "models": []
+  },
+  {
+    "brand": "Meyra",
+    "url": "https://www.car.info/en-se/meyra",
+    "models": []
+  },
+  {
+    "brand": "Minerva",
+    "url": "https://www.car.info/en-se/minerva",
+    "models": []
+  },
+  {
+    "brand": "Mitsuoka",
+    "url": "https://www.car.info/en-se/mitsuoka",
+    "models": []
+  },
+  {
+    "brand": "Mobility Ventures",
+    "url": "https://www.car.info/en-se/mobility-ventures",
+    "models": []
+  },
+  {
+    "brand": "Monaco RV",
+    "url": "https://www.car.info/en-se/monaco",
+    "models": []
+  },
+  {
+    "brand": "Monteverdi",
+    "url": "https://www.car.info/en-se/monteverdi",
+    "models": []
+  },
+  {
+    "brand": "Moretti",
+    "url": "https://www.car.info/en-se/moretti",
+    "models": []
+  },
+  {
+    "brand": "O.S.C.A.",
+    "url": "https://www.car.info/en-se/osca",
+    "models": []
+  },
+  {
+    "brand": "OK-Supreme",
+    "url": "https://www.car.info/en-se/ok-supreme",
+    "models": []
+  },
+  {
+    "brand": "Orient",
+    "url": "https://www.car.info/en-se/orient",
+    "models": []
+  },
+  {
+    "brand": "Oryx",
+    "url": "https://www.car.info/en-se/oryx",
+    "models": []
+  },
+  {
+    "brand": "Overland",
+    "url": "https://www.car.info/en-se/overland",
+    "models": []
+  },
+  {
+    "brand": "Pierce-Arrow",
+    "url": "https://www.car.info/en-se/pierce-arrow",
+    "models": []
+  },
+  {
+    "brand": "Pope-Toledo",
+    "url": "https://www.car.info/en-se/pope-toledo",
+    "models": []
+  },
+  {
+    "brand": "Priamus",
+    "url": "https://www.car.info/en-se/priamus",
+    "models": []
+  },
+  {
+    "brand": "Princess",
+    "url": "https://www.car.info/en-se/princess",
+    "models": []
+  },
+  {
+    "brand": "Qoros",
+    "url": "https://www.car.info/en-se/qoros",
+    "models": []
+  },
+  {
+    "brand": "Rockne",
+    "url": "https://www.car.info/en-se/rockne",
+    "models": []
+  },
+  {
+    "brand": "Rolland-Pilain",
+    "url": "https://www.car.info/en-se/rolland-pilain",
+    "models": []
+  },
+  {
+    "brand": "Roosevelt",
+    "url": "https://www.car.info/en-se/roosevelt",
+    "models": []
+  },
+  {
+    "brand": "Rosengart",
+    "url": "https://www.car.info/en-se/rosengart",
+    "models": []
+  },
+  {
+    "brand": "Rud. Ley",
+    "url": "https://www.car.info/en-se/rud-ley",
+    "models": []
+  },
+  {
+    "brand": "Rugby",
+    "url": "https://www.car.info/en-se/rugby",
+    "models": []
+  },
+  {
+    "brand": "S.A.R.A.",
+    "url": "https://www.car.info/en-se/sara",
+    "models": []
+  },
+  {
+    "brand": "Savio",
+    "url": "https://www.car.info/en-se/savio",
+    "models": []
+  },
+  {
+    "brand": "Stanley",
+    "url": "https://www.car.info/en-se/stanley",
+    "models": []
+  },
+  {
+    "brand": "Startins",
+    "url": "https://www.car.info/en-se/startins",
+    "models": []
+  },
+  {
+    "brand": "Steyr-Fiat",
+    "url": "https://www.car.info/en-se/steyr-fiat",
+    "models": []
+  },
+  {
+    "brand": "Stoewer",
+    "url": "https://www.car.info/en-se/stoewer",
+    "models": []
+  },
+  {
+    "brand": "Swallow",
+    "url": "https://www.car.info/en-se/swallow",
+    "models": []
+  },
+  {
+    "brand": "TechArt",
+    "url": "https://www.car.info/en-se/techart",
+    "models": []
+  },
+  {
+    "brand": "Terraplane",
+    "url": "https://www.car.info/en-se/terraplane",
+    "models": []
+  },
+  {
+    "brand": "The Detroit Eletric",
+    "url": "https://www.car.info/en-se/the-detroit-eletric",
+    "models": []
+  },
+  {
+    "brand": "U. S. Long Distance",
+    "url": "https://www.car.info/en-se/u-s-long-distance",
+    "models": []
+  },
+  {
+    "brand": "Vabis",
+    "url": "https://www.car.info/en-se/vabis",
+    "models": []
+  },
+  {
+    "brand": "Velocette",
+    "url": "https://www.car.info/en-se/velocette",
+    "models": []
+  },
+  {
+    "brand": "Veritas",
+    "url": "https://www.car.info/en-se/veritas",
+    "models": []
+  },
+  {
+    "brand": "Vignale",
+    "url": "https://www.car.info/en-se/vignale",
+    "models": []
+  },
+  {
+    "brand": "Wolseley-Siddeley",
+    "url": "https://www.car.info/en-se/wolseley-siddeley",
+    "models": []
+  },
+  {
+    "brand": "Zagato",
+    "url": "https://www.car.info/en-se/zagato",
+    "models": []
+  },
+  {
+    "brand": "Zündapp",
+    "url": "https://www.car.info/en-se/zundapp",
+    "models": []
+  },
+  {
+    "brand": "A.J. Miller",
+    "url": "https://www.car.info/en-se/aj-miller",
+    "models": []
+  },
+  {
+    "brand": "A.L.F.A.",
+    "url": "https://www.car.info/en-se/alfa",
+    "models": []
+  },
+  {
+    "brand": "AAC",
+    "url": "https://www.car.info/en-se/aac",
+    "models": []
+  },
+  {
+    "brand": "Aaglander",
+    "url": "https://www.car.info/en-se/aaglander",
+    "models": []
+  },
+  {
+    "brand": "AAR",
+    "url": "https://www.car.info/en-se/aar",
+    "models": []
+  },
+  {
+    "brand": "Abadal",
+    "url": "https://www.car.info/en-se/abadal",
+    "models": []
+  },
+  {
+    "brand": "Abbott-Detroit",
+    "url": "https://www.car.info/en-se/abbott-detroit",
+    "models": []
+  },
+  {
+    "brand": "AC Propulsion",
+    "url": "https://www.car.info/en-se/ac-propulsion",
+    "models": []
+  },
+  {
+    "brand": "AC Schnitzer",
+    "url": "https://www.car.info/en-se/ac-schnitzer",
+    "models": []
+  },
+  {
+    "brand": "Acadian",
+    "url": "https://www.car.info/en-se/acadian",
+    "models": []
+  },
+  {
+    "brand": "Access Motor",
+    "url": "https://www.car.info/en-se/access-motor",
+    "models": []
+  },
+  {
+    "brand": "Acme",
+    "url": "https://www.car.info/en-se/acme",
+    "models": []
+  },
+  {
+    "brand": "Adam",
+    "url": "https://www.car.info/en-se/adam",
+    "models": []
+  },
+  {
+    "brand": "Adams-Farwell",
+    "url": "https://www.car.info/en-se/adams-farwell",
+    "models": []
+  },
+  {
+    "brand": "Adly",
+    "url": "https://www.car.info/en-se/adly",
+    "models": []
+  },
+  {
+    "brand": "Aeolus",
+    "url": "https://www.car.info/en-se/aeolus",
+    "models": []
+  },
+  {
+    "brand": "Aeon",
+    "url": "https://www.car.info/en-se/aeon",
+    "models": []
+  },
+  {
+    "brand": "Aeon Motor",
+    "url": "https://www.car.info/en-se/aeon-motor",
+    "models": []
+  },
+  {
+    "brand": "AEV",
+    "url": "https://www.car.info/en-se/aev",
+    "models": []
+  },
+  {
+    "brand": "Afeela",
+    "url": "https://www.car.info/en-se/afeela",
+    "models": []
+  },
+  {
+    "brand": "Aion",
+    "url": "https://www.car.info/en-se/aion",
+    "models": []
+  },
+  {
+    "brand": "Aitekx",
+    "url": "https://www.car.info/en-se/aitekx",
+    "models": []
+  },
+  {
+    "brand": "AITO",
+    "url": "https://www.car.info/en-se/aito",
+    "models": []
+  },
+  {
+    "brand": "Aixam-Mega",
+    "url": "https://www.car.info/en-se/aixam-mega",
+    "models": []
+  },
+  {
+    "brand": "Ajax",
+    "url": "https://www.car.info/en-se/ajax",
+    "models": []
+  },
+  {
+    "brand": "Aland",
+    "url": "https://www.car.info/en-se/aland",
+    "models": []
+  },
+  {
+    "brand": "Albar",
+    "url": "https://www.car.info/en-se/albar",
+    "models": []
+  },
+  {
+    "brand": "Albion",
+    "url": "https://www.car.info/en-se/albion",
+    "models": []
+  },
+  {
+    "brand": "ALCO",
+    "url": "https://www.car.info/en-se/alco",
+    "models": []
+  },
+  {
+    "brand": "Alin",
+    "url": "https://www.car.info/en-se/alin",
+    "models": []
+  },
+  {
+    "brand": "Alldays & Onions",
+    "url": "https://www.car.info/en-se/alldays-onions",
+    "models": []
+  },
+  {
+    "brand": "Allemano",
+    "url": "https://www.car.info/en-se/allemano",
+    "models": []
+  },
+  {
+    "brand": "Allen",
+    "url": "https://www.car.info/en-se/allen",
+    "models": []
+  },
+  {
+    "brand": "Allen Iron & Steel",
+    "url": "https://www.car.info/en-se/allen-iron-steel",
+    "models": []
+  },
+  {
+    "brand": "Alpheon",
+    "url": "https://www.car.info/en-se/alpheon",
+    "models": []
+  },
+  {
+    "brand": "Altas",
+    "url": "https://www.car.info/en-se/altas",
+    "models": []
+  },
+  {
+    "brand": "American",
+    "url": "https://www.car.info/en-se/american",
+    "models": []
+  },
+  {
+    "brand": "American Austin",
+    "url": "https://www.car.info/en-se/american-austin",
+    "models": []
+  },
+  {
+    "brand": "American LaFrance",
+    "url": "https://www.car.info/en-se/american-lafrance",
+    "models": []
+  },
+  {
+    "brand": "Amigo",
+    "url": "https://www.car.info/en-se/amigo",
+    "models": []
+  },
+  {
+    "brand": "Anadol",
+    "url": "https://www.car.info/en-se/anadol",
+    "models": []
+  },
+  {
+    "brand": "Analogue Automotive",
+    "url": "https://www.car.info/en-se/analogue-automotive",
+    "models": []
+  },
+  {
+    "brand": "Anasagasti",
+    "url": "https://www.car.info/en-se/anasagasti",
+    "models": []
+  },
+  {
+    "brand": "Apocalypse",
+    "url": "https://www.car.info/en-se/apocalypse",
+    "models": []
+  },
+  {
+    "brand": "Apollo",
+    "url": "https://www.car.info/en-se/apollo",
+    "models": []
+  },
+  {
+    "brand": "Apollo (1962)",
+    "url": "https://www.car.info/en-se/apollo-1962",
+    "models": []
+  },
+  {
+    "brand": "Apperson",
+    "url": "https://www.car.info/en-se/apperson",
+    "models": []
+  },
+  {
+    "brand": "Applus+ IDIADA",
+    "url": "https://www.car.info/en-se/applus-idiada",
+    "models": []
+  },
+  {
+    "brand": "Arab",
+    "url": "https://www.car.info/en-se/arab",
+    "models": []
+  },
+  {
+    "brand": "Arash",
+    "url": "https://www.car.info/en-se/arash",
+    "models": []
+  },
+  {
+    "brand": "Arcfox",
+    "url": "https://www.car.info/en-se/arcfox",
+    "models": []
+  },
+  {
+    "brand": "Arden",
+    "url": "https://www.car.info/en-se/arden",
+    "models": []
+  },
+  {
+    "brand": "Argyll",
+    "url": "https://www.car.info/en-se/argyll",
+    "models": []
+  },
+  {
+    "brand": "ARK",
+    "url": "https://www.car.info/en-se/ark",
+    "models": []
+  },
+  {
+    "brand": "Aro",
+    "url": "https://www.car.info/en-se/aro",
+    "models": []
+  },
+  {
+    "brand": "Arrinera",
+    "url": "https://www.car.info/en-se/arrinera",
+    "models": []
+  },
+  {
+    "brand": "Arrol-Johnston",
+    "url": "https://www.car.info/en-se/arrol-johnston",
+    "models": []
+  },
+  {
+    "brand": "Artega",
+    "url": "https://www.car.info/en-se/artega",
+    "models": []
+  },
+  {
+    "brand": "AS Domžale",
+    "url": "https://www.car.info/en-se/as-domzale",
+    "models": []
+  },
+  {
+    "brand": "ASA",
+    "url": "https://www.car.info/en-se/asa",
+    "models": []
+  },
+  {
+    "brand": "Ascari",
+    "url": "https://www.car.info/en-se/ascari",
+    "models": []
+  },
+  {
+    "brand": "Ascot-Pullin Motorcycles",
+    "url": "https://www.car.info/en-se/ascot-pullin-motorcycles",
+    "models": []
+  },
+  {
+    "brand": "Ashley",
+    "url": "https://www.car.info/en-se/ashley",
+    "models": []
+  },
+  {
+    "brand": "Aspark",
+    "url": "https://www.car.info/en-se/aspark",
+    "models": []
+  },
+  {
+    "brand": "Aspid",
+    "url": "https://www.car.info/en-se/aspid",
+    "models": []
+  },
+  {
+    "brand": "Asüna",
+    "url": "https://www.car.info/en-se/asuna",
+    "models": []
+  },
+  {
+    "brand": "Atala",
+    "url": "https://www.car.info/en-se/atala",
+    "models": []
+  },
+  {
+    "brand": "Atalanta",
+    "url": "https://www.car.info/en-se/atalanta",
+    "models": []
+  },
+  {
+    "brand": "ATS",
+    "url": "https://www.car.info/en-se/ats",
+    "models": []
+  },
+  {
+    "brand": "AUDI (CN)",
+    "url": "https://www.car.info/en-se/audi-cn",
+    "models": []
+  },
+  {
+    "brand": "Aurus",
+    "url": "https://www.car.info/en-se/aurus",
+    "models": []
+  },
+  {
+    "brand": "Austro-Daimler",
+    "url": "https://www.car.info/en-se/austro-daimler",
+    "models": []
+  },
+  {
+    "brand": "Autobacs",
+    "url": "https://www.car.info/en-se/autobacs",
+    "models": []
+  },
+  {
+    "brand": "Autocar",
+    "url": "https://www.car.info/en-se/autocar",
+    "models": []
+  },
+  {
+    "brand": "Automobiles Grégoire",
+    "url": "https://www.car.info/en-se/automobiles-gregoire",
+    "models": []
+  },
+  {
+    "brand": "Automobili Amos",
+    "url": "https://www.car.info/en-se/automobili-amos",
+    "models": []
+  },
+  {
+    "brand": "Automobili Mignatta",
+    "url": "https://www.car.info/en-se/automobili-mignatta",
+    "models": []
+  },
+  {
+    "brand": "Automobili Pininfarina",
+    "url": "https://www.car.info/en-se/automobili-pininfarina",
+    "models": []
+  },
+  {
+    "brand": "Autoped",
+    "url": "https://www.car.info/en-se/autoped",
+    "models": []
+  },
+  {
+    "brand": "Autostudi",
+    "url": "https://www.car.info/en-se/autostudi",
+    "models": []
+  },
+  {
+    "brand": "Avatar",
+    "url": "https://www.car.info/en-se/avatar",
+    "models": []
+  },
+  {
+    "brand": "Avatr",
+    "url": "https://www.car.info/en-se/avatr",
+    "models": []
+  },
+  {
+    "brand": "B Engineering",
+    "url": "https://www.car.info/en-se/b-engineering",
+    "models": []
+  },
+  {
+    "brand": "BAIC",
+    "url": "https://www.car.info/en-se/baic",
+    "models": []
+  },
+  {
+    "brand": "Bailey Electric",
+    "url": "https://www.car.info/en-se/bailey-electric",
+    "models": []
+  },
+  {
+    "brand": "Balbo",
+    "url": "https://www.car.info/en-se/balbo",
+    "models": []
+  },
+  {
+    "brand": "Ballot",
+    "url": "https://www.car.info/en-se/ballot",
+    "models": []
+  },
+  {
+    "brand": "Baltasar",
+    "url": "https://www.car.info/en-se/baltasar",
+    "models": []
+  },
+  {
+    "brand": "Baltijas Džips",
+    "url": "https://www.car.info/en-se/baltijas-dzips",
+    "models": []
+  },
+  {
+    "brand": "Bandini",
+    "url": "https://www.car.info/en-se/bandini",
+    "models": []
+  },
+  {
+    "brand": "Baojun",
+    "url": "https://www.car.info/en-se/baojun",
+    "models": []
+  },
+  {
+    "brand": "Barnard",
+    "url": "https://www.car.info/en-se/barnard",
+    "models": []
+  },
+  {
+    "brand": "Barré",
+    "url": "https://www.car.info/en-se/barre",
+    "models": []
+  },
+  {
+    "brand": "Bean Cars",
+    "url": "https://www.car.info/en-se/bean-cars",
+    "models": []
+  },
+  {
+    "brand": "Beaumont",
+    "url": "https://www.car.info/en-se/beaumont",
+    "models": []
+  },
+  {
+    "brand": "Beijing",
+    "url": "https://www.car.info/en-se/beijing",
+    "models": []
+  },
+  {
+    "brand": "Beijing Jeep",
+    "url": "https://www.car.info/en-se/beijing-jeep",
+    "models": []
+  },
+  {
+    "brand": "Bellanger",
+    "url": "https://www.car.info/en-se/bellanger",
+    "models": []
+  },
+  {
+    "brand": "Beltoise",
+    "url": "https://www.car.info/en-se/beltoise",
+    "models": []
+  },
+  {
+    "brand": "Bengala",
+    "url": "https://www.car.info/en-se/bengala",
+    "models": []
+  },
+  {
+    "brand": "Bennie Automobile",
+    "url": "https://www.car.info/en-se/bennie-automobile",
+    "models": []
+  },
+  {
+    "brand": "Benz",
+    "url": "https://www.car.info/en-se/benz",
+    "models": []
+  },
+  {
+    "brand": "Berg",
+    "url": "https://www.car.info/en-se/berg",
+    "models": []
+  },
+  {
+    "brand": "Berkeley",
+    "url": "https://www.car.info/en-se/berkeley",
+    "models": []
+  },
+  {
+    "brand": "Bestune",
+    "url": "https://www.car.info/en-se/bestune",
+    "models": []
+  },
+  {
+    "brand": "Besturn",
+    "url": "https://www.car.info/en-se/besturn",
+    "models": []
+  },
+  {
+    "brand": "Bianco",
+    "url": "https://www.car.info/en-se/bianco",
+    "models": []
+  },
+  {
+    "brand": "Biddle",
+    "url": "https://www.car.info/en-se/biddle",
+    "models": []
+  },
+  {
+    "brand": "Bieber",
+    "url": "https://www.car.info/en-se/bieber",
+    "models": []
+  },
+  {
+    "brand": "Bimota",
+    "url": "https://www.car.info/en-se/bimota",
+    "models": []
+  },
+  {
+    "brand": "Bio Auto",
+    "url": "https://www.car.info/en-se/bio-auto",
+    "models": []
+  },
+  {
+    "brand": "Bird Motorcycles",
+    "url": "https://www.car.info/en-se/bird-motorcycles",
+    "models": []
+  },
+  {
+    "brand": "Bisu",
+    "url": "https://www.car.info/en-se/bisu",
+    "models": []
+  },
+  {
+    "brand": "Blaval",
+    "url": "https://www.car.info/en-se/blaval",
+    "models": []
+  },
+  {
+    "brand": "BMC",
+    "url": "https://www.car.info/en-se/bmc",
+    "models": []
+  },
+  {
+    "brand": "Boano",
+    "url": "https://www.car.info/en-se/boano",
+    "models": []
+  },
+  {
+    "brand": "Bodin",
+    "url": "https://www.car.info/en-se/bodin",
+    "models": []
+  },
+  {
+    "brand": "Bogdan",
+    "url": "https://www.car.info/en-se/bogdan",
+    "models": []
+  },
+  {
+    "brand": "Bollinger",
+    "url": "https://www.car.info/en-se/bollinger",
+    "models": []
+  },
+  {
+    "brand": "Bolloré",
+    "url": "https://www.car.info/en-se/bollore",
+    "models": []
+  },
+  {
+    "brand": "Bolwell",
+    "url": "https://www.car.info/en-se/bolwell",
+    "models": []
+  },
+  {
+    "brand": "Boneschi",
+    "url": "https://www.car.info/en-se/boneschi",
+    "models": []
+  },
+  {
+    "brand": "Bovensiepen",
+    "url": "https://www.car.info/en-se/bovensiepen",
+    "models": []
+  },
+  {
+    "brand": "Brabham",
+    "url": "https://www.car.info/en-se/brabham",
+    "models": []
+  },
+  {
+    "brand": "Brasier",
+    "url": "https://www.car.info/en-se/brasier",
+    "models": []
+  },
+  {
+    "brand": "Brasinca",
+    "url": "https://www.car.info/en-se/brasinca",
+    "models": []
+  },
+  {
+    "brand": "Bravia-Mobil",
+    "url": "https://www.car.info/en-se/bravia-mobil",
+    "models": []
+  },
+  {
+    "brand": "Brennabor",
+    "url": "https://www.car.info/en-se/brennabor",
+    "models": []
+  },
+  {
+    "brand": "Briggs-Detroiter",
+    "url": "https://www.car.info/en-se/briggs-detroiter",
+    "models": []
+  },
+  {
+    "brand": "Briscoe",
+    "url": "https://www.car.info/en-se/briscoe",
+    "models": []
+  },
+  {
+    "brand": "BRM",
+    "url": "https://www.car.info/en-se/brm",
+    "models": []
+  },
+  {
+    "brand": "Brooke & Company",
+    "url": "https://www.car.info/en-se/brooke-company",
+    "models": []
+  },
+  {
+    "brand": "Brooke Cars",
+    "url": "https://www.car.info/en-se/brooke-cars",
+    "models": []
+  },
+  {
+    "brand": "BRP",
+    "url": "https://www.car.info/en-se/brp",
+    "models": []
+  },
+  {
+    "brand": "Brush",
+    "url": "https://www.car.info/en-se/brush",
+    "models": []
+  },
+  {
+    "brand": "Brush Electrical Engineering",
+    "url": "https://www.car.info/en-se/brush-electrical-engineering",
+    "models": []
+  },
+  {
+    "brand": "Brush Traction",
+    "url": "https://www.car.info/en-se/brush-traction",
+    "models": []
+  },
+  {
+    "brand": "Bucciali",
+    "url": "https://www.car.info/en-se/bucciali",
+    "models": []
+  },
+  {
+    "brand": "Bufori",
+    "url": "https://www.car.info/en-se/bufori",
+    "models": []
+  },
+  {
+    "brand": "Burton",
+    "url": "https://www.car.info/en-se/burton",
+    "models": []
+  },
+  {
+    "brand": "Byton",
+    "url": "https://www.car.info/en-se/byton",
+    "models": []
+  },
+  {
+    "brand": "Cabby",
+    "url": "https://www.car.info/en-se/cabby",
+    "models": []
+  },
+  {
+    "brand": "Cagiva",
+    "url": "https://www.car.info/en-se/cagiva",
+    "models": []
+  },
+  {
+    "brand": "Calcott",
+    "url": "https://www.car.info/en-se/calcott",
+    "models": []
+  },
+  {
+    "brand": "Calthorpe",
+    "url": "https://www.car.info/en-se/calthorpe",
+    "models": []
+  },
+  {
+    "brand": "Cameron",
+    "url": "https://www.car.info/en-se/cameron",
+    "models": []
+  },
+  {
+    "brand": "Campagna",
+    "url": "https://www.car.info/en-se/campagna",
+    "models": []
+  },
+  {
+    "brand": "CANAM",
+    "url": "https://www.car.info/en-se/canam",
+    "models": []
+  },
+  {
+    "brand": "Caparo",
+    "url": "https://www.car.info/en-se/caparo",
+    "models": []
+  },
+  {
+    "brand": "Capricorn",
+    "url": "https://www.car.info/en-se/capricorn",
+    "models": []
+  },
+  {
+    "brand": "Carlsson",
+    "url": "https://www.car.info/en-se/carlsson",
+    "models": []
+  },
+  {
+    "brand": "Cartercar",
+    "url": "https://www.car.info/en-se/cartercar",
+    "models": []
+  },
+  {
+    "brand": "Carver",
+    "url": "https://www.car.info/en-se/carver",
+    "models": []
+  },
+  {
+    "brand": "Castagna",
+    "url": "https://www.car.info/en-se/castagna",
+    "models": []
+  },
+  {
+    "brand": "CAV",
+    "url": "https://www.car.info/en-se/cav",
+    "models": []
+  },
+  {
+    "brand": "Ceirano",
+    "url": "https://www.car.info/en-se/ceirano",
+    "models": []
+  },
+  {
+    "brand": "CGV",
+    "url": "https://www.car.info/en-se/cgv",
+    "models": []
+  },
+  {
+    "brand": "Chalmers-Detroit",
+    "url": "https://www.car.info/en-se/chalmers-detroit",
+    "models": []
+  },
+  {
+    "brand": "Chamonix",
+    "url": "https://www.car.info/en-se/chamonix",
+    "models": []
+  },
+  {
+    "brand": "Champion",
+    "url": "https://www.car.info/en-se/champion",
+    "models": []
+  },
+  {
+    "brand": "Changan",
+    "url": "https://www.car.info/en-se/changan",
+    "models": []
+  },
+  {
+    "brand": "Changfeng",
+    "url": "https://www.car.info/en-se/changfeng",
+    "models": []
+  },
+  {
+    "brand": "Changhe",
+    "url": "https://www.car.info/en-se/changhe",
+    "models": []
+  },
+  {
+    "brand": "Charron",
+    "url": "https://www.car.info/en-se/charron",
+    "models": []
+  },
+  {
+    "brand": "Cheetah",
+    "url": "https://www.car.info/en-se/cheetah",
+    "models": []
+  },
+  {
+    "brand": "Chenard-Walcker",
+    "url": "https://www.car.info/en-se/chenard-walcker",
+    "models": []
+  },
+  {
+    "brand": "Chery",
+    "url": "https://www.car.info/en-se/chery",
+    "models": []
+  },
+  {
+    "brand": "Chipie",
+    "url": "https://www.car.info/en-se/chipie",
+    "models": []
+  },
+  {
+    "brand": "Christie",
+    "url": "https://www.car.info/en-se/christie",
+    "models": []
+  },
+  {
+    "brand": "CHTC",
+    "url": "https://www.car.info/en-se/chtc",
+    "models": []
+  },
+  {
+    "brand": "Chuanl",
+    "url": "https://www.car.info/en-se/chuanl",
+    "models": []
+  },
+  {
+    "brand": "Ciimo",
+    "url": "https://www.car.info/en-se/ciimo",
+    "models": []
+  },
+  {
+    "brand": "Cisitalia",
+    "url": "https://www.car.info/en-se/cisitalia",
+    "models": []
+  },
+  {
+    "brand": "City Transformer",
+    "url": "https://www.car.info/en-se/city-transformer",
+    "models": []
+  },
+  {
+    "brand": "Cizeta",
+    "url": "https://www.car.info/en-se/cizeta",
+    "models": []
+  },
+  {
+    "brand": "Clément & Cie",
+    "url": "https://www.car.info/en-se/clement-cie",
+    "models": []
+  },
+  {
+    "brand": "Clément-Bayard",
+    "url": "https://www.car.info/en-se/clement-bayard",
+    "models": []
+  },
+  {
+    "brand": "Cleveland",
+    "url": "https://www.car.info/en-se/cleveland",
+    "models": []
+  },
+  {
+    "brand": "Clyno",
+    "url": "https://www.car.info/en-se/clyno",
+    "models": []
+  },
+  {
+    "brand": "CMC (TW)",
+    "url": "https://www.car.info/en-se/cmc-cn",
+    "models": []
+  },
+  {
+    "brand": "Cobera",
+    "url": "https://www.car.info/en-se/cobera",
+    "models": []
+  },
+  {
+    "brand": "Coda",
+    "url": "https://www.car.info/en-se/coda",
+    "models": []
+  },
+  {
+    "brand": "Colani",
+    "url": "https://www.car.info/en-se/colani",
+    "models": []
+  },
+  {
+    "brand": "Cole",
+    "url": "https://www.car.info/en-se/cole",
+    "models": []
+  },
+  {
+    "brand": "Coleman Milne",
+    "url": "https://www.car.info/en-se/coleman-milne",
+    "models": []
+  },
+  {
+    "brand": "Colli",
+    "url": "https://www.car.info/en-se/colli",
+    "models": []
+  },
+  {
+    "brand": "Columbia",
+    "url": "https://www.car.info/en-se/columbia",
+    "models": []
+  },
+  {
+    "brand": "Compound",
+    "url": "https://www.car.info/en-se/compound",
+    "models": []
+  },
+  {
+    "brand": "Connaught",
+    "url": "https://www.car.info/en-se/connaught",
+    "models": []
+  },
+  {
+    "brand": "Conquest Vehicles",
+    "url": "https://www.car.info/en-se/conquest-vehicles",
+    "models": []
+  },
+  {
+    "brand": "Conrero",
+    "url": "https://www.car.info/en-se/conrero",
+    "models": []
+  },
+  {
+    "brand": "Cooper",
+    "url": "https://www.car.info/en-se/cooper",
+    "models": []
+  },
+  {
+    "brand": "Coradir",
+    "url": "https://www.car.info/en-se/coradir",
+    "models": []
+  },
+  {
+    "brand": "Corbellati",
+    "url": "https://www.car.info/en-se/corbellati",
+    "models": []
+  },
+  {
+    "brand": "Corbin",
+    "url": "https://www.car.info/en-se/corbin",
+    "models": []
+  },
+  {
+    "brand": "Corre La Licorne",
+    "url": "https://www.car.info/en-se/corre-la-licorne",
+    "models": []
+  },
+  {
+    "brand": "Costin",
+    "url": "https://www.car.info/en-se/costin",
+    "models": []
+  },
+  {
+    "brand": "Cottin & Desgouttes",
+    "url": "https://www.car.info/en-se/cottin-desgouttes",
+    "models": []
+  },
+  {
+    "brand": "Cournil",
+    "url": "https://www.car.info/en-se/cournil",
+    "models": []
+  },
+  {
+    "brand": "Covert",
+    "url": "https://www.car.info/en-se/covert",
+    "models": []
+  },
+  {
+    "brand": "Covin",
+    "url": "https://www.car.info/en-se/covin",
+    "models": []
+  },
+  {
+    "brand": "Cowin",
+    "url": "https://www.car.info/en-se/cowin",
+    "models": []
+  },
+  {
+    "brand": "CPI Motor",
+    "url": "https://www.car.info/en-se/cpi-motor",
+    "models": []
+  },
+  {
+    "brand": "Crayford",
+    "url": "https://www.car.info/en-se/crayford",
+    "models": []
+  },
+  {
+    "brand": "Crosley",
+    "url": "https://www.car.info/en-se/crosley",
+    "models": []
+  },
+  {
+    "brand": "Crouch",
+    "url": "https://www.car.info/en-se/crouch",
+    "models": []
+  },
+  {
+    "brand": "Cunningham",
+    "url": "https://www.car.info/en-se/cunningham",
+    "models": []
+  },
+  {
+    "brand": "Cushman",
+    "url": "https://www.car.info/en-se/cushman",
+    "models": []
+  },
+  {
+    "brand": "Czinger",
+    "url": "https://www.car.info/en-se/czinger",
+    "models": []
+  },
+  {
+    "brand": "Dacora",
+    "url": "https://www.car.info/en-se/dacora",
+    "models": []
+  },
+  {
+    "brand": "Dadi",
+    "url": "https://www.car.info/en-se/dadi",
+    "models": []
+  },
+  {
+    "brand": "dÄHLer",
+    "url": "https://www.car.info/en-se/dahler",
+    "models": []
+  },
+  {
+    "brand": "Daimler MG",
+    "url": "https://www.car.info/en-se/daimler-mg",
+    "models": []
+  },
+  {
+    "brand": "Dallara",
+    "url": "https://www.car.info/en-se/dallara",
+    "models": []
+  },
+  {
+    "brand": "Dartz",
+    "url": "https://www.car.info/en-se/dartz",
+    "models": []
+  },
+  {
+    "brand": "David Brown",
+    "url": "https://www.car.info/en-se/david-brown",
+    "models": []
+  },
+  {
+    "brand": "Davis",
+    "url": "https://www.car.info/en-se/davis",
+    "models": []
+  },
+  {
+    "brand": "DB",
+    "url": "https://www.car.info/en-se/db",
+    "models": []
+  },
+  {
+    "brand": "DC Design",
+    "url": "https://www.car.info/en-se/dc-design",
+    "models": []
+  },
+  {
+    "brand": "De Dietrich",
+    "url": "https://www.car.info/en-se/de-dietrich",
+    "models": []
+  },
+  {
+    "brand": "De La Chapelle",
+    "url": "https://www.car.info/en-se/de-la-chapelle",
+    "models": []
+  },
+  {
+    "brand": "Deepal",
+    "url": "https://www.car.info/en-se/deepal",
+    "models": []
+  },
+  {
+    "brand": "Dellow",
+    "url": "https://www.car.info/en-se/dellow",
+    "models": []
+  },
+  {
+    "brand": "Denza",
+    "url": "https://www.car.info/en-se/denza",
+    "models": []
+  },
+  {
+    "brand": "Derways",
+    "url": "https://www.car.info/en-se/derways",
+    "models": []
+  },
+  {
+    "brand": "Detroit Electric",
+    "url": "https://www.car.info/en-se/detroit-electric",
+    "models": []
+  },
+  {
+    "brand": "DEUS",
+    "url": "https://www.car.info/en-se/deus",
+    "models": []
+  },
+  {
+    "brand": "Devaliet",
+    "url": "https://www.car.info/en-se/devaliet",
+    "models": []
+  },
+  {
+    "brand": "Devalliet",
+    "url": "https://www.car.info/en-se/devalliet",
+    "models": []
+  },
+  {
+    "brand": "Devel",
+    "url": "https://www.car.info/en-se/devel",
+    "models": []
+  },
+  {
+    "brand": "Devon",
+    "url": "https://www.car.info/en-se/devon",
+    "models": []
+  },
+  {
+    "brand": "Diamond T",
+    "url": "https://www.car.info/en-se/diamond-t",
+    "models": []
+  },
+  {
+    "brand": "Diatto",
+    "url": "https://www.car.info/en-se/diatto",
+    "models": []
+  },
+  {
+    "brand": "Dickinson",
+    "url": "https://www.car.info/en-se/dickinson",
+    "models": []
+  },
+  {
+    "brand": "Dinan",
+    "url": "https://www.car.info/en-se/dinan",
+    "models": []
+  },
+  {
+    "brand": "Dongfeng",
+    "url": "https://www.car.info/en-se/dongfeng",
+    "models": []
+  },
+  {
+    "brand": "Doninvest",
+    "url": "https://www.car.info/en-se/doninvest",
+    "models": []
+  },
+  {
+    "brand": "Dorcen",
+    "url": "https://www.car.info/en-se/dorcen",
+    "models": []
+  },
+  {
+    "brand": "Dorris",
+    "url": "https://www.car.info/en-se/dorris",
+    "models": []
+  },
+  {
+    "brand": "DR",
+    "url": "https://www.car.info/en-se/dr",
+    "models": []
+  },
+  {
+    "brand": "Dragon",
+    "url": "https://www.car.info/en-se/dragon",
+    "models": []
+  },
+  {
+    "brand": "Drako",
+    "url": "https://www.car.info/en-se/drako",
+    "models": []
+  },
+  {
+    "brand": "Dual-Ghia",
+    "url": "https://www.car.info/en-se/dual-ghia",
+    "models": []
+  },
+  {
+    "brand": "Duesenberg",
+    "url": "https://www.car.info/en-se/duesenberg",
+    "models": []
+  },
+  {
+    "brand": "duPont",
+    "url": "https://www.car.info/en-se/dupont",
+    "models": []
+  },
+  {
+    "brand": "Durant",
+    "url": "https://www.car.info/en-se/durant",
+    "models": []
+  },
+  {
+    "brand": "Duryea",
+    "url": "https://www.car.info/en-se/duryea",
+    "models": []
+  },
+  {
+    "brand": "Duryea Power",
+    "url": "https://www.car.info/en-se/duryea-power",
+    "models": []
+  },
+  {
+    "brand": "Eadon Green",
+    "url": "https://www.car.info/en-se/eadon-green",
+    "models": []
+  },
+  {
+    "brand": "EBRO",
+    "url": "https://www.car.info/en-se/ebro",
+    "models": []
+  },
+  {
+    "brand": "Eccentrica",
+    "url": "https://www.car.info/en-se/eccentrica",
+    "models": []
+  },
+  {
+    "brand": "Ecoist",
+    "url": "https://www.car.info/en-se/ecoist",
+    "models": []
+  },
+  {
+    "brand": "EDAG",
+    "url": "https://www.car.info/en-se/edag",
+    "models": []
+  },
+  {
+    "brand": "Edo Competition",
+    "url": "https://www.car.info/en-se/edo-competition",
+    "models": []
+  },
+  {
+    "brand": "Elcat",
+    "url": "https://www.car.info/en-se/elcat",
+    "models": []
+  },
+  {
+    "brand": "Eldredge",
+    "url": "https://www.car.info/en-se/eldredge",
+    "models": []
+  },
+  {
+    "brand": "Electromobile (UK)",
+    "url": "https://www.car.info/en-se/electromobile-uk",
+    "models": []
+  },
+  {
+    "brand": "Elemental",
+    "url": "https://www.car.info/en-se/elemental",
+    "models": []
+  },
+  {
+    "brand": "Elfin",
+    "url": "https://www.car.info/en-se/elfin",
+    "models": []
+  },
+  {
+    "brand": "Elizalde",
+    "url": "https://www.car.info/en-se/elizalde",
+    "models": []
+  },
+  {
+    "brand": "Elmore",
+    "url": "https://www.car.info/en-se/elmore",
+    "models": []
+  },
+  {
+    "brand": "Elstar Motorcycles",
+    "url": "https://www.car.info/en-se/elstar-motorcycles",
+    "models": []
+  },
+  {
+    "brand": "Elva",
+    "url": "https://www.car.info/en-se/elva",
+    "models": []
+  },
+  {
+    "brand": "Emme",
+    "url": "https://www.car.info/en-se/emme",
+    "models": []
+  },
+  {
+    "brand": "Engler",
+    "url": "https://www.car.info/en-se/engler",
+    "models": []
+  },
+  {
+    "brand": "Englon",
+    "url": "https://www.car.info/en-se/englon",
+    "models": []
+  },
+  {
+    "brand": "Eniak",
+    "url": "https://www.car.info/en-se/eniak",
+    "models": []
+  },
+  {
+    "brand": "Enovate",
+    "url": "https://www.car.info/en-se/enovate",
+    "models": []
+  },
+  {
+    "brand": "Enranger",
+    "url": "https://www.car.info/en-se/enranger",
+    "models": []
+  },
+  {
+    "brand": "Envoy",
+    "url": "https://www.car.info/en-se/envoy",
+    "models": []
+  },
+  {
+    "brand": "Eon Motors",
+    "url": "https://www.car.info/en-se/eon-motors",
+    "models": []
+  },
+  {
+    "brand": "Ermini",
+    "url": "https://www.car.info/en-se/ermini",
+    "models": []
+  },
+  {
+    "brand": "Estrema",
+    "url": "https://www.car.info/en-se/estrema",
+    "models": []
+  },
+  {
+    "brand": "Eterniti",
+    "url": "https://www.car.info/en-se/eterniti",
+    "models": []
+  },
+  {
+    "brand": "Etrusco",
+    "url": "https://www.car.info/en-se/etrusco",
+    "models": []
+  },
+  {
+    "brand": "Eunos",
+    "url": "https://www.car.info/en-se/eunos",
+    "models": []
+  },
+  {
+    "brand": "Everus",
+    "url": "https://www.car.info/en-se/everus",
+    "models": []
+  },
+  {
+    "brand": "EVO",
+    "url": "https://www.car.info/en-se/evo",
+    "models": []
+  },
+  {
+    "brand": "EVT",
+    "url": "https://www.car.info/en-se/evt",
+    "models": []
+  },
+  {
+    "brand": "Exagon",
+    "url": "https://www.car.info/en-se/exagon",
+    "models": []
+  },
+  {
+    "brand": "Exeed",
+    "url": "https://www.car.info/en-se/exeed",
+    "models": []
+  },
+  {
+    "brand": "Exlantix",
+    "url": "https://www.car.info/en-se/exlantix",
+    "models": []
+  },
+  {
+    "brand": "eπ",
+    "url": "https://www.car.info/en-se/ep",
+    "models": []
+  },
+  {
+    "brand": "FAB Design",
+    "url": "https://www.car.info/en-se/fab-design",
+    "models": []
+  },
+  {
+    "brand": "Factory Five",
+    "url": "https://www.car.info/en-se/factory-five",
+    "models": []
+  },
+  {
+    "brand": "Fairthorpe",
+    "url": "https://www.car.info/en-se/fairthorpe",
+    "models": []
+  },
+  {
+    "brand": "Falcon",
+    "url": "https://www.car.info/en-se/falcon",
+    "models": []
+  },
+  {
+    "brand": "Faraday Future",
+    "url": "https://www.car.info/en-se/faraday-future",
+    "models": []
+  },
+  {
+    "brand": "Farboud",
+    "url": "https://www.car.info/en-se/farboud",
+    "models": []
+  },
+  {
+    "brand": "Farnova",
+    "url": "https://www.car.info/en-se/farnova",
+    "models": []
+  },
+  {
+    "brand": "Faun",
+    "url": "https://www.car.info/en-se/faun",
+    "models": []
+  },
+  {
+    "brand": "FAW",
+    "url": "https://www.car.info/en-se/faw",
+    "models": []
+  },
+  {
+    "brand": "Federal Coach",
+    "url": "https://www.car.info/en-se/federal-coach",
+    "models": []
+  },
+  {
+    "brand": "Felber",
+    "url": "https://www.car.info/en-se/felber",
+    "models": []
+  },
+  {
+    "brand": "Felino",
+    "url": "https://www.car.info/en-se/felino",
+    "models": []
+  },
+  {
+    "brand": "Fendt",
+    "url": "https://www.car.info/en-se/fendt",
+    "models": []
+  },
+  {
+    "brand": "Fengshen",
+    "url": "https://www.car.info/en-se/fengshen",
+    "models": []
+  },
+  {
+    "brand": "Fengxing",
+    "url": "https://www.car.info/en-se/fengxing",
+    "models": []
+  },
+  {
+    "brand": "FENIKSBUS",
+    "url": "https://www.car.info/en-se/feniksbus",
+    "models": []
+  },
+  {
+    "brand": "Fenomenon",
+    "url": "https://www.car.info/en-se/fenomenon",
+    "models": []
+  },
+  {
+    "brand": "Ferqui",
+    "url": "https://www.car.info/en-se/ferqui",
+    "models": []
+  },
+  {
+    "brand": "Firefly",
+    "url": "https://www.car.info/en-se/firefly",
+    "models": []
+  },
+  {
+    "brand": "Flint",
+    "url": "https://www.car.info/en-se/flint",
+    "models": []
+  },
+  {
+    "brand": "Flying Merkel",
+    "url": "https://www.car.info/en-se/flying-merkel",
+    "models": []
+  },
+  {
+    "brand": "FN",
+    "url": "https://www.car.info/en-se/fn",
+    "models": []
+  },
+  {
+    "brand": "FNM",
+    "url": "https://www.car.info/en-se/fnm",
+    "models": []
+  },
+  {
+    "brand": "Foday",
+    "url": "https://www.car.info/en-se/foday",
+    "models": []
+  },
+  {
+    "brand": "Fogelsta",
+    "url": "https://www.car.info/en-se/fogelsta",
+    "models": []
+  },
+  {
+    "brand": "Force",
+    "url": "https://www.car.info/en-se/force",
+    "models": []
+  },
+  {
+    "brand": "Ford-Vairogs",
+    "url": "https://www.car.info/en-se/ford-vairogs",
+    "models": []
+  },
+  {
+    "brand": "Fornasari",
+    "url": "https://www.car.info/en-se/fornasari",
+    "models": []
+  },
+  {
+    "brand": "Forthing",
+    "url": "https://www.car.info/en-se/forthing",
+    "models": []
+  },
+  {
+    "brand": "Forveda",
+    "url": "https://www.car.info/en-se/forveda",
+    "models": []
+  },
+  {
+    "brand": "Foton",
+    "url": "https://www.car.info/en-se/foton",
+    "models": []
+  },
+  {
+    "brand": "Fox",
+    "url": "https://www.car.info/en-se/fox",
+    "models": []
+  },
+  {
+    "brand": "Foxtron",
+    "url": "https://www.car.info/en-se/foxtron",
+    "models": []
+  },
+  {
+    "brand": "FPV",
+    "url": "https://www.car.info/en-se/fpv",
+    "models": []
+  },
+  {
+    "brand": "Francis Lombardi",
+    "url": "https://www.car.info/en-se/francis-lombardi",
+    "models": []
+  },
+  {
+    "brand": "Frazer Nash",
+    "url": "https://www.car.info/en-se/frazer-nash",
+    "models": []
+  },
+  {
+    "brand": "Fredonia",
+    "url": "https://www.car.info/en-se/fredonia",
+    "models": []
+  },
+  {
+    "brand": "Freightliner",
+    "url": "https://www.car.info/en-se/freightliner",
+    "models": []
+  },
+  {
+    "brand": "Frisky",
+    "url": "https://www.car.info/en-se/frisky",
+    "models": []
+  },
+  {
+    "brand": "G-Power",
+    "url": "https://www.car.info/en-se/g-power",
+    "models": []
+  },
+  {
+    "brand": "GAC",
+    "url": "https://www.car.info/en-se/gac",
+    "models": []
+  },
+  {
+    "brand": "Galpin",
+    "url": "https://www.car.info/en-se/galpin",
+    "models": []
+  },
+  {
+    "brand": "Garavini",
+    "url": "https://www.car.info/en-se/garavini",
+    "models": []
+  },
+  {
+    "brand": "Gardner-Serpollet",
+    "url": "https://www.car.info/en-se/gardner-serpollet",
+    "models": []
+  },
+  {
+    "brand": "GEM",
+    "url": "https://www.car.info/en-se/gem",
+    "models": []
+  },
+  {
+    "brand": "Gemballa",
+    "url": "https://www.car.info/en-se/gemballa",
+    "models": []
+  },
+  {
+    "brand": "General Motors",
+    "url": "https://www.car.info/en-se/general-motors",
+    "models": []
+  },
+  {
+    "brand": "Genty",
+    "url": "https://www.car.info/en-se/genty",
+    "models": []
+  },
+  {
+    "brand": "Geometry",
+    "url": "https://www.car.info/en-se/geometry",
+    "models": []
+  },
+  {
+    "brand": "GFG Style",
+    "url": "https://www.car.info/en-se/gfg-style",
+    "models": []
+  },
+  {
+    "brand": "Giamaro Automobili",
+    "url": "https://www.car.info/en-se/giamaro-automobili",
+    "models": []
+  },
+  {
+    "brand": "Gilbern",
+    "url": "https://www.car.info/en-se/gilbern",
+    "models": []
+  },
+  {
+    "brand": "Gillet",
+    "url": "https://www.car.info/en-se/gillet",
+    "models": []
+  },
+  {
+    "brand": "Gladiator",
+    "url": "https://www.car.info/en-se/gladiator",
+    "models": []
+  },
+  {
+    "brand": "Gleagle",
+    "url": "https://www.car.info/en-se/gleagle",
+    "models": []
+  },
+  {
+    "brand": "GLM",
+    "url": "https://www.car.info/en-se/glm",
+    "models": []
+  },
+  {
+    "brand": "Gobron-Brillié",
+    "url": "https://www.car.info/en-se/gobron-brillie",
+    "models": []
+  },
+  {
+    "brand": "Gonow",
+    "url": "https://www.car.info/en-se/gonow",
+    "models": []
+  },
+  {
+    "brand": "Gordon Murray",
+    "url": "https://www.car.info/en-se/gordon-murray",
+    "models": []
+  },
+  {
+    "brand": "Grade",
+    "url": "https://www.car.info/en-se/grade",
+    "models": []
+  },
+  {
+    "brand": "Grant",
+    "url": "https://www.car.info/en-se/grant",
+    "models": []
+  },
+  {
+    "brand": "Grech RV",
+    "url": "https://www.car.info/en-se/grech-rv",
+    "models": []
+  },
+  {
+    "brand": "Greeves Motorcycles",
+    "url": "https://www.car.info/en-se/greeves-motorcycles",
+    "models": []
+  },
+  {
+    "brand": "Grenville",
+    "url": "https://www.car.info/en-se/grenville",
+    "models": []
+  },
+  {
+    "brand": "Griffith",
+    "url": "https://www.car.info/en-se/griffith",
+    "models": []
+  },
+  {
+    "brand": "Grout",
+    "url": "https://www.car.info/en-se/grout",
+    "models": []
+  },
+  {
+    "brand": "Grumman",
+    "url": "https://www.car.info/en-se/grumman",
+    "models": []
+  },
+  {
+    "brand": "GSC",
+    "url": "https://www.car.info/en-se/gsc",
+    "models": []
+  },
+  {
+    "brand": "GTA Motor",
+    "url": "https://www.car.info/en-se/gta-motor",
+    "models": []
+  },
+  {
+    "brand": "GTM",
+    "url": "https://www.car.info/en-se/gtm",
+    "models": []
+  },
+  {
+    "brand": "Gumpert",
+    "url": "https://www.car.info/en-se/gumpert",
+    "models": []
+  },
+  {
+    "brand": "Gumpert AIWAYS",
+    "url": "https://www.car.info/en-se/gumpert-aiways",
+    "models": []
+  },
+  {
+    "brand": "Gurgel",
+    "url": "https://www.car.info/en-se/gurgel",
+    "models": []
+  },
+  {
+    "brand": "Gutbrod",
+    "url": "https://www.car.info/en-se/gutbrod",
+    "models": []
+  },
+  {
+    "brand": "H.E. Hall & co.",
+    "url": "https://www.car.info/en-se/he-hall-co",
+    "models": []
+  },
+  {
+    "brand": "Hafei",
+    "url": "https://www.car.info/en-se/hafei",
+    "models": []
+  },
+  {
+    "brand": "Haima",
+    "url": "https://www.car.info/en-se/haima",
+    "models": []
+  },
+  {
+    "brand": "Hamann",
+    "url": "https://www.car.info/en-se/hamann",
+    "models": []
+  },
+  {
+    "brand": "Hamelbot",
+    "url": "https://www.car.info/en-se/hamelbot",
+    "models": []
+  },
+  {
+    "brand": "Hanomag",
+    "url": "https://www.car.info/en-se/hanomag",
+    "models": []
+  },
+  {
+    "brand": "Hanomag-Henschel",
+    "url": "https://www.car.info/en-se/hanomag-henschel",
+    "models": []
+  },
+  {
+    "brand": "Hansa-Lloyd",
+    "url": "https://www.car.info/en-se/hansa-lloyd",
+    "models": []
+  },
+  {
+    "brand": "Hanteng",
+    "url": "https://www.car.info/en-se/hanteng",
+    "models": []
+  },
+  {
+    "brand": "Hardman",
+    "url": "https://www.car.info/en-se/hardman",
+    "models": []
+  },
+  {
+    "brand": "Harrods",
+    "url": "https://www.car.info/en-se/harrods",
+    "models": []
+  },
+  {
+    "brand": "Hartge",
+    "url": "https://www.car.info/en-se/hartge",
+    "models": []
+  },
+  {
+    "brand": "Harvard",
+    "url": "https://www.car.info/en-se/harvard",
+    "models": []
+  },
+  {
+    "brand": "Haval",
+    "url": "https://www.car.info/en-se/haval",
+    "models": []
+  },
+  {
+    "brand": "Hawtai",
+    "url": "https://www.car.info/en-se/hawtai",
+    "models": []
+  },
+  {
+    "brand": "Haynes-Apperson",
+    "url": "https://www.car.info/en-se/haynes-apperson",
+    "models": []
+  },
+  {
+    "brand": "Hehn Mobil",
+    "url": "https://www.car.info/en-se/hehn-mobil",
+    "models": []
+  },
+  {
+    "brand": "Henschel",
+    "url": "https://www.car.info/en-se/henschel",
+    "models": []
+  },
+  {
+    "brand": "Hindustan",
+    "url": "https://www.car.info/en-se/hindustan",
+    "models": []
+  },
+  {
+    "brand": "Hino",
+    "url": "https://www.car.info/en-se/hino",
+    "models": []
+  },
+  {
+    "brand": "HiPhi",
+    "url": "https://www.car.info/en-se/hiphi",
+    "models": []
+  },
+  {
+    "brand": "Hispano-Suiza",
+    "url": "https://www.car.info/en-se/hispano-suiza",
+    "models": []
+  },
+  {
+    "brand": "HM Vehicles",
+    "url": "https://www.car.info/en-se/hm-vehicles",
+    "models": []
+  },
+  {
+    "brand": "Home-Car",
+    "url": "https://www.car.info/en-se/home-car",
+    "models": []
+  },
+  {
+    "brand": "Hommell",
+    "url": "https://www.car.info/en-se/hommell",
+    "models": []
+  },
+  {
+    "brand": "Hopium",
+    "url": "https://www.car.info/en-se/hopium",
+    "models": []
+  },
+  {
+    "brand": "Horex",
+    "url": "https://www.car.info/en-se/horex",
+    "models": []
+  },
+  {
+    "brand": "Horwin",
+    "url": "https://www.car.info/en-se/horwin",
+    "models": []
+  },
+  {
+    "brand": "HSV",
+    "url": "https://www.car.info/en-se/hsv",
+    "models": []
+  },
+  {
+    "brand": "HTT",
+    "url": "https://www.car.info/en-se/htt",
+    "models": []
+  },
+  {
+    "brand": "Huanghai",
+    "url": "https://www.car.info/en-se/huanghai",
+    "models": []
+  },
+  {
+    "brand": "Huansu",
+    "url": "https://www.car.info/en-se/huansu",
+    "models": []
+  },
+  {
+    "brand": "Huasong",
+    "url": "https://www.car.info/en-se/huasong",
+    "models": []
+  },
+  {
+    "brand": "Hugos",
+    "url": "https://www.car.info/en-se/hugos",
+    "models": []
+  },
+  {
+    "brand": "Hulme",
+    "url": "https://www.car.info/en-se/hulme",
+    "models": []
+  },
+  {
+    "brand": "Hurtan",
+    "url": "https://www.car.info/en-se/hurtan",
+    "models": []
+  },
+  {
+    "brand": "Hurtu",
+    "url": "https://www.car.info/en-se/hurtu",
+    "models": []
+  },
+  {
+    "brand": "Hybrid Kinetic",
+    "url": "https://www.car.info/en-se/hybrid-kinetic",
+    "models": []
+  },
+  {
+    "brand": "Hycan",
+    "url": "https://www.car.info/en-se/hycan",
+    "models": []
+  },
+  {
+    "brand": "Hyperion",
+    "url": "https://www.car.info/en-se/hyperion",
+    "models": []
+  },
+  {
+    "brand": "I.DE.A",
+    "url": "https://www.car.info/en-se/idea",
+    "models": []
+  },
+  {
+    "brand": "IAT",
+    "url": "https://www.car.info/en-se/iat",
+    "models": []
+  },
+  {
+    "brand": "iCar",
+    "url": "https://www.car.info/en-se/icar",
+    "models": []
+  },
+  {
+    "brand": "iCaur",
+    "url": "https://www.car.info/en-se/icaur",
+    "models": []
+  },
+  {
+    "brand": "Icona",
+    "url": "https://www.car.info/en-se/icona",
+    "models": []
+  },
+  {
+    "brand": "Iconiq Motors",
+    "url": "https://www.car.info/en-se/iconiq-motors",
+    "models": []
+  },
+  {
+    "brand": "IFR Automotive",
+    "url": "https://www.car.info/en-se/ifr-automotive",
+    "models": []
+  },
+  {
+    "brand": "IKA",
+    "url": "https://www.car.info/en-se/ika",
+    "models": []
+  },
+  {
+    "brand": "IKCO",
+    "url": "https://www.car.info/en-se/ikco",
+    "models": []
+  },
+  {
+    "brand": "IM",
+    "url": "https://www.car.info/en-se/im",
+    "models": []
+  },
+  {
+    "brand": "IMZ",
+    "url": "https://www.car.info/en-se/imz",
+    "models": []
+  },
+  {
+    "brand": "Indcar",
+    "url": "https://www.car.info/en-se/indcar",
+    "models": []
+  },
+  {
+    "brand": "INDI",
+    "url": "https://www.car.info/en-se/indi",
+    "models": []
+  },
+  {
+    "brand": "Inferno",
+    "url": "https://www.car.info/en-se/inferno",
+    "models": []
+  },
+  {
+    "brand": "Innocenti Scooter",
+    "url": "https://www.car.info/en-se/innocenti-scooter",
+    "models": []
+  },
+  {
+    "brand": "Innoson",
+    "url": "https://www.car.info/en-se/innonson",
+    "models": []
+  },
+  {
+    "brand": "Inter-State",
+    "url": "https://www.car.info/en-se/inter-state",
+    "models": []
+  },
+  {
+    "brand": "Intermeccanica",
+    "url": "https://www.car.info/en-se/intermeccanica",
+    "models": []
+  },
+  {
+    "brand": "Invacar",
+    "url": "https://www.car.info/en-se/invacar",
+    "models": []
+  },
+  {
+    "brand": "Invicta",
+    "url": "https://www.car.info/en-se/invicta",
+    "models": []
+  },
+  {
+    "brand": "Irmãos Mota",
+    "url": "https://www.car.info/en-se/irmaos-mota",
+    "models": []
+  },
+  {
+    "brand": "Isdera",
+    "url": "https://www.car.info/en-se/isdera",
+    "models": []
+  },
+  {
+    "brand": "Isotta Fraschini",
+    "url": "https://www.car.info/en-se/isotta-fraschini",
+    "models": []
+  },
+  {
+    "brand": "Italdesign",
+    "url": "https://www.car.info/en-se/italdesign",
+    "models": []
+  },
+  {
+    "brand": "IVM",
+    "url": "https://www.car.info/en-se/ivm",
+    "models": []
+  },
+  {
+    "brand": "Izh",
+    "url": "https://www.car.info/en-se/izh",
+    "models": []
+  },
+  {
+    "brand": "Jaecoo",
+    "url": "https://www.car.info/en-se/jaecoo",
+    "models": []
+  },
+  {
+    "brand": "Jannarelly",
+    "url": "https://www.car.info/en-se/jannarelly",
+    "models": []
+  },
+  {
+    "brand": "Jawa",
+    "url": "https://www.car.info/en-se/jawa",
+    "models": []
+  },
+  {
+    "brand": "Jeffery",
+    "url": "https://www.car.info/en-se/jeffery",
+    "models": []
+  },
+  {
+    "brand": "Jetour",
+    "url": "https://www.car.info/en-se/jetour",
+    "models": []
+  },
+  {
+    "brand": "Jetta",
+    "url": "https://www.car.info/en-se/jetta",
+    "models": []
+  },
+  {
+    "brand": "Jiangling",
+    "url": "https://www.car.info/en-se/jiangling",
+    "models": []
+  },
+  {
+    "brand": "Jiangnan",
+    "url": "https://www.car.info/en-se/jiangnan",
+    "models": []
+  },
+  {
+    "brand": "Jianshe",
+    "url": "https://www.car.info/en-se/jianshe",
+    "models": []
+  },
+  {
+    "brand": "Jinbei",
+    "url": "https://www.car.info/en-se/jinbei",
+    "models": []
+  },
+  {
+    "brand": "Jishi",
+    "url": "https://www.car.info/en-se/jishi",
+    "models": []
+  },
+  {
+    "brand": "Jiyue",
+    "url": "https://www.car.info/en-se/jiyue",
+    "models": []
+  },
+  {
+    "brand": "Jonway",
+    "url": "https://www.car.info/en-se/jonway",
+    "models": []
+  },
+  {
+    "brand": "Jordan",
+    "url": "https://www.car.info/en-se/jordan",
+    "models": []
+  },
+  {
+    "brand": "Joss",
+    "url": "https://www.car.info/en-se/joss",
+    "models": []
+  },
+  {
+    "brand": "Jurassic Truck",
+    "url": "https://www.car.info/en-se/jurassic-truck",
+    "models": []
+  },
+  {
+    "brand": "Kahn Design",
+    "url": "https://www.car.info/en-se/kahn-design",
+    "models": []
+  },
+  {
+    "brand": "Kaipan",
+    "url": "https://www.car.info/en-se/kaipan",
+    "models": []
+  },
+  {
+    "brand": "Kandi",
+    "url": "https://www.car.info/en-se/kandi",
+    "models": []
+  },
+  {
+    "brand": "Karabag",
+    "url": "https://www.car.info/en-se/karabag",
+    "models": []
+  },
+  {
+    "brand": "KAvZ",
+    "url": "https://www.car.info/en-se/kavz",
+    "models": []
+  },
+  {
+    "brand": "Kawei",
+    "url": "https://www.car.info/en-se/kawei",
+    "models": []
+  },
+  {
+    "brand": "Kellison",
+    "url": "https://www.car.info/en-se/kellison",
+    "models": []
+  },
+  {
+    "brand": "Ken Okuyama Design",
+    "url": "https://www.car.info/en-se/ken-okuyama-design",
+    "models": []
+  },
+  {
+    "brand": "Kentucky Camp",
+    "url": "https://www.car.info/en-se/kentucky-camp",
+    "models": []
+  },
+  {
+    "brand": "Khazar",
+    "url": "https://www.car.info/en-se/khazar",
+    "models": []
+  },
+  {
+    "brand": "KHM",
+    "url": "https://www.car.info/en-se/khm",
+    "models": []
+  },
+  {
+    "brand": "Kieft",
+    "url": "https://www.car.info/en-se/kieft",
+    "models": []
+  },
+  {
+    "brand": "Kimera",
+    "url": "https://www.car.info/en-se/kimera",
+    "models": []
+  },
+  {
+    "brand": "Kissel",
+    "url": "https://www.car.info/en-se/kissel",
+    "models": []
+  },
+  {
+    "brand": "Knight",
+    "url": "https://www.car.info/en-se/knight",
+    "models": []
+  },
+  {
+    "brand": "Knox",
+    "url": "https://www.car.info/en-se/knox",
+    "models": []
+  },
+  {
+    "brand": "Krastin",
+    "url": "https://www.car.info/en-se/krastin",
+    "models": []
+  },
+  {
+    "brand": "Krugger",
+    "url": "https://www.car.info/en-se/krugger",
+    "models": []
+  },
+  {
+    "brand": "Kyburz",
+    "url": "https://www.car.info/en-se/kyburz",
+    "models": []
+  },
+  {
+    "brand": "L'Élégante",
+    "url": "https://www.car.info/en-se/lelegante",
+    "models": []
+  },
+  {
+    "brand": "Lacoste & Battmann",
+    "url": "https://www.car.info/en-se/lacoste-battmann",
+    "models": []
+  },
+  {
+    "brand": "LaFayette",
+    "url": "https://www.car.info/en-se/lafayette",
+    "models": []
+  },
+  {
+    "brand": "Laffite",
+    "url": "https://www.car.info/en-se/laffite",
+    "models": []
+  },
+  {
+    "brand": "Lambert",
+    "url": "https://www.car.info/en-se/lambert",
+    "models": []
+  },
+  {
+    "brand": "Lanark",
+    "url": "https://www.car.info/en-se/lanark",
+    "models": []
+  },
+  {
+    "brand": "Landwind",
+    "url": "https://www.car.info/en-se/landwind",
+    "models": []
+  },
+  {
+    "brand": "Lanzante",
+    "url": "https://www.car.info/en-se/lanzante",
+    "models": []
+  },
+  {
+    "brand": "Laraki",
+    "url": "https://www.car.info/en-se/laraki",
+    "models": []
+  },
+  {
+    "brand": "Larkin",
+    "url": "https://www.car.info/en-se/larkin",
+    "models": []
+  },
+  {
+    "brand": "Laurin & Klement",
+    "url": "https://www.car.info/en-se/laurin-klement",
+    "models": []
+  },
+  {
+    "brand": "LeEco",
+    "url": "https://www.car.info/en-se/leeco",
+    "models": []
+  },
+  {
+    "brand": "Li Auto",
+    "url": "https://www.car.info/en-se/li-auto",
+    "models": []
+  },
+  {
+    "brand": "Lightyear",
+    "url": "https://www.car.info/en-se/lightyear",
+    "models": []
+  },
+  {
+    "brand": "Lister",
+    "url": "https://www.car.info/en-se/lister",
+    "models": []
+  },
+  {
+    "brand": "Lobini",
+    "url": "https://www.car.info/en-se/lobini",
+    "models": []
+  },
+  {
+    "brand": "Local Motors",
+    "url": "https://www.car.info/en-se/local-motors",
+    "models": []
+  },
+  {
+    "brand": "Locomobile",
+    "url": "https://www.car.info/en-se/locomobile",
+    "models": []
+  },
+  {
+    "brand": "Longbow",
+    "url": "https://www.car.info/en-se/longbow",
+    "models": []
+  },
+  {
+    "brand": "Lorenz & Rankl",
+    "url": "https://www.car.info/en-se/lorenz-rankl",
+    "models": []
+  },
+  {
+    "brand": "Lorinser",
+    "url": "https://www.car.info/en-se/lorinser",
+    "models": []
+  },
+  {
+    "brand": "LuAZ",
+    "url": "https://www.car.info/en-se/luaz",
+    "models": []
+  },
+  {
+    "brand": "Lumma Design",
+    "url": "https://www.car.info/en-se/lumma-design",
+    "models": []
+  },
+  {
+    "brand": "Luvly",
+    "url": "https://www.car.info/en-se/luvly",
+    "models": []
+  },
+  {
+    "brand": "Luxeed",
+    "url": "https://www.car.info/en-se/luxeed",
+    "models": []
+  },
+  {
+    "brand": "Luxgen",
+    "url": "https://www.car.info/en-se/luxgen",
+    "models": []
+  },
+  {
+    "brand": "Luxor",
+    "url": "https://www.car.info/en-se/luxor",
+    "models": []
+  },
+  {
+    "brand": "LVCHI",
+    "url": "https://www.car.info/en-se/lvchi",
+    "models": []
+  },
+  {
+    "brand": "Lyonheart",
+    "url": "https://www.car.info/en-se/lyonheart",
+    "models": []
+  },
+  {
+    "brand": "M & L",
+    "url": "https://www.car.info/en-se/m-l",
+    "models": []
+  },
+  {
+    "brand": "M-Hero",
+    "url": "https://www.car.info/en-se/m-hero",
+    "models": []
+  },
+  {
+    "brand": "M.M.C.",
+    "url": "https://www.car.info/en-se/mmc",
+    "models": []
+  },
+  {
+    "brand": "Magirus",
+    "url": "https://www.car.info/en-se/magirus",
+    "models": []
+  },
+  {
+    "brand": "Magirus-Deutz",
+    "url": "https://www.car.info/en-se/magirus-deutz",
+    "models": []
+  },
+  {
+    "brand": "Magna Steyr",
+    "url": "https://www.car.info/en-se/magna-steyr",
+    "models": []
+  },
+  {
+    "brand": "Magnum",
+    "url": "https://www.car.info/en-se/magnum",
+    "models": []
+  },
+  {
+    "brand": "Mako",
+    "url": "https://www.car.info/en-se/mako",
+    "models": []
+  },
+  {
+    "brand": "Malibu",
+    "url": "https://www.car.info/en-se/malibu",
+    "models": []
+  },
+  {
+    "brand": "Mallock",
+    "url": "https://www.car.info/en-se/mallock",
+    "models": []
+  },
+  {
+    "brand": "MANHART",
+    "url": "https://www.car.info/en-se/manhart",
+    "models": []
+  },
+  {
+    "brand": "Mansory",
+    "url": "https://www.car.info/en-se/mansory",
+    "models": []
+  },
+  {
+    "brand": "Manta",
+    "url": "https://www.car.info/en-se/manta",
+    "models": []
+  },
+  {
+    "brand": "Marauder",
+    "url": "https://www.car.info/en-se/marauder",
+    "models": []
+  },
+  {
+    "brand": "March",
+    "url": "https://www.car.info/en-se/march",
+    "models": []
+  },
+  {
+    "brand": "Marcopolo",
+    "url": "https://www.car.info/en-se/marcopolo",
+    "models": []
+  },
+  {
+    "brand": "Marquette",
+    "url": "https://www.car.info/en-se/marquette",
+    "models": []
+  },
+  {
+    "brand": "Martini",
+    "url": "https://www.car.info/en-se/martini",
+    "models": []
+  },
+  {
+    "brand": "Marussia",
+    "url": "https://www.car.info/en-se/marussia",
+    "models": []
+  },
+  {
+    "brand": "Mastretta",
+    "url": "https://www.car.info/en-se/mastretta",
+    "models": []
+  },
+  {
+    "brand": "Mathis",
+    "url": "https://www.car.info/en-se/mathis",
+    "models": []
+  },
+  {
+    "brand": "Maxim",
+    "url": "https://www.car.info/en-se/maxim",
+    "models": []
+  },
+  {
+    "brand": "Maxton",
+    "url": "https://www.car.info/en-se/maxton",
+    "models": []
+  },
+  {
+    "brand": "Maxwell",
+    "url": "https://www.car.info/en-se/maxwell",
+    "models": []
+  },
+  {
+    "brand": "Mazzanti",
+    "url": "https://www.car.info/en-se/mazzanti",
+    "models": []
+  },
+  {
+    "brand": "McLaughlin",
+    "url": "https://www.car.info/en-se/mclaughlin",
+    "models": []
+  },
+  {
+    "brand": "McMurtry",
+    "url": "https://www.car.info/en-se/mcmurtry",
+    "models": []
+  },
+  {
+    "brand": "Meier",
+    "url": "https://www.car.info/en-se/meier",
+    "models": []
+  },
+  {
+    "brand": "Melkus",
+    "url": "https://www.car.info/en-se/melkus",
+    "models": []
+  },
+  {
+    "brand": "Mercedes",
+    "url": "https://www.car.info/en-se/mercedes",
+    "models": []
+  },
+  {
+    "brand": "Mercedes-Simplex",
+    "url": "https://www.car.info/en-se/mercedes-simplex",
+    "models": []
+  },
+  {
+    "brand": "Mercer",
+    "url": "https://www.car.info/en-se/mercer",
+    "models": []
+  },
+  {
+    "brand": "Merkur",
+    "url": "https://www.car.info/en-se/merkur",
+    "models": []
+  },
+  {
+    "brand": "Merlyn",
+    "url": "https://www.car.info/en-se/merlyn",
+    "models": []
+  },
+  {
+    "brand": "Metz",
+    "url": "https://www.car.info/en-se/metz",
+    "models": []
+  },
+  {
+    "brand": "MEV",
+    "url": "https://www.car.info/en-se/mev",
+    "models": []
+  },
+  {
+    "brand": "Mia Electric",
+    "url": "https://www.car.info/en-se/mia",
+    "models": []
+  },
+  {
+    "brand": "Micro-Vett",
+    "url": "https://www.car.info/en-se/micro-vett",
+    "models": []
+  },
+  {
+    "brand": "Midget Motors",
+    "url": "https://www.car.info/en-se/midget-motors",
+    "models": []
+  },
+  {
+    "brand": "Mikrus",
+    "url": "https://www.car.info/en-se/mikrus",
+    "models": []
+  },
+  {
+    "brand": "Miles",
+    "url": "https://www.car.info/en-se/miles",
+    "models": []
+  },
+  {
+    "brand": "Minelli",
+    "url": "https://www.car.info/en-se/minelli",
+    "models": []
+  },
+  {
+    "brand": "Mitsubishi Fuso",
+    "url": "https://www.car.info/en-se/mitsubishi-fuso",
+    "models": []
+  },
+  {
+    "brand": "Miura",
+    "url": "https://www.car.info/en-se/miura",
+    "models": []
+  },
+  {
+    "brand": "MMI",
+    "url": "https://www.car.info/en-se/mmi",
+    "models": []
+  },
+  {
+    "brand": "Mobilize",
+    "url": "https://www.car.info/en-se/mobilize",
+    "models": []
+  },
+  {
+    "brand": "Monte Carlo",
+    "url": "https://www.car.info/en-se/monte-carlo",
+    "models": []
+  },
+  {
+    "brand": "Moon",
+    "url": "https://www.car.info/en-se/moon",
+    "models": []
+  },
+  {
+    "brand": "Mors",
+    "url": "https://www.car.info/en-se/mors",
+    "models": []
+  },
+  {
+    "brand": "Mosler",
+    "url": "https://www.car.info/en-se/mosler",
+    "models": []
+  },
+  {
+    "brand": "Motobloc",
+    "url": "https://www.car.info/en-se/motobloc",
+    "models": []
+  },
+  {
+    "brand": "Motto",
+    "url": "https://www.car.info/en-se/motto",
+    "models": []
+  },
+  {
+    "brand": "MP Lafer",
+    "url": "https://www.car.info/en-se/mp-lafer",
+    "models": []
+  },
+  {
+    "brand": "MPM",
+    "url": "https://www.car.info/en-se/mpm",
+    "models": []
+  },
+  {
+    "brand": "MTM",
+    "url": "https://www.car.info/en-se/mtm",
+    "models": []
+  },
+  {
+    "brand": "MTX",
+    "url": "https://www.car.info/en-se/mtx",
+    "models": []
+  },
+  {
+    "brand": "Murtaya",
+    "url": "https://www.car.info/en-se/murtaya",
+    "models": []
+  },
+  {
+    "brand": "NAG",
+    "url": "https://www.car.info/en-se/nag",
+    "models": []
+  },
+  {
+    "brand": "NamX",
+    "url": "https://www.car.info/en-se/namx",
+    "models": []
+  },
+  {
+    "brand": "NanoFlowcell",
+    "url": "https://www.car.info/en-se/nanoflowcell",
+    "models": []
+  },
+  {
+    "brand": "Napier",
+    "url": "https://www.car.info/en-se/napier",
+    "models": []
+  },
+  {
+    "brand": "Naran",
+    "url": "https://www.car.info/en-se/naran",
+    "models": []
+  },
+  {
+    "brand": "National",
+    "url": "https://www.car.info/en-se/national",
+    "models": []
+  },
+  {
+    "brand": "National Coaches",
+    "url": "https://www.car.info/en-se/national-coaches",
+    "models": []
+  },
+  {
+    "brand": "Neta",
+    "url": "https://www.car.info/en-se/neta",
+    "models": []
+  },
+  {
+    "brand": "Next.e.GO",
+    "url": "https://www.car.info/en-se/nextego",
+    "models": []
+  },
+  {
+    "brand": "Nimbus",
+    "url": "https://www.car.info/en-se/nimbus",
+    "models": []
+  },
+  {
+    "brand": "Nobe",
+    "url": "https://www.car.info/en-se/nobe",
+    "models": []
+  },
+  {
+    "brand": "Nobel",
+    "url": "https://www.car.info/en-se/nobel",
+    "models": []
+  },
+  {
+    "brand": "Nord",
+    "url": "https://www.car.info/en-se/nord",
+    "models": []
+  },
+  {
+    "brand": "Northern",
+    "url": "https://www.car.info/en-se/northern",
+    "models": []
+  },
+  {
+    "brand": "Nota",
+    "url": "https://www.car.info/en-se/nota",
+    "models": []
+  },
+  {
+    "brand": "Novitec",
+    "url": "https://www.car.info/en-se/novitec",
+    "models": []
+  },
+  {
+    "brand": "NSU-Fiat",
+    "url": "https://www.car.info/en-se/nsu-fiat",
+    "models": []
+  },
+  {
+    "brand": "Oettinger",
+    "url": "https://www.car.info/en-se/oettinger",
+    "models": []
+  },
+  {
+    "brand": "Ohta",
+    "url": "https://www.car.info/en-se/ohta",
+    "models": []
+  },
+  {
+    "brand": "Oltcit",
+    "url": "https://www.car.info/en-se/oltcit",
+    "models": []
+  },
+  {
+    "brand": "Omoda",
+    "url": "https://www.car.info/en-se/omoda",
+    "models": []
+  },
+  {
+    "brand": "Onvo",
+    "url": "https://www.car.info/en-se/onvo",
+    "models": []
+  },
+  {
+    "brand": "Onyx",
+    "url": "https://www.car.info/en-se/onyx",
+    "models": []
+  },
+  {
+    "brand": "OSC",
+    "url": "https://www.car.info/en-se/osc",
+    "models": []
+  },
+  {
+    "brand": "OSI",
+    "url": "https://www.car.info/en-se/osi",
+    "models": []
+  },
+  {
+    "brand": "Oullim",
+    "url": "https://www.car.info/en-se/oullim",
+    "models": []
+  },
+  {
+    "brand": "Pagani",
+    "url": "https://www.car.info/en-se/pagani",
+    "models": []
+  },
+  {
+    "brand": "Paige",
+    "url": "https://www.car.info/en-se/paige",
+    "models": []
+  },
+  {
+    "brand": "PAL-V",
+    "url": "https://www.car.info/en-se/pal-v",
+    "models": []
+  },
+  {
+    "brand": "Palomino RV",
+    "url": "https://www.car.info/en-se/palomino-rv",
+    "models": []
+  },
+  {
+    "brand": "Panoz",
+    "url": "https://www.car.info/en-se/panoz",
+    "models": []
+  },
+  {
+    "brand": "Pantore",
+    "url": "https://www.car.info/en-se/pantore",
+    "models": []
+  },
+  {
+    "brand": "PAZ",
+    "url": "https://www.car.info/en-se/paz",
+    "models": []
+  },
+  {
+    "brand": "Peaceyuli",
+    "url": "https://www.car.info/en-se/peaceyuli",
+    "models": []
+  },
+  {
+    "brand": "Peel",
+    "url": "https://www.car.info/en-se/peel",
+    "models": []
+  },
+  {
+    "brand": "Peerless",
+    "url": "https://www.car.info/en-se/peerless",
+    "models": []
+  },
+  {
+    "brand": "Pegaso",
+    "url": "https://www.car.info/en-se/pegaso",
+    "models": []
+  },
+  {
+    "brand": "Pennington",
+    "url": "https://www.car.info/en-se/pennington",
+    "models": []
+  },
+  {
+    "brand": "Perodua",
+    "url": "https://www.car.info/en-se/perodua",
+    "models": []
+  },
+  {
+    "brand": "PGO",
+    "url": "https://www.car.info/en-se/pgo",
+    "models": []
+  },
+  {
+    "brand": "Phantom",
+    "url": "https://www.car.info/en-se/phantom",
+    "models": []
+  },
+  {
+    "brand": "Phelon & Moore",
+    "url": "https://www.car.info/en-se/phelon-moore",
+    "models": []
+  },
+  {
+    "brand": "Phelps Motor Vehicle",
+    "url": "https://www.car.info/en-se/phelps-motor-vehicle",
+    "models": []
+  },
+  {
+    "brand": "Phillips",
+    "url": "https://www.car.info/en-se/phillips",
+    "models": []
+  },
+  {
+    "brand": "PhoeniX",
+    "url": "https://www.car.info/en-se/phoenix",
+    "models": []
+  },
+  {
+    "brand": "Phoenix (US)",
+    "url": "https://www.car.info/en-se/phoenix-us",
+    "models": []
+  },
+  {
+    "brand": "Pickman",
+    "url": "https://www.car.info/en-se/pickman",
+    "models": []
+  },
+  {
+    "brand": "Piëch",
+    "url": "https://www.car.info/en-se/piech",
+    "models": []
+  },
+  {
+    "brand": "Pierce Cycle",
+    "url": "https://www.car.info/en-se/pierce-cycle",
+    "models": []
+  },
+  {
+    "brand": "Pierce Manufacturing",
+    "url": "https://www.car.info/en-se/pierce-manufacturing",
+    "models": []
+  },
+  {
+    "brand": "Pilain",
+    "url": "https://www.car.info/en-se/pilain",
+    "models": []
+  },
+  {
+    "brand": "Piper Cars",
+    "url": "https://www.car.info/en-se/piper-cars",
+    "models": []
+  },
+  {
+    "brand": "PK",
+    "url": "https://www.car.info/en-se/pk",
+    "models": []
+  },
+  {
+    "brand": "Pogea Racing",
+    "url": "https://www.car.info/en-se/pogea-racing",
+    "models": []
+  },
+  {
+    "brand": "Pope",
+    "url": "https://www.car.info/en-se/pope",
+    "models": []
+  },
+  {
+    "brand": "Pope-Hartford",
+    "url": "https://www.car.info/en-se/pope-hartford",
+    "models": []
+  },
+  {
+    "brand": "Praga",
+    "url": "https://www.car.info/en-se/praga",
+    "models": []
+  },
+  {
+    "brand": "Premier",
+    "url": "https://www.car.info/en-se/premier",
+    "models": []
+  },
+  {
+    "brand": "Prodrive",
+    "url": "https://www.car.info/en-se/prodrive",
+    "models": []
+  },
+  {
+    "brand": "Puritalia",
+    "url": "https://www.car.info/en-se/puritalia",
+    "models": []
+  },
+  {
+    "brand": "Qiantu",
+    "url": "https://www.car.info/en-se/qiantu",
+    "models": []
+  },
+  {
+    "brand": "Qiteng",
+    "url": "https://www.car.info/en-se/qiteng",
+    "models": []
+  },
+  {
+    "brand": "Qvale",
+    "url": "https://www.car.info/en-se/qvale",
+    "models": []
+  },
+  {
+    "brand": "Radar",
+    "url": "https://www.car.info/en-se/radar",
+    "models": []
+  },
+  {
+    "brand": "RAF",
+    "url": "https://www.car.info/en-se/raf",
+    "models": []
+  },
+  {
+    "brand": "Rally",
+    "url": "https://www.car.info/en-se/rally",
+    "models": []
+  },
+  {
+    "brand": "Ralt",
+    "url": "https://www.car.info/en-se/ralt",
+    "models": []
+  },
+  {
+    "brand": "Ranger",
+    "url": "https://www.car.info/en-se/ranger",
+    "models": []
+  },
+  {
+    "brand": "Ranz",
+    "url": "https://www.car.info/en-se/ranz",
+    "models": []
+  },
+  {
+    "brand": "Rauch & Lang",
+    "url": "https://www.car.info/en-se/rauch-lang",
+    "models": []
+  },
+  {
+    "brand": "Ravon",
+    "url": "https://www.car.info/en-se/ravon",
+    "models": []
+  },
+  {
+    "brand": "Razor",
+    "url": "https://www.car.info/en-se/razor",
+    "models": []
+  },
+  {
+    "brand": "REAF",
+    "url": "https://www.car.info/en-se/reaf",
+    "models": []
+  },
+  {
+    "brand": "Regal",
+    "url": "https://www.car.info/en-se/regal",
+    "models": []
+  },
+  {
+    "brand": "Rely",
+    "url": "https://www.car.info/en-se/rely",
+    "models": []
+  },
+  {
+    "brand": "Renault Samsung",
+    "url": "https://www.car.info/en-se/renault-samsung",
+    "models": []
+  },
+  {
+    "brand": "RENNtech",
+    "url": "https://www.car.info/en-se/renntech",
+    "models": []
+  },
+  {
+    "brand": "Reynard",
+    "url": "https://www.car.info/en-se/reynard",
+    "models": []
+  },
+  {
+    "brand": "Rezvani",
+    "url": "https://www.car.info/en-se/rezvani",
+    "models": []
+  },
+  {
+    "brand": "Rickenbacker",
+    "url": "https://www.car.info/en-se/rickenbacker",
+    "models": []
+  },
+  {
+    "brand": "Riich",
+    "url": "https://www.car.info/en-se/riich",
+    "models": []
+  },
+  {
+    "brand": "Rimac",
+    "url": "https://www.car.info/en-se/rimac",
+    "models": []
+  },
+  {
+    "brand": "Rinspeed",
+    "url": "https://www.car.info/en-se/rinspeed",
+    "models": []
+  },
+  {
+    "brand": "Riversimple",
+    "url": "https://www.car.info/en-se/riversimple",
+    "models": []
+  },
+  {
+    "brand": "Rivian",
+    "url": "https://www.car.info/en-se/rivian",
+    "models": []
+  },
+  {
+    "brand": "RML",
+    "url": "https://www.car.info/en-se/rml",
+    "models": []
+  },
+  {
+    "brand": "Rochet-Schneider",
+    "url": "https://www.car.info/en-se/rochet-schneider",
+    "models": []
+  },
+  {
+    "brand": "Roding",
+    "url": "https://www.car.info/en-se/roding",
+    "models": []
+  },
+  {
+    "brand": "Roewe",
+    "url": "https://www.car.info/en-se/roewe",
+    "models": []
+  },
+  {
+    "brand": "Röhr",
+    "url": "https://www.car.info/en-se/rohr",
+    "models": []
+  },
+  {
+    "brand": "Rometsch",
+    "url": "https://www.car.info/en-se/rometsch",
+    "models": []
+  },
+  {
+    "brand": "Ronart",
+    "url": "https://www.car.info/en-se/ronart",
+    "models": []
+  },
+  {
+    "brand": "Rošero",
+    "url": "https://www.car.info/en-se/rosero",
+    "models": []
+  },
+  {
+    "brand": "Rossion",
+    "url": "https://www.car.info/en-se/rossion",
+    "models": []
+  },
+  {
+    "brand": "Rotrax",
+    "url": "https://www.car.info/en-se/rotax",
+    "models": []
+  },
+  {
+    "brand": "Roustabout",
+    "url": "https://www.car.info/en-se/roustabout",
+    "models": []
+  },
+  {
+    "brand": "Rovin",
+    "url": "https://www.car.info/en-se/rovin",
+    "models": []
+  },
+  {
+    "brand": "Royal",
+    "url": "https://www.car.info/en-se/royal",
+    "models": []
+  },
+  {
+    "brand": "Royal Enfield",
+    "url": "https://www.car.info/en-se/royal-enfield",
+    "models": []
+  },
+  {
+    "brand": "Royale",
+    "url": "https://www.car.info/en-se/royale",
+    "models": []
+  },
+  {
+    "brand": "RS Motorhomes",
+    "url": "https://www.car.info/en-se/rs-motorhomes",
+    "models": []
+  },
+  {
+    "brand": "Rumpler",
+    "url": "https://www.car.info/en-se/rumpler",
+    "models": []
+  },
+  {
+    "brand": "Rupp",
+    "url": "https://www.car.info/en-se/rupp",
+    "models": []
+  },
+  {
+    "brand": "Rush",
+    "url": "https://www.car.info/en-se/rush",
+    "models": []
+  },
+  {
+    "brand": "Russo-Balt",
+    "url": "https://www.car.info/en-se/russo-balt",
+    "models": []
+  },
+  {
+    "brand": "Sabra",
+    "url": "https://www.car.info/en-se/sabra",
+    "models": []
+  },
+  {
+    "brand": "Sacrilege Motors",
+    "url": "https://www.car.info/en-se/sacrilege-motors",
+    "models": []
+  },
+  {
+    "brand": "SAIC",
+    "url": "https://www.car.info/en-se/saic",
+    "models": []
+  },
+  {
+    "brand": "Saipa",
+    "url": "https://www.car.info/en-se/saipa",
+    "models": []
+  },
+  {
+    "brand": "Salmson",
+    "url": "https://www.car.info/en-se/salmson",
+    "models": []
+  },
+  {
+    "brand": "Sandusky Automobile",
+    "url": "https://www.car.info/en-se/sandusky-automobile",
+    "models": []
+  },
+  {
+    "brand": "Sanyou",
+    "url": "https://www.car.info/en-se/sanyou",
+    "models": []
+  },
+  {
+    "brand": "Sao",
+    "url": "https://www.car.info/en-se/sao",
+    "models": []
+  },
+  {
+    "brand": "Sauber",
+    "url": "https://www.car.info/en-se/sauber",
+    "models": []
+  },
+  {
+    "brand": "Sbarro",
+    "url": "https://www.car.info/en-se/sbarro",
+    "models": []
+  },
+  {
+    "brand": "Schüttoff",
+    "url": "https://www.car.info/en-se/schuttoff",
+    "models": []
+  },
+  {
+    "brand": "Schwinn-Whizzer",
+    "url": "https://www.car.info/en-se/schwinn-whizzer",
+    "models": []
+  },
+  {
+    "brand": "Scott Motorcycle",
+    "url": "https://www.car.info/en-se/scott-motorcycle",
+    "models": []
+  },
+  {
+    "brand": "Scout",
+    "url": "https://www.car.info/en-se/scout",
+    "models": []
+  },
+  {
+    "brand": "Scuderia Cameron Glickenhaus",
+    "url": "https://www.car.info/en-se/scuderia-cameron-glickenhaus",
+    "models": []
+  },
+  {
+    "brand": "SeAZ",
+    "url": "https://www.car.info/en-se/seaz",
+    "models": []
+  },
+  {
+    "brand": "Sebring-Vanguard",
+    "url": "https://www.car.info/en-se/sebring-vanguard",
+    "models": []
+  },
+  {
+    "brand": "Secma",
+    "url": "https://www.car.info/en-se/secma",
+    "models": []
+  },
+  {
+    "brand": "Sector111",
+    "url": "https://www.car.info/en-se/sector111",
+    "models": []
+  },
+  {
+    "brand": "Sehol",
+    "url": "https://www.car.info/en-se/sehol",
+    "models": []
+  },
+  {
+    "brand": "Selve",
+    "url": "https://www.car.info/en-se/selve",
+    "models": []
+  },
+  {
+    "brand": "Senova",
+    "url": "https://www.car.info/en-se/senova",
+    "models": []
+  },
+  {
+    "brand": "Share2Drive",
+    "url": "https://www.car.info/en-se/share2drive",
+    "models": []
+  },
+  {
+    "brand": "Sharky",
+    "url": "https://www.car.info/en-se/sharky",
+    "models": []
+  },
+  {
+    "brand": "Shayton",
+    "url": "https://www.car.info/en-se/shayton",
+    "models": []
+  },
+  {
+    "brand": "Shell",
+    "url": "https://www.car.info/en-se/shell",
+    "models": []
+  },
+  {
+    "brand": "Shuanghuan",
+    "url": "https://www.car.info/en-se/shuanghuan",
+    "models": []
+  },
+  {
+    "brand": "Siam Di Tella",
+    "url": "https://www.car.info/en-se/siam-di-tella",
+    "models": []
+  },
+  {
+    "brand": "Siata",
+    "url": "https://www.car.info/en-se/siata",
+    "models": []
+  },
+  {
+    "brand": "Silence",
+    "url": "https://www.car.info/en-se/silence",
+    "models": []
+  },
+  {
+    "brand": "Simplex",
+    "url": "https://www.car.info/en-se/simplex",
+    "models": []
+  },
+  {
+    "brand": "Simson",
+    "url": "https://www.car.info/en-se/simson",
+    "models": []
+  },
+  {
+    "brand": "Sin Cars",
+    "url": "https://www.car.info/en-se/sin-cars",
+    "models": []
+  },
+  {
+    "brand": "Sinclair",
+    "url": "https://www.car.info/en-se/sinclair",
+    "models": []
+  },
+  {
+    "brand": "Singer Vehicle Design",
+    "url": "https://www.car.info/en-se/singer-vehicle-design",
+    "models": []
+  },
+  {
+    "brand": "Sinogold",
+    "url": "https://www.car.info/en-se/sinogold",
+    "models": []
+  },
+  {
+    "brand": "Sinski",
+    "url": "https://www.car.info/en-se/sinski",
+    "models": []
+  },
+  {
+    "brand": "SISU Auto",
+    "url": "https://www.car.info/en-se/sisu-auto",
+    "models": []
+  },
+  {
+    "brand": "Slaby-Beringer",
+    "url": "https://www.car.info/en-se/slaby-beringer",
+    "models": []
+  },
+  {
+    "brand": "SMA",
+    "url": "https://www.car.info/en-se/sma",
+    "models": []
+  },
+  {
+    "brand": "SMZ",
+    "url": "https://www.car.info/en-se/smz",
+    "models": []
+  },
+  {
+    "brand": "SOL",
+    "url": "https://www.car.info/en-se/sol",
+    "models": []
+  },
+  {
+    "brand": "Solectria",
+    "url": "https://www.car.info/en-se/solectria",
+    "models": []
+  },
+  {
+    "brand": "Sony",
+    "url": "https://www.car.info/en-se/sony",
+    "models": []
+  },
+  {
+    "brand": "Soueast",
+    "url": "https://www.car.info/en-se/soueast",
+    "models": []
+  },
+  {
+    "brand": "Speedwell",
+    "url": "https://www.car.info/en-se/speedwell",
+    "models": []
+  },
+  {
+    "brand": "Spyker",
+    "url": "https://www.car.info/en-se/spyker",
+    "models": []
+  },
+  {
+    "brand": "Squire",
+    "url": "https://www.car.info/en-se/squire",
+    "models": []
+  },
+  {
+    "brand": "SRT",
+    "url": "https://www.car.info/en-se/srt",
+    "models": []
+  },
+  {
+    "brand": "SSC",
+    "url": "https://www.car.info/en-se/ssc",
+    "models": []
+  },
+  {
+    "brand": "Stabilimenti Farina",
+    "url": "https://www.car.info/en-se/stabilimenti-farina",
+    "models": []
+  },
+  {
+    "brand": "Stanguellini",
+    "url": "https://www.car.info/en-se/stanguellini",
+    "models": []
+  },
+  {
+    "brand": "Star (UK)",
+    "url": "https://www.car.info/en-se/star-uk",
+    "models": []
+  },
+  {
+    "brand": "STARTECH",
+    "url": "https://www.car.info/en-se/startech",
+    "models": []
+  },
+  {
+    "brand": "Statesman",
+    "url": "https://www.car.info/en-se/statesman",
+    "models": []
+  },
+  {
+    "brand": "Stearns-Knight",
+    "url": "https://www.car.info/en-se/stearns-knight",
+    "models": []
+  },
+  {
+    "brand": "Sterling",
+    "url": "https://www.car.info/en-se/sterling",
+    "models": []
+  },
+  {
+    "brand": "Sterling Trucks",
+    "url": "https://www.car.info/en-se/sterling-trucks",
+    "models": []
+  },
+  {
+    "brand": "Stevens-Duryea",
+    "url": "https://www.car.info/en-se/stevens-duryea",
+    "models": []
+  },
+  {
+    "brand": "Steyr",
+    "url": "https://www.car.info/en-se/steyr",
+    "models": []
+  },
+  {
+    "brand": "Steyr-Puch",
+    "url": "https://www.car.info/en-se/steyr-puch",
+    "models": []
+  },
+  {
+    "brand": "Sussita",
+    "url": "https://www.car.info/en-se/sussita",
+    "models": []
+  },
+  {
+    "brand": "SVE",
+    "url": "https://www.car.info/en-se/sve",
+    "models": []
+  },
+  {
+    "brand": "SVS",
+    "url": "https://www.car.info/en-se/svs",
+    "models": []
+  },
+  {
+    "brand": "Swebe",
+    "url": "https://www.car.info/en-se/swebe",
+    "models": []
+  },
+  {
+    "brand": "SWM",
+    "url": "https://www.car.info/en-se/swm",
+    "models": []
+  },
+  {
+    "brand": "T-King",
+    "url": "https://www.car.info/en-se/t-king",
+    "models": []
+  },
+  {
+    "brand": "TagAZ",
+    "url": "https://www.car.info/en-se/tagaz",
+    "models": []
+  },
+  {
+    "brand": "TARK",
+    "url": "https://www.car.info/en-se/tark",
+    "models": []
+  },
+  {
+    "brand": "Tata",
+    "url": "https://www.car.info/en-se/tata",
+    "models": []
+  },
+  {
+    "brand": "Tauro",
+    "url": "https://www.car.info/en-se/tauro",
+    "models": []
+  },
+  {
+    "brand": "Tazzari",
+    "url": "https://www.car.info/en-se/tazzari",
+    "models": []
+  },
+  {
+    "brand": "TEC",
+    "url": "https://www.car.info/en-se/tec",
+    "models": []
+  },
+  {
+    "brand": "Techrules",
+    "url": "https://www.car.info/en-se/techrules",
+    "models": []
+  },
+  {
+    "brand": "Tedson",
+    "url": "https://www.car.info/en-se/tedson",
+    "models": []
+  },
+  {
+    "brand": "Tekaydinlar",
+    "url": "https://www.car.info/en-se/tekaydinlar",
+    "models": []
+  },
+  {
+    "brand": "Tensor",
+    "url": "https://www.car.info/en-se/tensor",
+    "models": []
+  },
+  {
+    "brand": "Thai Rung",
+    "url": "https://www.car.info/en-se/thai-rung",
+    "models": []
+  },
+  {
+    "brand": "Thomas",
+    "url": "https://www.car.info/en-se/thomas",
+    "models": []
+  },
+  {
+    "brand": "Thornycroft",
+    "url": "https://www.car.info/en-se/thornycroft",
+    "models": []
+  },
+  {
+    "brand": "Thunder Power",
+    "url": "https://www.car.info/en-se/thunder-power",
+    "models": []
+  },
+  {
+    "brand": "Tiga",
+    "url": "https://www.car.info/en-se/tiga",
+    "models": []
+  },
+  {
+    "brand": "TMS",
+    "url": "https://www.car.info/en-se/tms",
+    "models": []
+  },
+  {
+    "brand": "TMZ",
+    "url": "https://www.car.info/en-se/tmz",
+    "models": []
+  },
+  {
+    "brand": "Tofaş",
+    "url": "https://www.car.info/en-se/tofas",
+    "models": []
+  },
+  {
+    "brand": "Togg",
+    "url": "https://www.car.info/en-se/togg",
+    "models": []
+  },
+  {
+    "brand": "Tony Huber",
+    "url": "https://www.car.info/en-se/tony-huber",
+    "models": []
+  },
+  {
+    "brand": "Top Secret",
+    "url": "https://www.car.info/en-se/top-secret",
+    "models": []
+  },
+  {
+    "brand": "Toroidion",
+    "url": "https://www.car.info/en-se/toroidion",
+    "models": []
+  },
+  {
+    "brand": "Touring Superleggera",
+    "url": "https://www.car.info/en-se/touring-superleggera",
+    "models": []
+  },
+  {
+    "brand": "Tramontana",
+    "url": "https://www.car.info/en-se/tramontana",
+    "models": []
+  },
+  {
+    "brand": "TransAm Depot",
+    "url": "https://www.car.info/en-se/transam-depot",
+    "models": []
+  },
+  {
+    "brand": "Traum",
+    "url": "https://www.car.info/en-se/traum",
+    "models": []
+  },
+  {
+    "brand": "Trident",
+    "url": "https://www.car.info/en-se/trident",
+    "models": []
+  },
+  {
+    "brand": "Trigano",
+    "url": "https://www.car.info/en-se/trigano",
+    "models": []
+  },
+  {
+    "brand": "Trion",
+    "url": "https://www.car.info/en-se/trion",
+    "models": []
+  },
+  {
+    "brand": "TriVette",
+    "url": "https://www.car.info/en-se/trivette",
+    "models": []
+  },
+  {
+    "brand": "Troller",
+    "url": "https://www.car.info/en-se/troller",
+    "models": []
+  },
+  {
+    "brand": "Trumpchi",
+    "url": "https://www.car.info/en-se/trumpchi",
+    "models": []
+  },
+  {
+    "brand": "Tucker",
+    "url": "https://www.car.info/en-se/tucker",
+    "models": []
+  },
+  {
+    "brand": "Turner",
+    "url": "https://www.car.info/en-se/turner",
+    "models": []
+  },
+  {
+    "brand": "Tushek",
+    "url": "https://www.car.info/en-se/tushek",
+    "models": []
+  },
+  {
+    "brand": "TWR",
+    "url": "https://www.car.info/en-se/twr",
+    "models": []
+  },
+  {
+    "brand": "UMM",
+    "url": "https://www.car.info/en-se/umm",
+    "models": []
+  },
+  {
+    "brand": "Unic",
+    "url": "https://www.car.info/en-se/unic",
+    "models": []
+  },
+  {
+    "brand": "UNO",
+    "url": "https://www.car.info/en-se/uno",
+    "models": []
+  },
+  {
+    "brand": "UNVI",
+    "url": "https://www.car.info/en-se/unvi",
+    "models": []
+  },
+  {
+    "brand": "UralZIS",
+    "url": "https://www.car.info/en-se/uralzis",
+    "models": []
+  },
+  {
+    "brand": "VAM",
+    "url": "https://www.car.info/en-se/vam",
+    "models": []
+  },
+  {
+    "brand": "Van Diemen",
+    "url": "https://www.car.info/en-se/van-diemen",
+    "models": []
+  },
+  {
+    "brand": "Vanda Electrics",
+    "url": "https://www.car.info/en-se/vanda-electrics",
+    "models": []
+  },
+  {
+    "brand": "Vanderhall",
+    "url": "https://www.car.info/en-se/vanderhall",
+    "models": []
+  },
+  {
+    "brand": "Vantage",
+    "url": "https://www.car.info/en-se/vantage",
+    "models": []
+  },
+  {
+    "brand": "Varsovia",
+    "url": "https://www.car.info/en-se/varsovia",
+    "models": []
+  },
+  {
+    "brand": "VB Automotive",
+    "url": "https://www.car.info/en-se/vb-automotive",
+    "models": []
+  },
+  {
+    "brand": "Vector Motors",
+    "url": "https://www.car.info/en-se/vector-motors",
+    "models": []
+  },
+  {
+    "brand": "Vega",
+    "url": "https://www.car.info/en-se/vega",
+    "models": []
+  },
+  {
+    "brand": "Vehixel",
+    "url": "https://www.car.info/en-se/vehixel",
+    "models": []
+  },
+  {
+    "brand": "Vencer",
+    "url": "https://www.car.info/en-se/vencer",
+    "models": []
+  },
+  {
+    "brand": "Venturi",
+    "url": "https://www.car.info/en-se/venturi",
+    "models": []
+  },
+  {
+    "brand": "Venucia",
+    "url": "https://www.car.info/en-se/venucia",
+    "models": []
+  },
+  {
+    "brand": "Victress",
+    "url": "https://www.car.info/en-se/victress",
+    "models": []
+  },
+  {
+    "brand": "Viking",
+    "url": "https://www.car.info/en-se/viking",
+    "models": []
+  },
+  {
+    "brand": "Vincent Motorcycles",
+    "url": "https://www.car.info/en-se/vincent-motorcycles",
+    "models": []
+  },
+  {
+    "brand": "VinFast",
+    "url": "https://www.car.info/en-se/vinfast",
+    "models": []
+  },
+  {
+    "brand": "Viritech",
+    "url": "https://www.car.info/en-se/viritech",
+    "models": []
+  },
+  {
+    "brand": "VLF",
+    "url": "https://www.car.info/en-se/vlf",
+    "models": []
+  },
+  {
+    "brand": "VOLT",
+    "url": "https://www.car.info/en-se/volt",
+    "models": []
+  },
+  {
+    "brand": "Volvo Construction Equipment",
+    "url": "https://www.car.info/en-se/volvo-construction-equipment",
+    "models": []
+  },
+  {
+    "brand": "Vortex",
+    "url": "https://www.car.info/en-se/vortex",
+    "models": []
+  },
+  {
+    "brand": "Voyah",
+    "url": "https://www.car.info/en-se/voyah",
+    "models": []
+  },
+  {
+    "brand": "VPMZ",
+    "url": "https://www.car.info/en-se/vpmz",
+    "models": []
+  },
+  {
+    "brand": "VUHL",
+    "url": "https://www.car.info/en-se/vuhl",
+    "models": []
+  },
+  {
+    "brand": "W Motors",
+    "url": "https://www.car.info/en-se/w-motors",
+    "models": []
+  },
+  {
+    "brand": "Wallys",
+    "url": "https://www.car.info/en-se/wallys",
+    "models": []
+  },
+  {
+    "brand": "Wanderer Motorcycles",
+    "url": "https://www.car.info/en-se/wanderer-motorcycles",
+    "models": []
+  },
+  {
+    "brand": "Weber",
+    "url": "https://www.car.info/en-se/weber",
+    "models": []
+  },
+  {
+    "brand": "Weiwang",
+    "url": "https://www.car.info/en-se/weiwang",
+    "models": []
+  },
+  {
+    "brand": "Weltmeister",
+    "url": "https://www.car.info/en-se/weltmeister",
+    "models": []
+  },
+  {
+    "brand": "Westfalia Mobil",
+    "url": "https://www.car.info/en-se/westfalia-mobil",
+    "models": []
+  },
+  {
+    "brand": "Westfield",
+    "url": "https://www.car.info/en-se/westfield",
+    "models": []
+  },
+  {
+    "brand": "White",
+    "url": "https://www.car.info/en-se/white",
+    "models": []
+  },
+  {
+    "brand": "Williams",
+    "url": "https://www.car.info/en-se/williams",
+    "models": []
+  },
+  {
+    "brand": "Willys-Knight",
+    "url": "https://www.car.info/en-se/willys-knight",
+    "models": []
+  },
+  {
+    "brand": "Winnebago",
+    "url": "https://www.car.info/en-se/winnebago",
+    "models": []
+  },
+  {
+    "brand": "Winton",
+    "url": "https://www.car.info/en-se/winton",
+    "models": []
+  },
+  {
+    "brand": "Worblaufen",
+    "url": "https://www.car.info/en-se/worblaufen",
+    "models": []
+  },
+  {
+    "brand": "Wuling",
+    "url": "https://www.car.info/en-se/wuling",
+    "models": []
+  },
+  {
+    "brand": "Xiali",
+    "url": "https://www.car.info/en-se/xiali",
+    "models": []
+  },
+  {
+    "brand": "Xiaomi",
+    "url": "https://www.car.info/en-se/xiaomi",
+    "models": []
+  },
+  {
+    "brand": "Yale",
+    "url": "https://www.car.info/en-se/yale",
+    "models": []
+  },
+  {
+    "brand": "Yangwang",
+    "url": "https://www.car.info/en-se/yangwang",
+    "models": []
+  },
+  {
+    "brand": "Yaxa",
+    "url": "https://www.car.info/en-se/yaxa",
+    "models": []
+  },
+  {
+    "brand": "Yema",
+    "url": "https://www.car.info/en-se/yema",
+    "models": []
+  },
+  {
+    "brand": "Yes!",
+    "url": "https://www.car.info/en-se/yes",
+    "models": []
+  },
+  {
+    "brand": "Youngman Lotus",
+    "url": "https://www.car.info/en-se/youngman-lotus",
+    "models": []
+  },
+  {
+    "brand": "Yugo",
+    "url": "https://www.car.info/en-se/yugo",
+    "models": []
+  },
+  {
+    "brand": "Yulon",
+    "url": "https://www.car.info/en-se/yulon",
+    "models": []
+  },
+  {
+    "brand": "ZAP",
+    "url": "https://www.car.info/en-se/zap",
+    "models": []
+  },
+  {
+    "brand": "Zarooq Motors",
+    "url": "https://www.car.info/en-se/zarooq-motors",
+    "models": []
+  },
+  {
+    "brand": "Zedriv",
+    "url": "https://www.car.info/en-se/zedriv",
+    "models": []
+  },
+  {
+    "brand": "Zender",
+    "url": "https://www.car.info/en-se/zender",
+    "models": []
+  },
+  {
+    "brand": "Zenith Motorcycles",
+    "url": "https://www.car.info/en-se/zenith-motorcycles",
+    "models": []
+  },
+  {
+    "brand": "ZENN",
+    "url": "https://www.car.info/en-se/zenn",
+    "models": []
+  },
+  {
+    "brand": "Zenos",
+    "url": "https://www.car.info/en-se/zenos",
+    "models": []
+  },
+  {
+    "brand": "Zenvo",
+    "url": "https://www.car.info/en-se/zenvo",
+    "models": []
+  },
+  {
+    "brand": "ZiL",
+    "url": "https://www.car.info/en-se/zil",
+    "models": []
+  },
+  {
+    "brand": "Zinoro",
+    "url": "https://www.car.info/en-se/zinoro",
+    "models": []
+  },
+  {
+    "brand": "ZiS",
+    "url": "https://www.car.info/en-se/zis",
+    "models": []
+  },
+  {
+    "brand": "ZNA",
+    "url": "https://www.car.info/en-se/zna",
+    "models": []
+  },
+  {
+    "brand": "Zoe",
+    "url": "https://www.car.info/en-se/zoe",
+    "models": []
+  },
+  {
+    "brand": "Zotye",
+    "url": "https://www.car.info/en-se/zotye",
+    "models": []
+  },
+  {
+    "brand": "ZX",
+    "url": "https://www.car.info/en-se/zx",
+    "models": []
+  },
+  {
+    "brand": "9FF",
+    "url": "https://www.car.info/en-se/9ff",
+    "models": []
+  },
+  {
+    "brand": "ɛ̃fini",
+    "url": "https://www.car.info/en-se/fini",
+    "models": []
+  }
+]

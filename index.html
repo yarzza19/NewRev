@@ -2411,7 +2411,10 @@ Descripción de la pieza: ${textVal}`;
         renderCalendario();
         initForos();
 
-        // ── Gráficas de crisis ─────────────────────────────────────────────
+    </script>
+
+    <!-- ── Gráficas de crisis (script aislado para evitar que errores previos lo bloqueen) ── -->
+    <script>
         function initCrisisCharts() {
             const years = [2000,2002,2004,2006,2008,2010,2012,2014,2016,2018,2020,2022,2024,2026,2028,2030,2032,2035];
             const supply = [100,96,91,85,78,70,61,52,44,37,30,24,19,14,10,7,4,2];
@@ -2548,7 +2551,9 @@ Descripción de la pieza: ${textVal}`;
         } else {
             window.addEventListener('load', launchCrisisCharts);
         }
+    </script>
 
+    <script>
         // ── Calendario de retos ─────────────────────────────────────────────
         const CALENDARIO = [
             { mes: 'Enero',      marca: 'Biscúter',    estado: 'completado', piezas: 3,  icono: '🏆' },

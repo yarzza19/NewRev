@@ -1,3 +1,9 @@
 node_modules/
 .DS_Store
 .env
+uploads/
+boveda_segura_newrev/
+comunidad_piezas.json
+temp_brands.json
+temp.html
+*.log

@@ -14,6 +14,9 @@ const nodemailer = require('nodemailer');
 
 const PORT = 3000;
 const PROJECT_DIR = __dirname;
+
+// Token secreto para el endpoint admin (solo tú lo conoces)
+const ADMIN_TOKEN = process.env.ADMIN_TOKEN || 'newrev-admin-local-only';
 const FRAMES_DIR = 'C:\\Users\\pablo\\Desktop\\addicar\\video\\ImageToStl.com_-video-to-webp-converter';
 const DB_FILE = path.join(__dirname, 'comunidad_piezas.json');
 const UPLOADS_DIR = path.join(__dirname, 'uploads');
@@ -48,8 +51,8 @@ if (!fs.existsSync(DB_FILE)) {
 // ── Email config ────────────────────────────────────────────────────────────
 // Para Gmail necesitas una "Contraseña de aplicación":
 // https://myaccount.google.com/apppasswords  (activa 2FA primero)
-const GMAIL_USER = 'pabloyarza19@gmail.com';
-const GMAIL_PASS = process.env.GMAIL_APP_PASS || 'lnphojbekgfrgndg';
+const GMAIL_USER = process.env.GMAIL_USER || '';
+const GMAIL_PASS = process.env.GMAIL_APP_PASS || '';
 
 const transporter = nodemailer.createTransport({
     service: 'gmail',
@@ -356,19 +359,22 @@ const server = http.createServer((req, res) => {
         return;
     }
 
-    // ── Novedad: GET /admin/descargar/:archivo (Descarga para tu Impresora 3D) 
+    // ── GET /admin/descargar/:archivo — solo con token de administrador
     if (req.method === 'GET' && urlPath.startsWith('/admin/descargar/')) {
+        const authHeader = req.headers['x-admin-token'] || '';
+        if (authHeader !== ADMIN_TOKEN) {
+            res.writeHead(403, { 'Content-Type': 'application/json' });
+            return res.end(JSON.stringify({ error: 'Acceso denegado.' }));
+        }
         const fileName = path.basename(urlPath);
         const filePath = path.join(VAULT_DIR, fileName);
-
         if (fs.existsSync(filePath)) {
             console.log(`📦 Enviando archivo para impresión: ${fileName}`);
             res.writeHead(200, {
                 'Content-Type': 'application/octet-stream',
                 'Content-Disposition': `attachment; filename="${fileName}"`
             });
-            const stream = fs.createReadStream(filePath);
-            stream.pipe(res);
+            fs.createReadStream(filePath).pipe(res);
         } else {
             res.writeHead(404, { 'Content-Type': 'application/json' });
             return res.end(JSON.stringify({ error: 'El archivo no existe en la bóveda.' }));
@@ -376,13 +382,18 @@ const server = http.createServer((req, res) => {
         return;
     }
 
-    // ── Serve uploads ────────────────────────────────────────────────────────
+    // ── Serve uploads — solo imágenes, nunca modelos 3D ─────────────────────
     if (urlPath.startsWith('/uploads/')) {
         const filename = path.basename(urlPath);
         const filePath = path.join(UPLOADS_DIR, filename);
+        const ext = path.extname(filePath).toLowerCase();
+        const allowedUploadExts = ['.jpg', '.jpeg', '.png', '.webp', '.gif'];
+        if (!allowedUploadExts.includes(ext)) {
+            res.writeHead(403, { 'Content-Type': 'application/json' });
+            return res.end(JSON.stringify({ error: 'Tipo de archivo no permitido.' }));
+        }
         fs.readFile(filePath, (err, data) => {
             if (err) { res.writeHead(404); return res.end('File not found'); }
-            const ext = path.extname(filePath).toLowerCase();
             res.writeHead(200, { 'Content-Type': MIME[ext] || 'application/octet-stream' });
             res.end(data);
         });
@@ -619,9 +630,28 @@ REGLAS DE COMPORTAMIENTO MUY IMPORTANTES (SÍGUELAS ESTRICTAMENTE):
         return;
     }
 
+    // ── Bloquear descarga directa de modelos 3D ──────────────────────────────
+    const blocked3D = ['.glb', '.gltf', '.stl', '.obj', '.step', '.stp', '.3mf'];
+    const reqExt = path.extname(urlPath).toLowerCase();
+    if (blocked3D.includes(reqExt)) {
+        res.writeHead(403, { 'Content-Type': 'application/json' });
+        return res.end(JSON.stringify({ error: 'Descarga de modelos 3D no permitida.' }));
+    }
+
+    // ── Bloquear acceso a archivos sensibles del servidor ────────────────────
+    const blockedPaths = ['/server.js', '/.env', '/comunidad_piezas.json', '/package.json', '/package-lock.json'];
+    if (blockedPaths.includes(urlPath) || urlPath.startsWith('/node_modules') || urlPath.startsWith('/boveda_segura_newrev') || urlPath.startsWith('/uploads/')) {
+        res.writeHead(403, { 'Content-Type': 'application/json' });
+        return res.end(JSON.stringify({ error: 'Acceso denegado.' }));
+    }
+
     // ── Serve project files ─────────────────────────────────────────────────
     const servePath = urlPath === '/' ? '/index.html' : urlPath;
     const filePath = path.join(PROJECT_DIR, servePath);
+    // Protección path traversal: asegurarse de que el archivo está dentro del proyecto
+    if (!filePath.startsWith(PROJECT_DIR)) {
+        res.writeHead(403); return res.end('Acceso denegado.');
+    }
     const ext = path.extname(filePath).toLowerCase();
 
     fs.readFile(filePath, (err, data) => {
@@ -629,6 +659,8 @@ REGLAS DE COMPORTAMIENTO MUY IMPORTANTES (SÍGUELAS ESTRICTAMENTE):
         res.writeHead(200, {
             'Content-Type': MIME[ext] || 'application/octet-stream',
             'Cache-Control': 'no-cache',
+            'X-Content-Type-Options': 'nosniff',
+            'X-Frame-Options': 'SAMEORIGIN',
         });
         res.end(data);
     });

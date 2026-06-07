@@ -168,6 +168,46 @@ const server = http.createServer((req, res) => {
         return;
     }
 
+    // ── POST /send-contact ──────────────────────────────────────────────────
+    if (req.method === 'POST' && urlPath === '/send-contact') {
+        const chunks = [];
+        req.on('data', c => chunks.push(c));
+        req.on('end', () => {
+            let body;
+            try { body = JSON.parse(Buffer.concat(chunks).toString()); } catch (e) {
+                res.writeHead(400, { 'Content-Type': 'application/json' });
+                return res.end(JSON.stringify({ ok: false, error: 'Bad request' }));
+            }
+            const { name, email, subject, message } = body;
+            const mailOptions = {
+                from: `"NewRev Web" <${GMAIL_USER}>`,
+                to: GMAIL_USER,
+                replyTo: email,
+                subject: `✉️ Contacto NewRev: ${subject || 'Sin asunto'}`,
+                html: `
+                    <h2 style="color:#1a1a2e;">Nuevo mensaje de contacto</h2>
+                    <hr/>
+                    <p><strong>Nombre:</strong> ${String(name).replace(/</g,'&lt;')}</p>
+                    <p><strong>Email:</strong> ${String(email).replace(/</g,'&lt;')}</p>
+                    <p><strong>Asunto:</strong> ${String(subject).replace(/</g,'&lt;')}</p>
+                    <hr/>
+                    <h3>Mensaje:</h3>
+                    <p style="white-space:pre-wrap;font-family:sans-serif;">${String(message).replace(/</g,'&lt;')}</p>
+                    <hr/>
+                    <p style="color:#888;font-size:12px;">Enviado desde <strong>newrev.local</strong></p>
+                `,
+            };
+            transporter.sendMail(mailOptions, (err, info) => {
+                res.setHeader('Access-Control-Allow-Origin', '*');
+                res.setHeader('Content-Type', 'application/json');
+                if (err) { res.writeHead(500); return res.end(JSON.stringify({ ok: false, error: err.message })); }
+                res.writeHead(200);
+                res.end(JSON.stringify({ ok: true }));
+            });
+        });
+        return;
+    }
+
     // ── GET /api/comunidad ──────────────────────────────────────────────────
     if (req.method === 'GET' && urlPath === '/api/comunidad') {
         const data = fs.readFileSync(DB_FILE, 'utf8');

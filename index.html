@@ -12,6 +12,7 @@
     <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@200;300;400;500;600;700&display=swap"
         rel="stylesheet" />
     <link rel="stylesheet" href="style.css?v=2" />
+    <script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.2/dist/chart.umd.min.js"></script>
 </head>
 
 <body>
@@ -41,10 +42,29 @@
         <!-- Opciones Derecha -->
         <ul class="nav-links" style="justify-self: start; gap: 40px; margin: 0 0 0 50px; padding: 0;">
             <li><a href="#comunidad">Comunidad</a></li>
-            <li><a href="#about">Nosotros</a></li>
+            <li><a href="#foros">Foros</a></li>
+            <li><a href="#calendario">Retos</a></li>
             <li><a href="#contact">Contacto</a></li>
         </ul>
+
+        <!-- Botón hamburguesa (solo móvil) -->
+        <button class="nav-hamburger" id="nav-hamburger" aria-label="Abrir menú" aria-expanded="false" onclick="toggleMobileMenu()">
+            <span></span>
+            <span></span>
+            <span></span>
+        </button>
     </nav>
+
+    <!-- Menú móvil desplegable -->
+    <div class="mobile-menu" id="mobile-menu" aria-hidden="true">
+        <ul>
+            <li><a href="#" onclick="toggleCatalogos(event); closeMobileMenu()">Catálogos</a></li>
+            <li><a href="#coches" onclick="closeMobileMenu()">Coches</a></li>
+            <li><a href="#comunidad" onclick="closeMobileMenu()">Comunidad</a></li>
+            <li><a href="#about" onclick="closeMobileMenu()">Nosotros</a></li>
+            <li><a href="#contact" onclick="closeMobileMenu()">Contacto</a></li>
+        </ul>
+    </div>
 
     <!-- ══════════════════════════════════════════════════════════
        HERO TEXT SECTION
@@ -72,6 +92,22 @@
 
     <section id="hero-text">
         <p class="unicorn-eyebrow">EXPERIENCIA INMERSIVA</p>
+        <div class="hero-stats-row">
+            <div class="hero-stat-pill">
+                <span class="hero-stat-num" data-target="47">0</span>
+                <span class="hero-stat-lbl">piezas digitalizadas</span>
+            </div>
+            <div class="hero-stat-sep"></div>
+            <div class="hero-stat-pill">
+                <span class="hero-stat-num" data-target="12">0</span>
+                <span class="hero-stat-lbl">marcas catalogadas</span>
+            </div>
+            <div class="hero-stat-sep"></div>
+            <div class="hero-stat-pill">
+                <span class="hero-stat-num" data-target="100">0</span>
+                <span class="hero-stat-lbl">% open source</span>
+            </div>
+        </div>
         <h1 class="unicorn-headline">El Futuro<br />del Coleccionismo</h1>
         <p class="unicorn-sub">Vehículos de alto rendimiento, seleccionados con precisión.</p>
         <p class="hero-description">Bienvenido a la biblioteca digital de piezas de coches clásicos. Este proyecto,
@@ -89,6 +125,51 @@
     </section>
 
     <!-- ══════════════════════════════════════════════════════════
+       BUSCADOR — encima del vídeo
+    ═══════════════════════════════════════════════════════════ -->
+    <div id="search-above-video">
+        <p class="search-above-eyebrow">ENCUENTRA TU PIEZA</p>
+        <h2 class="search-above-title">¿Qué pieza necesitas?</h2>
+
+        <!-- Búsqueda global -->
+        <div class="global-parts-search">
+            <div class="global-search-wrap">
+                <span class="global-search-icon">🔍</span>
+                <input type="text" id="global-part-search" class="global-search-input" placeholder="Busca una pieza directamente: culata, pistón, soporte..." oninput="onGlobalPartSearch()" autocomplete="off" />
+                <button id="global-search-clear" class="parts-clear-btn" onclick="clearGlobalSearch()" style="display:none;">✕</button>
+            </div>
+            <div id="global-search-results" class="global-search-results" style="display:none;"></div>
+        </div>
+
+        <div class="global-search-divider"><span>o busca por marca y modelo</span></div>
+
+        <!-- Buscador Marca → Modelo -->
+        <div class="parts-search-bar" style="overflow:visible;">
+            <div class="parts-search-group">
+                <label class="parts-search-label" for="brand-search">Marca</label>
+                <div class="parts-input-wrap" style="position:relative;">
+                    <input type="text" id="brand-search" class="parts-input" placeholder="Ej: BMW, Biscúter, Renault..." oninput="onBrandFilterInput()" onfocus="onBrandFilterInput()" onblur="setTimeout(()=>hideBrandDropdown(),150)" autocomplete="off">
+                    <button id="brand-clear-btn" class="parts-clear-btn" onclick="clearBrandFilter()" style="display:none;">✕</button>
+                    <div id="brand-dropdown" class="search-dropdown" style="display:none;"></div>
+                </div>
+                <div id="brand-locked-chip" class="brand-locked-chip" style="display:none;"></div>
+            </div>
+            <div class="parts-search-arrow" id="filter-arrow">→</div>
+            <div class="parts-search-group" id="model-filter-group" style="opacity:0.35; pointer-events:none; transition: opacity 0.3s;">
+                <label class="parts-search-label" for="model-search">Modelo</label>
+                <div class="parts-input-wrap" style="position:relative;">
+                    <input type="text" id="model-search" class="parts-input" placeholder="Selecciona primero una marca..." oninput="onModelFilterInput()" onfocus="onModelFilterInput()" onblur="setTimeout(()=>hideModelDropdown(),150)" autocomplete="off" disabled>
+                    <button id="model-clear-btn" class="parts-clear-btn" onclick="clearModelFilter()" style="display:none;">✕</button>
+                    <div id="model-dropdown" class="search-dropdown" style="display:none;"></div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Resultados inline -->
+        <div id="brands-wizard-container" class="search-above-results"></div>
+    </div>
+
+    <!-- ══════════════════════════════════════════════════════════
        SCROLL ANIMATION SECTION (Secuencia de imágenes)
     ═══════════════════════════════════════════════════════════ -->
     <section id="scroll-animation-section" style="position: relative; height: 300vh; background-color: #000;">
@@ -102,6 +183,86 @@
         </div>
     </section>
 
+
+    <!-- ══════════════════════════════════════════════════════════
+       CRISIS SECTION — El problema de las piezas descontinuadas
+  ═══════════════════════════════════════════════════════════ -->
+    <section id="crisis">
+        <div class="crisis-inner">
+
+            <div class="crisis-header">
+                <span class="section-tag">EL PROBLEMA</span>
+                <h2 class="section-heading">El mercado de piezas clásicas<br/>está desapareciendo</h2>
+                <p class="section-body">A medida que los vehículos clásicos envejecen, los fabricantes dejan de producir recambios. La oferta cae en picado mientras la demanda de los coleccionistas no para de crecer. El resultado: un mercado roto donde encontrar una pieza es cuestión de suerte.</p>
+            </div>
+
+            <!-- KPI row -->
+            <div class="crisis-kpis">
+                <div class="crisis-kpi">
+                    <span class="crisis-kpi-num">−68%</span>
+                    <span class="crisis-kpi-label">de piezas OEM disponibles para vehículos &gt;30 años</span>
+                </div>
+                <div class="crisis-kpi crisis-kpi--up">
+                    <span class="crisis-kpi-num">+340%</span>
+                    <span class="crisis-kpi-label">de crecimiento del mercado de coches clásicos (2000–2024)</span>
+                </div>
+                <div class="crisis-kpi">
+                    <span class="crisis-kpi-num">4.2M</span>
+                    <span class="crisis-kpi-label">vehículos clásicos inmovilizados por falta de repuestos en Europa</span>
+                </div>
+            </div>
+
+            <!-- Gráfica principal -->
+            <div class="crisis-chart-wrap glass-panel">
+                <div class="crisis-chart-header">
+                    <div>
+                        <h3 class="crisis-chart-title">Oferta vs. Demanda de piezas para vehículos clásicos</h3>
+                        <p class="crisis-chart-sub">Índice normalizado 100 = año 2000 · Proyección hasta 2035</p>
+                    </div>
+                    <div class="crisis-legend">
+                        <span class="crisis-legend-dot crisis-legend-dot--supply"></span><span>Disponibilidad OEM</span>
+                        <span class="crisis-legend-dot crisis-legend-dot--demand"></span><span>Demanda coleccionistas</span>
+                        <span class="crisis-legend-dot crisis-legend-dot--gap"></span><span>Brecha sin cubrir</span>
+                    </div>
+                </div>
+                <div class="crisis-chart-container">
+                    <canvas id="crisis-chart"></canvas>
+                </div>
+                <div class="crisis-annotation" id="crisis-annotation">
+                    <span class="crisis-annotation-year">2026</span>
+                    <span class="crisis-annotation-text">Punto de inflexión — NewRev entra en escena</span>
+                </div>
+            </div>
+
+            <!-- Segunda gráfica: categorías de piezas más críticas -->
+            <div class="crisis-bottom-grid">
+                <div class="crisis-bar-wrap glass-panel">
+                    <h3 class="crisis-chart-title">Piezas más críticas por categoría</h3>
+                    <p class="crisis-chart-sub">% de referencia OEM descatalogadas en vehículos pre-1990</p>
+                    <div class="crisis-bars" id="crisis-bars"></div>
+                </div>
+                <div class="crisis-callout glass-panel">
+                    <div class="crisis-callout-icon">⏳</div>
+                    <h3>¿Qué pasa cuando no se encuentran?</h3>
+                    <ul class="crisis-callout-list">
+                        <li>El vehículo queda inmovilizado indefinidamente</li>
+                        <li>Se recurre a piezas de desguace en mal estado</li>
+                        <li>Se pagan precios desorbitados a especuladores</li>
+                        <li>El patrimonio automovilístico se pierde para siempre</li>
+                    </ul>
+                    <div class="crisis-callout-cta">
+                        <span class="crisis-callout-label">La solución</span>
+                        <p>Digitalización 3D + fabricación aditiva bajo demanda</p>
+                        <a href="#coches" class="unicorn-cta" style="margin-top:16px; display:inline-flex;">
+                            <span>Ver el catálogo</span>
+                            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+                        </a>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </section>
 
     <!-- ══════════════════════════════════════════════════════════
        CATÁLOGOS SECTION
@@ -129,44 +290,40 @@
             <!-- Metales Panel -->
             <div class="cat-panel active" id="panel-metales" role="tabpanel">
                 <div class="cat-grid">
-                    <div class="cat-card">
+                    <div class="cat-card" onclick="openMaterialModal('acero316l')">
                         <div class="cat-card-img" style="background: linear-gradient(135deg,#b8bcc8,#8a8f9e);"></div>
                         <div class="cat-card-body">
                             <span class="cat-card-tag">Ferromagnético</span>
                             <h3 class="cat-card-title">Acero Inoxidable 316L</h3>
-                            <p class="cat-card-desc">Alta resistencia a la corrosión. Ideal para piezas estructurales y
-                                componentes de precisión.</p>
-                            <a href="#" class="cat-card-cta">Ver detalles →</a>
+                            <p class="cat-card-desc">Alta resistencia a la corrosión. Ideal para piezas estructurales y componentes de precisión.</p>
+                            <span class="cat-card-cta">Ver detalles →</span>
                         </div>
                     </div>
-                    <div class="cat-card">
+                    <div class="cat-card" onclick="openMaterialModal('aluminio6061')">
                         <div class="cat-card-img" style="background: linear-gradient(135deg,#e8c87a,#c9952a);"></div>
                         <div class="cat-card-body">
                             <span class="cat-card-tag">No Ferroso</span>
                             <h3 class="cat-card-title">Aluminio 6061-T6</h3>
-                            <p class="cat-card-desc">Ligero y resistente. Excelente maquinabilidad para componentes
-                                aeroespaciales y automotrices.</p>
-                            <a href="#" class="cat-card-cta">Ver detalles →</a>
+                            <p class="cat-card-desc">Ligero y resistente. Excelente maquinabilidad para componentes aeroespaciales y automotrices.</p>
+                            <span class="cat-card-cta">Ver detalles →</span>
                         </div>
                     </div>
-                    <div class="cat-card">
+                    <div class="cat-card" onclick="openMaterialModal('cobreC110')">
                         <div class="cat-card-img" style="background: linear-gradient(135deg,#d4a574,#b87333);"></div>
                         <div class="cat-card-body">
                             <span class="cat-card-tag">Conductor</span>
                             <h3 class="cat-card-title">Cobre Electrolítico C110</h3>
-                            <p class="cat-card-desc">Pureza ≥99.9%. Conductividad eléctrica y térmica superior para
-                                aplicaciones industriales.</p>
-                            <a href="#" class="cat-card-cta">Ver detalles →</a>
+                            <p class="cat-card-desc">Pureza ≥99.9%. Conductividad eléctrica y térmica superior para aplicaciones industriales.</p>
+                            <span class="cat-card-cta">Ver detalles →</span>
                         </div>
                     </div>
-                    <div class="cat-card">
+                    <div class="cat-card" onclick="openMaterialModal('titanioG5')">
                         <div class="cat-card-img" style="background: linear-gradient(135deg,#e8e8e8,#a0a0a0);"></div>
                         <div class="cat-card-body">
                             <span class="cat-card-tag">Ligero</span>
                             <h3 class="cat-card-title">Titanio Grado 5 (Ti-6Al-4V)</h3>
-                            <p class="cat-card-desc">La mejor relación resistencia/peso. Biocompatible y resistente a
-                                temperaturas extremas.</p>
-                            <a href="#" class="cat-card-cta">Ver detalles →</a>
+                            <p class="cat-card-desc">La mejor relación resistencia/peso. Biocompatible y resistente a temperaturas extremas.</p>
+                            <span class="cat-card-cta">Ver detalles →</span>
                         </div>
                     </div>
                 </div>
@@ -175,44 +332,40 @@
             <!-- Plásticos Panel -->
             <div class="cat-panel" id="panel-plasticos" role="tabpanel">
                 <div class="cat-grid">
-                    <div class="cat-card">
+                    <div class="cat-card" onclick="openMaterialModal('policarbonato')">
                         <div class="cat-card-img" style="background: linear-gradient(135deg,#f0f4ff,#7b9cff);"></div>
                         <div class="cat-card-body">
                             <span class="cat-card-tag">Termoplástico</span>
                             <h3 class="cat-card-title">Policarbonato (PC)</h3>
-                            <p class="cat-card-desc">Alta transparencia y resistencia al impacto. Perfecto para carcasas
-                                y piezas ópticas.</p>
-                            <a href="#" class="cat-card-cta">Ver detalles →</a>
+                            <p class="cat-card-desc">Alta transparencia y resistencia al impacto. Perfecto para carcasas y piezas ópticas.</p>
+                            <span class="cat-card-cta">Ver detalles →</span>
                         </div>
                     </div>
-                    <div class="cat-card">
+                    <div class="cat-card" onclick="openMaterialModal('tpu95a')">
                         <div class="cat-card-img" style="background: linear-gradient(135deg,#fff0f0,#ff8a80);"></div>
                         <div class="cat-card-body">
                             <span class="cat-card-tag">Elastómero</span>
                             <h3 class="cat-card-title">TPU Shore 95A</h3>
-                            <p class="cat-card-desc">Flexible y duradero. Excelente resistencia a la abrasión para
-                                juntas y recubrimientos.</p>
-                            <a href="#" class="cat-card-cta">Ver detalles →</a>
+                            <p class="cat-card-desc">Flexible y duradero. Excelente resistencia a la abrasión para juntas y recubrimientos.</p>
+                            <span class="cat-card-cta">Ver detalles →</span>
                         </div>
                     </div>
-                    <div class="cat-card">
+                    <div class="cat-card" onclick="openMaterialModal('peek450g')">
                         <div class="cat-card-img" style="background: linear-gradient(135deg,#f0fff4,#52c97a);"></div>
                         <div class="cat-card-body">
                             <span class="cat-card-tag">Técnico</span>
                             <h3 class="cat-card-title">PEEK 450G</h3>
-                            <p class="cat-card-desc">Resistencia química y térmica extrema. Sustituto plástico del metal
-                                en entornos agresivos.</p>
-                            <a href="#" class="cat-card-cta">Ver detalles →</a>
+                            <p class="cat-card-desc">Resistencia química y térmica extrema. Sustituto plástico del metal en entornos agresivos.</p>
+                            <span class="cat-card-cta">Ver detalles →</span>
                         </div>
                     </div>
-                    <div class="cat-card">
+                    <div class="cat-card" onclick="openMaterialModal('polipropileno')">
                         <div class="cat-card-img" style="background: linear-gradient(135deg,#fffbf0,#ffcc44);"></div>
                         <div class="cat-card-body">
                             <span class="cat-card-tag">Reciclable</span>
                             <h3 class="cat-card-title">Polipropileno (PP-H)</h3>
-                            <p class="cat-card-desc">Ligero, resistente a químicos y económico. Amplio uso en
-                                contenedores y piezas de automoción.</p>
-                            <a href="#" class="cat-card-cta">Ver detalles →</a>
+                            <p class="cat-card-desc">Ligero, resistente a químicos y económico. Amplio uso en contenedores y piezas de automoción.</p>
+                            <span class="cat-card-cta">Ver detalles →</span>
                         </div>
                     </div>
                 </div>
@@ -224,135 +377,24 @@
        COCHES SECTION
   ═══════════════════════════════════════════════════════════ -->
     <!-- ══════════════════════════════════════════════════════════
+       MODAL — Detalle de material
+  ═══════════════════════════════════════════════════════════ -->
+    <div id="material-modal" class="modal-overlay" style="display:none;" onclick="closeMaterialModal(event)">
+        <div class="modal-content glass-panel material-modal-content" onclick="event.stopPropagation()">
+            <button class="modal-close" onclick="closeMaterialModal()" aria-label="Cerrar">✕</button>
+            <div id="material-modal-header" class="material-modal-header"></div>
+            <div id="material-modal-body" class="material-modal-body"></div>
+        </div>
+    </div>
+
+    <!-- ══════════════════════════════════════════════════════════
        COCHES SECTION (STEP-BY-STEP WIZARD)
   ═══════════════════════════════════════════════════════════ -->
-    <section id="coches">
-        <div class="coches-inner">
-            <span class="section-tag">CONSEGUIR RECAMBIO</span>
-            <h2 class="section-heading">Asistente de Piezas</h2>
-            <p class="section-body" style="margin-bottom: 40px;">Consigue tu pieza perfecta en 3 sencillos pasos.</p>
-
-            <!-- Wizard Progress Bar -->
-            <div class="wizard-progress-bar">
-                <div class="progress-step active" id="prog-step-1" onclick="goToStep(1)">
-                    <span class="step-num">1</span>
-                    <span class="step-label">Vehículo</span>
-                </div>
-                <div class="progress-line" id="prog-line-1"></div>
-                <div class="progress-step" id="prog-step-2" onclick="if(selectedModel) goToStep(2)">
-                    <span class="step-num">2</span>
-                    <span class="step-label">Material</span>
-                </div>
-                <div class="progress-line" id="prog-line-2"></div>
-                <div class="progress-step" id="prog-step-3" onclick="if(selectedModel && selectedMaterial) goToStep(3)">
-                    <span class="step-num">3</span>
-                    <span class="step-label">Piezas</span>
-                </div>
-            </div>
-
-            <!-- Wizard Panels Container -->
-            <div class="wizard-panels">
-                
-                <!-- STEP 1: SELECT VEHICLE -->
-                <div class="wizard-panel active" id="panel-step-1">
-
-                    <!-- Dual filter bar: brand first, then model -->
-                    <div class="wizard-filter-bar">
-                        <!-- FILTER 1: Brand -->
-                        <div class="wizard-filter-group">
-                            <label class="wizard-filter-label" for="brand-search">1. Filtra por Marca</label>
-                            <div class="wizard-filter-input-wrap">
-                                <span class="wizard-filter-icon">🏷️</span>
-                                <input type="text" id="brand-search" class="wizard-filter-input" placeholder="Ej: Renault, BMW, Biscúter..." oninput="onBrandFilterInput()" autocomplete="off">
-                                <button id="brand-clear-btn" class="wizard-filter-clear" onclick="clearBrandFilter()" style="display:none;">✕</button>
-                            </div>
-                            <!-- Locked brand chip shown after selection -->
-                            <div id="brand-locked-chip" class="brand-locked-chip" style="display:none;"></div>
-                        </div>
-
-                        <!-- Arrow connector -->
-                        <div class="wizard-filter-arrow" id="filter-arrow" style="opacity:0.2;">→</div>
-
-                        <!-- FILTER 2: Model (appears once brand is locked) -->
-                        <div class="wizard-filter-group" id="model-filter-group" style="opacity:0.35; pointer-events:none;">
-                            <label class="wizard-filter-label" for="model-search">2. Filtra por Modelo</label>
-                            <div class="wizard-filter-input-wrap">
-                                <span class="wizard-filter-icon">🚗</span>
-                                <input type="text" id="model-search" class="wizard-filter-input" placeholder="Busca un modelo específico..." oninput="onModelFilterInput()" autocomplete="off" disabled>
-                                <button id="model-clear-btn" class="wizard-filter-clear" onclick="clearModelFilter()" style="display:none;">✕</button>
-                            </div>
-                        </div>
-                    </div>
-
-                    <!-- Breadcrumbs / Trail for deep model navigation -->
-                    <div id="wizard-nav-trail" class="wizard-nav-trail" style="display:none; margin-bottom: 20px;">
-                        <!-- dynamic trail -->
-                    </div>
-
-                    <div id="brands-wizard-container">
-                        <!-- Grid of brands or models injected here -->
-                    </div>
-                </div>
-
-                <!-- STEP 2: SELECT MATERIAL -->
-                <div class="wizard-panel" id="panel-step-2">
-                    <div class="step-actions-top" style="margin-bottom: 20px; text-align: left;">
-                        <button class="unicorn-cta" onclick="goToStep(1)" style="padding: 10px 20px;">
-                            <span>← Volver a Vehículo</span>
-                        </button>
-                    </div>
-                    
-                    <h3 class="step-subtitle" style="font-size: 1.5rem; font-weight: 600; margin-bottom: 10px; color: var(--clr-text);">Selecciona el material de fabricación</h3>
-                    <p class="step-subdescription" style="color: var(--clr-muted); margin-bottom: 30px;">Elige las propiedades ideales para fabricar tu recambio con precisión técnica.</p>
-                    
-                    <div class="materials-wizard-grid">
-                        <!-- Metales -->
-                        <div class="materials-group-box glass-panel" style="padding: 24px; border-radius: 16px;">
-                            <h4 style="font-size: 1.2rem; font-weight: 600; margin-bottom: 20px; color: var(--clr-accent); display: flex; align-items: center; gap: 10px;">🔩 Metales Sinterizados</h4>
-                            <div class="materials-group-grid" id="materials-metals-grid" style="display: flex; flex-direction: column; gap: 16px;">
-                                <!-- Metal cards injected here -->
-                            </div>
-                        </div>
-
-                        <!-- Plásticos -->
-                        <div class="materials-group-box glass-panel" style="padding: 24px; border-radius: 16px;">
-                            <h4 style="font-size: 1.2rem; font-weight: 600; margin-bottom: 20px; color: var(--clr-accent2); display: flex; align-items: center; gap: 10px;">◈ Plásticos Técnicos</h4>
-                            <div class="materials-group-grid" id="materials-plastics-grid" style="display: flex; flex-direction: column; gap: 16px;">
-                                <!-- Plastic cards injected here -->
-                            </div>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- STEP 3: VIEW & REQUEST PARTS -->
-                <div class="wizard-panel" id="panel-step-3">
-                    <div class="step-actions-top" style="margin-bottom: 20px; text-align: left; display: flex; gap: 15px;">
-                        <button class="unicorn-cta" onclick="goToStep(2)" style="padding: 10px 20px;">
-                            <span>← Volver a Material</span>
-                        </button>
-                    </div>
-
-                    <!-- Config Resumen -->
-                    <div class="config-summary-card glass-panel" style="display: flex; justify-content: space-around; align-items: center; padding: 20px; border-radius: 12px; margin-bottom: 40px; border: 1.5px solid var(--clr-border);">
-                        <div class="summary-item" style="text-align: center;">
-                            <span class="summary-tag" style="display: block; font-size: 0.75rem; text-transform: uppercase; letter-spacing: 0.1em; color: var(--clr-muted); margin-bottom: 4px;">Vehículo Seleccionado</span>
-                            <span class="summary-val" id="summary-vehicle-name" style="font-size: 1.2rem; font-weight: 600; color: var(--clr-text);">—</span>
-                        </div>
-                        <div class="summary-divider" style="width: 1px; height: 40px; background: var(--clr-border);"></div>
-                        <div class="summary-item" style="text-align: center;">
-                            <span class="summary-tag" style="display: block; font-size: 0.75rem; text-transform: uppercase; letter-spacing: 0.1em; color: var(--clr-muted); margin-bottom: 4px;">Material Elegido</span>
-                            <span class="summary-val" id="summary-material-name" style="font-size: 1.2rem; font-weight: 600; color: var(--clr-accent);">—</span>
-                        </div>
-                    </div>
-
-                    <div id="parts-results-container">
-                        <!-- Injected: parts list OR custom request form -->
-                    </div>
-                </div>
-
-            </div>
-        </div>
-    </section>
+    <!-- Panels ocultos para flujo material (compatibilidad JS) -->
+    <div style="display:none;">
+        <div id="panel-step-2"><div id="materials-metals-grid"></div><div id="materials-plastics-grid"></div></div>
+        <div id="panel-step-3"><span id="summary-vehicle-name"></span><span id="summary-material-name"></span><div id="parts-results-container"></div></div>
+    </div>
 
     <!-- ══════════════════════════════════════════════════════════
        MURO DE LA COMUNIDAD SECTION
@@ -442,14 +484,114 @@
 
 
     <!-- ══════════════════════════════════════════════════════════
+       CALENDARIO DE RETOS
+  ═══════════════════════════════════════════════════════════ -->
+    <section id="calendario">
+        <div class="calendario-inner">
+            <div class="calendario-header">
+                <span class="section-tag">RETO MENSUAL</span>
+                <h2 class="section-heading">Calendario de Digitalización</h2>
+                <p class="section-body">Cada mes nos centramos en una marca. El club de propietarios nos facilita sus piezas más críticas para digitalizarlas y añadirlas al catálogo. ¿Tienes piezas del mes? <a href="#contact" style="color:var(--clr-accent);">Contáctanos</a>.</p>
+            </div>
+
+            <div class="realcal-wrap">
+                <!-- Sidebar: marca del mes -->
+                <div class="realcal-sidebar" id="realcal-sidebar"></div>
+
+                <!-- Calendario -->
+                <div class="realcal-main">
+                    <div class="realcal-nav">
+                        <button class="realcal-nav-btn" onclick="calPrev()">‹</button>
+                        <h3 class="realcal-month-title" id="realcal-title"></h3>
+                        <button class="realcal-nav-btn" onclick="calNext()">›</button>
+                    </div>
+                    <div class="realcal-grid">
+                        <div class="realcal-day-header">Lun</div>
+                        <div class="realcal-day-header">Mar</div>
+                        <div class="realcal-day-header">Mié</div>
+                        <div class="realcal-day-header">Jue</div>
+                        <div class="realcal-day-header">Vie</div>
+                        <div class="realcal-day-header">Sáb</div>
+                        <div class="realcal-day-header">Dom</div>
+                        <div id="realcal-days" style="display:contents;"></div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Modal evento -->
+            <div id="cal-event-modal" class="modal-overlay" style="display:none;" onclick="closeCalModal()">
+                <div class="modal-content glass-panel cal-event-modal-content" onclick="event.stopPropagation()">
+                    <button class="modal-close" onclick="closeCalModal()">✕</button>
+                    <div id="cal-event-modal-body"></div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ══════════════════════════════════════════════════════════
+       FOROS POR MARCA
+  ═══════════════════════════════════════════════════════════ -->
+    <section id="foros">
+        <div class="foros-inner">
+            <div class="foros-header">
+                <span class="section-tag">COMUNIDAD</span>
+                <h2 class="section-heading">Foros por Marca</h2>
+                <p class="section-body">Cada marca tiene su propio espacio. Comparte experiencias, resuelve dudas y conecta con otros propietarios.</p>
+            </div>
+            <div class="foros-search-wrap">
+                <input type="text" id="foros-search" class="global-search-input" placeholder="Buscar marca..." oninput="filterForos()" style="max-width:400px;" />
+            </div>
+            <div class="foros-grid" id="foros-grid"></div>
+        </div>
+    </section>
+
+    <!-- ══════════════════════════════════════════════════════════
        ABOUT SECTION
   ═══════════════════════════════════════════════════════════ -->
     <section id="about">
         <div class="about-inner">
-            <span class="section-tag">SOBRE NEWREV</span>
-            <h2 class="section-heading">Pasión por la<br />ingeniería pura</h2>
-            <p class="section-body">Somos la plataforma de referencia para coleccionistas y entusiastas del automóvil de
-                alta gama. Cada vehículo es una obra de arte en movimiento.</p>
+            <div class="about-header">
+                <span class="section-tag">SOBRE NEWREV</span>
+                <h2 class="section-heading">Pasión por la<br />ingeniería pura</h2>
+                <p class="section-body">NewRev nació como Trabajo de Fin de Grado en Ingeniería de Diseño, con una misión clara: que ninguna pieza clásica desaparezca por falta de planos o de repuestos.</p>
+            </div>
+
+            <div class="about-grid">
+                <div class="about-card glass-panel">
+                    <div class="about-card-icon">🔬</div>
+                    <h3>El problema</h3>
+                    <p>Miles de vehículos clásicos quedan inmovilizados cada año por piezas descatalogadas. Sin planos, sin moldes, sin opciones. El legado del automovilismo se pierde silenciosamente.</p>
+                </div>
+                <div class="about-card glass-panel">
+                    <div class="about-card-icon">📐</div>
+                    <h3>La solución</h3>
+                    <p>Digitalizamos y modelamos en 3D los componentes esenciales —culatas, pistones, soportes— para que puedan fabricarse de nuevo mediante impresión 3D o mecanizado CNC cuando se necesiten.</p>
+                </div>
+                <div class="about-card glass-panel">
+                    <div class="about-card-icon">🤝</div>
+                    <h3>La comunidad</h3>
+                    <p>Cualquier ingeniero o entusiasta puede contribuir subiendo sus propios modelos al muro. La plataforma crece con cada pieza compartida, verificada y aprobada por el equipo de NewRev.</p>
+                </div>
+            </div>
+
+            <div class="about-stats">
+                <div class="about-stat">
+                    <span class="about-stat-number" data-target="47">0</span>
+                    <span class="about-stat-label">Piezas digitalizadas</span>
+                </div>
+                <div class="about-stat">
+                    <span class="about-stat-number" data-target="12">0</span>
+                    <span class="about-stat-label">Marcas catalogadas</span>
+                </div>
+                <div class="about-stat">
+                    <span class="about-stat-number" data-target="3">0</span>
+                    <span class="about-stat-label">Materiales disponibles</span>
+                </div>
+                <div class="about-stat">
+                    <span class="about-stat-number" data-target="1">0</span>
+                    <span class="about-stat-label">TFG detrás del proyecto</span>
+                </div>
+            </div>
         </div>
     </section>
 
@@ -458,11 +600,101 @@
   ═══════════════════════════════════════════════════════════ -->
     <section id="contact">
         <div class="contact-inner">
-            <span class="section-tag">CONTACTO</span>
-            <h2 class="section-heading">Hablemos</h2>
-            <a href="mailto:pabloyarza19@gmail.com" class="contact-email">pabloyarza19@gmail.com</a>
+            <div class="contact-header">
+                <span class="section-tag">CONTACTO</span>
+                <h2 class="section-heading">Hablemos</h2>
+                <p class="section-body">¿Tienes una pieza que necesitas digitalizar? ¿Quieres colaborar con el proyecto? Escríbenos.</p>
+            </div>
+
+            <div class="contact-layout">
+                <div class="contact-info">
+                    <div class="contact-info-item">
+                        <span class="contact-info-icon">✉️</span>
+                        <div>
+                            <span class="contact-info-label">Email</span>
+                            <a href="mailto:pabloyarza19@gmail.com" class="contact-email">pabloyarza19@gmail.com</a>
+                        </div>
+                    </div>
+                    <div class="contact-info-item">
+                        <span class="contact-info-icon">📍</span>
+                        <div>
+                            <span class="contact-info-label">Proyecto</span>
+                            <span class="contact-info-value">TFG — Ingeniería de Diseño</span>
+                        </div>
+                    </div>
+                    <div class="contact-info-item">
+                        <span class="contact-info-icon">⏱️</span>
+                        <div>
+                            <span class="contact-info-label">Respuesta</span>
+                            <span class="contact-info-value">En menos de 48h</span>
+                        </div>
+                    </div>
+                </div>
+
+                <form id="contact-form" class="contact-form glass-panel" onsubmit="submitContactForm(event)">
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label class="form-label" for="cf-name">Nombre</label>
+                            <input type="text" id="cf-name" class="parts-input" placeholder="Tu nombre" required />
+                        </div>
+                        <div class="form-group">
+                            <label class="form-label" for="cf-email">Email</label>
+                            <input type="email" id="cf-email" class="parts-input" placeholder="tu@email.com" required />
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label class="form-label" for="cf-subject">Asunto</label>
+                        <input type="text" id="cf-subject" class="parts-input" placeholder="¿En qué podemos ayudarte?" required />
+                    </div>
+                    <div class="form-group">
+                        <label class="form-label" for="cf-message">Mensaje</label>
+                        <textarea id="cf-message" class="form-textarea" rows="5" placeholder="Cuéntanos tu proyecto, la pieza que necesitas, o cómo quieres colaborar..." required></textarea>
+                    </div>
+                    <button type="submit" class="btn-primary" id="cf-submit-btn">
+                        <span id="cf-btn-text">Enviar mensaje</span>
+                    </button>
+                    <p id="cf-status" class="cf-status" style="display:none;"></p>
+                </form>
+            </div>
         </div>
     </section>
+
+    <!-- ══════════════════════════════════════════════════════════
+       FOOTER
+  ═══════════════════════════════════════════════════════════ -->
+    <footer id="main-footer">
+        <div class="footer-inner">
+            <div class="footer-top">
+                <a href="#" class="footer-logo">
+                    <img src="assets/img/logo1.png" alt="NEWREV Logo" />
+                </a>
+                <nav class="footer-nav">
+                    <div class="footer-nav-col">
+                        <span class="footer-nav-title">Explorar</span>
+                        <a href="#" onclick="toggleCatalogos(event)">Catálogos</a>
+                        <a href="#coches">Buscador de piezas</a>
+                        <a href="#comunidad">Comunidad</a>
+                    </div>
+                    <div class="footer-nav-col">
+                        <span class="footer-nav-title">Proyecto</span>
+                        <a href="#about">Nosotros</a>
+                        <a href="#contact">Contacto</a>
+                        <a href="mailto:pabloyarza19@gmail.com">Email directo</a>
+                    </div>
+                    <div class="footer-nav-col">
+                        <span class="footer-nav-title">Tecnología</span>
+                        <span class="footer-tag">Fabricación aditiva</span>
+                        <span class="footer-tag">Impresión 3D</span>
+                        <span class="footer-tag">Patrimonio automotriz</span>
+                    </div>
+                </nav>
+            </div>
+            <div class="footer-bottom">
+                <p class="footer-copy">© 2026 NewRev — Proyecto de TFG en Ingeniería de Diseño</p>
+                <p class="footer-copy footer-copy--right">Preservando el legado del automovilismo clásico</p>
+            </div>
+        </div>
+    </footer>
 
     <!-- ══════════════════════════════════════════════════════════
        FLOATING NOTIFICATION — ¿No encuentras tu pieza?
@@ -521,6 +753,15 @@
     <!-- ══════════════════════════════════════════════════════════
        MODAL — Detalles del Modelo de Coche
   ═══════════════════════════════════════════════════════════ -->
+    <!-- Modal foro -->
+    <div id="foro-modal" class="modal-overlay" style="display:none;" onclick="closeForoModal()">
+        <div class="modal-content glass-panel foro-modal-content" onclick="event.stopPropagation()">
+            <button class="modal-close" onclick="closeForoModal()">✕</button>
+            <h2 id="foro-modal-title" class="foro-modal-title"></h2>
+            <div id="foro-modal-body"></div>
+        </div>
+    </div>
+
     <div id="car-modal" role="dialog" aria-modal="true" aria-labelledby="car-modal-title" class="car-modal-container">
         <div class="modal-backdrop" onclick="closeCarModal()"></div>
         <div class="modal-card car-modal-card">
@@ -957,37 +1198,161 @@
         function onBrandFilterInput() {
             const val = document.getElementById('brand-search').value;
             document.getElementById('brand-clear-btn').style.display = val ? 'flex' : 'none';
-            // If a brand was locked, unlock it so user can change
-            if (lockedBrandObj) {
-                lockedBrandObj = null;
-                unlockModelFilter();
-            }
+            if (lockedBrandObj) { lockedBrandObj = null; unlockModelFilter(); }
             wizardNavStack = [];
-            renderBrandsWizard(allCoches, val);
+            // Hide card grid while searching — only show dropdown
+            document.getElementById('brands-wizard-container').innerHTML = '';
+            showBrandDropdown(val);
+        }
+
+        function showBrandDropdown(term) {
+            const dd = document.getElementById('brand-dropdown');
+            if (!allCoches || !allCoches.length) { dd.style.display = 'none'; return; }
+            const t = (term || '').toLowerCase();
+            const filtered = allCoches.filter(b => !t || b.brand.toLowerCase().includes(t)).slice(0, 50);
+            if (!filtered.length) {
+                dd.innerHTML = `<div class="dropdown-empty">Sin resultados para "${term}"</div>`;
+            } else {
+                dd.innerHTML = filtered.map(b => {
+                    const count = countModelsDeep(b.models);
+                    const safe = b.brand.replace(/\\/g, '\\\\').replace(/'/g, "\\'");
+                    return `<div class="dropdown-item" onmousedown="selectBrandFromDropdown('${safe}')">
+                        <span class="dropdown-item-name">${b.brand}</span>
+                        <span class="dropdown-item-meta">${count > 0 ? count + ' modelos' : 'a medida'}</span>
+                    </div>`;
+                }).join('');
+            }
+            dd.style.display = 'block';
+        }
+
+        function hideBrandDropdown() { document.getElementById('brand-dropdown').style.display = 'none'; }
+        function hideModelDropdown() { document.getElementById('model-dropdown').style.display = 'none'; }
+
+        function selectBrandFromDropdown(brandName) {
+            document.getElementById('brand-dropdown').style.display = 'none';
+            document.getElementById('brand-search').value = brandName;
+            document.getElementById('brand-clear-btn').style.display = 'flex';
+            selectBrandWizard(brandName);
         }
 
         function clearBrandFilter() {
             document.getElementById('brand-search').value = '';
             document.getElementById('brand-clear-btn').style.display = 'none';
+            document.getElementById('brand-dropdown').style.display = 'none';
             lockedBrandObj = null;
             unlockModelFilter();
             wizardNavStack = [];
-            renderBrandsWizard(allCoches, '');
+            document.getElementById('brands-wizard-container').innerHTML = '';
         }
 
         function onModelFilterInput() {
             const term = document.getElementById('model-search').value;
             document.getElementById('model-clear-btn').style.display = term ? 'flex' : 'none';
             if (!lockedBrandObj) return;
-            // Filter models inside the locked brand
-            const filteredItems = filterModelsRecursive(lockedBrandObj.models, term.toLowerCase());
-            renderModelList(filteredItems);
+            const all = lockedBrandObj.models || [];
+            const filteredItems = term ? filterModelsRecursive(all, term.toLowerCase()) : all;
+            // Hide card grid — only show dropdown
+            document.getElementById('brands-wizard-container').innerHTML = '';
+            showModelDropdown(term, filteredItems);
+        }
+
+        let _dropdownModels = []; // global ref to avoid JSON-in-HTML issues
+
+        function showModelDropdown(term, items) {
+            const dd = document.getElementById('model-dropdown');
+            const flat = [];
+            function flatten(arr) {
+                (arr || []).forEach(m => {
+                    if (typeof m === 'object' && m.type === 'category') flatten(m.submodels || []);
+                    else flat.push(m);
+                });
+            }
+            flatten(items);
+            _dropdownModels = flat;
+            if (!flat.length) {
+                dd.innerHTML = term
+                    ? `<div class="dropdown-empty">Sin modelos para "${term}"</div>`
+                    : `<div class="dropdown-empty">Este vehículo no tiene modelos catalogados.</div>`;
+                dd.style.display = 'block';
+                return;
+            }
+            dd.innerHTML = flat.slice(0, 50).map((m, idx) => {
+                const name = typeof m === 'object' ? m.name : m;
+                const hasParts = m.parts && m.parts.length > 0;
+                return `<div class="dropdown-item" onmousedown="selectModelFromDropdown(${idx})">
+                    <span class="dropdown-item-name">${name}</span>
+                    <span class="dropdown-item-meta">${hasParts ? '⚙️ ' + m.parts.length + ' piezas 3D' : 'sin piezas'}</span>
+                </div>`;
+            }).join('');
+            dd.style.display = 'block';
+        }
+
+        function selectModelFromDropdown(idx) {
+            document.getElementById('model-dropdown').style.display = 'none';
+            const model = _dropdownModels[idx];
+            if (!model) return;
+            const name = typeof model === 'object' ? model.name : model;
+            document.getElementById('model-search').value = name;
+            selectedBrand = lockedBrandObj ? lockedBrandObj.brand : '';
+            selectedModel = typeof model === 'object' ? model : { name: model, parts: [] };
+            // Mostrar piezas directamente sin paso de material
+            renderPartsPanel();
+        }
+
+        function renderNoPiecesMsg(context) {
+            return `
+                <div style="max-width:500px; margin:0 auto; text-align:center; padding:48px 24px; background:var(--clr-surface); border:1px solid var(--clr-border); border-radius:18px;">
+                    <div style="font-size:2.5rem; margin-bottom:16px;">🔩</div>
+                    <h3 style="font-size:1.2rem; font-weight:600; color:var(--clr-text); margin-bottom:8px;">
+                        No hay piezas digitalizadas ${context ? 'para ' + context : 'aún'}
+                    </h3>
+                    <p style="color:var(--clr-muted); font-size:0.9rem; margin-bottom:28px; line-height:1.6;">
+                        Este vehículo aún no tiene recambios en nuestro repositorio.<br>
+                        Puedes solicitarnos que digitalizemos la pieza que necesitas.
+                    </p>
+                    <button class="unicorn-cta" style="margin:0 auto;" onclick="openPiezaModal()">
+                        <span>Solicitar nueva pieza →</span>
+                    </button>
+                </div>`;
+        }
+
+        function renderPartsPanel() {
+            const container = document.getElementById('brands-wizard-container');
+            const parts = selectedModel.parts || [];
+            if (!parts.length) {
+                container.innerHTML = renderNoPiecesMsg(selectedBrand + ' ' + selectedModel.name);
+                return;
+            }
+            container.innerHTML = `
+                <div style="margin-bottom:24px;">
+                    <h3 style="font-size:1.3rem; font-weight:600; color:var(--clr-text); margin-bottom:6px;">
+                        Piezas de ${selectedBrand} ${selectedModel.name}
+                    </h3>
+                    <p style="color:var(--clr-muted); font-size:0.9rem;">${parts.length} pieza${parts.length>1?'s':''} digitalizadas — haz clic para ver el modelo 3D</p>
+                </div>
+                <div style="display:flex; flex-direction:column; gap:16px;">
+                    ${parts.map((p, i) => {
+                        const has3D = p.stlUrl && (p.stlUrl.endsWith('.glb') || p.stlUrl.endsWith('.gltf'));
+                        return `<div class="part-item-card glass-panel" style="display:flex; justify-content:space-between; align-items:center; padding:20px; border-radius:14px; border:1px solid var(--clr-border); cursor:pointer; transition:all 0.3s;" onclick="openPartModal('${p.name.replace(/'/g,"\\'")}','${(p.description||'').replace(/'/g,"\\'")}','${p.stlUrl||''}','${p.price||''}','')">
+                            <div>
+                                <h4 style="font-size:1rem; font-weight:600; margin:0 0 4px; color:var(--clr-text);">${p.name}</h4>
+                                <p style="font-size:0.82rem; color:var(--clr-muted); margin:0;">${p.description||''}</p>
+                                ${has3D ? '<span style="font-size:0.7rem; font-weight:600; background:rgba(238,198,129,0.12); color:var(--clr-accent); padding:2px 8px; border-radius:4px; margin-top:6px; display:inline-block;">Visor 3D disponible</span>' : ''}
+                            </div>
+                            <div style="text-align:right; flex-shrink:0; margin-left:16px;">
+                                <div style="font-size:1.2rem; font-weight:700; color:var(--clr-text);">${p.price||'Consultar'}</div>
+                                <button class="unicorn-cta" style="margin-top:8px; padding:6px 14px; font-size:0.8rem;"><span>Ver 3D →</span></button>
+                            </div>
+                        </div>`;
+                    }).join('')}
+                </div>`;
         }
 
         function clearModelFilter() {
             document.getElementById('model-search').value = '';
             document.getElementById('model-clear-btn').style.display = 'none';
-            if (lockedBrandObj) renderModelList(lockedBrandObj.models);
+            document.getElementById('model-dropdown').style.display = 'none';
+            document.getElementById('brands-wizard-container').innerHTML = '';
         }
 
         function lockBrandFilter(brandObj) {
@@ -1068,24 +1433,47 @@
             }).join('');
         }
 
-        function selectBrandWizard(brandName) {
+        function selectBrandWizard(brandName, preselectedModel) {
             const brandObj = allCoches.find(b => b.brand === brandName);
             if (!brandObj) return;
 
             if (!brandObj.models || brandObj.models.length === 0) {
-                // No models → lock brand and go straight to step 2
                 lockBrandFilter(brandObj);
                 selectedBrand = brandObj.brand;
-                selectedModel = { name: 'Todos los Modelos', brand: brandObj.brand, customRequestOnly: true, specs: {}, parts: [] };
-                // Still show model filter step as disabled and go to step 2
-                goToStep(2);
+                selectedModel = { name: '', brand: brandObj.brand, parts: [] };
+                document.getElementById('brands-wizard-container').innerHTML = renderNoPiecesMsg(brandObj.brand);
                 return;
             }
 
-            // Lock brand and show model filter
             lockBrandFilter(brandObj);
             wizardNavStack = [{ label: brandObj.brand, items: brandObj.models }];
-            renderModelList(brandObj.models);
+            document.getElementById('brands-wizard-container').innerHTML = '';
+
+            if (preselectedModel) {
+                // Auto-select model from global search
+                const flat = [];
+                function flattenAll(arr) {
+                    (arr || []).forEach(m => {
+                        if (typeof m === 'object' && m.type === 'category') flattenAll(m.submodels || []);
+                        else flat.push(m);
+                    });
+                }
+                flattenAll(brandObj.models);
+                const found = flat.find(m => (typeof m === 'object' ? m.name : m) === preselectedModel);
+                if (found) {
+                    const name = typeof found === 'object' ? found.name : found;
+                    document.getElementById('model-search').value = name;
+                    document.getElementById('model-clear-btn').style.display = 'flex';
+                    selectedBrand = brandObj.brand;
+                    selectedModel = typeof found === 'object' ? found : { name: found, parts: [] };
+                    hideModelDropdown();
+                    renderPartsPanel();
+                    return;
+                }
+            }
+
+            showModelDropdown('', brandObj.models);
+            setTimeout(() => document.getElementById('model-search').focus(), 100);
         }
 
         function selectModelWizard(index) {
@@ -1362,30 +1750,6 @@ Descripción de la pieza: ${textVal}`;
                 : 'Arrastra imágenes aquí o pulsa para seleccionar';
         }
 
-                let partsBtnHtml = '';
-                if (m.parts && m.parts.length > 0) {
-                    partsBtnHtml = `<div style="margin-top: 1.5rem;"><button class="nav-cta" style="width: 100%; justify-content: center;" onclick="showParts('${base64Data}')">Ver piezas</button></div>`;
-                }
-
-                content.innerHTML = `
-                    <div class="car-modal-img-wrap">
-                        <img src="${m.image}" alt="${m.name}" class="car-modal-img">
-                    </div>
-                    <div class="car-modal-info">
-                        <h3>${m.name}</h3>
-                        <div class="car-specs-grid">
-                            ${specsHtml}
-                        </div>
-                        ${partsBtnHtml}
-                    </div>
-                `;
-                document.getElementById('car-modal').classList.add('open');
-                document.body.style.overflow = 'hidden';
-            } catch (e) {
-                console.error("Error modal:", e);
-            }
-        }
-
         function showParts(base64Data) {
             try {
                 const m = JSON.parse(decodeURIComponent(atob(base64Data)));
@@ -1422,8 +1786,69 @@ Descripción de la pieza: ${textVal}`;
             }
         }
 
+        // ── Datos mock de valoraciones por pieza ────────────────────────────
+        const PART_REVIEWS = {
+            'Culata': {
+                rating: 4.6, count: 14,
+                cost: { fabricacion: 185, mercado: 6500, ahorro: 97 },
+                install: [
+                    { step: 1, titulo: 'Preparación', desc: 'Retira la tapa de balancines y desconecta los cables de bujías. Limpia la zona de trabajo con desengrasante.' },
+                    { step: 2, titulo: 'Desmontaje', desc: 'Afloja los pernos de la culata en orden cruzado (8 Nm). Extrae la culata con cuidado hacia arriba para no dañar la junta.' },
+                    { step: 3, titulo: 'Preparación de superficie', desc: 'Raspa los restos de junta del bloque. La superficie debe quedar completamente plana (comprobar con regla de 30cm).' },
+                    { step: 4, titulo: 'Montaje de la nueva culata', desc: 'Coloca una junta nueva. Monta la culata impresa y aprieta los pernos en orden cruzado: primero 15 Nm, luego 25 Nm, finalmente 35 Nm.' },
+                    { step: 5, titulo: 'Comprobación', desc: 'Arranca el motor en frío y deja calentar 10 minutos. Comprueba que no hay pérdidas de aceite ni refrigerante. Revisar el apriete a las 500 km.' },
+                ],
+                reviews: [
+                    { autor: 'Jordi M.', estrellas: 5, texto: 'Encaja perfectamente. Llevamos 3 meses rodando sin ninguna pérdida. Increíble que algo así se pueda imprimir.', fecha: 'Mar 2026' },
+                    { autor: 'Ramón G.', estrellas: 4, texto: 'Buena pieza. Tuve que lijar mínimamente la superficie de contacto pero luego ajustó a la perfección.', fecha: 'Feb 2026' },
+                    { autor: 'Alicia T.', estrellas: 5, texto: 'Mi Biscúter llevaba 4 años parado por esta culata. Ya vuelve a rodar. Gracias NewRev.', fecha: 'Ene 2026' },
+                ],
+            },
+            'Pieza motor tubo': {
+                rating: 4.2, count: 7,
+                cost: { fabricacion: 42, mercado: 320, ahorro: 87 },
+                install: [
+                    { step: 1, titulo: 'Localización', desc: 'El tubo de motor se encuentra en la parte posterior del bloque, entre el carburador y la culata. Acceder retirando el panel trasero.' },
+                    { step: 2, titulo: 'Desconexión', desc: 'Cierra la llave de combustible. Desconecta las bridas de sujeción del tubo (2 abrazaderas de 8mm).' },
+                    { step: 3, titulo: 'Extracción', desc: 'Gira el tubo 15° hacia la derecha y extrae deslizándolo hacia afuera. Puede necesitar algo de fuerza si lleva años montado.' },
+                    { step: 4, titulo: 'Montaje', desc: 'Inserta el nuevo tubo en posición girada, alinea y gira 15° a la izquierda hasta enclavar. Aprieta las abrazaderas sin pasarse (no es una pieza de presión alta).' },
+                    { step: 5, titulo: 'Verificación', desc: 'Abre la llave de combustible, arranca y comprueba ausencia de fugas durante 5 minutos a ralentí.' },
+                ],
+                reviews: [
+                    { autor: 'Paco V.', estrellas: 4, texto: 'Monté la pieza en 20 minutos. El acabado superficial es muy bueno para ser impresión 3D.', fecha: 'Abr 2026' },
+                    { autor: 'Maite R.', estrellas: 5, texto: 'Perfecto, encaja sin juego. Mucho mejor que la pieza de desguace que encontré oxidada.', fecha: 'Mar 2026' },
+                ],
+            },
+            'Pieza arranque motor': {
+                rating: 4.8, count: 9,
+                cost: { fabricacion: 93, mercado: 890, ahorro: 90 },
+                install: [
+                    { step: 1, titulo: 'Desconexión eléctrica', desc: 'Desconecta el terminal negativo de la batería antes de tocar nada. El sistema de arranque trabaja con corriente directa.' },
+                    { step: 2, titulo: 'Acceso al arranque', desc: 'El motor de arranque está en la parte inferior izquierda del bloque. Retira el protector inferior (4 tornillos M6).' },
+                    { step: 3, titulo: 'Desmontaje del engranaje', desc: 'Extrae el tornillo central del piñón (rosca izquierda, girar en sentido horario para aflojar). Extrae el engranaje con un extractor de poleas o golpes suaves.' },
+                    { step: 4, titulo: 'Montaje del nuevo engranaje', desc: 'Coloca el nuevo engranaje impreso alineando la chaveta. Aprieta el tornillo central (rosca izquierda) a 20 Nm.' },
+                    { step: 5, titulo: 'Prueba de arranque', desc: 'Reconecta la batería. Arranca el motor y escucha: debe sonar limpio sin traqueteo metálico. Si hay ruido, revisar alineación del engranaje.' },
+                ],
+                reviews: [
+                    { autor: 'Manuel C.', estrellas: 5, texto: 'El engranaje arranca perfecto. Llevábamos 6 meses sin poder arrancar el Biscúter. Ahora lo hacemos a la primera.', fecha: 'May 2026' },
+                    { autor: 'Luis A.', estrellas: 5, texto: 'Impresionante. El piñón encaja mejor que el original. Impreso en acero inoxidable 316L.', fecha: 'Abr 2026' },
+                    { autor: 'Carmen F.', estrellas: 4, texto: 'Muy buena pieza. Tardé algo más en encontrar la alineación correcta pero luego funcionó perfecto.', fecha: 'Mar 2026' },
+                ],
+            },
+        };
+
+        function renderStars(rating) {
+            return [1,2,3,4,5].map(i => {
+                const filled = i <= Math.floor(rating);
+                const half = !filled && i === Math.ceil(rating) && rating % 1 >= 0.3;
+                return `<span style="color:${filled || half ? '#eec681' : 'var(--clr-border)'}; font-size:1rem;">${filled ? '★' : half ? '⯨' : '☆'}</span>`;
+            }).join('');
+        }
+
         function openPartModal(partName, description, stlUrl, price, base64Data) {
             const content = document.getElementById('car-modal-content');
+            document.getElementById('car-modal').classList.add('open');
+            document.body.style.overflow = 'hidden';
 
             let viewerHtml = '';
             if (stlUrl) {
@@ -1456,22 +1881,94 @@ Descripción de la pieza: ${textVal}`;
                 `;
             }
 
-            content.innerHTML = `
-                <div class="car-modal-info" style="width: 100%;">
-                    <button onclick="showParts('${base64Data}')" style="background:none; border:none; color: var(--accent-color); cursor: pointer; display: flex; align-items: center; gap: 0.5rem; margin-bottom: 1rem; font-family: inherit; font-size: 1rem; font-weight: 500;">
-                        <span>←</span> Volver a la lista de piezas
-                    </button>
-                    <div style="display:flex; justify-content:space-between; align-items:center; margin-bottom: 0.5rem; flex-wrap:wrap; gap:10px;">
-                        <h3 style="margin: 0;">${partName}</h3>
-                        ${price ? `<span style="font-size:1.5rem; font-weight:600; color:var(--accent-color);">${price}</span>` : ''}
+            const rev = PART_REVIEWS[partName];
+            const starsHtml = rev ? renderStars(rev.rating) : '';
+
+            const costHtml = rev ? `
+                <div class="pm-cost-box">
+                    <h4 class="pm-section-title">💰 Fabricación vs Mercado</h4>
+                    <div class="pm-cost-grid">
+                        <div class="pm-cost-item pm-cost-item--fab">
+                            <span class="pm-cost-label">Coste de fabricación</span>
+                            <span class="pm-cost-num">${rev.cost.fabricacion} €</span>
+                        </div>
+                        <div class="pm-cost-item pm-cost-item--market">
+                            <span class="pm-cost-label">Precio de mercado</span>
+                            <span class="pm-cost-num pm-cost-num--market">${rev.cost.mercado.toLocaleString('es-ES')} €</span>
+                        </div>
                     </div>
-                    <p style="color:var(--text-light); margin-bottom: 1.5rem;">${description}</p>
-                    ${viewerHtml}
-                    ${price ? `
-                    <button class="nav-cta" style="width: 100%; justify-content: center; font-size: 1.1rem; padding: 1rem; margin-top: 1rem;" onclick="alert('Redirigiendo a pasarela de pago para comprar ${partName} por ${price}')">
-                        Añadir al carrito
+                    <div class="pm-cost-bar-wrap">
+                        <div class="pm-cost-bar-fill" style="width:${rev.cost.ahorro}%"></div>
+                    </div>
+                    <p class="pm-cost-saving">Ahorras un <strong>${rev.cost.ahorro}%</strong> fabricándola con NewRev</p>
+                </div>
+            ` : '';
+
+            const installHtml = rev ? `
+                <div class="pm-install-box">
+                    <h4 class="pm-section-title">🔧 Guía de instalación</h4>
+                    <ol class="pm-install-steps">
+                        ${rev.install.map(s => `
+                            <li class="pm-install-step">
+                                <div class="pm-step-num">${s.step}</div>
+                                <div>
+                                    <strong>${s.titulo}</strong>
+                                    <p>${s.desc}</p>
+                                </div>
+                            </li>
+                        `).join('')}
+                    </ol>
+                </div>
+            ` : '';
+
+            const reviewsHtml = rev ? `
+                <div class="pm-reviews-box">
+                    <div class="pm-reviews-header">
+                        <h4 class="pm-section-title">⭐ Valoraciones</h4>
+                        <div class="pm-rating-summary">
+                            <span class="pm-rating-big">${rev.rating}</span>
+                            <div>
+                                <div>${starsHtml}</div>
+                                <span class="pm-rating-count">${rev.count} valoraciones</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="pm-reviews-list">
+                        ${rev.reviews.map(r => `
+                            <div class="pm-review-card">
+                                <div class="pm-review-top">
+                                    <div class="pm-review-avatar">${r.autor[0]}</div>
+                                    <div>
+                                        <strong class="pm-review-autor">${r.autor}</strong>
+                                        <span class="pm-review-fecha">${r.fecha}</span>
+                                    </div>
+                                    <div class="pm-review-stars">${renderStars(r.estrellas)}</div>
+                                </div>
+                                <p class="pm-review-text">"${r.texto}"</p>
+                            </div>
+                        `).join('')}
+                    </div>
+                </div>
+            ` : '';
+
+            content.innerHTML = `
+                <div class="car-modal-info" style="width:100%;">
+                    <button onclick="showParts('${base64Data}')" style="background:none;border:none;color:var(--clr-accent);cursor:pointer;display:flex;align-items:center;gap:0.5rem;margin-bottom:1rem;font-family:var(--font);font-size:0.9rem;font-weight:500;">
+                        ← Volver a la lista de piezas
                     </button>
-                    ` : ''}
+                    <div style="display:flex;justify-content:space-between;align-items:flex-start;margin-bottom:0.5rem;flex-wrap:wrap;gap:10px;">
+                        <div>
+                            <h3 style="margin:0 0 6px;">${partName}</h3>
+                            ${rev ? `<div style="display:flex;align-items:center;gap:8px;">${starsHtml}<span style="font-size:0.8rem;color:var(--clr-muted);">${rev.rating} · ${rev.count} valoraciones</span></div>` : ''}
+                        </div>
+                        ${price ? `<span style="font-size:1.5rem;font-weight:700;color:var(--clr-accent);">${price}</span>` : ''}
+                    </div>
+                    <p style="color:var(--clr-muted);margin-bottom:1.5rem;line-height:1.6;">${description}</p>
+                    ${viewerHtml}
+                    ${costHtml}
+                    ${installHtml}
+                    ${reviewsHtml}
+                    ${price ? `<button class="nav-cta" style="width:100%;justify-content:center;font-size:1rem;padding:1rem;margin-top:1rem;" onclick="alert('Añadiendo al carrito: ${partName}')">Añadir al carrito — ${price}</button>` : ''}
                 </div>
             `;
         }
@@ -1499,8 +1996,43 @@ Descripción de la pieza: ${textVal}`;
             const gallery = document.getElementById('community-gallery');
             if (!gallery) return;
 
-            gallery.innerHTML = mockPiezas.map(pieza => `
-                <div class="piece-card glass-panel" style="cursor: pointer;" onclick="openCommunityModelModal(${pieza.id})">
+            // Mock verificaciones colaborativas por pieza
+            const VERIFICADORES = {
+                1: [
+                    { nombre: 'Ing. García', avatar: 'G', ok: true },
+                    { nombre: 'Ing. Martín', avatar: 'M', ok: true },
+                    { nombre: 'Ing. López',  avatar: 'L', ok: true },
+                ],
+                2: [
+                    { nombre: 'Ing. Pérez',  avatar: 'P', ok: true },
+                    { nombre: 'Ing. Ruiz',   avatar: 'R', ok: false },
+                    { nombre: 'Pendiente',   avatar: '?', ok: false },
+                ],
+            };
+
+            gallery.innerHTML = mockPiezas.map(pieza => {
+                const verifs = VERIFICADORES[pieza.id] || [
+                    { nombre: 'Pendiente', avatar: '?', ok: false },
+                    { nombre: 'Pendiente', avatar: '?', ok: false },
+                    { nombre: 'Pendiente', avatar: '?', ok: false },
+                ];
+                const aprobados = verifs.filter(v => v.ok).length;
+                const verifHtml = `
+                    <div class="verif-collab">
+                        <span class="verif-label">Verificación colaborativa</span>
+                        <div class="verif-avatars">
+                            ${verifs.map(v => `
+                                <div class="verif-avatar verif-avatar--${v.ok ? 'ok' : 'pending'}" title="${v.nombre}">
+                                    ${v.avatar}
+                                    <span class="verif-check">${v.ok ? '✓' : '·'}</span>
+                                </div>
+                            `).join('')}
+                            <span class="verif-count">${aprobados}/3</span>
+                        </div>
+                    </div>
+                `;
+                return `
+                <div class="piece-card glass-panel" style="cursor:pointer;" onclick="openCommunityModelModal(${pieza.id})">
                     <div class="status-badge ${pieza.estado}">
                         ${pieza.estado === 'verificada' ? 'VERIFICADA' : 'NO REVISADA'}
                     </div>
@@ -1511,12 +2043,13 @@ Descripción de la pieza: ${textVal}`;
                         <p><strong>Material ideal:</strong> ${pieza.material_recomendado}</p>
                         <p class="description">${pieza.funcion}</p>
                     </div>
-                    <button class="btn-download ${pieza.estado}" 
+                    ${verifHtml}
+                    <button class="btn-download ${pieza.estado}"
                         onclick="event.stopPropagation(); handleDownloadPieza(${pieza.id})">
                         ${pieza.estado === 'verificada' ? '✅ Descargar (Comprobada)' : '⚠️ Descargar Archivo'}
                     </button>
-                </div>
-            `).join('');
+                </div>`;
+            }).join('');
         }
 
         function openCommunityModelModal(id) {
@@ -1874,9 +2407,699 @@ Descripción de la pieza: ${textVal}`;
         // Run on load
         fetchComunidad();
         loadCoches();
+        initCalendario();
+        renderCalendario();
+        initForos();
+
+        // ── Gráficas de crisis ─────────────────────────────────────────────
+        function initCrisisCharts() {
+            const years = [2000,2002,2004,2006,2008,2010,2012,2014,2016,2018,2020,2022,2024,2026,2028,2030,2032,2035];
+            const supply = [100,96,91,85,78,70,61,52,44,37,30,24,19,14,10,7,4,2];
+            const demand = [100,108,117,128,122,132,145,163,182,207,238,272,310,340,370,400,430,470];
+            const gap    = demand.map((d, i) => d - supply[i]);
+
+            const accentColor = '#eec681';
+            const textColor   = 'rgba(245,234,225,0.65)';
+            const gridColor   = 'rgba(238,198,129,0.09)';
+
+            const canvasEl = document.getElementById('crisis-chart');
+            if (!canvasEl) return;
+
+            new Chart(canvasEl, {
+                type: 'line',
+                data: {
+                    labels: years,
+                    datasets: [
+                        {
+                            label: 'Disponibilidad OEM',
+                            data: supply,
+                            borderColor: '#ef4444',
+                            backgroundColor: 'rgba(239,68,68,0.08)',
+                            borderWidth: 2.5,
+                            pointRadius: 3,
+                            tension: 0.4,
+                            fill: false,
+                        },
+                        {
+                            label: 'Demanda coleccionistas',
+                            data: demand,
+                            borderColor: accentColor,
+                            backgroundColor: 'rgba(238,198,129,0.06)',
+                            borderWidth: 2.5,
+                            pointRadius: 3,
+                            tension: 0.4,
+                            fill: false,
+                        },
+                        {
+                            label: 'Brecha sin cubrir',
+                            data: gap,
+                            borderColor: 'transparent',
+                            backgroundColor: 'rgba(239,68,68,0.06)',
+                            fill: true,
+                            tension: 0.4,
+                            pointRadius: 0,
+                        },
+                    ],
+                },
+                options: {
+                    responsive: true,
+                    maintainAspectRatio: false,
+                    interaction: { mode: 'index', intersect: false },
+                    plugins: {
+                        legend: { display: false },
+                        tooltip: {
+                            backgroundColor: '#241A16',
+                            borderColor: 'rgba(238,198,129,0.2)',
+                            borderWidth: 1,
+                            titleColor: '#F5EAE1',
+                            bodyColor: textColor,
+                            padding: 14,
+                            callbacks: {
+                                label: function(item) {
+                                    if (item.datasetIndex === 2) return ' Brecha: +' + item.raw + ' puntos';
+                                    return ' ' + item.dataset.label + ': ' + item.raw;
+                                },
+                            },
+                        },
+                    },
+                    scales: {
+                        x: {
+                            grid: { color: gridColor },
+                            ticks: { color: textColor, font: { family: 'Outfit' } },
+                        },
+                        y: {
+                            grid: { color: gridColor },
+                            ticks: { color: textColor, font: { family: 'Outfit' } },
+                            title: { display: true, text: 'Índice (2000 = 100)', color: textColor, font: { family: 'Outfit', size: 11 } },
+                        },
+                    },
+                },
+            });
+
+            // Barra horizontal: categorías críticas
+            const categories = [
+                { label: 'Carburación y combustible', pct: 84 },
+                { label: 'Juntas y retenes de motor',  pct: 79 },
+                { label: 'Electrónica / CDI / ECU',    pct: 91 },
+                { label: 'Transmisión y embrague',     pct: 67 },
+                { label: 'Carrocería y cromados',      pct: 73 },
+                { label: 'Frenos (tambor / disco)',    pct: 61 },
+            ];
+
+            const barsEl = document.getElementById('crisis-bars');
+            if (!barsEl) return;
+            barsEl.innerHTML = categories.map(c => `
+                <div class="crisis-bar-row">
+                    <span class="crisis-bar-label">${c.label}</span>
+                    <div class="crisis-bar-track">
+                        <div class="crisis-bar-fill" data-pct="${c.pct}" style="width:0%">
+                            <span class="crisis-bar-pct">${c.pct}%</span>
+                        </div>
+                    </div>
+                </div>
+            `).join('');
+
+            // Animar barras con IntersectionObserver
+            const barsObserver = new IntersectionObserver(entries => {
+                entries.forEach(entry => {
+                    if (!entry.isIntersecting) return;
+                    entry.target.querySelectorAll('.crisis-bar-fill').forEach((bar, i) => {
+                        setTimeout(() => {
+                            bar.style.transition = 'width 0.9s cubic-bezier(0.22,1,0.36,1)';
+                            bar.style.width = bar.dataset.pct + '%';
+                        }, i * 100);
+                    });
+                    barsObserver.unobserve(entry.target);
+                });
+            }, { threshold: 0.3 });
+            barsObserver.observe(barsEl);
+        }
+
+        // Lanzar cuando Chart.js esté listo
+        function launchCrisisCharts() {
+            try {
+                initCrisisCharts();
+            } catch(e) {
+                console.error('Crisis chart error:', e);
+            }
+        }
+        if (typeof Chart !== 'undefined') {
+            launchCrisisCharts();
+        } else {
+            window.addEventListener('load', launchCrisisCharts);
+        }
+
+        // ── Calendario de retos ─────────────────────────────────────────────
+        const CALENDARIO = [
+            { mes: 'Enero',      marca: 'Biscúter',    estado: 'completado', piezas: 3,  icono: '🏆' },
+            { mes: 'Febrero',    marca: 'Renault',      estado: 'completado', piezas: 7,  icono: '🏆' },
+            { mes: 'Marzo',      marca: 'Citroën',      estado: 'completado', piezas: 5,  icono: '🏆' },
+            { mes: 'Abril',      marca: 'Alfa Romeo',   estado: 'completado', piezas: 4,  icono: '🏆' },
+            { mes: 'Mayo',       marca: 'Volkswagen',   estado: 'completado', piezas: 9,  icono: '🏆' },
+            { mes: 'Junio',      marca: 'SEAT',         estado: 'activo',     piezas: 0,  icono: '🔥' },
+            { mes: 'Julio',      marca: 'BMW',          estado: 'proximo',    piezas: 0,  icono: '⏳' },
+            { mes: 'Agosto',     marca: 'Porsche',      estado: 'proximo',    piezas: 0,  icono: '⏳' },
+            { mes: 'Septiembre', marca: 'Fiat',         estado: 'proximo',    piezas: 0,  icono: '⏳' },
+            { mes: 'Octubre',    marca: 'Mercedes',     estado: 'proximo',    piezas: 0,  icono: '⏳' },
+            { mes: 'Noviembre',  marca: 'Lancia',       estado: 'proximo',    piezas: 0,  icono: '⏳' },
+            { mes: 'Diciembre',  marca: 'Pegaso',       estado: 'proximo',    piezas: 0,  icono: '⏳' },
+        ];
+
+        // ── Calendario real ─────────────────────────────────────────────────
+        let calYear  = new Date().getFullYear();
+        let calMonth = new Date().getMonth(); // 0-based
+
+        // Eventos por fecha: clave "YYYY-MM-DD"
+        const CAL_EVENTS = {
+            '2026-06-01': [{ tipo: 'inicio', texto: '🔥 Inicio reto SEAT — apertura de envíos' }],
+            '2026-06-10': [{ tipo: 'taller', texto: '🔧 Taller de escaneo 3D · Club SEAT Madrid' }],
+            '2026-06-15': [{ tipo: 'deadline', texto: '⏰ 1ª entrega de piezas SEAT' }],
+            '2026-06-20': [{ tipo: 'verif', texto: '✅ Verificación colaborativa — ingenieros' }],
+            '2026-06-28': [{ tipo: 'deadline', texto: '⏰ Cierre de envíos del mes' }],
+            '2026-06-30': [{ tipo: 'fin', texto: '🏁 Fin reto SEAT — publicación de resultados' }],
+            '2026-07-01': [{ tipo: 'inicio', texto: '🔥 Inicio reto BMW' }],
+            '2026-07-12': [{ tipo: 'taller', texto: '🔧 Taller · Club BMW Barcelona' }],
+            '2026-07-20': [{ tipo: 'deadline', texto: '⏰ Cierre envíos BMW' }],
+            '2026-08-01': [{ tipo: 'inicio', texto: '🔥 Inicio reto Porsche' }],
+            '2026-05-31': [{ tipo: 'fin', texto: '🏁 Fin reto Volkswagen' }],
+            '2026-05-20': [{ tipo: 'verif', texto: '✅ Verificación piezas VW completada' }],
+        };
+
+        const MESES_ES = ['Enero','Febrero','Marzo','Abril','Mayo','Junio','Julio','Agosto','Septiembre','Octubre','Noviembre','Diciembre'];
+
+        function calDateKey(y, m, d) {
+            return `${y}-${String(m+1).padStart(2,'0')}-${String(d).padStart(2,'0')}`;
+        }
+
+        function renderCalendario() {
+            const title = document.getElementById('realcal-title');
+            const daysEl = document.getElementById('realcal-days');
+            const sidebar = document.getElementById('realcal-sidebar');
+            if (!title || !daysEl) return;
+
+            const marcaMes = CALENDARIO[calMonth];
+            title.textContent = `${MESES_ES[calMonth]} ${calYear}`;
+
+            // Sidebar
+            sidebar.innerHTML = `
+                <div class="realcal-brand-badge realcal-brand-badge--${marcaMes.estado}">
+                    <span class="realcal-brand-label">Marca del mes</span>
+                    <div class="realcal-brand-name">${marcaMes.marca}</div>
+                    <div class="realcal-brand-estado cal-badge cal-badge--${marcaMes.estado}">
+                        ${marcaMes.estado === 'completado' ? `🏆 Completado · ${marcaMes.piezas} piezas` : marcaMes.estado === 'activo' ? '🔥 En curso' : '⏳ Próximamente'}
+                    </div>
+                    ${marcaMes.estado === 'activo' ? `<a href="#contact" class="realcal-cta">Enviar piezas →</a>` : ''}
+                    ${marcaMes.estado === 'completado' ? `<a href="#search-above-video" class="realcal-cta">Ver piezas →</a>` : ''}
+                </div>
+                <div class="realcal-leyenda">
+                    <div class="realcal-ley-item"><span class="realcal-dot realcal-dot--inicio"></span>Inicio / Fin reto</div>
+                    <div class="realcal-ley-item"><span class="realcal-dot realcal-dot--taller"></span>Taller / Evento</div>
+                    <div class="realcal-ley-item"><span class="realcal-dot realcal-dot--deadline"></span>Entrega de piezas</div>
+                    <div class="realcal-ley-item"><span class="realcal-dot realcal-dot--verif"></span>Verificación</div>
+                </div>
+            `;
+
+            // Calcular días
+            const firstDay = new Date(calYear, calMonth, 1).getDay(); // 0=dom
+            const totalDays = new Date(calYear, calMonth + 1, 0).getDate();
+            const offset = (firstDay === 0 ? 6 : firstDay - 1); // ajustar lunes=0
+            const today = new Date();
+
+            let html = '';
+            // Celdas vacías antes del día 1
+            for (let i = 0; i < offset; i++) html += `<div class="realcal-cell realcal-cell--empty"></div>`;
+
+            for (let d = 1; d <= totalDays; d++) {
+                const key = calDateKey(calYear, calMonth, d);
+                const events = CAL_EVENTS[key] || [];
+                const isToday = today.getFullYear() === calYear && today.getMonth() === calMonth && today.getDate() === d;
+                const hasEvents = events.length > 0;
+                html += `
+                    <div class="realcal-cell ${isToday ? 'realcal-cell--today' : ''} ${hasEvents ? 'realcal-cell--has-event' : ''}"
+                         onclick="${hasEvents ? `openCalModal('${key}')` : ''}">
+                        <span class="realcal-day-num">${d}</span>
+                        ${events.map(e => `<div class="realcal-event realcal-event--${e.tipo}">${e.texto.split(' ').slice(0,3).join(' ')}…</div>`).join('')}
+                    </div>`;
+            }
+            daysEl.innerHTML = html;
+        }
+
+        function calPrev() { calMonth--; if (calMonth < 0) { calMonth = 11; calYear--; } renderCalendario(); }
+        function calNext() { calMonth++; if (calMonth > 11) { calMonth = 0; calYear++; } renderCalendario(); }
+
+        function openCalModal(key) {
+            const events = CAL_EVENTS[key] || [];
+            if (!events.length) return;
+            const [y, m, d] = key.split('-');
+            document.getElementById('cal-event-modal-body').innerHTML = `
+                <h3 style="margin:0 0 16px;color:var(--clr-text);">${parseInt(d)} de ${MESES_ES[parseInt(m)-1]} ${y}</h3>
+                <div style="display:flex;flex-direction:column;gap:10px;">
+                    ${events.map(e => `
+                        <div class="cal-event-item cal-event-item--${e.tipo}">
+                            <span>${e.texto}</span>
+                        </div>
+                    `).join('')}
+                </div>
+            `;
+            document.getElementById('cal-event-modal').style.display = 'flex';
+            document.body.style.overflow = 'hidden';
+        }
+        function closeCalModal() {
+            document.getElementById('cal-event-modal').style.display = 'none';
+            document.body.style.overflow = '';
+        }
+
+        function initCalendario() {
+            const grid = document.getElementById('cal-grid');
+            if (!grid) return;
+            grid.innerHTML = CALENDARIO.map(c => `
+                <div class="cal-card cal-card--${c.estado}">
+                    <div class="cal-card-top">
+                        <span class="cal-mes">${c.mes}</span>
+                        <span class="cal-icono">${c.icono}</span>
+                    </div>
+                    <div class="cal-marca">${c.marca}</div>
+                    ${c.estado === 'completado' ? `<div class="cal-piezas">${c.piezas} piezas digitalizadas</div>` : ''}
+                    ${c.estado === 'activo' ? `<div class="cal-piezas cal-piezas--activo">🔴 En curso — ¡Colabora!</div>` : ''}
+                    ${c.estado === 'proximo' ? `<div class="cal-piezas cal-piezas--proximo">Próximamente</div>` : ''}
+                    <div class="cal-badge cal-badge--${c.estado}">
+                        ${c.estado === 'completado' ? 'Completado' : c.estado === 'activo' ? 'Activo' : 'Próximo'}
+                    </div>
+                </div>
+            `).join('');
+        }
+
+        // ── Foros por marca ─────────────────────────────────────────────────
+        const FOROS_MARCAS = [
+            { marca: 'Biscúter',  posts: 142, miembros: 38,  ultimo: 'hace 2h',   temas: ['Culata 197cc', 'Frenos originales', 'Carburador Bing'] },
+            { marca: 'SEAT',      posts: 891, miembros: 204, ultimo: 'hace 15min', temas: ['SEAT 600 carburador', '850 transmisión', '124 Sport'] },
+            { marca: 'Renault',   posts: 634, miembros: 156, ultimo: 'hace 1h',    temas: ['Renault 4 motor', '8 Gordini piezas', 'Dauphine'] },
+            { marca: 'Citroën',   posts: 478, miembros: 112, ultimo: 'hace 3h',    temas: ['2CV junta culata', 'DS hidráulico', 'Mehari'] },
+            { marca: 'BMW',       posts: 523, miembros: 134, ultimo: 'hace 45min', temas: ['E30 suspensión', '2002 carburador', 'Isetta'] },
+            { marca: 'Volkswagen',posts: 712, miembros: 189, ultimo: 'hace 30min', temas: ['Escarabajo motor', 'Combi T1', 'Golf GTI Mk1'] },
+            { marca: 'Alfa Romeo',posts: 389, miembros: 87,  ultimo: 'hace 5h',    temas: ['Giulia Sprint', 'Spider junta', '1750 carburador'] },
+            { marca: 'Porsche',   posts: 267, miembros: 63,  ultimo: 'hace 8h',    temas: ['356 motor', '911 E caja', '912 pistones'] },
+            { marca: 'Fiat',      posts: 445, miembros: 98,  ultimo: 'hace 2h',    temas: ['500 motor', '124 Spider', 'Topolino piezas'] },
+            { marca: 'Mercedes',  posts: 334, miembros: 79,  ultimo: 'hace 6h',    temas: ['300SL puertas', 'Pagoda W113', '190 SL'] },
+            { marca: 'Lancia',    posts: 198, miembros: 45,  ultimo: 'hace 1d',    temas: ['Fulvia HF', 'Stratos réplica', 'Delta Integrale'] },
+            { marca: 'Pegaso',    posts: 87,  miembros: 22,  ultimo: 'hace 3d',    temas: ['Z-102 motor', 'Carrocería Touring', 'Documentación'] },
+        ];
+
+        let forosData = [...FOROS_MARCAS];
+
+        function initForos() {
+            renderForos(forosData);
+        }
+
+        function renderForos(data) {
+            const grid = document.getElementById('foros-grid');
+            if (!grid) return;
+            grid.innerHTML = data.map(f => `
+                <div class="foro-card glass-panel" onclick="openForoModal('${f.marca}')">
+                    <div class="foro-card-top">
+                        <div class="foro-avatar">${f.marca[0]}</div>
+                        <div class="foro-meta">
+                            <h3 class="foro-marca">${f.marca}</h3>
+                            <span class="foro-ultimo">Último mensaje ${f.ultimo}</span>
+                        </div>
+                        <div class="foro-stats">
+                            <span class="foro-stat"><strong>${f.posts}</strong> posts</span>
+                            <span class="foro-stat"><strong>${f.miembros}</strong> miembros</span>
+                        </div>
+                    </div>
+                    <div class="foro-temas">
+                        ${f.temas.map(t => `<span class="foro-tema-chip">${t}</span>`).join('')}
+                    </div>
+                </div>
+            `).join('');
+        }
+
+        function filterForos() {
+            const term = document.getElementById('foros-search').value.toLowerCase();
+            renderForos(forosData.filter(f => f.marca.toLowerCase().includes(term) || f.temas.some(t => t.toLowerCase().includes(term))));
+        }
+
+        function openForoModal(marca) {
+            const f = FOROS_MARCAS.find(x => x.marca === marca);
+            if (!f) return;
+            const modal = document.getElementById('foro-modal');
+            document.getElementById('foro-modal-title').textContent = `Foro · ${marca}`;
+            document.getElementById('foro-modal-body').innerHTML = `
+                <div class="foro-modal-stats">
+                    <span><strong>${f.posts}</strong> posts</span>
+                    <span><strong>${f.miembros}</strong> miembros</span>
+                    <span>Último mensaje <strong>${f.ultimo}</strong></span>
+                </div>
+                <div class="foro-threads">
+                    ${f.temas.map((t, i) => `
+                        <div class="foro-thread">
+                            <div class="foro-thread-icon">💬</div>
+                            <div class="foro-thread-body">
+                                <strong>${t}</strong>
+                                <span>${[12,7,23,5,18][i % 5]} respuestas · ${['hace 2h','hace 1d','hace 3h','hace 5d','hace 30min'][i % 5]}</span>
+                            </div>
+                            <div class="foro-thread-badge">${['Activo','Resuelto','Activo','Cerrado','Activo'][i % 5]}</div>
+                        </div>
+                    `).join('')}
+                </div>
+                <div class="foro-new-post">
+                    <textarea class="form-textarea" placeholder="Escribe tu pregunta o aportación para el foro de ${marca}..." rows="3"></textarea>
+                    <button class="btn-primary" onclick="alert('Función de publicar disponible próximamente. Regístrate para participar.')">Publicar en el foro</button>
+                </div>
+            `;
+            modal.style.display = 'flex';
+            document.body.style.overflow = 'hidden';
+        }
+
+        function closeForoModal() {
+            document.getElementById('foro-modal').style.display = 'none';
+            document.body.style.overflow = '';
+        }
+
+        // ── Búsqueda global de piezas ───────────────────────────────────────
+        function onGlobalPartSearch() {
+            const term = document.getElementById('global-part-search').value.trim();
+            document.getElementById('global-search-clear').style.display = term ? 'flex' : 'none';
+            const resultsEl = document.getElementById('global-search-results');
+            if (!term || term.length < 2) { resultsEl.style.display = 'none'; return; }
+            const t = term.toLowerCase();
+            const matches = [];
+            for (const brand of (allCoches || [])) {
+                collectPartsDeep(brand.models, brand.brand, [], t, matches);
+                if (matches.length >= 40) break;
+            }
+            if (!matches.length) {
+                resultsEl.innerHTML = `<div class="dropdown-empty">Sin resultados para "<strong>${term}</strong>"</div>`;
+            } else {
+                resultsEl.innerHTML = matches.map((m, i) => `
+                    <div class="global-result-item" onmousedown="selectGlobalResult(${i})">
+                        <div class="global-result-main">
+                            <span class="global-result-part">${highlight(m.partName, term)}</span>
+                            <span class="global-result-path">${m.brand} › ${m.modelName}</span>
+                        </div>
+                        ${m.has3d ? '<span class="global-result-badge">3D</span>' : ''}
+                    </div>
+                `).join('');
+                window._globalResults = matches;
+            }
+            resultsEl.style.display = 'block';
+        }
+
+        function collectPartsDeep(models, brand, path, term, out) {
+            for (const m of (models || [])) {
+                if (out.length >= 40) return;
+                const isCategory = typeof m === 'object' && m.type === 'category';
+                if (isCategory) {
+                    collectPartsDeep(m.submodels || [], brand, path.concat(m.name), term, out);
+                } else {
+                    const modelName = typeof m === 'object' ? m.name : m;
+                    for (const p of (m.parts || [])) {
+                        if (p.name && p.name.toLowerCase().includes(term)) {
+                            out.push({ brand, modelName, partName: p.name, part: p, has3d: !!(p.stlUrl && (p.stlUrl.endsWith('.glb') || p.stlUrl.endsWith('.gltf'))) });
+                        }
+                    }
+                }
+            }
+        }
+
+        function highlight(text, term) {
+            const idx = text.toLowerCase().indexOf(term.toLowerCase());
+            if (idx < 0) return text;
+            return text.slice(0, idx) + '<mark>' + text.slice(idx, idx + term.length) + '</mark>' + text.slice(idx + term.length);
+        }
+
+        function selectGlobalResult(i) {
+            const r = (window._globalResults || [])[i];
+            if (!r) return;
+            document.getElementById('global-search-results').style.display = 'none';
+            document.getElementById('global-part-search').value = r.partName;
+            // Rellenar buscador de marca/modelo y disparar la selección
+            document.getElementById('brand-search').value = r.brand;
+            document.getElementById('brand-clear-btn').style.display = 'flex';
+            selectBrandWizard(r.brand, r.modelName);
+        }
+
+        function clearGlobalSearch() {
+            document.getElementById('global-part-search').value = '';
+            document.getElementById('global-search-clear').style.display = 'none';
+            document.getElementById('global-search-results').style.display = 'none';
+        }
+
+        // ── Modal de materiales ─────────────────────────────────────────────
+        const MATERIALES_DATA = {
+            acero316l: {
+                nombre: 'Acero Inoxidable 316L',
+                tag: 'Ferromagnético',
+                color: 'linear-gradient(135deg,#b8bcc8,#8a8f9e)',
+                desc: 'Acero austenítico con adición de molibdeno que lo hace superior al 304 en resistencia a la corrosión, especialmente frente a cloruros. Idóneo para piezas estructurales y de precisión en entornos húmedos o marinos.',
+                specs: [
+                    { label: 'Densidad', value: '7.99 g/cm³' },
+                    { label: 'Resistencia tracción', value: '485–620 MPa' },
+                    { label: 'Límite elástico', value: '170–310 MPa' },
+                    { label: 'Dureza', value: '≤ 217 HB' },
+                    { label: 'Temp. máx. continua', value: '870 °C' },
+                    { label: 'Módulo de Young', value: '193 GPa' },
+                ],
+                usos: ['Piezas de escape', 'Soportes de motor', 'Componentes de frenos', 'Bridas y racores'],
+            },
+            aluminio6061: {
+                nombre: 'Aluminio 6061-T6',
+                tag: 'No Ferroso',
+                color: 'linear-gradient(135deg,#e8c87a,#c9952a)',
+                desc: 'Aleación de aluminio con magnesio y silicio, tratada térmicamente (T6) para maximizar resistencia. Excelente relación resistencia/peso y maquinabilidad. Estándar de la industria aeroespacial y automotriz.',
+                specs: [
+                    { label: 'Densidad', value: '2.70 g/cm³' },
+                    { label: 'Resistencia tracción', value: '310 MPa' },
+                    { label: 'Límite elástico', value: '276 MPa' },
+                    { label: 'Dureza', value: '95 HB' },
+                    { label: 'Temp. máx. continua', value: '150 °C' },
+                    { label: 'Módulo de Young', value: '68.9 GPa' },
+                ],
+                usos: ['Carcasas de motor', 'Brazos de suspensión', 'Tapas de cilindros', 'Chasis ligeros'],
+            },
+            cobreC110: {
+                nombre: 'Cobre Electrolítico C110',
+                tag: 'Conductor',
+                color: 'linear-gradient(135deg,#d4a574,#b87333)',
+                desc: 'Cobre de pureza ≥99.9% obtenido por refinado electrolítico. Conductividad eléctrica del 101% IACS y conductividad térmica excepcional. Referencia en aplicaciones eléctricas e intercambiadores de calor.',
+                specs: [
+                    { label: 'Densidad', value: '8.94 g/cm³' },
+                    { label: 'Conductividad eléctrica', value: '101% IACS' },
+                    { label: 'Conductividad térmica', value: '391 W/m·K' },
+                    { label: 'Resistencia tracción', value: '220–250 MPa' },
+                    { label: 'Temp. de fusión', value: '1085 °C' },
+                    { label: 'Módulo de Young', value: '110 GPa' },
+                ],
+                usos: ['Bobinas de encendido', 'Conectores eléctricos', 'Radiadores', 'Bujes de contacto'],
+            },
+            titanioG5: {
+                nombre: 'Titanio Grado 5 (Ti-6Al-4V)',
+                tag: 'Ligero',
+                color: 'linear-gradient(135deg,#e8e8e8,#a0a0a0)',
+                desc: 'La aleación de titanio más utilizada del mundo. Combina alta resistencia, bajo peso y biocompatibilidad. Resiste temperaturas extremas y entornos corrosivos sin recubrimientos adicionales.',
+                specs: [
+                    { label: 'Densidad', value: '4.43 g/cm³' },
+                    { label: 'Resistencia tracción', value: '950 MPa' },
+                    { label: 'Límite elástico', value: '880 MPa' },
+                    { label: 'Dureza', value: '334 HB' },
+                    { label: 'Temp. máx. continua', value: '315 °C' },
+                    { label: 'Módulo de Young', value: '113.8 GPa' },
+                ],
+                usos: ['Válvulas de competición', 'Tornillería de alto rendimiento', 'Piezas de turbo', 'Implantes y prótesis'],
+            },
+            policarbonato: {
+                nombre: 'Policarbonato (PC)',
+                tag: 'Termoplástico',
+                color: 'linear-gradient(135deg,#f0f4ff,#7b9cff)',
+                desc: 'Termoplástico amorfo con extraordinaria resistencia al impacto (200 veces más que el vidrio) y alta transparencia óptica. Estable dimensionalmente hasta 135 °C y fácil de mecanizar e imprimir.',
+                specs: [
+                    { label: 'Densidad', value: '1.20 g/cm³' },
+                    { label: 'Resistencia tracción', value: '55–75 MPa' },
+                    { label: 'Resistencia al impacto', value: '600–850 J/m' },
+                    { label: 'Temp. de deflexión', value: '130–135 °C' },
+                    { label: 'Transmitancia óptica', value: '≥88%' },
+                    { label: 'Módulo de Young', value: '2.3 GPa' },
+                ],
+                usos: ['Cubiertas de faros', 'Carcasas de centralita', 'Lentes y visores', 'Paneles interiores'],
+            },
+            tpu95a: {
+                nombre: 'TPU Shore 95A',
+                tag: 'Elastómero',
+                color: 'linear-gradient(135deg,#fff0f0,#ff8a80)',
+                desc: 'Poliuretano termoplástico de dureza Shore 95A. Combina la flexibilidad del caucho con la procesabilidad de los termoplásticos. Alta resistencia a la abrasión, aceites y temperaturas de trabajo moderadas.',
+                specs: [
+                    { label: 'Densidad', value: '1.20–1.25 g/cm³' },
+                    { label: 'Dureza Shore', value: '95A' },
+                    { label: 'Resistencia tracción', value: '40–55 MPa' },
+                    { label: 'Elongación rotura', value: '400–500%' },
+                    { label: 'Temp. de trabajo', value: '-40 a +85 °C' },
+                    { label: 'Resistencia abrasión', value: 'Excelente (DIN 53516)' },
+                ],
+                usos: ['Juntas de estanqueidad', 'Protectores de cables', 'Topes de suspensión', 'Recubrimientos antideslizantes'],
+            },
+            peek450g: {
+                nombre: 'PEEK 450G',
+                tag: 'Técnico',
+                color: 'linear-gradient(135deg,#f0fff4,#52c97a)',
+                desc: 'Polietercetona semicristalina de altas prestaciones. Resiste ácidos concentrados, bases y la mayoría de disolventes orgánicos. A 250 °C mantiene el 50% de sus propiedades mecánicas. El plástico de ingeniería más exigente.',
+                specs: [
+                    { label: 'Densidad', value: '1.32 g/cm³' },
+                    { label: 'Resistencia tracción', value: '100 MPa' },
+                    { label: 'Módulo de flexión', value: '4.1 GPa' },
+                    { label: 'Temp. continua', value: '250 °C' },
+                    { label: 'Temp. de fusión', value: '343 °C' },
+                    { label: 'Resistencia química', value: 'Ácidos, bases, disolventes' },
+                ],
+                usos: ['Engranajes de distribución', 'Rodamientos secos', 'Piezas de bomba de combustible', 'Aislantes eléctricos de alta temp.'],
+            },
+            polipropileno: {
+                nombre: 'Polipropileno (PP-H)',
+                tag: 'Reciclable',
+                color: 'linear-gradient(135deg,#fffbf0,#ffcc44)',
+                desc: 'Termoplástico semicristalino de bajo coste y alta versatilidad. Excelente resistencia química a ácidos diluidos y bases. 100% reciclable (código 5). Ampliamente usado en automoción por su ligereza y rigidez.',
+                specs: [
+                    { label: 'Densidad', value: '0.90–0.91 g/cm³' },
+                    { label: 'Resistencia tracción', value: '31–41 MPa' },
+                    { label: 'Módulo de flexión', value: '1.3–1.8 GPa' },
+                    { label: 'Temp. de deflexión', value: '100–115 °C' },
+                    { label: 'Resistencia química', value: 'Ácidos diluidos, bases, aceites' },
+                    { label: 'Reciclabilidad', value: 'Código 5 — 100% reciclable' },
+                ],
+                usos: ['Depósitos de líquido de frenos', 'Carcasas de batería', 'Conductos de aire', 'Parachoques y spoilers'],
+            },
+        };
+
+        function openMaterialModal(id) {
+            const m = MATERIALES_DATA[id];
+            if (!m) return;
+            document.getElementById('material-modal-header').innerHTML = `
+                <div class="mat-modal-swatch" style="background:${m.color};"></div>
+                <div>
+                    <span class="cat-card-tag">${m.tag}</span>
+                    <h2 class="mat-modal-title">${m.nombre}</h2>
+                    <p class="mat-modal-desc">${m.desc}</p>
+                </div>
+            `;
+            document.getElementById('material-modal-body').innerHTML = `
+                <div class="mat-modal-specs">
+                    <h4 class="mat-modal-section-title">Propiedades técnicas</h4>
+                    <div class="mat-specs-grid">
+                        ${m.specs.map(s => `
+                            <div class="mat-spec-item">
+                                <span class="mat-spec-label">${s.label}</span>
+                                <span class="mat-spec-value">${s.value}</span>
+                            </div>
+                        `).join('')}
+                    </div>
+                </div>
+                <div class="mat-modal-usos">
+                    <h4 class="mat-modal-section-title">Aplicaciones en automoción</h4>
+                    <div class="mat-usos-list">
+                        ${m.usos.map(u => `<span class="mat-uso-chip">⚙️ ${u}</span>`).join('')}
+                    </div>
+                </div>
+            `;
+            document.getElementById('material-modal').style.display = 'flex';
+            document.body.style.overflow = 'hidden';
+        }
+
+        function closeMaterialModal(e) {
+            if (e && e.target !== document.getElementById('material-modal') && !e.target.classList.contains('modal-close')) return;
+            document.getElementById('material-modal').style.display = 'none';
+            document.body.style.overflow = '';
+        }
+
+        // Formulario de contacto
+        async function submitContactForm(e) {
+            e.preventDefault();
+            const btn = document.getElementById('cf-submit-btn');
+            const btnText = document.getElementById('cf-btn-text');
+            const status = document.getElementById('cf-status');
+            btnText.textContent = 'Enviando...';
+            btn.disabled = true;
+            status.style.display = 'none';
+            try {
+                const res = await fetch('/send-contact', {
+                    method: 'POST',
+                    headers: { 'Content-Type': 'application/json' },
+                    body: JSON.stringify({
+                        name: document.getElementById('cf-name').value,
+                        email: document.getElementById('cf-email').value,
+                        subject: document.getElementById('cf-subject').value,
+                        message: document.getElementById('cf-message').value,
+                    })
+                });
+                const data = await res.json();
+                if (data.ok) {
+                    status.textContent = '✓ Mensaje enviado. Te respondemos en menos de 48h.';
+                    status.className = 'cf-status success';
+                    document.getElementById('contact-form').reset();
+                } else {
+                    throw new Error(data.error);
+                }
+            } catch (err) {
+                status.textContent = '✕ Error al enviar. Escríbenos directamente a pabloyarza19@gmail.com';
+                status.className = 'cf-status error';
+            }
+            status.style.display = 'block';
+            btnText.textContent = 'Enviar mensaje';
+            btn.disabled = false;
+        }
+
+        // Contador animado para la sección About
+        function animateCounter(el) {
+            const target = parseInt(el.dataset.target, 10);
+            const duration = 1200;
+            const start = performance.now();
+            function step(now) {
+                const progress = Math.min((now - start) / duration, 1);
+                const eased = 1 - Math.pow(1 - progress, 3);
+                el.textContent = Math.floor(eased * target);
+                if (progress < 1) requestAnimationFrame(step);
+                else el.textContent = target;
+            }
+            requestAnimationFrame(step);
+        }
+
+        // Animar contadores del hero al cargar
+        document.querySelectorAll('.hero-stat-num').forEach(el => {
+            setTimeout(() => animateCounter(el), 400);
+        });
+
+        const statsObserver = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.querySelectorAll('.about-stat-number').forEach(animateCounter);
+                    statsObserver.unobserve(entry.target);
+                }
+            });
+        }, { threshold: 0.3 });
+
+        const statsEl = document.querySelector('.about-stats');
+        if (statsEl) statsObserver.observe(statsEl);
     </script>
     <!-- SCRIPTS EXTERNOS -->
     <script src="sequence-animation.js"></script>
+    <script>
+        function toggleMobileMenu() {
+            const menu = document.getElementById('mobile-menu');
+            const btn = document.getElementById('nav-hamburger');
+            const isOpen = menu.classList.toggle('is-open');
+            btn.classList.toggle('is-open', isOpen);
+            btn.setAttribute('aria-expanded', isOpen);
+            menu.setAttribute('aria-hidden', !isOpen);
+            document.body.style.overflow = isOpen ? 'hidden' : '';
+        }
+        function closeMobileMenu() {
+            const menu = document.getElementById('mobile-menu');
+            const btn = document.getElementById('nav-hamburger');
+            menu.classList.remove('is-open');
+            btn.classList.remove('is-open');
+            btn.setAttribute('aria-expanded', 'false');
+            menu.setAttribute('aria-hidden', 'true');
+            document.body.style.overflow = '';
+        }
+    </script>
 </body>
 
 </html>

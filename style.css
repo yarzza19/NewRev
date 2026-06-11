@@ -4441,13 +4441,13 @@ body.theme-plastic .material-wizard-card:hover {
 
 /* ── Vídeo promo ─────────────────────────────────────────── */
 #promo-video-section {
-    padding: 80px 6vw;
+    padding: 100px 6vw;
     background: var(--clr-bg);
     border-top: 1px solid var(--clr-border);
 }
 
 .promo-video-wrap {
-    max-width: 960px;
+    max-width: 1100px;
     margin: 0 auto;
 }
 
@@ -4457,8 +4457,10 @@ body.theme-plastic .material-wizard-card:hover {
     padding-bottom: 56.25%; /* 16:9 */
     border-radius: 20px;
     overflow: hidden;
-    box-shadow: 0 24px 80px rgba(0,0,0,0.45);
+    box-shadow: 0 32px 100px rgba(0,0,0,0.6);
     border: 1px solid var(--clr-border);
+    background: #06070A;
+    min-height: 480px;
 }
 
 .promo-video-iframe {
@@ -4468,8 +4470,53 @@ body.theme-plastic .material-wizard-card:hover {
     height: 100%;
     border: none;
     border-radius: 20px;
+    transition: opacity 0.4s ease;
+}
+
+/* Overlay play */
+.promo-play-overlay {
+    position: absolute;
+    inset: 0;
+    z-index: 10;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 20px;
+    cursor: pointer;
+    background: radial-gradient(ellipse at center, rgba(238,198,129,0.06) 0%, transparent 70%),
+                linear-gradient(160deg, rgba(20,14,10,0.92) 0%, rgba(6,7,10,0.97) 100%);
+    border-radius: 20px;
+    transition: background 0.3s ease;
+}
+
+.promo-play-overlay:hover {
+    background: radial-gradient(ellipse at center, rgba(238,198,129,0.12) 0%, transparent 70%),
+                linear-gradient(160deg, rgba(20,14,10,0.88) 0%, rgba(6,7,10,0.93) 100%);
+}
+
+.promo-play-btn {
+    width: 100px;
+    height: 100px;
+    transition: transform 0.25s cubic-bezier(0.22,1,0.36,1);
+    filter: drop-shadow(0 0 24px rgba(238,198,129,0.35));
+}
+
+.promo-play-overlay:hover .promo-play-btn {
+    transform: scale(1.1);
+    filter: drop-shadow(0 0 36px rgba(238,198,129,0.55));
+}
+
+.promo-play-label {
+    font-family: 'Outfit', sans-serif;
+    font-size: 0.85rem;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    color: rgba(238,198,129,0.7);
 }
 
 @media (max-width: 768px) {
-    #promo-video-section { padding: 50px 4vw; }
+    #promo-video-section { padding: 60px 4vw; }
+    .promo-video-frame-wrap { min-height: 220px; }
+    .promo-play-btn { width: 72px; height: 72px; }
 }

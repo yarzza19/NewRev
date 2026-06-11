@@ -131,13 +131,26 @@
         <div class="promo-video-wrap">
             <p class="search-above-eyebrow" style="text-align:center; margin-bottom:16px;">VER EN ACCIÓN</p>
             <h2 class="search-above-title" style="text-align:center; margin-bottom:28px;">Descubre NewRev</h2>
-            <div class="promo-video-frame-wrap">
+            <div class="promo-video-frame-wrap" id="promo-video-container">
+                <!-- Overlay con play button — desaparece al hacer clic -->
+                <div class="promo-play-overlay" id="promo-play-overlay" onclick="startPromoVideo()">
+                    <div class="promo-play-btn">
+                        <svg viewBox="0 0 80 80" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <circle cx="40" cy="40" r="39" stroke="rgba(238,198,129,0.4)" stroke-width="1.5"/>
+                            <circle cx="40" cy="40" r="32" fill="rgba(238,198,129,0.12)" stroke="rgba(238,198,129,0.6)" stroke-width="1"/>
+                            <path d="M33 27 L57 40 L33 53 Z" fill="#eec681"/>
+                        </svg>
+                    </div>
+                    <p class="promo-play-label">Reproducir vídeo promo</p>
+                </div>
                 <iframe
-                    src="assets/img/newrev-promo-video.html"
+                    id="promo-video-iframe"
+                    src=""
                     class="promo-video-iframe"
                     frameborder="0"
                     allowfullscreen
                     title="NewRev Promo Video"
+                    style="opacity:0; pointer-events:none;"
                 ></iframe>
             </div>
         </div>
@@ -3103,6 +3116,37 @@ Descripción de la pieza: ${textVal}`;
         if (statsEl) statsObserver.observe(statsEl);
     </script>
     <!-- SCRIPTS EXTERNOS -->
+    <script>
+        function startPromoVideo() {
+            const overlay = document.getElementById('promo-play-overlay');
+            const iframe  = document.getElementById('promo-video-iframe');
+            // Carga el src solo al hacer play (evita carga en background)
+            iframe.src = 'assets/img/newrev-promo-video.html';
+            overlay.style.transition = 'opacity 0.4s ease';
+            overlay.style.opacity = '0';
+            iframe.style.opacity = '1';
+            iframe.style.pointerEvents = 'auto';
+            setTimeout(() => { overlay.style.display = 'none'; }, 420);
+
+            // Detectar fin: el iframe avisa via postMessage cuando el vídeo acaba
+            window.addEventListener('message', function onMsg(e) {
+                if (e.data === 'newrev-video-ended') {
+                    resetPromoVideo();
+                    window.removeEventListener('message', onMsg);
+                }
+            });
+        }
+
+        function resetPromoVideo() {
+            const overlay = document.getElementById('promo-play-overlay');
+            const iframe  = document.getElementById('promo-video-iframe');
+            iframe.src = '';
+            iframe.style.opacity = '0';
+            iframe.style.pointerEvents = 'none';
+            overlay.style.display = 'flex';
+            requestAnimationFrame(() => { overlay.style.opacity = '1'; });
+        }
+    </script>
     <script src="sequence-animation.js"></script>
     <script>
         function toggleMobileMenu() {

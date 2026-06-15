@@ -7,3 +7,8 @@ comunidad_piezas.json
 temp_brands.json
 temp.html
 *.log
+.vercel
+.env*
+
+# NewRev landing data (override the bare comunidad_piezas.json ignore)
+!data/comunidad_piezas.json

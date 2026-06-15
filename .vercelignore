@@ -19,3 +19,5 @@ admin_change_status.js
 workspace.code-workspace
 comfyui_text_workflow.json
 scroll-animation.js
+
+!data/comunidad_piezas.json

@@ -1,0 +1,396 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="SILEX — a digital marketing studio that forges brands with the permanence of bedrock and the heat of flint. Brand strategy, performance media, creative, motion and SEO." />
+  <meta name="theme-color" content="#0a0908" />
+  <title>SILEX — Strike the Spark · Digital Marketing Studio</title>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Syne:wght@500;600;700;800&family=Fraunces:ital,opsz,wght@1,9..144,400;1,9..144,500&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet" />
+
+  <link rel="stylesheet" href="css/style.css" />
+
+  <script type="importmap">
+    {
+      "imports": {
+        "three": "https://cdn.jsdelivr.net/npm/three@0.160.0/build/three.module.js",
+        "three/addons/": "https://cdn.jsdelivr.net/npm/three@0.160.0/examples/jsm/"
+      }
+    }
+  </script>
+</head>
+<body>
+  <!-- ============ PRELOADER ============ -->
+  <div class="preloader" id="preloader">
+    <div class="preloader__inner">
+      <div class="preloader__label">
+        <span>SILEX</span>
+        <span>STRIKING THE FLINT</span>
+      </div>
+      <div class="preloader__counter" id="counter">0</div>
+      <div class="preloader__bar"><span id="loadbar"></span></div>
+      <div class="preloader__status" id="loadstatus">Surveying the bedrock</div>
+    </div>
+  </div>
+
+  <!-- ============ CUSTOM CURSOR ============ -->
+  <div class="cursor" id="cursor"><span class="cursor__label"></span></div>
+  <div class="cursor-dot" id="cursorDot"></div>
+
+  <!-- ============ GRAIN OVERLAY ============ -->
+  <div class="grain" aria-hidden="true"></div>
+
+  <!-- ============ 3D CANVAS ============ -->
+  <canvas id="stone"></canvas>
+  <div class="scene-vignette" aria-hidden="true"></div>
+
+  <!-- ============ NAV ============ -->
+  <header class="nav" id="nav">
+    <a href="#top" class="nav__logo" data-cursor="SILEX">
+      <svg viewBox="0 0 34 34" width="26" height="26" aria-hidden="true">
+        <path d="M17 2 L31 13 L25 31 L9 31 L3 13 Z" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linejoin="round"/>
+        <path d="M17 2 L17 18 L31 13 M17 18 L25 31 M17 18 L9 31 M17 18 L3 13" fill="none" stroke="currentColor" stroke-width="1" opacity="0.6"/>
+      </svg>
+      <span>SILEX</span>
+    </a>
+    <nav class="nav__links">
+      <a href="#ethos" data-cursor="read">Ethos</a>
+      <a href="#capabilities" data-cursor="view">Capabilities</a>
+      <a href="#pricing" data-cursor="view">Planes</a>
+      <a href="#contact" data-cursor="view">Contact</a>
+    </nav>
+    <a href="#contact" class="nav__cta" data-cursor="strike">
+      <span>Start a project</span>
+      <span class="nav__cta-dot"></span>
+    </a>
+  </header>
+
+  <main id="top">
+    <!-- ============ HERO ============ -->
+    <section class="hero" id="hero">
+      <div class="hero__meta hero__meta--left">
+        <span class="tag">EST. MMXIV</span>
+        <span class="tag">FLINT-GRADE STRATEGY</span>
+      </div>
+      <div class="hero__meta hero__meta--right">
+        <span class="tag" id="coords">41.3874° N / 2.1686° E</span>
+        <span class="tag">STUDIO — OPEN</span>
+      </div>
+
+      <div class="hero__content">
+        <p class="hero__eyebrow reveal-line"><span>A digital marketing studio</span></p>
+        <h1 class="hero__title">
+          <span class="line"><span>STRIKE</span></span>
+          <span class="line"><span>THE <em>spark</em></span></span>
+        </h1>
+        <div class="hero__sub">
+          <p class="reveal-line"><span>We forge brands with the permanence of bedrock</span></p>
+          <p class="reveal-line"><span>and the heat of flint. Strategy that holds —</span></p>
+          <p class="reveal-line"><span>creative that refuses to erode.</span></p>
+        </div>
+      </div>
+
+      <div class="hero__scroll" id="heroScroll">
+        <span>Scroll to descend</span>
+        <span class="hero__scroll-line"><i></i></span>
+      </div>
+
+      <div class="hero__index">
+        <span>001 — 005</span>
+        <span>/ THE SEAM</span>
+      </div>
+    </section>
+
+    <!-- ============ MARQUEE ============ -->
+    <div class="marquee" aria-hidden="true">
+      <div class="marquee__track">
+        <span>BRAND STRATEGY</span><span class="dot">✦</span>
+        <span>PERFORMANCE MEDIA</span><span class="dot">✦</span>
+        <span>CREATIVE DIRECTION</span><span class="dot">✦</span>
+        <span>MOTION &amp; 3D</span><span class="dot">✦</span>
+        <span>SEO &amp; OWNED</span><span class="dot">✦</span>
+        <span>SOCIAL</span><span class="dot">✦</span>
+        <span>BRAND STRATEGY</span><span class="dot">✦</span>
+        <span>PERFORMANCE MEDIA</span><span class="dot">✦</span>
+        <span>CREATIVE DIRECTION</span><span class="dot">✦</span>
+        <span>MOTION &amp; 3D</span><span class="dot">✦</span>
+        <span>SEO &amp; OWNED</span><span class="dot">✦</span>
+        <span>SOCIAL</span><span class="dot">✦</span>
+      </div>
+    </div>
+
+    <!-- ============ ETHOS / MANIFESTO ============ -->
+    <section class="ethos" id="ethos">
+      <div class="section-head">
+        <span class="section-head__num">002</span>
+        <span class="section-head__label">The Ethos</span>
+      </div>
+      <h2 class="ethos__statement">
+        <span class="word">A</span> <span class="word">brand</span> <span class="word">should</span>
+        <span class="word">be</span> <span class="word">cut</span> <span class="word">from</span>
+        <span class="word"><em>bedrock</em></span> <span class="word">—</span>
+        <span class="word">unshakeable</span> <span class="word">at</span> <span class="word">the</span>
+        <span class="word">foundation,</span> <span class="word">incandescent</span>
+        <span class="word">at</span> <span class="word">the</span> <span class="word">surface.</span>
+        <span class="word">Silex</span> <span class="word">shapes</span> <span class="word">both:</span>
+        <span class="word">the</span> <span class="word">strategy</span> <span class="word">that</span>
+        <span class="word">holds,</span> <span class="word">and</span> <span class="word">the</span>
+        <span class="word"><em>spark</em></span> <span class="word">that</span> <span class="word">spreads.</span>
+      </h2>
+    </section>
+
+    <!-- ============ STATS ============ -->
+    <section class="stats" id="stats">
+      <div class="stat">
+        <span class="stat__num" data-count="312" data-suffix="">0</span>
+        <span class="stat__label">Brands forged</span>
+      </div>
+      <div class="stat">
+        <span class="stat__num" data-count="4.8" data-suffix="×" data-decimals="1">0</span>
+        <span class="stat__label">Avg. return on ad spend</span>
+      </div>
+      <div class="stat">
+        <span class="stat__num" data-count="1.2" data-suffix="B" data-decimals="1">0</span>
+        <span class="stat__label">Impressions ignited</span>
+      </div>
+      <div class="stat">
+        <span class="stat__num" data-count="27" data-suffix="">0</span>
+        <span class="stat__label">Industry awards</span>
+      </div>
+    </section>
+
+    <!-- ============ CAPABILITIES (HORIZONTAL PIN) ============ -->
+    <section class="seams" id="capabilities">
+      <div class="seams__pin" id="seamsPin">
+        <div class="seams__track" id="seamsTrack">
+          <div class="seams__intro panel">
+            <div class="section-head">
+              <span class="section-head__num">003</span>
+              <span class="section-head__label">Capabilities</span>
+            </div>
+            <h2 class="seams__heading">Layers that<br/>carry weight.</h2>
+            <p>Five seams of capability, each engineered for a different depth of the work — from the load-bearing strategy to the spark at the surface. Drag or scroll to dig.</p>
+            <span class="seams__hint" data-cursor="">DIG →</span>
+          </div>
+
+          <article class="seam panel" data-cursor="explore">
+            <div class="seam__index">01</div>
+            <div class="seam__visual seam--strategy"><span class="seam__glow"></span></div>
+            <div class="seam__body">
+              <h3>Brand&nbsp;Strategy</h3>
+              <p class="seam__class">Positioning &amp; foundations</p>
+              <p class="seam__desc">We core-sample your market and lay the load-bearing strategy everything else is built on — positioning, narrative and identity with real density.</p>
+              <ul class="seam__spec">
+                <li><span>Output</span><b>Brand platform</b></li>
+                <li><span>Depth</span><b>Bedrock</b></li>
+                <li><span>Cycle</span><b>4–6 wks</b></li>
+              </ul>
+            </div>
+          </article>
+
+          <article class="seam panel" data-cursor="explore">
+            <div class="seam__index">02</div>
+            <div class="seam__visual seam--media"><span class="seam__glow"></span></div>
+            <div class="seam__body">
+              <h3>Performance&nbsp;Media</h3>
+              <p class="seam__class">Paid acquisition</p>
+              <p class="seam__desc">Full-funnel paid across search, social and programmatic — engineered to compound month over month, not erode the moment you pause.</p>
+              <ul class="seam__spec">
+                <li><span>Channels</span><b>Omni</b></li>
+                <li><span>Model</span><b>Full-funnel</b></li>
+                <li><span>Signal</span><b>First-party</b></li>
+              </ul>
+            </div>
+          </article>
+
+          <article class="seam panel" data-cursor="explore">
+            <div class="seam__index">03</div>
+            <div class="seam__visual seam--creative"><span class="seam__glow"></span></div>
+            <div class="seam__body">
+              <h3>Creative &amp; Motion</h3>
+              <p class="seam__class">Design · film · 3D</p>
+              <p class="seam__desc">Scroll-stopping creative, motion design and real-time 3D — forged for feeds that move fast and audiences that don't wait around.</p>
+              <ul class="seam__spec">
+                <li><span>Craft</span><b>Film · 3D</b></li>
+                <li><span>Speed</span><b>Always-on</b></li>
+                <li><span>Format</span><b>Native</b></li>
+              </ul>
+            </div>
+          </article>
+
+          <article class="seam panel" data-cursor="explore">
+            <div class="seam__index">04</div>
+            <div class="seam__visual seam--seo"><span class="seam__glow"></span></div>
+            <div class="seam__body">
+              <h3>SEO &amp; Owned</h3>
+              <p class="seam__class">Organic &amp; content</p>
+              <p class="seam__desc">Durable organic growth — technical SEO, content systems and owned channels that rank for the long haul and stop renting your traffic.</p>
+              <ul class="seam__spec">
+                <li><span>Horizon</span><b>Long-haul</b></li>
+                <li><span>Assets</span><b>Owned</b></li>
+                <li><span>Stack</span><b>Technical</b></li>
+              </ul>
+            </div>
+          </article>
+
+          <article class="seam panel" data-cursor="explore">
+            <div class="seam__index">05</div>
+            <div class="seam__visual seam--social"><span class="seam__glow"></span></div>
+            <div class="seam__body">
+              <h3>Social &amp; Community</h3>
+              <p class="seam__class">Channels &amp; community</p>
+              <p class="seam__desc">Always-on social that turns scattered audiences into a community with mass — content, creators and community management in one seam.</p>
+              <ul class="seam__spec">
+                <li><span>Mode</span><b>Always-on</b></li>
+                <li><span>Reach</span><b>Creators</b></li>
+                <li><span>Goal</span><b>Community</b></li>
+              </ul>
+            </div>
+          </article>
+
+          <div class="seams__end panel">
+            <h2>Every seam,<br/>one quarry.</h2>
+            <a href="#contact" class="btn" data-cursor="open">
+              <span>See the full capability deck</span>
+              <svg viewBox="0 0 24 24" width="18" height="18"><path d="M5 12h14M13 6l6 6-6 6" fill="none" stroke="currentColor" stroke-width="1.6"/></svg>
+            </a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============ PRICING / PLANES ============ -->
+    <section class="pricing" id="pricing">
+      <div class="section-head section-head--center">
+        <span class="section-head__num">004</span>
+        <span class="section-head__label">Planes y Precios</span>
+      </div>
+      <h2 class="pricing__title">Invierte en contenido<br/>que <em>convierte</em>.</h2>
+      <p class="pricing__sub">Elige el plan que mejor se adapta a tu marca. Sin sorpresas, sin letra pequeña.</p>
+
+      <div class="plans">
+        <!-- ---- BÁSICO ---- -->
+        <article class="plan">
+          <header class="plan__head"><span class="plan__name">Básico</span></header>
+          <p class="plan__tagline">Ideal para empezar a crecer</p>
+          <div class="plan__price">
+            <span class="plan__amount">100€</span>
+            <span class="plan__period">/ mes</span>
+          </div>
+          <a href="#contact" class="plan__cta" data-cursor="strike"><span>Empezar ahora</span></a>
+          <ul class="plan__features">
+            <li><svg class="plan__check" viewBox="0 0 24 24" aria-hidden="true"><path d="M5 13l4 4L19 7"/></svg><span>1 vídeo mensual de 20–25 seg <i class="plan__note">Producción completa</i></span></li>
+            <li><svg class="plan__check" viewBox="0 0 24 24" aria-hidden="true"><path d="M5 13l4 4L19 7"/></svg><span>1 vídeo de influencer de 10–12 seg <i class="plan__note">Diseñado por el cliente</i></span></li>
+            <li><svg class="plan__check" viewBox="0 0 24 24" aria-hidden="true"><path d="M5 13l4 4L19 7"/></svg><span>Edición y postproducción</span></li>
+            <li><svg class="plan__check" viewBox="0 0 24 24" aria-hidden="true"><path d="M5 13l4 4L19 7"/></svg><span>Entrega en formato digital</span></li>
+            <li><svg class="plan__check" viewBox="0 0 24 24" aria-hidden="true"><path d="M5 13l4 4L19 7"/></svg><span>Revisiones incluidas <i class="plan__note">1 ronda</i></span></li>
+          </ul>
+        </article>
+
+        <!-- ---- PRO (destacado) ---- -->
+        <article class="plan plan--featured">
+          <span class="plan__badge">Más popular</span>
+          <header class="plan__head"><span class="plan__name">Pro</span></header>
+          <p class="plan__tagline">Para marcas con ambición</p>
+          <div class="plan__price">
+            <span class="plan__amount">340€</span>
+            <span class="plan__period">/ mes</span>
+          </div>
+          <a href="#contact" class="plan__cta plan__cta--solid" data-cursor="strike"><span>Empezar ahora</span></a>
+          <ul class="plan__features">
+            <li><svg class="plan__check" viewBox="0 0 24 24" aria-hidden="true"><path d="M5 13l4 4L19 7"/></svg><span>4 vídeos mensuales de 20–25 seg <i class="plan__note">Producción completa</i></span></li>
+            <li><svg class="plan__check" viewBox="0 0 24 24" aria-hidden="true"><path d="M5 13l4 4L19 7"/></svg><span>4 vídeos de influencer de 10–12 seg <i class="plan__note">Diseñados por el cliente</i></span></li>
+            <li><svg class="plan__check" viewBox="0 0 24 24" aria-hidden="true"><path d="M5 13l4 4L19 7"/></svg><span>Edición y postproducción premium</span></li>
+            <li><svg class="plan__check" viewBox="0 0 24 24" aria-hidden="true"><path d="M5 13l4 4L19 7"/></svg><span>Estrategia de contenido mensual</span></li>
+            <li><svg class="plan__check" viewBox="0 0 24 24" aria-hidden="true"><path d="M5 13l4 4L19 7"/></svg><span>Entrega multi-plataforma <i class="plan__note">Reels · TikTok · Shorts</i></span></li>
+            <li><svg class="plan__check" viewBox="0 0 24 24" aria-hidden="true"><path d="M5 13l4 4L19 7"/></svg><span>Revisiones incluidas <i class="plan__note">3 rondas</i></span></li>
+            <li><svg class="plan__check" viewBox="0 0 24 24" aria-hidden="true"><path d="M5 13l4 4L19 7"/></svg><span>Soporte prioritario</span></li>
+          </ul>
+        </article>
+
+        <!-- ---- ENTERPRISE ---- -->
+        <article class="plan">
+          <header class="plan__head"><span class="plan__name">Enterprise</span></header>
+          <p class="plan__tagline">Solución a medida para tu empresa</p>
+          <div class="plan__price plan__price--custom">
+            <span class="plan__amount">Personalizado</span>
+          </div>
+          <a href="#contact" class="plan__cta" data-cursor="strike"><span>Hablar con el equipo</span></a>
+          <ul class="plan__features">
+            <li><svg class="plan__check" viewBox="0 0 24 24" aria-hidden="true"><path d="M5 13l4 4L19 7"/></svg><span>Volumen de vídeos personalizado</span></li>
+            <li><svg class="plan__check" viewBox="0 0 24 24" aria-hidden="true"><path d="M5 13l4 4L19 7"/></svg><span>Vídeos de influencer a medida</span></li>
+            <li><svg class="plan__check" viewBox="0 0 24 24" aria-hidden="true"><path d="M5 13l4 4L19 7"/></svg><span>Estrategia integral de marca</span></li>
+            <li><svg class="plan__check" viewBox="0 0 24 24" aria-hidden="true"><path d="M5 13l4 4L19 7"/></svg><span>Account manager dedicado</span></li>
+            <li><svg class="plan__check" viewBox="0 0 24 24" aria-hidden="true"><path d="M5 13l4 4L19 7"/></svg><span>Revisiones ilimitadas</span></li>
+            <li><svg class="plan__check" viewBox="0 0 24 24" aria-hidden="true"><path d="M5 13l4 4L19 7"/></svg><span>SLA y entrega garantizada</span></li>
+          </ul>
+        </article>
+      </div>
+
+      <p class="pricing__note">Todos los planes incluyen IVA. Pago mensual sin permanencia mínima.</p>
+    </section>
+
+    <!-- ============ CONTACT / CTA ============ -->
+    <section class="contact" id="contact">
+      <div class="section-head section-head--center">
+        <span class="section-head__num">005</span>
+        <span class="section-head__label">Start a Project</span>
+      </div>
+      <h2 class="contact__title">
+        <span class="line"><span>Let's strike.</span></span>
+      </h2>
+      <p class="contact__sub">Tell us what you're building. Bring the ambition — we'll bring the flint, the strategy and the spark.</p>
+      <a href="mailto:hello@silex.studio" class="contact__btn" data-cursor="strike">
+        <span class="contact__btn-bg"></span>
+        <span class="contact__btn-text">hello@silex.studio</span>
+      </a>
+      <div class="contact__windows">
+        <div><span>NEXT INTAKE</span><b id="intake">T– 06 : 12 : 48</b></div>
+        <div><span>STUDIO</span><b>Barcelona · Remote</b></div>
+        <div><span>STATUS</span><b>Taking new partners</b></div>
+      </div>
+    </section>
+
+    <!-- ============ FOOTER ============ -->
+    <footer class="footer">
+      <div class="footer__big">SILEX</div>
+      <div class="footer__grid">
+        <div class="footer__col">
+          <span class="footer__h">Studio</span>
+          <a href="#ethos" data-cursor="">Ethos</a>
+          <a href="#capabilities" data-cursor="">Capabilities</a>
+          <a href="#pricing" data-cursor="">Planes</a>
+          <a href="#contact" data-cursor="">Contact</a>
+        </div>
+        <div class="footer__col">
+          <span class="footer__h">Connect</span>
+          <a href="#" data-cursor="">Instagram</a>
+          <a href="#" data-cursor="">LinkedIn</a>
+          <a href="#" data-cursor="">Behance</a>
+          <a href="#" data-cursor="">Dribbble</a>
+        </div>
+        <div class="footer__col footer__col--wide">
+          <span class="footer__h">The Quarry</span>
+          <p>Carrer del Flint 7, Barcelona · Working worldwide</p>
+          <p>hello@silex.studio</p>
+          <p class="footer__note">A fictional studio, built as a Three.js + GSAP showcase.</p>
+        </div>
+      </div>
+      <div class="footer__bottom">
+        <span>© MMXXV SILEX MEDIA</span>
+        <span>BUILT LIKE BEDROCK · BURNS LIKE FLINT</span>
+        <span>STRIKE THE SPARK</span>
+      </div>
+    </footer>
+  </main>
+
+  <script type="module" src="js/scene.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/@studio-freight/lenis@1.0.42/dist/lenis.min.js"></script>
+  <script src="js/main.js"></script>
+</body>
+</html>

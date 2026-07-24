@@ -131,7 +131,10 @@ const server = http.createServer((req, res) => {
             }
 
             const parts = parseMultipart(body, boundaryMatch[1]);
-            const description = parts.find(p => p.name === 'description')?.data.toString().trim() || '(sin descripción)';
+            const getText = (name) => parts.find(p => p.name === name)?.data.toString().trim() || '';
+            const nombre = getText('nombre') || '(sin nombre)';
+            const email = getText('email') || '';
+            const description = getText('description') || '(sin descripción)';
             const attachments = parts
                 .filter(p => p.filename && p.data.length > 0)
                 .map(p => ({
@@ -140,15 +143,20 @@ const server = http.createServer((req, res) => {
                     contentType: p.contentType,
                 }));
 
+            const esc = (s) => String(s).replace(/</g, '&lt;');
             const mailOptions = {
                 from: `"NewRev Web" <${GMAIL_USER}>`,
                 to: GMAIL_USER,
-                subject: '🔩 Nueva solicitud de pieza — NewRev',
+                replyTo: email || undefined,
+                subject: `🔩 Nueva pieza a digitalizar — ${nombre}`,
                 html: `
-                    <h2 style="color:#1a1a2e;">Nueva solicitud de pieza</h2>
+                    <h2 style="color:#1a1a2e;">Nueva solicitud de digitalización</h2>
                     <hr/>
-                    <h3>Descripción:</h3>
-                    <p style="white-space:pre-wrap;font-family:sans-serif;">${description.replace(/</g, '&lt;')}</p>
+                    <p><strong>Nombre y apellidos:</strong> ${esc(nombre)}</p>
+                    <p><strong>Correo de contacto:</strong> ${esc(email || 'no indicado')}</p>
+                    <hr/>
+                    <h3>Descripción de la pieza:</h3>
+                    <p style="white-space:pre-wrap;font-family:sans-serif;">${esc(description)}</p>
                     <hr/>
                     <p style="color:#888;font-size:12px;">Enviado desde <strong>newrev.local</strong></p>
                 `,
@@ -628,14 +636,6 @@ REGLAS DE COMPORTAMIENTO MUY IMPORTANTES (SÍGUELAS ESTRICTAMENTE):
             res.end(data);
         });
         return;
-    }
-
-    // ── Bloquear descarga directa de modelos 3D ──────────────────────────────
-    const blocked3D = ['.glb', '.gltf', '.stl', '.obj', '.step', '.stp', '.3mf'];
-    const reqExt = path.extname(urlPath).toLowerCase();
-    if (blocked3D.includes(reqExt)) {
-        res.writeHead(403, { 'Content-Type': 'application/json' });
-        return res.end(JSON.stringify({ error: 'Descarga de modelos 3D no permitida.' }));
     }
 
     // ── Bloquear acceso a archivos sensibles del servidor ────────────────────

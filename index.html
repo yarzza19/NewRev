@@ -79,6 +79,10 @@
         <span class="matswitch__opt" data-mat="plastic">Polímero</span>
         <span class="matswitch__thumb"></span>
       </button>
+      <a href="#comunidad" class="nav__community" data-cursor="ver">Comunidad</a>
+      <div class="nav__user" id="navUser">
+        <button type="button" class="nav__login" id="navLoginBtn" data-cursor="entrar">Iniciar sesión</button>
+      </div>
       <a href="#contacto" class="nav__cta" data-cursor="buscar" data-magnetic>
         <span>Encuentra tu pieza</span>
         <span class="nav__cta-dot"></span>
@@ -130,9 +134,48 @@
       </div>
 
       <div class="hero__index">
-        <span>001 — 006</span>
+        <span>001 — 007</span>
         <span>/ EL TALLER</span>
       </div>
+    </section>
+
+    <!-- ============ CONTACTO / CTA ============ -->
+    <section class="cta" id="contacto">
+      <div class="section-head section-head--center">
+        <span class="section-head__num">002</span>
+        <span class="section-head__label">Encuentra tu pieza</span>
+      </div>
+      <h2 class="cta__title">
+        <span class="line"><span>¿Qué te falta</span></span>
+        <span class="line"><span>para <em>rodar</em>?</span></span>
+      </h2>
+      <p class="cta__sub">Dinos la marca, el modelo y la pieza. Buscamos en el archivo y, si aún no existe, la digitalizamos contigo.</p>
+
+      <form class="search" id="searchForm" autocomplete="off">
+        <div class="search__field">
+          <span class="search__icon" aria-hidden="true">
+            <svg viewBox="0 0 24 24" width="18" height="18"><circle cx="11" cy="11" r="7" fill="none" stroke="currentColor" stroke-width="1.6"/><path d="M16.5 16.5L21 21" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/></svg>
+          </span>
+          <input type="text" id="searchInput" placeholder="Ej. culata, Biscúter, clips paragolpes BMW…" aria-label="Buscar pieza" />
+          <button type="submit" class="search__btn" data-cursor="buscar" data-magnetic>Buscar</button>
+        </div>
+        <p class="search__result" id="searchResult" aria-live="polite"></p>
+      </form>
+
+      <div class="cta__chips" id="searchChips">
+        <button class="chip" data-cursor="">Culata</button>
+        <button class="chip" data-cursor="">Biscúter</button>
+        <button class="chip" data-cursor="">Motor</button>
+        <button class="chip" data-cursor="">BMW</button>
+        <button class="chip" data-cursor="">Aluminio</button>
+      </div>
+
+      <div class="results" id="searchResults" aria-live="polite"></div>
+
+      <button type="button" class="digitize-cta" id="openDigitizeForm" data-cursor="digitalizar" data-magnetic>
+        <span>¿No está en el archivo? Digitaliza tu pieza</span>
+        <svg viewBox="0 0 24 24" width="18" height="18"><path d="M5 12h14M13 6l6 6-6 6" fill="none" stroke="currentColor" stroke-width="1.6"/></svg>
+      </button>
     </section>
 
     <!-- ============ MARQUEE ============ -->
@@ -153,7 +196,7 @@
     <section class="problem" id="problema">
       <div class="problem__head">
         <div class="section-head">
-          <span class="section-head__num">002</span>
+          <span class="section-head__num">003</span>
           <span class="section-head__label">El problema</span>
         </div>
         <h2 class="problem__title">
@@ -229,7 +272,7 @@
       <div class="process__pin" id="processPin">
         <div class="process__head">
           <div class="section-head">
-            <span class="section-head__num">003</span>
+            <span class="section-head__num">004</span>
             <span class="section-head__label">Cómo funciona</span>
           </div>
           <h2 class="process__title">De la pieza rota<br/>al archivo imprimible.</h2>
@@ -276,7 +319,7 @@
     <!-- ============ MATERIALES ============ -->
     <section class="materials" id="materiales">
       <div class="section-head section-head--center">
-        <span class="section-head__num">004</span>
+        <span class="section-head__num">005</span>
         <span class="section-head__label">Materiales</span>
       </div>
       <h2 class="materials__title">Dos mundos,<br/>una misma <em>geometría</em>.</h2>
@@ -389,7 +432,7 @@
         <div class="gallery__track" id="galleryTrack">
           <div class="gallery__intro panel">
             <div class="section-head">
-              <span class="section-head__num">005</span>
+              <span class="section-head__num">006</span>
               <span class="section-head__label">Catálogo vivo</span>
             </div>
             <h2 class="gallery__heading">Piezas que<br/>ya existen.</h2>
@@ -414,38 +457,47 @@
       </div>
     </section>
 
-    <!-- ============ CONTACTO / CTA ============ -->
-    <section class="cta" id="contacto">
+    <!-- ============ COMUNIDAD (FEED + PETICIONES DE FIRMAS) ============ -->
+    <section class="chub" id="comunidad">
       <div class="section-head section-head--center">
-        <span class="section-head__num">006</span>
-        <span class="section-head__label">Encuentra tu pieza</span>
+        <span class="section-head__num">007</span>
+        <span class="section-head__label">Comunidad</span>
       </div>
-      <h2 class="cta__title">
-        <span class="line"><span>¿Qué te falta</span></span>
-        <span class="line"><span>para <em>rodar</em>?</span></span>
-      </h2>
-      <p class="cta__sub">Dinos la marca, el modelo y la pieza. Buscamos en el archivo y, si aún no existe, la digitalizamos contigo.</p>
+      <h2 class="chub__title">La comunidad decide<br/>qué se fabrica.</h2>
+      <p class="chub__lede">Comparte tu restauración, pide ayuda y firma por las piezas que necesitas. Cuantas más firmas reciba una pieza, antes entra NewRev a fabricarla en serie.</p>
 
-      <form class="search" id="searchForm" autocomplete="off">
-        <div class="search__field">
-          <span class="search__icon" aria-hidden="true">
-            <svg viewBox="0 0 24 24" width="18" height="18"><circle cx="11" cy="11" r="7" fill="none" stroke="currentColor" stroke-width="1.6"/><path d="M16.5 16.5L21 21" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/></svg>
-          </span>
-          <input type="text" id="searchInput" placeholder="Ej. culata, Biscúter, clips paragolpes BMW…" aria-label="Buscar pieza" />
-          <button type="submit" class="search__btn" data-cursor="buscar" data-magnetic>Buscar</button>
+      <div class="chub__tabs" id="chubTabs" role="tablist">
+        <button class="chtab is-active" data-tab="feed" role="tab" aria-selected="true">Feed</button>
+        <button class="chtab" data-tab="peticiones" role="tab" aria-selected="false">Peticiones de piezas</button>
+      </div>
+
+      <!-- ---- FEED ---- -->
+      <div class="chpanel is-active" data-panel="feed">
+        <div class="composer" id="composer">
+          <div class="composer__avatar" id="composerAvatar">?</div>
+          <div class="composer__body">
+            <textarea id="composerInput" rows="2" placeholder="¿Qué estás restaurando?" maxlength="280"></textarea>
+            <div class="composer__row">
+              <span class="composer__hint" id="composerHint">Inicia sesión para publicar en la comunidad</span>
+              <button type="button" class="btn btn--solid composer__submit" id="composerSubmit">Iniciar sesión</button>
+            </div>
+          </div>
         </div>
-        <p class="search__result" id="searchResult" aria-live="polite"></p>
-      </form>
 
-      <div class="cta__chips" id="searchChips">
-        <button class="chip" data-cursor="">Culata</button>
-        <button class="chip" data-cursor="">Biscúter</button>
-        <button class="chip" data-cursor="">Motor</button>
-        <button class="chip" data-cursor="">BMW</button>
-        <button class="chip" data-cursor="">Aluminio</button>
+        <div class="feed" id="feed"></div>
       </div>
 
-      <div class="results" id="searchResults" aria-live="polite"></div>
+      <!-- ---- PETICIONES ---- -->
+      <div class="chpanel" data-panel="peticiones">
+        <div class="petitions__head">
+          <p>Ordenadas por firmas — así sabe NewRev qué fabricar primero, con mercado garantizado.</p>
+          <button type="button" class="btn btn--ghost petitions__new" id="newPetitionBtn" data-cursor="pedir" data-magnetic>
+            <span>Pedir una pieza nueva</span>
+            <svg viewBox="0 0 24 24" width="18" height="18"><path d="M5 12h14M13 6l6 6-6 6" fill="none" stroke="currentColor" stroke-width="1.6"/></svg>
+          </button>
+        </div>
+        <div class="petitions" id="petitions"></div>
+      </div>
     </section>
 
     <!-- ============ FOOTER ============ -->
@@ -481,6 +533,130 @@
       </div>
     </footer>
   </main>
+
+  <!-- ============ MODAL: DIGITALIZAR PIEZA ============ -->
+  <div class="modal" id="digitizeModal" aria-hidden="true">
+    <div class="modal__backdrop" data-modal-close></div>
+    <div class="modal__panel" role="dialog" aria-modal="true" aria-labelledby="digitizeTitle">
+      <button type="button" class="modal__close" data-modal-close aria-label="Cerrar" data-cursor="cerrar">
+        <svg viewBox="0 0 24 24" width="20" height="20"><path d="M6 6l12 12M18 6L6 18" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/></svg>
+      </button>
+
+      <div class="modal__head">
+        <span class="section-head__num">+</span>
+        <span class="section-head__label">Digitalizar pieza</span>
+      </div>
+      <h3 id="digitizeTitle" class="modal__title">Cuéntanos qué te falta</h3>
+      <p class="modal__lede">Danos los datos de la pieza y algunas fotos. Te contactamos para valorar el escaneo y la fabricación.</p>
+
+      <form class="digitize-form" id="digitizeForm" novalidate>
+        <div class="digitize-form__row">
+          <label class="digitize-form__field">
+            <span>Nombre y apellidos</span>
+            <input type="text" name="nombre" id="digNombre" required autocomplete="name" />
+          </label>
+          <label class="digitize-form__field">
+            <span>Correo de contacto</span>
+            <input type="email" name="email" id="digEmail" required autocomplete="email" />
+          </label>
+        </div>
+
+        <label class="digitize-form__field">
+          <span>Descripción de la pieza</span>
+          <textarea name="description" id="digDescription" rows="4" placeholder="Marca, modelo, año, qué pieza necesitas y para qué…" required></textarea>
+        </label>
+
+        <label class="digitize-form__field digitize-form__file" id="digFileField">
+          <span>Fotos de la pieza</span>
+          <input type="file" name="fotos" id="digFotos" accept="image/*" multiple />
+          <span class="digitize-form__filehint" id="digFileHint">Arrastra o selecciona una o varias imágenes (JPG, PNG, WEBP)</span>
+        </label>
+
+        <button type="submit" class="btn btn--solid" id="digitizeSubmit" data-cursor="enviar" data-magnetic>
+          <span>Enviar solicitud</span>
+          <svg viewBox="0 0 24 24" width="18" height="18"><path d="M5 12h14M13 6l6 6-6 6" fill="none" stroke="currentColor" stroke-width="1.6"/></svg>
+        </button>
+
+        <p class="digitize-form__status" id="digitizeStatus" aria-live="polite"></p>
+      </form>
+    </div>
+  </div>
+
+  <!-- ============ MODAL: INICIAR SESIÓN ============ -->
+  <div class="modal" id="loginModal" aria-hidden="true">
+    <div class="modal__backdrop" data-modal-close></div>
+    <div class="modal__panel" role="dialog" aria-modal="true" aria-labelledby="loginTitle">
+      <button type="button" class="modal__close" data-modal-close aria-label="Cerrar" data-cursor="cerrar">
+        <svg viewBox="0 0 24 24" width="20" height="20"><path d="M6 6l12 12M18 6L6 18" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/></svg>
+      </button>
+
+      <div class="modal__head">
+        <span class="section-head__num">+</span>
+        <span class="section-head__label">Comunidad NewRev</span>
+      </div>
+      <h3 id="loginTitle" class="modal__title">Entra en tu cuenta</h3>
+      <p class="modal__lede">Publica, comenta y firma peticiones de piezas con tu perfil NewRev. Cuenta de demostración — no se pide contraseña.</p>
+
+      <form class="digitize-form" id="loginForm" novalidate>
+        <label class="digitize-form__field">
+          <span>Nombre</span>
+          <input type="text" name="name" id="loginName" required autocomplete="name" placeholder="Cómo te verá la comunidad" />
+        </label>
+        <label class="digitize-form__field">
+          <span>Correo</span>
+          <input type="email" name="email" id="loginEmail" required autocomplete="email" />
+        </label>
+        <button type="submit" class="btn btn--solid" data-cursor="entrar" data-magnetic>
+          <span>Entrar</span>
+          <svg viewBox="0 0 24 24" width="18" height="18"><path d="M5 12h14M13 6l6 6-6 6" fill="none" stroke="currentColor" stroke-width="1.6"/></svg>
+        </button>
+        <p class="digitize-form__status" id="loginStatus" aria-live="polite"></p>
+      </form>
+    </div>
+  </div>
+
+  <!-- ============ MODAL: NUEVA PETICIÓN DE PIEZA ============ -->
+  <div class="modal" id="petitionModal" aria-hidden="true">
+    <div class="modal__backdrop" data-modal-close></div>
+    <div class="modal__panel" role="dialog" aria-modal="true" aria-labelledby="petitionTitle">
+      <button type="button" class="modal__close" data-modal-close aria-label="Cerrar" data-cursor="cerrar">
+        <svg viewBox="0 0 24 24" width="20" height="20"><path d="M6 6l12 12M18 6L6 18" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/></svg>
+      </button>
+
+      <div class="modal__head">
+        <span class="section-head__num">+</span>
+        <span class="section-head__label">Nueva petición</span>
+      </div>
+      <h3 id="petitionTitle" class="modal__title">Pide una pieza</h3>
+      <p class="modal__lede">Ábrela a firmas de la comunidad. Cuando reúna suficientes, NewRev la prioriza para fabricación.</p>
+
+      <form class="digitize-form" id="petitionForm" novalidate>
+        <label class="digitize-form__field">
+          <span>Nombre de la pieza</span>
+          <input type="text" name="nombre" id="petNombre" required placeholder="Ej. Tapacubos trasero" />
+        </label>
+        <div class="digitize-form__row">
+          <label class="digitize-form__field">
+            <span>Marca y modelo</span>
+            <input type="text" name="coche" id="petCoche" required placeholder="Ej. Seat 850" />
+          </label>
+          <label class="digitize-form__field">
+            <span>Año</span>
+            <input type="text" name="anio" id="petAnio" required placeholder="Ej. 1969" />
+          </label>
+        </div>
+        <label class="digitize-form__field">
+          <span>Descripción</span>
+          <textarea name="descripcion" id="petDescripcion" rows="3" placeholder="Qué pieza es y por qué hace falta…" required></textarea>
+        </label>
+        <button type="submit" class="btn btn--solid" data-cursor="pedir" data-magnetic>
+          <span>Abrir petición</span>
+          <svg viewBox="0 0 24 24" width="18" height="18"><path d="M5 12h14M13 6l6 6-6 6" fill="none" stroke="currentColor" stroke-width="1.6"/></svg>
+        </button>
+        <p class="digitize-form__status" id="petitionStatus" aria-live="polite"></p>
+      </form>
+    </div>
+  </div>
 
   <script type="module" src="https://cdn.jsdelivr.net/npm/@google/model-viewer@3.5.0/dist/model-viewer.min.js"></script>
   <script type="module" src="js/scene.js"></script>

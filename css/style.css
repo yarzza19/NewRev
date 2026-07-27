@@ -91,7 +91,7 @@ section { position: relative; }
 @keyframes grain { 0%,100% { transform: translate(0,0); } 50% { transform: translate(-3%, 2%); } }
 
 /* =================== CURSOR =================== */
-.cursor, .cursor-dot { position: fixed; top: 0; left: 0; z-index: 90; pointer-events: none; }
+.cursor, .cursor-dot { position: fixed; top: 0; left: 0; z-index: 220; pointer-events: none; }
 .cursor {
   width: 44px; height: 44px;
   border: 1px solid rgba(241,237,230,0.6);
@@ -263,7 +263,6 @@ body.theme-plastic .matswitch__thumb { transform: translateX(100%); }
 .hero { min-height: 100svh; display: flex; flex-direction: column; justify-content: center; padding: 0 var(--gut); }
 .hero__meta { position: absolute; top: 40%; display: flex; flex-direction: column; gap: .4rem; }
 .hero__meta--left { left: var(--gut); align-items: flex-start; }
-.hero__meta--right { right: var(--gut); align-items: flex-end; text-align: right; }
 @media (max-width: 1000px){ .hero__meta { display: none; } }
 
 .hero__content { max-width: 1100px; position: relative; }
@@ -504,6 +503,15 @@ body.theme-plastic .bigtoggle__thumb { transform: translateX(100%); }
   background: rgba(7,8,10,0.6); backdrop-filter: blur(6px); color: var(--muted);
 }
 .part__badge--3d { color: var(--accent); border-left: 2px solid var(--accent); }
+
+/* "ver en grande" button overlaid on any 3D preview (gallery cards + search results) */
+.part-expand {
+  position: absolute; top: .7rem; right: .7rem; z-index: 5;
+  width: 32px; height: 32px; border-radius: 50%; display: grid; place-items: center;
+  background: rgba(7,8,10,0.6); border: 1px solid var(--faint); color: var(--fg);
+  backdrop-filter: blur(6px); transition: background-color .3s var(--ease), border-color .3s var(--ease), color .3s var(--ease), transform .3s var(--ease);
+}
+.part-expand:hover { background: var(--accent); border-color: var(--accent); color: var(--accent-ink); transform: scale(1.08); }
 /* featured vehicle card */
 .part--vehicle .part__visual.part--photo { background-size: cover; background-position: center; filter: saturate(.92) contrast(1.02); }
 .part--photo::after { content: ""; position: absolute; inset: 0; background: linear-gradient(180deg, rgba(7,8,10,0) 40%, rgba(7,8,10,0.55)); }
@@ -624,6 +632,31 @@ body.theme-plastic .bigtoggle__thumb { transform: translateX(100%); }
 .digitize-form__status.is-error { color: #e0685f; }
 
 @media (max-width: 560px) { .digitize-form__row { grid-template-columns: 1fr; } }
+
+/* =================== MODAL: VER PIEZA EN GRANDE =================== */
+.modal__panel--wide { width: min(940px, 100%); }
+.partview { display: grid; grid-template-columns: 1.15fr 1fr; gap: clamp(1.4rem, 3vw, 2.4rem); }
+.partview__stage {
+  position: relative; min-height: 360px; border-radius: 16px; overflow: hidden;
+  background: radial-gradient(70% 70% at 50% 45%, color-mix(in srgb, var(--accent) 14%, transparent), transparent 70%), conic-gradient(from 200deg at 50% 50%, #0b0e14, #14181f, #0b0e14);
+}
+.partview__stage model-viewer { width: 100%; height: 100%; background: transparent; --poster-color: transparent; cursor: grab; }
+.partview__body { display: flex; flex-direction: column; padding-top: .3rem; }
+.partview__tag { font-family: var(--font-mono); font-size: 10.5px; letter-spacing: .1em; text-transform: uppercase; color: var(--accent); }
+.partview__title { font-size: clamp(1.5rem, 3vw, 2.1rem); font-weight: 600; letter-spacing: -0.02em; line-height: 1.1; margin-top: .5rem; }
+.partview__desc { color: var(--muted); font-size: .95rem; line-height: 1.55; margin-top: .9rem; }
+.partview__meta { margin-top: 1.3rem; padding-top: 1.1rem; border-top: 1px solid var(--line); display: flex; flex-direction: column; gap: .65rem; }
+.partview__meta li { display: flex; align-items: baseline; justify-content: space-between; gap: 1rem; font-size: .9rem; }
+.partview__meta li span { font-family: var(--font-mono); font-size: 10px; letter-spacing: .08em; text-transform: uppercase; color: var(--muted); }
+.partview__request { margin-top: 1.4rem; align-self: flex-start; }
+.partview__hint {
+  margin-top: auto; padding-top: 1.3rem; font-family: var(--font-mono); font-size: 10px;
+  letter-spacing: .1em; text-transform: uppercase; color: var(--faint);
+}
+@media (max-width: 720px) {
+  .partview { grid-template-columns: 1fr; }
+  .partview__stage { min-height: 280px; }
+}
 
 /* =================== COMUNIDAD (FEED + PETICIONES) =================== */
 .chub { padding: clamp(6rem, 12vw, 9rem) var(--gut) clamp(5rem, 8vw, 7rem); }

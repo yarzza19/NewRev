@@ -469,16 +469,34 @@
   }
   function ratingFor(p) { return p.glb ? "★★★★★" : (p.estado === "verificada" ? "★★★★☆" : "★★★☆☆"); }
 
-  function partCard(p, idx) {
-    const visual = p.glb
-      ? `<div class="part__visual part--model">${modelViewer(p.glb, p.name)}<span class="part__badge part__badge--3d">3D · GLB</span></div>`
-      : `<div class="part__visual part--head"><span class="part__grid"></span><span class="part__badge">${p.estado === "verificada" ? "Verificada" : "En revisión"}</span></div>`;
-    const ctxLine = [p.brand, p.model && p.model !== p.brand ? p.model : "", p.anio].filter(Boolean).join(" · ");
+  function metaFor(p) {
     const meta = [];
     if (p.material) meta.push(["Material", p.material]);
     if (p.price) meta.push(["Precio", p.price]);
     meta.push(["Formato", p.glb ? "GLB · 3D" : (p.estado === "verificada" ? "Bajo demanda" : "Comunidad")]);
     meta.push(["Imprimible", ratingFor(p)]);
+    return meta;
+  }
+
+  // small "ver en grande" button overlaid on a part's 3D preview — opens the part viewer modal
+  function expandBtn(p, ctxLine) {
+    if (!p.glb) return "";
+    return `<button type="button" class="part-expand" data-part-expand
+      data-glb="${esc(p.glb)}" data-name="${esc(p.name)}"
+      data-ctx="${esc(ctxLine || "Catálogo NewRev")}"
+      data-desc="${esc(p.desc || "Geometría digitalizada y verificada por NewRev.")}"
+      data-meta='${esc(JSON.stringify(metaFor(p)))}'
+      data-cursor="ampliar" aria-label="Ver ${esc(p.name)} en grande">
+      <svg viewBox="0 0 24 24" width="16" height="16"><path d="M9 3H4v5M15 3h5v5M9 21H4v-5M15 21h5v-5" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"/></svg>
+    </button>`;
+  }
+
+  function partCard(p, idx) {
+    const ctxLine = [p.brand, p.model && p.model !== p.brand ? p.model : "", p.anio].filter(Boolean).join(" · ");
+    const visual = p.glb
+      ? `<div class="part__visual part--model">${modelViewer(p.glb, p.name)}${expandBtn(p, ctxLine)}<span class="part__badge part__badge--3d">3D · GLB</span></div>`
+      : `<div class="part__visual part--head"><span class="part__grid"></span><span class="part__badge">${p.estado === "verificada" ? "Verificada" : "En revisión"}</span></div>`;
+    const meta = metaFor(p);
     const metaHtml = meta.slice(0, 3).map(([k, v]) => `<li><span>${esc(k)}</span><b>${esc(v)}</b></li>`).join("");
     return `<article class="part panel" data-cursor="${p.glb ? "rotar" : "ver"}">
       <div class="part__index">${String(idx).padStart(2, "0")}</div>
@@ -549,10 +567,10 @@
       ? `${hits.length} ${hits.length === 1 ? "coincidencia" : "coincidencias"} en el archivo`
       : `Sin resultados para “${q.trim()}”. Súbela y la digitalizamos contigo.`;
     box.innerHTML = hits.slice(0, 8).map((p) => {
-      const visual = p.glb
-        ? `<div class="rcard__media">${modelViewer(p.glb, p.name)}</div>`
-        : `<div class="rcard__media rcard__media--ph"><span>${p.type === "comunidad" ? "Comunidad" : "Oficial"}</span></div>`;
       const tags = [p.brand, p.model && p.model !== p.brand ? p.model : "", p.anio].filter(Boolean).join(" · ");
+      const visual = p.glb
+        ? `<div class="rcard__media">${modelViewer(p.glb, p.name)}${expandBtn(p, tags)}</div>`
+        : `<div class="rcard__media rcard__media--ph"><span>${p.type === "comunidad" ? "Comunidad" : "Oficial"}</span></div>`;
       const badge = p.estado === "verificada" ? `<span class="rcard__badge rcard__badge--ok">Verificada</span>` : `<span class="rcard__badge">En revisión</span>`;
       const extra = p.price ? esc(p.price) : (p.material ? esc(p.material) : (p.glb ? "GLB · 3D" : "Bajo demanda"));
       return `<article class="rcard" data-cursor="${p.glb ? "rotar" : ""}">
@@ -589,6 +607,7 @@
         document.body.classList.remove("no-scroll");
       }
       if (lastFocus) lastFocus.focus();
+      if (opts && opts.onClose) opts.onClose();
     }
     modal.querySelectorAll("[data-modal-close]").forEach((el) => el.addEventListener("click", close));
     return { modal, open, close };
@@ -652,7 +671,24 @@
   /* ---------------- Digitize-a-part modal + form ---------------- */
   (function wireDigitizeModal() {
     const openBtn = document.getElementById("openDigitizeForm");
-    const m = createModal("digitizeModal", { focusId: "digNombre" });
+    const label = document.getElementById("digModalLabel");
+    const title = document.getElementById("digitizeTitle");
+    const lede = document.getElementById("digitizeLede");
+    const descInput = document.getElementById("digDescription");
+    const DEFAULTS = {
+      label: "Digitalizar pieza",
+      title: "Cuéntanos qué te falta",
+      lede: "Danos los datos de la pieza y algunas fotos. Te contactamos para valorar el escaneo y la fabricación.",
+    };
+    const m = createModal("digitizeModal", {
+      focusId: "digNombre",
+      onClose: () => {
+        label.textContent = DEFAULTS.label;
+        title.textContent = DEFAULTS.title;
+        lede.textContent = DEFAULTS.lede;
+        if (descInput) descInput.value = "";
+      },
+    });
     if (!openBtn || !m) return;
     const form = document.getElementById("digitizeForm");
     const status = document.getElementById("digitizeStatus");
@@ -661,7 +697,17 @@
     const fileField = document.getElementById("digFileField");
     const fileHint = document.getElementById("digFileHint");
 
-    openBtn.addEventListener("click", m.open);
+    function openDigitize(opts) {
+      opts = opts || {};
+      label.textContent = opts.label || DEFAULTS.label;
+      title.textContent = opts.title || DEFAULTS.title;
+      lede.textContent = opts.lede || DEFAULTS.lede;
+      if (descInput) descInput.value = opts.description || "";
+      m.open();
+    }
+    window.__openDigitizeModal = openDigitize;
+
+    openBtn.addEventListener("click", () => openDigitize());
 
     if (fileInput && fileField && fileHint) {
       fileInput.addEventListener("change", () => {
@@ -996,6 +1042,52 @@
     }
   })();
 
+  /* ---------------- Part viewer: open a single part's 3D model larger ---------------- */
+  (function wirePartViewer() {
+    const stage = document.getElementById("partViewStage");
+    const tag = document.getElementById("partViewTag");
+    const title = document.getElementById("partModalTitle");
+    const desc = document.getElementById("partViewDesc");
+    const metaEl = document.getElementById("partViewMeta");
+    const m = createModal("partModal", { onClose: () => { stage.innerHTML = ""; } });
+    if (!stage || !m) return;
+
+    document.addEventListener("click", (e) => {
+      const btn = e.target.closest("[data-part-expand]");
+      if (!btn) return;
+      e.preventDefault();
+      e.stopPropagation();
+      stage.innerHTML = `<model-viewer src="${esc(btn.dataset.glb)}" alt="${esc(btn.dataset.name)}" camera-controls
+        auto-rotate auto-rotate-delay="1200" rotation-per-second="18deg" shadow-intensity="1" shadow-softness="1"
+        exposure="1.15" environment-image="neutral" camera-orbit="35deg 75deg 120%" min-camera-orbit="auto auto auto"
+        loading="eager" reveal="auto"></model-viewer>`;
+      tag.textContent = btn.dataset.ctx || "Catálogo NewRev";
+      title.textContent = btn.dataset.name || "Pieza";
+      desc.textContent = btn.dataset.desc || "";
+      let meta = [];
+      try { meta = JSON.parse(btn.dataset.meta || "[]"); } catch (err) { meta = []; }
+      metaEl.innerHTML = meta.map(([k, v]) => `<li><span>${esc(k)}</span><b>${esc(v)}</b></li>`).join("");
+      m.open();
+    });
+
+    const requestBtn = document.getElementById("partRequestBtn");
+    if (requestBtn) {
+      requestBtn.addEventListener("click", () => {
+        const name = title.textContent || "esta pieza";
+        const ctx = tag.textContent && tag.textContent !== "Catálogo NewRev" ? ` (${tag.textContent})` : "";
+        m.close();
+        if (window.__openDigitizeModal) {
+          window.__openDigitizeModal({
+            label: "Solicitar pieza",
+            title: "Solicita esta pieza",
+            lede: "Confírmanos tus datos y te contactamos con el precio final y el plazo de fabricación.",
+            description: `Quiero solicitar: ${name}${ctx}`,
+          });
+        }
+      });
+    }
+  })();
+
   (function wireSearch() {
     const form = document.getElementById("searchForm");
     const input = document.getElementById("searchInput");
@@ -1053,17 +1145,6 @@
       console.warn("NewRev catalog load failed", err);
     }
   }
-
-  /* ---------------- Live part counter flicker (hero) ---------------- */
-  (function partCounter() {
-    const el = document.getElementById("partCounter");
-    if (!el) return;
-    let n = 12480;
-    setInterval(() => {
-      n += Math.floor(Math.random() * 3);
-      el.textContent = n.toLocaleString("es-ES") + " PIEZAS DIGITALIZADAS";
-    }, 2600);
-  })();
 
   /* ---------------- Boot ---------------- */
   let booted = false;

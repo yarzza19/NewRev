@@ -161,6 +161,7 @@ body.no-scroll { overflow: hidden; }
   mix-blend-mode: difference;
 }
 .nav__logo svg { color: var(--accent); }
+.nav__logo-mark { display: block; width: auto; height: 24px; }
 .nav__links {
   display: flex; gap: clamp(1.3rem, 2.6vw, 2.4rem);
   font-size: 13px; letter-spacing: .04em; mix-blend-mode: difference;

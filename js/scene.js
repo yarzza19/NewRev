@@ -203,24 +203,20 @@ loader.load(
     });
     carGroup.add(car);
 
-    // collect wheels (nodes named Circle.*) as detachables that fly out sideways
+    // collect wheels (nodes named Circle.*) — stay attached to the car, only used for the wheel label
     const bbox = new THREE.Box3().setFromObject(car);
     const c = bbox.getCenter(new THREE.Vector3());
+    const wheels = [];
     car.children.slice().forEach((node) => {
-      if (/circle/i.test(node.name)) {
-        const wb = new THREE.Box3().setFromObject(node);
-        const wc = wb.getCenter(new THREE.Vector3());
-        const dir = new THREE.Vector3(wc.x - c.x, 0.12, wc.z - c.z).normalize();
-        detachables.push({ obj: node, base: node.position.clone(), dir, dist: 1.4, emerge: false });
-      }
+      if (/circle/i.test(node.name)) wheels.push(node);
     });
 
     carMinY = bbox.min.y; carMaxY = bbox.max.y;
     carCenter.set(c.x, (bbox.min.y + bbox.max.y) * 0.5, c.z);
     labelAnchors.carroceria = anchor(carGroup, c.x, bbox.max.y + 0.05, c.z);
     // a wheel label
-    const firstWheel = detachables[0];
-    if (firstWheel) labelAnchors.rueda = anchor(carGroup, firstWheel.obj.position.x, 0.5, firstWheel.obj.position.z);
+    const firstWheel = wheels[0];
+    if (firstWheel) labelAnchors.rueda = anchor(carGroup, firstWheel.position.x, 0.5, firstWheel.position.z);
 
     loaded = true;
     finishReady();

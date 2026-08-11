@@ -9,10 +9,9 @@
   /* --- Tinta y papel ------------------------------------- */
   --papel: #ffffff;
   --tinta: #121110;
-  --tinta-media: #6b6759; /* 5,3:1 sobre papel */
-  /* Sólo para filetes y separadores decorativos. Cualquier texto que
-     se lea usa --tinta-media: por debajo no se llega al 4,5:1. */
-  --tinta-tenue: rgba(18, 17, 16, 0.55);
+  /* El único tono secundario para texto. 5,66:1 sobre papel: por
+     debajo de este no se compone nada que haya que leer. */
+  --tinta-media: #6b6759;
   --filete: rgba(18, 17, 16, 0.22);
   --filete-firme: rgba(18, 17, 16, 0.55);
 

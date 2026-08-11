@@ -22,11 +22,25 @@
   text-align: right;
 }
 
+.conDedo {
+  display: none;
+}
+
+@media (pointer: coarse) {
+  .conPuntero {
+    display: none;
+  }
+
+  .conDedo {
+    display: inline;
+  }
+}
+
 /* El nombre a sangre a la izquierda y, a su costado, la oferta y la
    acción: el primer pliego entero en una mirada. */
 .zonaEspectro {
   display: grid;
-  grid-template-columns: minmax(0, 1fr) minmax(15rem, 21rem);
+  grid-template-columns: minmax(0, 1fr) minmax(17rem, 26rem);
   align-items: end;
   gap: clamp(1.5rem, 3vw, 3rem);
   padding-inline: var(--margen);

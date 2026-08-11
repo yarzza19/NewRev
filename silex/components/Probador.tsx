@@ -24,12 +24,10 @@ export default function Probador({ primero }: { primero: Corte | undefined }) {
   const [ejes, setEjes] = useState(ARRANQUE);
   const [vivo, setVivo] = useState(false);
   const [tocado, setTocado] = useState(false);
-  const [grueso, setGrueso] = useState(false);
   const zona = useRef<HTMLDivElement>(null);
   const espectro = useRef<HTMLHeadingElement>(null);
 
   useEffect(() => {
-    setGrueso(window.matchMedia('(pointer: coarse)').matches);
     const reducido = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
     if (reducido) {
       setEjes(REPOSO);
@@ -91,12 +89,6 @@ export default function Probador({ primero }: { primero: Corte | undefined }) {
     setEjes(REPOSO);
   }, [vivo]);
 
-  const instruccion = tocado
-    ? 'Suelta y vuelve a su corte'
-    : grueso
-      ? 'Arrastra sobre el nombre'
-      : 'Pasa por encima del nombre';
-
   return (
     <section className={estilos.primerPliego} aria-labelledby="titulo-silex">
       <div className={estilos.franjaAlta}>
@@ -104,7 +96,19 @@ export default function Probador({ primero }: { primero: Corte | undefined }) {
           <span>wdth {ejes.wdth}</span>
           <span>wght {ejes.wght}</span>
         </p>
-        <p className={`margenNota ${estilos.instruccion}`}>{instruccion}</p>
+        {/* El gesto lo decide el CSS, no el JS: qué puntero hay es una
+            consulta de medio, y así la frase es correcta ya en el HTML
+            servido, sin esperar a la hidratación. */}
+        <p className={`margenNota ${estilos.instruccion}`}>
+          {tocado ? (
+            'Suelta y vuelve a su corte'
+          ) : (
+            <>
+              <span className={estilos.conPuntero}>Pasa por encima del nombre</span>
+              <span className={estilos.conDedo}>Arrastra sobre el nombre</span>
+            </>
+          )}
+        </p>
       </div>
 
       <div ref={zona} className={estilos.zonaEspectro} onPointerMove={alMover} onPointerLeave={alSalir}>

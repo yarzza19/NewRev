@@ -20,7 +20,7 @@
   --amarillo-hondo: #e5cd00;
   --amarillo-sombra: #6b5f00;
   /* Texto secundario sobre amarillo: teñido del propio tono,
-     nunca gris. 7,2:1 sobre #ffe500. */
+     nunca gris. 5,33:1 medido sobre #ffe500. */
   --sobre-amarillo-medio: #6b5a00;
 
   /* --- Tipografía ---------------------------------------- */

@@ -1,0 +1,129 @@
+.pie {
+  margin-top: var(--pliegue);
+  border-top: 1px solid var(--tinta);
+  overflow: hidden;
+  container-type: inline-size;
+}
+
+.superior {
+  display: grid;
+  grid-template-columns: minmax(0, 1.35fr) minmax(0, 1fr);
+  gap: clamp(2rem, 5vw, 5rem);
+  padding: clamp(2rem, 4vw, 3.5rem) var(--margen) clamp(2rem, 4vw, 3rem);
+}
+
+.tituloBloque {
+  color: var(--tinta-media);
+  padding-bottom: 0.75rem;
+  margin-bottom: 0.75rem;
+  border-bottom: 1px solid var(--filete-firme);
+}
+
+/* --- Índice tabular -------------------------------------- */
+
+.tabla {
+  width: 100%;
+  border-collapse: collapse;
+  font-variant-numeric: tabular-nums;
+}
+
+.tabla th {
+  text-align: left;
+  color: var(--tinta-media);
+  font-weight: 500;
+  padding-bottom: 0.5rem;
+  border-bottom: 1px solid var(--filete);
+}
+
+.tabla td {
+  padding: 0.55rem 0.75rem 0.55rem 0;
+  border-bottom: 1px solid var(--filete);
+  font-size: 0.9375rem;
+  vertical-align: baseline;
+}
+
+.tabla tbody tr:hover td {
+  background: var(--amarillo);
+}
+
+.tabla td:last-child,
+.tabla th:last-child {
+  text-align: right;
+  padding-right: 0;
+}
+
+.enlaceTabla {
+  text-decoration: none;
+  font-weight: 500;
+  border-bottom: 1px solid var(--filete);
+}
+
+.enlaceTabla:hover {
+  border-bottom-color: var(--tinta);
+}
+
+/* --- Lateral --------------------------------------------- */
+
+.lateral {
+  display: flex;
+  flex-direction: column;
+  gap: clamp(1.75rem, 3vw, 2.5rem);
+}
+
+.contacto {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 0.35rem;
+  font-size: 1.0625rem;
+}
+
+.contacto a {
+  text-decoration-color: var(--filete);
+}
+
+.contacto a:hover {
+  text-decoration-color: var(--tinta);
+}
+
+/* --- Cierre ---------------------------------------------- */
+
+.legal {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  gap: 0.75rem 2rem;
+  padding: 1rem var(--margen);
+  border-top: 1px solid var(--filete-firme);
+  color: var(--tinta-media);
+  text-transform: none;
+  letter-spacing: 0.03em;
+}
+
+/* La firma se corta por el borde inferior a propósito, nunca por el
+   lateral: el cuerpo se calcula para caber justo en la medida. */
+.firma {
+  font-family: var(--display);
+  font-size: calc((100cqi - 2 * var(--margen)) / (var(--caracteres, 5) * 0.618));
+  font-weight: 800;
+  letter-spacing: -0.05em;
+  line-height: 0.72;
+  text-transform: uppercase;
+  font-variation-settings: 'wdth' 100;
+  margin: 0 0 -0.16em;
+  padding-inline: var(--margen);
+  color: var(--tinta);
+  user-select: none;
+}
+
+@media (max-width: 60rem) {
+  .superior {
+    grid-template-columns: 1fr;
+  }
+
+  .columnaMaterial {
+    display: none;
+  }
+}

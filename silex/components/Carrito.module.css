@@ -1,0 +1,234 @@
+.velo {
+  position: fixed;
+  inset: 0;
+  background: rgba(18, 17, 16, 0.44);
+  z-index: 60;
+}
+
+/* El cajón es un albarán: papel, filetes y cifras alineadas. */
+.cajon {
+  position: fixed;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  z-index: 61;
+  display: flex;
+  flex-direction: column;
+  width: min(30rem, 100%);
+  background: var(--papel);
+  border-left: 1px solid var(--tinta);
+  outline: none;
+}
+
+.cabezaCajon {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
+  padding: 1.15rem 1.25rem;
+  border-bottom: 1px solid var(--tinta);
+  background: var(--amarillo);
+}
+
+.tituloCajon {
+  color: var(--tinta);
+}
+
+.cerrar {
+  display: grid;
+  place-items: center;
+  width: 2.25rem;
+  height: 2.25rem;
+  background: none;
+  border: 1px solid transparent;
+  cursor: pointer;
+  transition: border-color var(--rapido) var(--salida);
+}
+
+.cerrar:hover {
+  border-color: var(--tinta);
+}
+
+/* --- Orden vacía ---------------------------------------- */
+
+.vacio {
+  padding: 2.5rem 1.25rem;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 0.75rem;
+}
+
+.vacioTexto {
+  max-width: 34ch;
+  color: var(--tinta-media);
+}
+
+.vacioEnlace {
+  margin-top: 0.5rem;
+  font-family: var(--dato);
+  font-size: var(--t-dato);
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  text-decoration-color: var(--amarillo-hondo);
+  text-decoration-thickness: 2px;
+}
+
+/* --- Líneas ---------------------------------------------- */
+
+.lineas {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  overflow-y: auto;
+  flex: 1;
+}
+
+.linea {
+  display: grid;
+  grid-template-columns: 1fr auto auto;
+  grid-template-areas:
+    'texto contador total'
+    'borrar borrar borrar';
+  align-items: center;
+  gap: 0.5rem 1rem;
+  padding: 1.1rem 1.25rem;
+  border-bottom: 1px solid var(--filete);
+}
+
+.lineaTexto {
+  grid-area: texto;
+  display: flex;
+  flex-direction: column;
+  gap: 0.2rem;
+  min-width: 0;
+}
+
+.lineaNombre {
+  font-family: var(--display);
+  font-size: 1.25rem;
+  font-weight: 600;
+  letter-spacing: -0.02em;
+  text-decoration: none;
+}
+
+.lineaNombre:hover {
+  text-decoration: underline;
+  text-decoration-thickness: 2px;
+  text-decoration-color: var(--amarillo-hondo);
+}
+
+.lineaRef {
+  color: var(--tinta-media);
+}
+
+.contador {
+  grid-area: contador;
+  display: flex;
+  align-items: center;
+  gap: 0.3rem;
+  border: 1px solid var(--filete-firme);
+}
+
+.contador button {
+  display: grid;
+  place-items: center;
+  width: 2rem;
+  height: 2rem;
+  background: none;
+  border: 0;
+  cursor: pointer;
+  transition: background-color var(--rapido) var(--salida);
+}
+
+.contador button:hover {
+  background: var(--amarillo);
+}
+
+.contador button svg {
+  width: 15px;
+  height: 15px;
+}
+
+.contador span {
+  min-width: 1.5rem;
+  text-align: center;
+  font-size: 0.875rem;
+}
+
+.lineaTotal {
+  grid-area: total;
+  font-size: 0.9375rem;
+  font-weight: 600;
+}
+
+.borrar {
+  grid-area: borrar;
+  justify-self: start;
+  padding: 0;
+  background: none;
+  border: 0;
+  font-family: var(--dato);
+  font-size: var(--t-dato-menor);
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  color: var(--tinta-media);
+  cursor: pointer;
+  text-decoration: underline;
+  text-underline-offset: 0.25em;
+  text-decoration-color: var(--filete);
+}
+
+.borrar:hover {
+  color: var(--tinta);
+  text-decoration-color: currentColor;
+}
+
+/* --- Pie del pedido -------------------------------------- */
+
+.piePedido {
+  border-top: 1px solid var(--tinta);
+  padding: 1.25rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.85rem;
+}
+
+.sumaFila {
+  display: flex;
+  align-items: baseline;
+  justify-content: space-between;
+}
+
+.suma {
+  font-size: clamp(1.75rem, 5vw, 2.25rem);
+  font-weight: 600;
+  letter-spacing: -0.03em;
+}
+
+.nota {
+  color: var(--tinta-media);
+  text-transform: none;
+  letter-spacing: 0.02em;
+  line-height: 1.5;
+}
+
+.tramitar {
+  padding: 1rem 1.25rem;
+  background: var(--tinta);
+  color: var(--papel);
+  border: 1px solid var(--tinta);
+  font-family: var(--dato);
+  font-size: var(--t-dato);
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  cursor: pointer;
+  transition:
+    background-color var(--normal) var(--salida),
+    color var(--normal) var(--salida);
+}
+
+.tramitar:hover {
+  background: var(--amarillo);
+  color: var(--tinta);
+}

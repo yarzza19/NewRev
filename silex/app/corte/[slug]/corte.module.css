@@ -1,0 +1,103 @@
+.ficha {
+  padding-top: clamp(5rem, 9vw, 7rem);
+}
+
+.migas {
+  display: flex;
+  align-items: baseline;
+  gap: 0.5rem;
+  padding: 0 var(--margen) clamp(1.25rem, 3vw, 2rem);
+}
+
+.migas a {
+  color: var(--tinta-media);
+  text-decoration-color: var(--filete);
+}
+
+.migas a:hover {
+  color: var(--tinta);
+  text-decoration-color: var(--tinta);
+}
+
+.separador {
+  color: var(--tinta-tenue);
+}
+
+.actual {
+  color: var(--tinta-media);
+}
+
+/* --- Otros cortes ---------------------------------------- */
+
+.vecinos {
+  margin-top: var(--pliegue);
+}
+
+.tituloVecinos {
+  color: var(--tinta-media);
+  padding: 0 var(--margen) 1rem;
+}
+
+.parrillaVecinos {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 1px;
+  background: var(--filete-firme);
+  border-block: 1px solid var(--tinta);
+}
+
+.vecino {
+  display: flex;
+  flex-direction: column;
+  background: var(--papel);
+  padding: clamp(0.75rem, 1.5vw, 1.25rem);
+  text-decoration: none;
+  transition: background-color var(--normal) var(--salida);
+}
+
+.vecino:hover {
+  background: var(--amarillo);
+}
+
+.pieVecino {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) auto;
+  align-items: baseline;
+  gap: 0.15rem 0.75rem;
+  padding-top: 0.75rem;
+}
+
+.refVecino {
+  grid-column: 1 / -1;
+  color: var(--tinta-media);
+}
+
+.vecino:hover .refVecino {
+  color: var(--sobre-amarillo-medio);
+}
+
+.nombreVecino {
+  font-family: var(--display);
+  font-size: clamp(1.1rem, 1.6vw, 1.4rem);
+  font-weight: 620;
+  letter-spacing: -0.03em;
+  line-height: 1.1;
+}
+
+.precioVecino {
+  font-size: 0.875rem;
+  font-weight: 600;
+  white-space: nowrap;
+}
+
+@media (max-width: 64rem) {
+  .parrillaVecinos {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+  }
+}
+
+@media (max-width: 48rem) {
+  .parrillaVecinos {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}

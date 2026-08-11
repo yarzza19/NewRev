@@ -1,0 +1,295 @@
+/* ============================================================
+   SILEX — sistema base
+   Pliego de espécimen: papel blanco, una tinta, un campo amarillo.
+   Los tokens de aquí abajo son el único sitio donde tocar color,
+   tipo y ritmo. Todo lo demás los consume.
+   ============================================================ */
+
+:root {
+  /* --- Tinta y papel ------------------------------------- */
+  --papel: #ffffff;
+  --tinta: #121110;
+  --tinta-media: #6b6759;
+  --tinta-tenue: rgba(18, 17, 16, 0.42);
+  --filete: rgba(18, 17, 16, 0.22);
+  --filete-firme: rgba(18, 17, 16, 0.55);
+
+  /* --- Campo amarillo ------------------------------------ */
+  --amarillo: #ffe500;
+  --amarillo-hondo: #e5cd00;
+  --amarillo-sombra: #6b5f00;
+  /* Texto secundario sobre amarillo: teñido del propio tono,
+     nunca gris. 7,2:1 sobre #ffe500. */
+  --sobre-amarillo-medio: #6b5a00;
+
+  /* --- Tipografía ---------------------------------------- */
+  --display: var(--fuente-display), 'Arial Narrow', system-ui, sans-serif;
+  --texto: var(--fuente-texto), system-ui, sans-serif;
+  --dato: var(--fuente-dato), ui-monospace, 'SFMono-Regular', monospace;
+
+  /* Escala. El mundo es un pliego de espécimen: el display sube
+     por encima del techo habitual a propósito, porque el tamaño
+     ES el contenido de un espécimen. */
+  --t-espectro: clamp(4.5rem, 19vw, 17rem);
+  --t-titular: clamp(2.6rem, 7.2vw, 6.2rem);
+  --t-seccion: clamp(1.75rem, 3.4vw, 3rem);
+  --t-cuerpo-mayor: clamp(1.0625rem, 1.35vw, 1.3125rem);
+  --t-cuerpo: 1rem;
+  --t-dato: 0.75rem;
+  --t-dato-menor: 0.6875rem;
+
+  /* --- Ritmo --------------------------------------------- */
+  --margen: clamp(1.125rem, 4vw, 3.5rem);
+  --canal: clamp(1.5rem, 3vw, 2.75rem);
+  --pliegue: clamp(5rem, 11vw, 10rem);
+
+  /* --- Motion -------------------------------------------- */
+  --salida: cubic-bezier(0.16, 1, 0.3, 1);
+  --entrada: cubic-bezier(0.32, 0, 0.67, 0);
+  --rapido: 140ms;
+  --normal: 240ms;
+  --amplio: 420ms;
+}
+
+/* ============================================================
+   Reset corto
+   ============================================================ */
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+* {
+  margin: 0;
+}
+
+html {
+  -webkit-text-size-adjust: 100%;
+  scrollbar-gutter: stable;
+}
+
+body {
+  background: var(--papel);
+  color: var(--tinta);
+  font-family: var(--texto);
+  font-size: var(--t-cuerpo);
+  line-height: 1.5;
+  font-synthesis-weight: none;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  overflow-x: hidden;
+}
+
+img,
+svg {
+  display: block;
+  max-width: 100%;
+}
+
+button,
+input {
+  font: inherit;
+  color: inherit;
+}
+
+/* ============================================================
+   Superficies del navegador.
+   Las partes que no dibujas también son diseño: selección,
+   caret, barra de scroll, foco, subrayado y las cifras.
+   ============================================================ */
+
+::selection {
+  background: var(--amarillo);
+  color: var(--tinta);
+}
+
+html {
+  scrollbar-color: var(--tinta) var(--papel);
+  scrollbar-width: thin;
+  accent-color: var(--tinta);
+  caret-color: var(--tinta);
+}
+
+::-webkit-scrollbar {
+  width: 11px;
+  height: 11px;
+}
+
+::-webkit-scrollbar-track {
+  background: var(--papel);
+  border-left: 1px solid var(--filete);
+}
+
+::-webkit-scrollbar-thumb {
+  background: var(--tinta);
+  border: 3px solid var(--papel);
+  border-radius: 0;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: var(--amarillo-sombra);
+}
+
+:focus-visible {
+  outline: 2px solid var(--tinta);
+  outline-offset: 3px;
+}
+
+/* Sobre el campo amarillo el foco se invierte para no perderse
+   dentro del propio color. */
+.enAmarillo :focus-visible {
+  outline-color: var(--tinta);
+  outline-offset: 4px;
+}
+
+a {
+  color: inherit;
+  text-decoration-thickness: 1px;
+  text-underline-offset: 0.22em;
+}
+
+::marker {
+  color: var(--tinta-media);
+}
+
+/* ============================================================
+   Primitivas
+   ============================================================ */
+
+.pliego {
+  padding-inline: var(--margen);
+}
+
+.dato {
+  font-family: var(--dato);
+  font-size: var(--t-dato);
+  font-variant-numeric: tabular-nums;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  font-weight: 500;
+}
+
+.cifra {
+  font-family: var(--dato);
+  font-variant-numeric: tabular-nums lining-nums;
+  letter-spacing: -0.01em;
+}
+
+.espectro {
+  font-family: var(--display);
+  font-weight: 700;
+  letter-spacing: -0.035em;
+  line-height: 0.82;
+  text-wrap: balance;
+}
+
+.titular {
+  font-family: var(--display);
+  font-size: var(--t-titular);
+  font-weight: 620;
+  letter-spacing: -0.032em;
+  line-height: 0.92;
+  text-wrap: balance;
+}
+
+.seccion {
+  font-family: var(--display);
+  font-size: var(--t-seccion);
+  font-weight: 600;
+  letter-spacing: -0.028em;
+  line-height: 1;
+  text-wrap: balance;
+}
+
+.parrafo {
+  max-width: 68ch;
+  font-size: var(--t-cuerpo-mayor);
+  line-height: 1.58;
+  color: var(--tinta);
+}
+
+.filete {
+  border: 0;
+  border-top: 1px solid var(--filete-firme);
+  height: 0;
+}
+
+.aOido {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip-path: inset(50%);
+  white-space: nowrap;
+  border: 0;
+}
+
+/* ============================================================
+   Avisos. Sonner sin estilar: el aviso es un sello sobre el
+   pliego, no una tarjeta redondeada de sistema.
+   ============================================================ */
+
+.avisoSilex {
+  display: flex;
+  flex-direction: column;
+  gap: 0.25rem;
+  width: min(24rem, calc(100vw - 2.5rem));
+  padding: 0.9rem 1.1rem;
+  background: var(--amarillo);
+  color: var(--tinta);
+  border: 1px solid var(--tinta);
+}
+
+.avisoSilexTitulo {
+  font-family: var(--display);
+  font-size: 1.0625rem;
+  font-weight: 620;
+  letter-spacing: -0.02em;
+}
+
+.avisoSilexDescripcion {
+  font-family: var(--dato);
+  font-size: var(--t-dato-menor);
+  letter-spacing: 0.04em;
+  line-height: 1.45;
+  color: var(--sobre-amarillo-medio);
+}
+
+/* ============================================================
+   Revelado. El contenido está visible por defecto: si el
+   script falla, la página sigue leyéndose entera.
+   ============================================================ */
+
+[data-revelar] {
+  opacity: 1;
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  [data-revelar='espera'] {
+    opacity: 0;
+    transform: translate3d(0, 14px, 0);
+  }
+
+  [data-revelar='llega'] {
+    opacity: 1;
+    transform: none;
+    transition:
+      opacity var(--amplio) var(--salida),
+      transform var(--amplio) var(--salida);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}

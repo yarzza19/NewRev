@@ -1,0 +1,91 @@
+.marco {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  border: 1px solid var(--filete-firme);
+  overflow: hidden;
+}
+
+.papel {
+  background: var(--papel);
+}
+
+.amarillo {
+  background: var(--amarillo);
+}
+
+.dibujo {
+  width: 100%;
+  height: auto;
+  aspect-ratio: 480 / 620;
+}
+
+.foto {
+  width: 100%;
+  height: 100%;
+  aspect-ratio: 480 / 620;
+  object-fit: cover;
+}
+
+.cuerpo {
+  fill: var(--tinta);
+}
+
+/* Los detalles blancos son el papel visto a través de la tinta:
+   bisel, veta, hueco. No son un segundo color. */
+.cuerpo :global(.brillo) {
+  fill: none;
+  stroke: var(--papel);
+  stroke-width: 1.5;
+  opacity: 0.55;
+}
+
+.cuerpo :global(.hueco) {
+  fill: var(--papel);
+}
+
+.cuerpo :global(.trazoGrueso) {
+  stroke: var(--tinta);
+}
+
+.registro path {
+  stroke: var(--tinta);
+  stroke-width: 1;
+  opacity: 0.5;
+  fill: none;
+}
+
+.trama {
+  fill-opacity: 0.07;
+}
+
+.amarillo .trama {
+  fill-opacity: 0.11;
+}
+
+.cota path {
+  stroke: var(--tinta);
+  stroke-width: 1;
+  opacity: 0.55;
+}
+
+.cota text {
+  font-family: var(--dato);
+  font-size: 15px;
+  letter-spacing: 0.06em;
+  fill: var(--tinta);
+  opacity: 0.75;
+}
+
+.leyenda {
+  display: flex;
+  justify-content: space-between;
+  gap: 1rem;
+  padding: 0.6rem 0.75rem;
+  border-top: 1px solid var(--filete-firme);
+  color: var(--tinta-media);
+}
+
+.amarillo .leyenda {
+  color: var(--sobre-amarillo-medio);
+}

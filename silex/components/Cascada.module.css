@@ -1,0 +1,183 @@
+.cascada {
+  position: relative;
+  margin-top: var(--pliegue);
+  scroll-margin-top: 5rem;
+}
+
+.encabezado {
+  display: flex;
+  align-items: baseline;
+  justify-content: space-between;
+  gap: var(--canal);
+  padding: 0 var(--margen) 1.25rem;
+}
+
+.cuentaCortes {
+  color: var(--tinta-media);
+  white-space: nowrap;
+}
+
+.escalones {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  border-top: 1px solid var(--tinta);
+}
+
+.escalon {
+  position: relative;
+  border-bottom: 1px solid var(--filete);
+}
+
+/* El campo amarillo se abre desde el margen izquierdo, como una
+   marca de revisión sobre el pliego. */
+.escalon::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: var(--amarillo);
+  transform: scaleX(0);
+  transform-origin: left;
+  transition: transform var(--normal) var(--salida);
+  z-index: 0;
+}
+
+.escalon:hover::before,
+.escalon:focus-within::before {
+  transform: scaleX(1);
+}
+
+.enlaceEscalon {
+  position: relative;
+  z-index: 1;
+  display: grid;
+  grid-template-columns: 5.5rem minmax(0, auto) minmax(0, 1fr) auto;
+  align-items: baseline;
+  gap: clamp(0.75rem, 2vw, 2rem);
+  padding: clamp(0.6rem, 1.4vw, 1.1rem) var(--margen);
+  padding-right: clamp(var(--margen), 18vw, 19rem);
+  text-decoration: none;
+}
+
+.refEscalon {
+  color: var(--tinta-media);
+  transition: color var(--normal) var(--salida);
+}
+
+.escalon:hover .refEscalon,
+.escalon:focus-within .refEscalon {
+  color: var(--sobre-amarillo-medio);
+}
+
+/* El tamaño ES el dato: cada escalón baja un peldaño. */
+.nombreEscalon {
+  font-family: var(--display);
+  font-size: calc(clamp(2rem, 6.4vw, 5.25rem) * var(--escala));
+  font-weight: 640;
+  letter-spacing: -0.035em;
+  line-height: 1.02;
+  font-variation-settings: 'wdth' 92;
+  transition: font-variation-settings var(--amplio) var(--salida);
+}
+
+.escalon:hover .nombreEscalon,
+.escalon:focus-within .nombreEscalon {
+  font-variation-settings: 'wdth' 100;
+}
+
+.sumarioEscalon {
+  color: var(--tinta-media);
+  font-size: 0.9375rem;
+  transition: color var(--normal) var(--salida);
+}
+
+.escalon:hover .sumarioEscalon,
+.escalon:focus-within .sumarioEscalon {
+  color: var(--sobre-amarillo-medio);
+}
+
+.precioEscalon {
+  font-size: 1rem;
+  font-weight: 600;
+  justify-self: end;
+  white-space: nowrap;
+}
+
+/* --- Plancha que sigue al puntero ------------------------ */
+
+.seguidor {
+  position: absolute;
+  top: 0;
+  right: var(--margen);
+  width: clamp(9rem, 14vw, 13rem);
+  pointer-events: none;
+  opacity: 0;
+  transition: opacity var(--normal) var(--salida);
+  z-index: 2;
+}
+
+.seguidorVisible {
+  opacity: 1;
+}
+
+.seguidorCaja {
+  animation: entraPlancha var(--amplio) var(--salida) both;
+}
+
+@keyframes entraPlancha {
+  from {
+    opacity: 0;
+    transform: scale(0.94);
+  }
+  to {
+    opacity: 1;
+    transform: none;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .seguidorCaja {
+    animation: none;
+  }
+
+  .escalon::before {
+    transition: none;
+  }
+}
+
+@media (max-width: 64rem) {
+  .seguidor {
+    display: none;
+  }
+
+  .enlaceEscalon {
+    grid-template-columns: 4.5rem minmax(0, 1fr) auto;
+    padding-right: var(--margen);
+    row-gap: 0.15rem;
+  }
+
+  .sumarioEscalon {
+    grid-column: 2 / -1;
+  }
+}
+
+@media (max-width: 40rem) {
+  .enlaceEscalon {
+    grid-template-columns: minmax(0, 1fr) auto;
+  }
+
+  .refEscalon {
+    grid-column: 1;
+    grid-row: 1;
+  }
+
+  .nombreEscalon {
+    grid-column: 1 / -1;
+    font-size: calc(clamp(1.9rem, 11vw, 3rem) * max(var(--escala), 0.62));
+  }
+
+  .precioEscalon {
+    grid-column: 2;
+    grid-row: 1;
+  }
+}

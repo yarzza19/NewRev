@@ -1,0 +1,223 @@
+.primerPliego {
+  padding-top: clamp(4.25rem, 6vw, 5.25rem);
+  display: grid;
+  gap: clamp(1rem, 1.8vw, 1.5rem);
+}
+
+.franjaAlta {
+  display: flex;
+  align-items: baseline;
+  justify-content: space-between;
+  gap: 1rem;
+  padding-inline: var(--margen);
+  color: var(--tinta-media);
+}
+
+.lectura {
+  display: flex;
+  gap: clamp(0.75rem, 2vw, 1.5rem);
+}
+
+.instruccion {
+  color: var(--tinta-tenue);
+}
+
+/* Sin puntero fino no hay nada que pasar por encima: la instrucción
+   se retira en lugar de pedir un gesto que no existe. */
+@media (pointer: coarse) {
+  .instruccion {
+    display: none;
+  }
+}
+
+/* La caja del espécimen sangra a los dos márgenes: el nombre no
+   está dentro de una columna, es el pliego entero. */
+.zonaEspectro {
+  padding-inline: var(--margen);
+  border-block: 1px solid var(--tinta);
+  padding-block: clamp(0.5rem, 1.5vw, 1.25rem);
+  touch-action: pan-y;
+  container-type: inline-size;
+}
+
+/* El cuerpo sale del ancho de la caja dividido entre las letras que
+   tenga el nombre: la medida manda sobre la escala fija. --ajuste lo
+   afina con la medición real; sin JS la estimación ya es válida. */
+.espectro {
+  /* El techo en vh es lo que mantiene la banda del primer corte
+     dentro del primer pliego: el nombre llena la medida hasta donde
+     el alto lo permite, y a partir de ahí manda la composición. */
+  font-size: min(
+    calc(100cqi / (var(--caracteres, 5) * 0.605) * var(--ajuste, 1)),
+    44vh
+  );
+  margin: 0;
+  text-transform: uppercase;
+  cursor: crosshair;
+  transition: font-variation-settings 780ms var(--salida);
+  will-change: font-variation-settings;
+}
+
+/* En cuanto termina la entrada la transición se retira: a partir de
+   ahí el puntero manda y cualquier interpolación sería latencia. */
+.espectroVivo {
+  transition: none;
+  will-change: auto;
+}
+
+.bajada {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) auto;
+  align-items: end;
+  gap: var(--canal);
+  padding-inline: var(--margen);
+}
+
+.oferta {
+  max-width: 46ch;
+  text-wrap: pretty;
+}
+
+.acciones {
+  display: flex;
+  align-items: center;
+  gap: 1.25rem;
+}
+
+.accionPrincipal {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.7rem;
+  padding: 1rem 1.4rem;
+  background: var(--tinta);
+  color: var(--papel);
+  font-family: var(--dato);
+  font-size: var(--t-dato);
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  text-decoration: none;
+  border: 1px solid var(--tinta);
+  transition:
+    background-color var(--normal) var(--salida),
+    color var(--normal) var(--salida);
+}
+
+.accionPrincipal:hover {
+  background: var(--amarillo);
+  color: var(--tinta);
+}
+
+.flecha {
+  width: 17px;
+  height: 17px;
+  transition: transform var(--normal) var(--salida);
+}
+
+.accionPrincipal:hover .flecha {
+  transform: translateX(4px);
+}
+
+.accionSecundaria {
+  font-family: var(--dato);
+  font-size: var(--t-dato);
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  text-decoration-color: var(--filete);
+  text-decoration-thickness: 1px;
+  white-space: nowrap;
+}
+
+.accionSecundaria:hover {
+  text-decoration-color: var(--tinta);
+}
+
+/* --- Banda del primer corte ------------------------------ */
+
+.bandaPrimero {
+  margin-top: clamp(1rem, 2vw, 1.75rem);
+  background: var(--amarillo);
+  border-top: 1px solid var(--tinta);
+  display: grid;
+  grid-template-columns: auto minmax(0, 1fr) auto;
+  align-items: center;
+  gap: var(--canal);
+  padding: clamp(1rem, 2vw, 1.5rem) var(--margen);
+}
+
+.planchaPrimero {
+  width: clamp(5.5rem, 9vw, 8rem);
+}
+
+.textoPrimero {
+  display: flex;
+  flex-direction: column;
+  gap: 0.3rem;
+  min-width: 0;
+}
+
+.refPrimero {
+  color: var(--sobre-amarillo-medio);
+}
+
+.nombrePrimero {
+  font-family: var(--display);
+  font-size: clamp(2rem, 5.5vw, 3.5rem);
+  font-weight: 650;
+  letter-spacing: -0.035em;
+  line-height: 0.95;
+  text-decoration: none;
+  width: fit-content;
+  border-bottom: 2px solid transparent;
+  transition: border-color var(--rapido) var(--salida);
+}
+
+.nombrePrimero:hover {
+  border-bottom-color: var(--tinta);
+}
+
+.sumarioPrimero {
+  color: var(--sobre-amarillo-medio);
+  max-width: 44ch;
+}
+
+.precioPrimero {
+  font-size: clamp(1.5rem, 3vw, 2.25rem);
+  font-weight: 600;
+  letter-spacing: -0.03em;
+  align-self: end;
+}
+
+@media (max-width: 60rem) {
+  .bajada {
+    grid-template-columns: 1fr;
+    align-items: start;
+    gap: 1.5rem;
+  }
+
+  .bandaPrimero {
+    grid-template-columns: auto minmax(0, 1fr);
+    row-gap: 1rem;
+  }
+
+  .precioPrimero {
+    grid-column: 2;
+    justify-self: start;
+  }
+}
+
+@media (max-width: 40rem) {
+  .franjaAlta {
+    flex-direction: column;
+    gap: 0.25rem;
+  }
+
+  .acciones {
+    flex-wrap: wrap;
+    gap: 1rem;
+  }
+
+  .accionPrincipal {
+    flex: 1 1 auto;
+    justify-content: space-between;
+  }
+}

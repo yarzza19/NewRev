@@ -1,0 +1,82 @@
+.set {
+  margin-top: var(--pliegue);
+}
+
+.encabezado {
+  display: flex;
+  align-items: baseline;
+  justify-content: space-between;
+  gap: var(--canal);
+  padding: 0 var(--margen) 1.25rem;
+}
+
+.pieEncabezado {
+  color: var(--tinta-media);
+}
+
+/* Los filetes de la retícula se hacen con el fondo: un hueco de 1px
+   deja ver la tinta y no hay ni una caja de más. */
+.parrilla {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 1px;
+  background: var(--filete-firme);
+  border-block: 1px solid var(--tinta);
+}
+
+.celda {
+  display: flex;
+  flex-direction: column;
+  background: var(--papel);
+  padding: clamp(0.75rem, 1.5vw, 1.25rem);
+  text-decoration: none;
+  transition: background-color var(--normal) var(--salida);
+}
+
+.celda:hover {
+  background: var(--amarillo);
+}
+
+.pieCelda {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) auto;
+  align-items: baseline;
+  gap: 0.15rem 0.75rem;
+  padding-top: 0.75rem;
+}
+
+.refCelda {
+  grid-column: 1 / -1;
+  color: var(--tinta-media);
+  transition: color var(--normal) var(--salida);
+}
+
+.celda:hover .refCelda {
+  color: var(--sobre-amarillo-medio);
+}
+
+.nombreCelda {
+  font-family: var(--display);
+  font-size: clamp(1.1rem, 1.6vw, 1.4rem);
+  font-weight: 620;
+  letter-spacing: -0.03em;
+  line-height: 1.1;
+}
+
+.precioCelda {
+  font-size: 0.875rem;
+  font-weight: 600;
+  white-space: nowrap;
+}
+
+@media (max-width: 64rem) {
+  .parrilla {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+  }
+}
+
+@media (max-width: 48rem) {
+  .parrilla {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}

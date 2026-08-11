@@ -1,0 +1,114 @@
+.cabecera {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 50;
+  display: grid;
+  grid-template-columns: auto 1fr auto;
+  align-items: center;
+  gap: var(--canal);
+  padding: 0.75rem var(--margen);
+  background: var(--papel);
+  border-bottom: 1px solid transparent;
+  transition: border-color var(--normal) var(--salida);
+}
+
+.posada {
+  border-bottom-color: var(--tinta);
+}
+
+.marca {
+  font-family: var(--display);
+  font-size: 1.4rem;
+  font-weight: 800;
+  letter-spacing: -0.04em;
+  text-transform: uppercase;
+  text-decoration: none;
+  line-height: 1;
+  font-variation-settings: 'wdth' 88;
+}
+
+.descriptor {
+  display: flex;
+  gap: 0.5rem;
+  color: var(--tinta-media);
+}
+
+.separador {
+  color: var(--tinta-tenue);
+}
+
+.navegacion {
+  display: flex;
+  align-items: center;
+  gap: clamp(0.75rem, 2vw, 1.75rem);
+}
+
+.enlace {
+  text-decoration: none;
+  padding-bottom: 2px;
+  border-bottom: 1px solid transparent;
+  transition: border-color var(--rapido) var(--salida);
+}
+
+.enlace:hover {
+  border-bottom-color: var(--tinta);
+}
+
+.orden {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.5rem 0.75rem;
+  background: var(--amarillo);
+  border: 1px solid var(--tinta);
+  cursor: pointer;
+  transition:
+    background-color var(--rapido) var(--salida),
+    transform var(--rapido) var(--salida);
+}
+
+.orden:hover {
+  background: var(--tinta);
+  color: var(--amarillo);
+}
+
+.orden:active {
+  transform: translateY(1px);
+}
+
+.iconoOrden {
+  width: 16px;
+  height: 16px;
+}
+
+.cuenta {
+  font-size: var(--t-dato);
+  font-weight: 600;
+}
+
+@media (max-width: 60rem) {
+  .descriptor {
+    display: none;
+  }
+
+  .cabecera {
+    grid-template-columns: auto 1fr;
+  }
+
+  .navegacion {
+    grid-column: 2;
+    justify-self: end;
+  }
+}
+
+@media (max-width: 30rem) {
+  .enlace {
+    display: none;
+  }
+
+  .orden span:nth-of-type(1) {
+    display: none;
+  }
+}

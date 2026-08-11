@@ -76,6 +76,64 @@ typography:
     lineHeight: 1.5
     letterSpacing: "-0.01em"
     fontFeature: "tabular-nums lining-nums"
+  marca:
+    fontFamily: "Bricolage Grotesque, system-ui, sans-serif"
+    fontSize: "1.4rem"
+    fontWeight: 800
+    lineHeight: 1
+    letterSpacing: "-0.04em"
+    fontVariation: "'wdth' 88"
+  nombre-banda:
+    fontFamily: "Bricolage Grotesque, system-ui, sans-serif"
+    fontSize: "clamp(2rem, 5.5vw, 3.5rem)"
+    fontWeight: 650
+    lineHeight: 0.95
+    letterSpacing: "-0.035em"
+  nombre-linea:
+    fontFamily: "Bricolage Grotesque, system-ui, sans-serif"
+    fontSize: "1.25rem"
+    fontWeight: 600
+    lineHeight: 1.1
+    letterSpacing: "-0.02em"
+  nombre-leyenda:
+    fontFamily: "Bricolage Grotesque, system-ui, sans-serif"
+    fontSize: "clamp(1.05rem, 1.5vw, 1.4rem)"
+    fontWeight: 620
+    lineHeight: 1.1
+    letterSpacing: "-0.03em"
+  precio-banda:
+    fontFamily: "Martian Mono, ui-monospace, SFMono-Regular, monospace"
+    fontSize: "clamp(1.5rem, 3vw, 2.25rem)"
+    fontWeight: 600
+    lineHeight: 1.5
+    letterSpacing: "-0.03em"
+    fontFeature: "tabular-nums lining-nums"
+  suma:
+    fontFamily: "Martian Mono, ui-monospace, SFMono-Regular, monospace"
+    fontSize: "clamp(1.75rem, 5vw, 2.25rem)"
+    fontWeight: 600
+    lineHeight: 1.5
+    letterSpacing: "-0.03em"
+    fontFeature: "tabular-nums lining-nums"
+  detalle:
+    fontFamily: "Archivo, system-ui, sans-serif"
+    fontSize: "0.9375rem"
+    fontWeight: 400
+    lineHeight: 1.5
+    letterSpacing: "normal"
+  prosa-nota:
+    fontFamily: "Archivo, system-ui, sans-serif"
+    fontSize: "clamp(1.1875rem, 1.8vw, 1.5rem)"
+    fontWeight: 400
+    lineHeight: 1.5
+    letterSpacing: "normal"
+  precio-ficha:
+    fontFamily: "Martian Mono, ui-monospace, SFMono-Regular, monospace"
+    fontSize: "clamp(2rem, 4.5vw, 2.75rem)"
+    fontWeight: 600
+    lineHeight: 1
+    letterSpacing: "-0.035em"
+    fontFeature: "tabular-nums lining-nums"
 rounded:
   nulo: "0"
 spacing:

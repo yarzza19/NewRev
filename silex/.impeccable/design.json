@@ -72,7 +72,16 @@
       "accion": { "displayName": "Acción", "purpose": "Todo botón y enlace de acción (.accion). Cara de texto en caja alta: un botón no mide nada, así que no va en mono." },
       "dato": { "displayName": "Dato", "purpose": "Referencias, cotas, valores de eje, cabeceras de tabla, recuentos y leyendas de plancha (.dato). Mono tabular." },
       "dato-menor": { "displayName": "Dato menor", "purpose": "Descripción de aviso y micro-leyenda." },
-      "cifra": { "displayName": "Cifra", "purpose": "Precios y sumas a cualquier cuerpo (.cifra). Mono con tabular-nums lining-nums." }
+      "cifra": { "displayName": "Cifra", "purpose": "Precios y sumas a cualquier cuerpo (.cifra). Mono con tabular-nums lining-nums." },
+      "marca": { "displayName": "Marca", "purpose": "El logotipo de la cabecera: display 800 condensado a wdth 88, 1.4rem." },
+      "nombre-banda": { "displayName": "Nombre en banda", "purpose": "Nombre de pieza en la banda amarilla del primer pliego, clamp(2rem, 5.5vw, 3.5rem)." },
+      "nombre-linea": { "displayName": "Nombre en línea", "purpose": "Nombre de pieza dentro de una fila del cajón-albarán, 1.25rem." },
+      "nombre-leyenda": { "displayName": "Nombre en leyenda", "purpose": "Nombre de pieza bajo una plancha en hoja o parrilla de vecinos, clamp(1.05rem, 1.5vw, 1.4rem)." },
+      "precio-banda": { "displayName": "Precio en banda", "purpose": "Precio destacado de la banda del primer pliego, clamp(1.5rem, 3vw, 2.25rem) en cifra." },
+      "suma": { "displayName": "Suma", "purpose": "Total del cajón-albarán, clamp(1.75rem, 5vw, 2.25rem) en cifra." },
+      "detalle": { "displayName": "Detalle", "purpose": "Sumario de escalón, total de línea y celda de tabla del pie: 0.9375rem en cara de texto." },
+      "prosa-nota": { "displayName": "Prosa de nota", "purpose": "La prosa destacada de la nota del taller, clamp(1.1875rem, 1.8vw, 1.5rem)." },
+      "precio-ficha": { "displayName": "Precio de ficha", "purpose": "El precio del pliego desplegado y de la ficha, clamp(2rem, 4.5vw, 2.75rem) en cifra." }
     },
     "shadows": [],
     "motion": [

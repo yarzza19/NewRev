@@ -36,7 +36,9 @@ export default function Portada() {
             <h2 id="titulo-desplegado" className="seccion">
               Un corte desplegado
             </h2>
-            <p className={`dato ${estilos.aclaracion}`}>Misma ficha que verás en cada pieza</p>
+            <p className={`margenNota ${estilos.aclaracion}`}>
+              La misma ficha que verás en cada pieza
+            </p>
           </div>
           <PliegoCorte corte={desplegado} />
         </section>

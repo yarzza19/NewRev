@@ -2,8 +2,7 @@
 
 import Link from 'next/link';
 import { useCallback, useEffect, useRef, useState } from 'react';
-import { estudio, type Corte } from '@/lib/catalogo';
-import { euros } from '@/lib/catalogo';
+import { estudio, euros, type Corte } from '@/lib/catalogo';
 import Plancha from './Plancha';
 import { IconoFlecha } from './Iconos';
 import estilos from './Probador.module.css';
@@ -25,11 +24,28 @@ export default function Probador({ primero }: { primero: Corte | undefined }) {
   const [ejes, setEjes] = useState(ARRANQUE);
   const [vivo, setVivo] = useState(false);
   const [tocado, setTocado] = useState(false);
+  const [grueso, setGrueso] = useState(false);
   const zona = useRef<HTMLDivElement>(null);
   const espectro = useRef<HTMLHeadingElement>(null);
 
+  useEffect(() => {
+    setGrueso(window.matchMedia('(pointer: coarse)').matches);
+    const reducido = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+    if (reducido) {
+      setEjes(REPOSO);
+      setVivo(true);
+      return;
+    }
+    const cuadro = requestAnimationFrame(() => setEjes(REPOSO));
+    const fin = window.setTimeout(() => setVivo(true), 820);
+    return () => {
+      cancelAnimationFrame(cuadro);
+      window.clearTimeout(fin);
+    };
+  }, []);
+
   /**
-   * El nombre tiene que llenar la medida sea cual sea: «Silex» son
+   * El nombre tiene que llenar su columna sea cual sea: «Silex» son
    * cinco letras, pero esto es una plantilla y el siguiente puede
    * tener doce. El CSS lo estima por número de caracteres —así el
    * primer pintado ya sale bien— y aquí se corrige con la medida
@@ -54,21 +70,6 @@ export default function Probador({ primero }: { primero: Corte | undefined }) {
     return () => window.removeEventListener('resize', ajustar);
   }, [vivo]);
 
-  useEffect(() => {
-    const reducido = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
-    if (reducido) {
-      setEjes(REPOSO);
-      setVivo(true);
-      return;
-    }
-    const cuadro = requestAnimationFrame(() => setEjes(REPOSO));
-    const fin = window.setTimeout(() => setVivo(true), 820);
-    return () => {
-      cancelAnimationFrame(cuadro);
-      window.clearTimeout(fin);
-    };
-  }, []);
-
   const alMover = useCallback(
     (evento: React.PointerEvent<HTMLDivElement>) => {
       if (!vivo || !zona.current) return;
@@ -90,51 +91,53 @@ export default function Probador({ primero }: { primero: Corte | undefined }) {
     setEjes(REPOSO);
   }, [vivo]);
 
+  const instruccion = tocado
+    ? 'Suelta y vuelve a su corte'
+    : grueso
+      ? 'Arrastra sobre el nombre'
+      : 'Pasa por encima del nombre';
+
   return (
     <section className={estilos.primerPliego} aria-labelledby="titulo-silex">
       <div className={estilos.franjaAlta}>
         <p className={`dato ${estilos.lectura}`} aria-hidden="true">
           <span>wdth {ejes.wdth}</span>
           <span>wght {ejes.wght}</span>
-          <span>opsz 96</span>
         </p>
-        <p className={`dato ${estilos.instruccion}`}>
-          {tocado ? 'Suelta y vuelve a su corte' : 'Pasa por encima del nombre'}
-        </p>
+        <p className={`margenNota ${estilos.instruccion}`}>{instruccion}</p>
       </div>
 
-      <div
-        ref={zona}
-        className={estilos.zonaEspectro}
-        onPointerMove={alMover}
-        onPointerLeave={alSalir}
-      >
-        <h1
-          id="titulo-silex"
-          ref={espectro}
-          className={`espectro ${estilos.espectro} ${vivo ? estilos.espectroVivo : ''}`}
-          style={{
-            fontVariationSettings: `"wdth" ${ejes.wdth}, "wght" ${ejes.wght}, "opsz" 96`,
-            ['--caracteres' as string]: estudio.nombre.length,
-          }}
-        >
-          {estudio.nombre}
-        </h1>
-      </div>
+      <div ref={zona} className={estilos.zonaEspectro} onPointerMove={alMover} onPointerLeave={alSalir}>
+        <div className={estilos.cajaEspectro}>
+          <h1
+            id="titulo-silex"
+            ref={espectro}
+            className={`espectro ${estilos.espectro} ${vivo ? estilos.espectroVivo : ''}`}
+            style={{
+              fontVariationSettings: `"wdth" ${ejes.wdth}, "wght" ${ejes.wght}, "opsz" 96`,
+              ['--caracteres' as string]: estudio.nombre.length,
+            }}
+          >
+            {estudio.nombre}
+          </h1>
+        </div>
 
-      <div className={estilos.bajada}>
-        <p className={`parrafo ${estilos.oferta}`}>
-          Ocho objetos de acero, piedra y latón. Se funden, se rectifican y se numeran en el
-          taller: lo que no pasa la plancha de control no se vende.
-        </p>
-        <div className={estilos.acciones}>
-          <Link href="#catalogo" className={estilos.accionPrincipal}>
-            Ver los ocho cortes
-            <IconoFlecha className={estilos.flecha} />
-          </Link>
-          <Link href="#taller" className={estilos.accionSecundaria}>
-            Nota del taller
-          </Link>
+        {/* La oferta y la acción van al costado del nombre, no debajo:
+            el primer pliego se lee en una sola mirada. */}
+        <div className={estilos.bajada}>
+          <p className={estilos.oferta}>
+            Ocho objetos de acero, piedra y latón. Se funden, se rectifican y se numeran en el
+            taller: lo que no pasa la plancha de control no se vende.
+          </p>
+          <div className={estilos.acciones}>
+            <Link href="#catalogo" className={`accion ${estilos.accionPrincipal}`}>
+              Ver los ocho cortes
+              <IconoFlecha className={estilos.flecha} />
+            </Link>
+            <Link href="#taller" className={`accion ${estilos.accionSecundaria}`}>
+              Nota del taller
+            </Link>
+          </div>
         </div>
       </div>
 
@@ -144,10 +147,12 @@ export default function Probador({ primero }: { primero: Corte | undefined }) {
             <Plancha corte={primero} detalle="seco" prioridad />
           </div>
           <div className={estilos.textoPrimero}>
-            <p className={`dato ${estilos.refPrimero}`}>{primero.ref} · primer corte del catálogo</p>
-            <Link href={`/corte/${primero.slug}`} className={estilos.nombrePrimero}>
-              {primero.nombre}
-            </Link>
+            <p className={estilos.lineaNombre}>
+              <Link href={`/corte/${primero.slug}`} className={estilos.nombrePrimero}>
+                {primero.nombre}
+              </Link>
+              <span className={`dato ${estilos.refPrimero}`}>{primero.ref}</span>
+            </p>
             <p className={estilos.sumarioPrimero}>{primero.sumario}</p>
           </div>
           <p className={`cifra ${estilos.precioPrimero}`}>{euros(primero.precio)}</p>

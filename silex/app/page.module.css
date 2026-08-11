@@ -13,7 +13,7 @@
 }
 
 .aclaracion {
-  color: var(--tinta-media);
+  text-align: right;
 }
 
 .sinCatalogo {

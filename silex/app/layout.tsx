@@ -65,8 +65,10 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
           <Cabecera />
           <main id="principal">{children}</main>
           <Pie />
+          {/* A la izquierda: el cajón de la orden entra por la derecha
+              y un aviso ahí taparía el botón de tramitar. */}
           <Toaster
-            position="bottom-right"
+            position="bottom-left"
             gap={8}
             offset={20}
             toastOptions={{

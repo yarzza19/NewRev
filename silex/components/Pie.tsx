@@ -70,7 +70,7 @@ export default function Pie() {
         </div>
       </div>
 
-      <p className={`dato ${estilos.legal}`}>
+      <p className={`margenNota ${estilos.legal}`}>
         <span>
           {estudio.nombre} · {estudio.temporada}
         </span>

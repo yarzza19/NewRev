@@ -10,8 +10,8 @@ export default function BotonAnadir({ corte, ancho = false }: { corte: Corte; an
 
   if (corte.agotado) {
     return (
-      <p className={`dato ${estilos.agotado}`}>
-        Edición agotada · escribe al taller para la próxima tirada
+      <p className={`margenNota ${estilos.agotado}`}>
+        Edición agotada. Escribe al taller para entrar en la próxima tirada.
       </p>
     );
   }
@@ -19,7 +19,7 @@ export default function BotonAnadir({ corte, ancho = false }: { corte: Corte; an
   return (
     <button
       type="button"
-      className={`${estilos.boton} ${ancho ? estilos.ancho : ''}`}
+      className={`accion ${estilos.boton} ${ancho ? estilos.ancho : ''}`}
       onClick={() => {
         anadir(corte);
         abrir();

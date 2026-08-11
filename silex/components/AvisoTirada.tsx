@@ -32,7 +32,7 @@ export default function AvisoTirada() {
       }}
       noValidate
     >
-      <label className={`dato ${estilos.etiqueta}`} htmlFor="correo-tirada">
+      <label className={`accion ${estilos.etiqueta}`} htmlFor="correo-tirada">
         Avísame de la próxima tirada
       </label>
       <div className={estilos.linea}>

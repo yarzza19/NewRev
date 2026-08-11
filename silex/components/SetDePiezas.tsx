@@ -1,13 +1,17 @@
 import Link from 'next/link';
-import { euros, type Corte } from '@/lib/catalogo';
+import type { Corte } from '@/lib/catalogo';
 import Plancha from './Plancha';
 import Revelado from './Revelado';
 import estilos from './SetDePiezas.module.css';
 
 /**
- * El set de piezas: en un espécimen es la parrilla de caracteres,
- * aquí es el catálogo completo a un solo tamaño. Sin tarjetas —los
- * filetes de la retícula son la única separación.
+ * El pliego de planchas: en un espécimen es la parrilla de caracteres
+ * completa, aquí son todas las piezas dibujadas al mismo tamaño para
+ * poder compararlas.
+ *
+ * No lleva caja por pieza ni precio: el precio ya está en la cascada
+ * y en el índice del pie, y una caja alrededor de una plancha que ya
+ * tiene su propio marco es un marco dentro de otro marco.
  */
 
 export default function SetDePiezas({ cortes }: { cortes: Corte[] }) {
@@ -15,22 +19,21 @@ export default function SetDePiezas({ cortes }: { cortes: Corte[] }) {
     <section className={estilos.set} aria-labelledby="titulo-set">
       <div className={estilos.encabezado}>
         <h2 id="titulo-set" className="seccion">
-          El set completo
+          Todas las planchas
         </h2>
-        <p className={`dato ${estilos.pieEncabezado}`}>Todas las piezas al mismo tamaño</p>
+        <p className={`margenNota ${estilos.pieEncabezado}`}>
+          Al mismo tamaño, para poder compararlas
+        </p>
       </div>
 
-      <Revelado className={estilos.parrilla}>
+      <Revelado className={estilos.hoja}>
         {cortes.map((corte) => (
-          <Link key={corte.slug} href={`/corte/${corte.slug}`} className={estilos.celda}>
+          <Link key={corte.slug} href={`/corte/${corte.slug}`} className={estilos.pieza}>
             <Plancha corte={corte} detalle="seco" />
-            <div className={estilos.pieCelda}>
-              <span className={`dato ${estilos.refCelda}`}>{corte.ref}</span>
-              <span className={estilos.nombreCelda}>{corte.nombre}</span>
-              <span className={`cifra ${estilos.precioCelda}`}>
-                {corte.agotado ? 'Agotado' : euros(corte.precio)}
-              </span>
-            </div>
+            <p className={estilos.leyenda}>
+              <span className={`dato ${estilos.refPieza}`}>{corte.ref}</span>
+              <span className={estilos.nombrePieza}>{corte.nombre}</span>
+            </p>
           </Link>
         ))}
       </Revelado>

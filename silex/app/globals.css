@@ -9,8 +9,10 @@
   /* --- Tinta y papel ------------------------------------- */
   --papel: #ffffff;
   --tinta: #121110;
-  --tinta-media: #6b6759;
-  --tinta-tenue: rgba(18, 17, 16, 0.42);
+  --tinta-media: #6b6759; /* 5,3:1 sobre papel */
+  /* Sólo para filetes y separadores decorativos. Cualquier texto que
+     se lea usa --tinta-media: por debajo no se llega al 4,5:1. */
+  --tinta-tenue: rgba(18, 17, 16, 0.55);
   --filete: rgba(18, 17, 16, 0.22);
   --filete-firme: rgba(18, 17, 16, 0.55);
 
@@ -23,7 +25,7 @@
   --sobre-amarillo-medio: #6b5a00;
 
   /* --- Tipografía ---------------------------------------- */
-  --display: var(--fuente-display), 'Arial Narrow', system-ui, sans-serif;
+  --display: var(--fuente-display), system-ui, sans-serif;
   --texto: var(--fuente-texto), system-ui, sans-serif;
   --dato: var(--fuente-dato), ui-monospace, 'SFMono-Regular', monospace;
 
@@ -175,6 +177,23 @@ a {
   font-family: var(--dato);
   font-variant-numeric: tabular-nums lining-nums;
   letter-spacing: -0.01em;
+}
+
+/* Las acciones van en la cara de texto, no en la mono: la mono es
+   para medir —referencias, cotas, precios, ejes—, y un botón no mide
+   nada. Mantiene la caja alta y el tracking del catálogo técnico. */
+.accion {
+  font-family: var(--texto);
+  font-size: 0.8125rem;
+  font-weight: 600;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+}
+
+/* Anotación al margen: prosa corta que acompaña a un bloque. */
+.margenNota {
+  font-size: 0.875rem;
+  color: var(--tinta-media);
 }
 
 .espectro {

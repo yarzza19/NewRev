@@ -29,7 +29,7 @@
 }
 
 .campo::placeholder {
-  color: var(--tinta-tenue);
+  color: var(--tinta-media);
 }
 
 .enviar {

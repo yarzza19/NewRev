@@ -66,7 +66,7 @@ export default function Cascada({ cortes }: { cortes: Corte[] }) {
     >
       <div className={estilos.encabezado}>
         <h2 id="titulo-cascada" className="seccion">
-          El catálogo entero, de mayor a menor
+          El catálogo entero, en cascada
         </h2>
         <p className={`dato ${estilos.cuentaCortes}`}>
           {String(cortes.length).padStart(2, '0')} cortes
@@ -79,11 +79,14 @@ export default function Cascada({ cortes }: { cortes: Corte[] }) {
           // legible: con veinte productos la cascada sigue siendo
           // una cascada y no un titular repetido.
           const escala = Math.max(0.42, 1 - indice * 0.11);
+          // Y estrecha el eje de ancho a la vez: una cascada de
+          // fundición muestra el rango de la cara, no sólo su cuerpo.
+          const ancho = Math.max(78, 100 - indice * 3);
           return (
             <li
               key={corte.slug}
               className={estilos.escalon}
-              style={{ ['--escala' as string]: escala }}
+              style={{ ['--escala' as string]: escala, ['--ancho' as string]: ancho }}
               onPointerEnter={() => setActivo(corte)}
               onPointerLeave={() => setActivo(null)}
             >
@@ -96,6 +99,9 @@ export default function Cascada({ cortes }: { cortes: Corte[] }) {
                 <span className={`dato ${estilos.refEscalon}`}>{corte.ref}</span>
                 <span className={estilos.nombreEscalon}>{corte.nombre}</span>
                 <span className={estilos.sumarioEscalon}>{corte.sumario}</span>
+                {/* La cota al margen: el escalón de tamaño deja de ser
+                    una gradación decorativa y pasa a ser un dato. */}
+                <span className={`dato ${estilos.cotaEscalon}`}>{corte.medidas}</span>
                 <span className={`cifra ${estilos.precioEscalon}`}>
                   {corte.agotado ? 'Agotado' : euros(corte.precio)}
                 </span>

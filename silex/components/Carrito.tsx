@@ -60,8 +60,11 @@ export function ProveedorCarrito({ children }: { children: React.ReactNode }) {
       }
       return [...previas, { slug: corte.slug, unidades: 1 }];
     });
-    toast(`${corte.nombre} anotado en la orden`, {
-      description: `${corte.ref} · ${euros(corte.precio)}`,
+    // El nombre va en la descripción y no en el título: el catálogo lo
+    // escribe el dueño de la tienda y «anotado» no puede concordar con
+    // un nombre que puede ser femenino, plural o las dos cosas.
+    toast('Anotado en la orden', {
+      description: `${corte.ref} · ${corte.nombre} · ${euros(corte.precio)}`,
     });
   }, []);
 
@@ -147,7 +150,7 @@ function CajonOrden() {
               <p className={estilos.vacioTexto}>
                 Ocho cortes esperando. Se anotan desde la ficha de cada objeto o desde el índice.
               </p>
-              <Link href="/#catalogo" className={estilos.vacioEnlace} onClick={cerrar}>
+              <Link href="/#catalogo" className={`accion ${estilos.vacioEnlace}`} onClick={cerrar}>
                 Ver el catálogo
               </Link>
             </div>
@@ -206,12 +209,12 @@ function CajonOrden() {
                   <span className="dato">Suma</span>
                   <span className={`cifra ${estilos.suma}`}>{euros(total)}</span>
                 </div>
-                <p className={`dato ${estilos.nota}`}>
+                <p className={`margenNota ${estilos.nota}`}>
                   Plantilla de demostración: no hay pasarela de pago conectada.
                 </p>
                 <button
                   type="button"
-                  className={estilos.tramitar}
+                  className={`accion ${estilos.tramitar}`}
                   onClick={() =>
                     toast('Falta conectar la pasarela de pago', {
                       description: 'Enlaza aquí tu proveedor: Stripe, Shopify o el que uses.',

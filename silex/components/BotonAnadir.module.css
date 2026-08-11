@@ -6,10 +6,6 @@
   background: var(--amarillo);
   color: var(--tinta);
   border: 1px solid var(--tinta);
-  font-family: var(--dato);
-  font-size: var(--t-dato);
-  letter-spacing: 0.08em;
-  text-transform: uppercase;
   cursor: pointer;
   transition:
     background-color var(--normal) var(--salida),
@@ -38,9 +34,7 @@
 
 .agotado {
   padding: 0.9rem 0;
-  color: var(--tinta-media);
-  text-transform: none;
-  letter-spacing: 0.02em;
+  max-width: 34ch;
   border-top: 1px solid var(--filete);
   border-bottom: 1px solid var(--filete);
 }

@@ -46,7 +46,7 @@ function normalizarCorte(bruto: unknown, indice: number): Corte | null {
     : leerForma(c.plancha, indice);
 
   return {
-    ref: texto(c.ref) || `SX-${String(indice + 1).padStart(2, '0')}`,
+    ref: texto(c.ref) || `BC-${String(indice + 1).padStart(2, '0')}`,
     slug,
     nombre,
     sumario: texto(c.sumario),
@@ -107,7 +107,7 @@ export const cortes: Corte[] = brutos
 const estudioBruto = ((datos as Record<string, unknown>).estudio ?? {}) as Record<string, unknown>;
 
 export const estudio: Estudio = {
-  nombre: texto(estudioBruto.nombre) || 'Silex',
+  nombre: texto(estudioBruto.nombre) || 'Barracuda',
   descriptor: texto(estudioBruto.descriptor) || 'Fundición de objetos',
   temporada: texto(estudioBruto.temporada) || 'Catálogo',
   nota: texto(estudioBruto.nota),

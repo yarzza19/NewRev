@@ -48,7 +48,7 @@ const CONTRATO = `<!--
 THESIS: un catálogo de objetos compuesto como el pliego de espécimen de una fundición tipográfica; rechaza la rejilla de tarjetas con foto grande y botón que repite la categoría.
 OWN-WORLD: papel blanco, una tinta negra, campo amarillo #FFE500 macizo que ocupa regiones enteras; filetes de 1px, datos en mono tabular, planchas dibujadas a tinta. Sin tarjetas, sin sombras, sin degradados.
 STORY: el visitante entiende que son ocho objetos numerados y a la venta, cree que están hechos con precisión medida, y entra en un corte o lo añade.
-FIRST VIEWPORT: SILEX a sangre en variable, ejes wdth/wght vivos bajo el puntero con lectura en mono; a la derecha la línea de oferta y la acción; banda amarilla inferior con el corte 01.
+FIRST VIEWPORT: el nombre de la casa a sangre en variable, ejes wdth/wght vivos bajo el puntero con lectura en mono; a la derecha la línea de oferta y la acción; banda amarilla inferior con el corte 01.
 FORM: pliego de espécimen, candidata 4 de 7 de la lista ordenada por resonancia, semilla 70790d9e.
 FINISH: unreviewed and undocumented is unfinished; this build ends with the finish review, the verdict, and DESIGN.md
 -->`;

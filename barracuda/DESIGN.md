@@ -1,5 +1,5 @@
 ---
-name: Silex
+name: Barracuda
 description: Catálogo de ocho objetos compuesto como el pliego de espécimen de una fundición tipográfica.
 colors:
   papel: "#ffffff"
@@ -196,13 +196,13 @@ components:
     rounded: "{rounded.nulo}"
 ---
 
-# Design System: Silex
+# Design System: Barracuda
 
 ## Overview
 
 **Creative North Star: "El pliego de espécimen"**
 
-Silex se compone como el pliego que una fundición tipográfica imprime para enseñar una cara: papel blanco a sangre, una sola tinta negra, un campo amarillo macizo que ocupa regiones enteras del pliego, filetes de 1px que dividen sin decorar y datos en mono tabular que declaran medida. El tamaño no es jerarquía decorativa: en un espécimen el tamaño **es** el contenido, y por eso el nombre de la casa ocupa el ancho entero de su columna y cada escalón del catálogo baja un peldaño de cuerpo.
+Barracuda se compone como el pliego que una fundición tipográfica imprime para enseñar una cara: papel blanco a sangre, una sola tinta negra, un campo amarillo macizo que ocupa regiones enteras del pliego, filetes de 1px que dividen sin decorar y datos en mono tabular que declaran medida. El tamaño no es jerarquía decorativa: en un espécimen el tamaño **es** el contenido, y por eso el nombre de la casa ocupa el ancho entero de su columna y cada escalón del catálogo baja un peldaño de cuerpo.
 
 La densidad es alta y deliberadamente técnica. No hay tarjetas: las planchas llevan su propio marco de 1px y se apoyan sobre la hoja, y la retícula del catálogo no dibuja celdas ni fondos por pieza. La página no tiene profundidad simulada —cero sombras, cero degradados, cero radios— y toda la sensación de capas viene del filete, del cambio de campo (papel ↔ amarillo) y del orden tabular. El único momento de autoría en movimiento es el probador del primer pliego: el nombre entra condensado y ligero y se abre hasta su reposo, y después el puntero manda sobre los ejes `wdth`/`wght` con lectura numérica en mono.
 

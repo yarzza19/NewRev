@@ -1,11 +1,11 @@
-# Silex
+# Barracuda
 
 Plantilla de tienda para un catálogo corto de producto de alta gama. Next.js (App Router) + TypeScript, sin CMS y sin base de datos: **todo el contenido sale de `data/products.json`**.
 
 ## Arrancar
 
 ```bash
-cd silex
+cd barracuda
 npm install
 npm run dev      # http://localhost:3000
 npm run build    # comprueba que todo compila antes de publicar
@@ -98,7 +98,7 @@ El pago está conectado y funciona en cuanto le des tu clave; hasta entonces, «
 ## Estructura
 
 ```
-silex/
+barracuda/
 ├─ app/
 │  ├─ layout.tsx          cabecera, pie, fuentes, carrito, avisos
 │  ├─ page.tsx            portada

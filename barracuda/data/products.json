@@ -1,7 +1,7 @@
 {
   "_leeme": "CATÁLOGO DE MUESTRA. Todo lo que hay aquí abajo es material de relleno para que la plantilla se vea llena: los objetos, los precios, los materiales y los textos son inventados. Sustitúyelos por los tuyos antes de publicar. Añadir un producto es añadir un objeto a la lista 'cortes'. Nada más. No hace falta tocar ni el HTML ni el CSS.",
   "_campos": {
-    "ref": "Referencia corta, en mayúsculas. Sale impresa en la ficha. Ej: SX-01",
+    "ref": "Referencia corta, en mayúsculas. Sale impresa en la ficha. Ej: BC-01",
     "slug": "Lo que aparece en la URL: /corte/<slug>. Sin espacios ni acentos.",
     "nombre": "Nombre del objeto. Se compone en grande, así que funciona mejor entre 4 y 16 caracteres.",
     "sumario": "Una línea. Qué es el objeto. Aparece bajo el nombre en la cascada.",
@@ -13,20 +13,20 @@
     "acabado": "Texto libre corto.",
     "edicion": "Texto libre corto. Ej: 40 piezas",
     "plancha": "Dibujo generado para el objeto cuando no hay foto. Formas disponibles: hoja, losa, cuenco, varilla, aro, gancho.",
-    "imagen": "OPCIONAL. Ruta a una foto dentro de /public, ej: /fotos/sx-01.jpg. Si la pones, sustituye al dibujo generado.",
+    "imagen": "OPCIONAL. Ruta a una foto dentro de /public, ej: /fotos/bc-01.jpg. Si la pones, sustituye al dibujo generado.",
     "agotado": "OPCIONAL. true para marcarlo como agotado; el botón de compra se desactiva."
   },
   "estudio": {
-    "nombre": "Silex",
+    "nombre": "Barracuda",
     "descriptor": "Fundición de objetos",
     "temporada": "Catálogo 2026",
-    "nota": "Silex corta, sujeta, sostiene y prende. Ocho objetos al año, no más: cada uno se funde, se rectifica y se numera antes de entrar en el catálogo. Lo que no supera la plancha de control no se vende, se refunde.",
-    "correo": "taller@silex.example",
+    "nota": "Barracuda corta, sujeta, sostiene y prende. Ocho objetos al año, no más: cada uno se funde, se rectifica y se numera antes de entrar en el catálogo. Lo que no supera la plancha de control no se vende, se refunde.",
+    "correo": "taller@barracuda.example",
     "telefono": "+34 000 00 00 00"
   },
   "cortes": [
     {
-      "ref": "SX-01",
+      "ref": "BC-01",
       "slug": "hoja-corta",
       "nombre": "Hoja corta",
       "sumario": "Cuchillo de oficio en acero al carbono",
@@ -40,7 +40,7 @@
       "plancha": { "forma": "hoja", "fondo": "papel" }
     },
     {
-      "ref": "SX-02",
+      "ref": "BC-02",
       "slug": "losa-de-corte",
       "nombre": "Losa",
       "sumario": "Tabla de corte en piedra caliza y arce",
@@ -54,7 +54,7 @@
       "plancha": { "forma": "losa", "fondo": "amarillo" }
     },
     {
-      "ref": "SX-03",
+      "ref": "BC-03",
       "slug": "cuenco-hondo",
       "nombre": "Cuenco hondo",
       "sumario": "Recipiente girado en latón macizo",
@@ -68,7 +68,7 @@
       "plancha": { "forma": "cuenco", "fondo": "papel" }
     },
     {
-      "ref": "SX-04",
+      "ref": "BC-04",
       "slug": "varilla-de-asentar",
       "nombre": "Varilla",
       "sumario": "Chaira de cerámica con mango de fresno",
@@ -82,11 +82,11 @@
       "plancha": { "forma": "varilla", "fondo": "papel" }
     },
     {
-      "ref": "SX-05",
+      "ref": "BC-05",
       "slug": "aro-de-fuego",
       "nombre": "Aro de fuego",
       "sumario": "Encendedor de pedernal en acero inoxidable",
-      "descripcion": "Un aro, una barra de ferrocerio y nada más. Se rasca con el canto del aro y suelta chispa a tres mil grados, mojado o seco, a cualquier altitud y sin combustible que se gaste.\n\nEs la pieza que da nombre a la casa. Cabe en el puño cerrado y está pensada para llevarla veinte años.",
+      "descripcion": "Un aro, una barra de ferrocerio y nada más. Se rasca con el canto del aro y suelta chispa a tres mil grados, mojado o seco, a cualquier altitud y sin combustible que se gaste.\n\nCabe en el puño cerrado y está pensada para llevarla veinte años.",
       "precio": 68,
       "materiales": ["Acero inoxidable 316", "Ferrocerio"],
       "medidas": "Ø 62 × 9 mm",
@@ -96,7 +96,7 @@
       "plancha": { "forma": "aro", "fondo": "amarillo" }
     },
     {
-      "ref": "SX-06",
+      "ref": "BC-06",
       "slug": "gancho-de-pared",
       "nombre": "Gancho",
       "sumario": "Colgador forjado en barra maciza",
@@ -110,11 +110,11 @@
       "plancha": { "forma": "gancho", "fondo": "papel" }
     },
     {
-      "ref": "SX-07",
+      "ref": "BC-07",
       "slug": "hoja-larga",
       "nombre": "Hoja larga",
       "sumario": "Cuchillo de deshojar en acero inoxidable",
-      "descripcion": "La hermana flexible de la SX-01. Hoja larga y estrecha que se dobla lo justo para seguir un hueso o separar una piel sin desgarrar.\n\nInoxidable porque esta pieza trabaja en húmedo y no queremos que nadie la seque con prisa. Mango de nogal, misma espiga pasante que el resto de la casa.",
+      "descripcion": "La hermana flexible de la BC-01. Hoja larga y estrecha que se dobla lo justo para seguir un hueso o separar una piel sin desgarrar.\n\nInoxidable porque esta pieza trabaja en húmedo y no queremos que nadie la seque con prisa. Mango de nogal, misma espiga pasante que el resto de la casa.",
       "precio": 265,
       "materiales": ["Acero inoxidable 14C28N", "Nogal macizo", "Cuero"],
       "medidas": "310 × 26 × 3 mm",
@@ -125,7 +125,7 @@
       "agotado": true
     },
     {
-      "ref": "SX-08",
+      "ref": "BC-08",
       "slug": "losa-menor",
       "nombre": "Losa menor",
       "sumario": "Plato de servicio en caliza",

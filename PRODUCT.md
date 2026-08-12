@@ -8,7 +8,7 @@ web
 
 ## Stack
 
-React / Next.js — elegido por el usuario en la ronda de init, frente a HTML/CSS/JS plano. El resto del repo NewRev es estático; Silex vive en su propio subdirectorio con su propio build.
+React / Next.js — elegido por el usuario en la ronda de init, frente a HTML/CSS/JS plano. El resto del repo NewRev es estático; Barracuda vive en su propio subdirectorio (`barracuda/`) con su propio build.
 
 ## Users
 
@@ -23,7 +23,7 @@ Una plantilla de tienda para un catálogo corto (del orden de 6-12 referencias) 
 
 ## Positioning
 
-Marca nueva e independiente. **No** es la tienda de Silex Media (`silex-media/`, estudio de marketing en este mismo repo) y no hereda nada de su identidad: comparte el nombre y nada más. Confirmado con el usuario en la ronda de init, y confirmado otra vez cuando pidió llamarla «Silex a secas, no Silex Media».
+Marca nueva e independiente. **No** es la tienda de Silex Media (`silex-media/`, estudio de marketing en este mismo repo) y no hereda nada de su identidad: al principio compartía el nombre y nada más — confirmado con el usuario en la ronda de init, y confirmado otra vez cuando pidió llamarla «Silex a secas, no Silex Media». El proyecto se renombró después a **Barracuda**; la independencia de Silex Media sigue aplicando igual, y el cambio de nombre la refuerza en vez de debilitarla.
 
 ## Operating Context
 
@@ -40,7 +40,7 @@ Marca nueva e independiente. **No** es la tienda de Silex Media (`silex-media/`,
 
 ## Brand Commitments
 
-- Nombre: **Silex**. A secas — sin «Media», sin bajada de línea heredada del otro proyecto.
+- Nombre: **Barracuda** (antes Silex; renombrado a petición del usuario). Sin bajada de línea heredada del otro proyecto.
 - Restricción visual fijada por el usuario: **amarillo y blanco como colores principales**. Vinculante. Registrada aquí tal cual, sin ampliarla.
 - Referencia de nivel pedida: calidad de sitio premiado en Awwwards. Es una vara de calidad, no una dirección visual.
 
@@ -54,7 +54,7 @@ Ninguna. No hay fotos de producto reales, ni precios reales, ni clientes, ni res
 2. **Pocas piezas, cada una con peso.** El catálogo corto es la premisa, no una limitación temporal: cada producto se muestra a un tamaño que un catálogo largo no se podría permitir.
 3. **El contenido de muestra se declara.** Nada colocado como relleno puede leerse como un hecho comercial de la marca.
 4. **Resistente al contenido real.** Textos largos, fotos que faltan, precios de distinta longitud y un catálogo que crece no pueden degradar la maquetación.
-5. **Silex es una marca nueva.** Cualquier parecido con `silex-media/` sería un error, no una coherencia.
+5. **Barracuda es una marca nueva.** Cualquier parecido con `silex-media/` sería un error, no una coherencia.
 
 ## Accessibility & Inclusion
 

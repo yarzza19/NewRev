@@ -43,11 +43,11 @@ export default function Probador({ primero }: { primero: Corte | undefined }) {
   }, []);
 
   /**
-   * El nombre tiene que llenar su columna sea cual sea: «Silex» son
-   * cinco letras, pero esto es una plantilla y el siguiente puede
-   * tener doce. El CSS lo estima por número de caracteres —así el
-   * primer pintado ya sale bien— y aquí se corrige con la medida
-   * real de la caja del texto.
+   * El nombre tiene que llenar su columna sea cual sea: «Barracuda»
+   * son nueve letras, pero esto es una plantilla y el siguiente
+   * nombre puede tener otro largo. El CSS lo estima por número de
+   * caracteres —así el primer pintado ya sale bien— y aquí se
+   * corrige con la medida real de la caja del texto.
    */
   useEffect(() => {
     if (!vivo) return;

@@ -72,11 +72,26 @@ Si cambias el amarillo por un tono más claro u oscuro, revisa también `--sobre
 
 Las tres fuentes se declaran en `app/layout.tsx` con `next/font/google` (se auto-alojan en el build, no se piden a Google en tiempo de ejecución). La de titulares **tiene que ser variable con eje de ancho** (`wdth`) o el probador de la portada no tendrá nada que mover.
 
+## Pagos: Stripe Checkout
+
+El pago está conectado y funciona en cuanto le des tu clave; hasta entonces, «Tramitar la orden» avisa con claridad de que falta configurarlo, en vez de fingir que cobra.
+
+1. Crea una cuenta en [stripe.com](https://stripe.com) si no tienes una.
+2. Copia tu clave secreta de [dashboard.stripe.com/apikeys](https://dashboard.stripe.com/apikeys) — usa la de **modo prueba** (`sk_test_...`) mientras pruebas.
+3. `cp .env.local.example .env.local` y pega la clave en `STRIPE_SECRET_KEY`.
+4. `npm run dev` y prueba una compra con la tarjeta de pruebas de Stripe: número `4242 4242 4242 4242`, cualquier fecha futura, cualquier CVC.
+5. Cuando publiques de verdad, sustituye la clave por la de producción (`sk_live_...`) en las variables de entorno de tu hosting — nunca en el código ni en el repositorio.
+
+**Por qué es seguro con solo eso:**
+
+- Tu servidor **nunca ve un número de tarjeta**. El botón redirige a una página de pago alojada por Stripe (Stripe Checkout); el dato sensible viaja del navegador del comprador a Stripe directamente. Esto te deja en el nivel más bajo de exigencia de cumplimiento PCI (SAQ A) — la carga de esa certificación es de Stripe, no tuya.
+- El **precio que se cobra se relee siempre en el servidor** desde `data/products.json` (`app/api/checkout/route.ts`). El navegador sólo puede decir «qué referencia» y «cuántas unidades»; nunca «a qué precio». Aunque alguien manipule la petición para intentar pagar menos, el servidor ignora ese dato y usa el precio real del catálogo.
+- Las claves de Stripe viven en `.env.local` (excluido de git) o en las variables de entorno de tu hosting, nunca en el código fuente.
+
+**Lo que esto NO incluye**, para que no des por hecho más de lo que hay: no hay base de datos de pedidos — Stripe es tu único registro de lo cobrado, consúltalo en tu panel de Stripe; no hay envío de email de confirmación (Stripe puede mandarlo él mismo, actívalo en su panel); no hay webhook para reaccionar a pagos (recomendado si más adelante añades un backend que gestione stock o envíos).
+
 ## Lo que falta conectar
 
-La plantilla es honesta sobre sus huecos en lugar de fingir que funcionan:
-
-- **Pago.** El carrito guarda en `localStorage` y calcula el total, pero «Tramitar la orden» sólo avisa de que no hay pasarela. Conecta la tuya en `components/Carrito.tsx`.
 - **Avisos de tirada.** El formulario del pie valida el correo y no lo envía a ninguna parte. Enchufa tu proveedor en `components/AvisoTirada.tsx`.
 - **Catálogo de muestra.** Las ocho piezas, sus precios, sus materiales y la nota del taller son material de relleno inventado. Sustitúyelo antes de publicar: hay un aviso a pie de página que también habrá que quitar.
 

@@ -1,0 +1,36 @@
+.pliego {
+  padding: clamp(6rem, 16vh, 10rem) var(--margen) var(--pliegue);
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 1.25rem;
+  max-width: 42rem;
+}
+
+.recibo {
+  width: 100%;
+  margin: 0.5rem 0;
+  border-top: 1px solid var(--tinta);
+  border-bottom: 1px solid var(--tinta);
+}
+
+.recibo div {
+  display: flex;
+  align-items: baseline;
+  justify-content: space-between;
+  gap: 1rem;
+  padding: 0.7rem 0;
+  border-bottom: 1px solid var(--filete);
+}
+
+.recibo div:last-child {
+  border-bottom: 0;
+}
+
+.recibo dt {
+  color: var(--tinta-media);
+}
+
+.recibo dd {
+  margin: 0;
+}

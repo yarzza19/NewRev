@@ -134,3 +134,7 @@ const formateadorEuro = new Intl.NumberFormat('es-ES', {
 export function euros(cantidad: number): string {
   return formateadorEuro.format(cantidad);
 }
+
+/** Clave de localStorage de la orden. Compartida entre el carrito y
+ * la página de confirmación, que la vacía tras un pago confirmado. */
+export const CLAVE_ORDEN = 'silex.orden.v1';

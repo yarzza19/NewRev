@@ -218,3 +218,13 @@
   background: var(--amarillo);
   color: var(--tinta);
 }
+
+.tramitar:disabled {
+  cursor: default;
+  opacity: 0.6;
+}
+
+.tramitar:disabled:hover {
+  background: var(--tinta);
+  color: var(--papel);
+}

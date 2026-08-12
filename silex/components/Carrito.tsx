@@ -4,7 +4,7 @@ import { createContext, useCallback, useContext, useEffect, useMemo, useState } 
 import Link from 'next/link';
 import { Drawer } from 'vaul';
 import { toast } from 'sonner';
-import { cortes, euros, type Corte } from '@/lib/catalogo';
+import { cortes, euros, CLAVE_ORDEN, type Corte } from '@/lib/catalogo';
 import { IconoCruz, IconoMas, IconoMenos } from './Iconos';
 import estilos from './Carrito.module.css';
 
@@ -23,7 +23,6 @@ type Contexto = {
 };
 
 const CarritoCtx = createContext<Contexto | null>(null);
-const CLAVE = 'silex.orden.v1';
 
 export function ProveedorCarrito({ children }: { children: React.ReactNode }) {
   const [lineas, setLineas] = useState<Linea[]>([]);
@@ -32,7 +31,7 @@ export function ProveedorCarrito({ children }: { children: React.ReactNode }) {
 
   useEffect(() => {
     try {
-      const guardado = window.localStorage.getItem(CLAVE);
+      const guardado = window.localStorage.getItem(CLAVE_ORDEN);
       if (guardado) {
         const leido = JSON.parse(guardado);
         if (Array.isArray(leido)) setLineas(leido.filter((l) => typeof l?.slug === 'string'));
@@ -46,7 +45,7 @@ export function ProveedorCarrito({ children }: { children: React.ReactNode }) {
   useEffect(() => {
     if (!hidratado) return;
     try {
-      window.localStorage.setItem(CLAVE, JSON.stringify(lineas));
+      window.localStorage.setItem(CLAVE_ORDEN, JSON.stringify(lineas));
     } catch {
       /* idem */
     }
@@ -125,6 +124,38 @@ export function useCarrito(): Contexto {
 
 function CajonOrden() {
   const { lineas, total, piezas, ajustar, quitar, abierto, cerrar } = useCarrito();
+  const [tramitando, setTramitando] = useState(false);
+
+  const tramitar = useCallback(async () => {
+    if (tramitando) return;
+    setTramitando(true);
+    try {
+      const respuesta = await fetch('/api/checkout', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ lineas }),
+      });
+      const datos = await respuesta.json().catch(() => null);
+      if (!respuesta.ok || !datos?.url) {
+        toast(datos?.error || 'No se pudo iniciar el pago', {
+          description:
+            respuesta.status === 501
+              ? 'El propietario de la tienda aún no ha conectado Stripe.'
+              : 'Inténtalo de nuevo en un momento.',
+        });
+        setTramitando(false);
+        return;
+      }
+      // Redirige a la página de pago alojada por Stripe: aquí termina
+      // todo lo que este sitio hace con el dinero.
+      window.location.href = datos.url;
+    } catch {
+      toast('No se pudo contactar con el servidor de pago', {
+        description: 'Comprueba tu conexión e inténtalo de nuevo.',
+      });
+      setTramitando(false);
+    }
+  }, [lineas, tramitando]);
 
   const detalladas = lineas
     .map((linea) => ({ linea, corte: cortes.find((c) => c.slug === linea.slug) }))
@@ -210,18 +241,16 @@ function CajonOrden() {
                   <span className={`cifra ${estilos.suma}`}>{euros(total)}</span>
                 </div>
                 <p className={`margenNota ${estilos.nota}`}>
-                  Plantilla de demostración: no hay pasarela de pago conectada.
+                  El pago lo procesa Stripe: esta tienda no ve ni guarda tu tarjeta.
                 </p>
                 <button
                   type="button"
                   className={`accion ${estilos.tramitar}`}
-                  onClick={() =>
-                    toast('Falta conectar la pasarela de pago', {
-                      description: 'Enlaza aquí tu proveedor: Stripe, Shopify o el que uses.',
-                    })
-                  }
+                  onClick={tramitar}
+                  disabled={tramitando}
+                  aria-busy={tramitando}
                 >
-                  Tramitar la orden
+                  {tramitando ? 'Abriendo el pago…' : 'Tramitar la orden'}
                 </button>
               </div>
             </>

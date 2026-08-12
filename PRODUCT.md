@@ -33,7 +33,7 @@ Marca nueva e independiente. **No** es la tienda de Silex Media (`silex-media/`,
 
 ## Capabilities and Constraints
 
-- Catálogo, ficha de producto por referencia, y carrito. El carrito es de cliente: no hay pasarela de pago ni backend de pedidos, y la plantilla no debe fingir que los tiene.
+- Catálogo, ficha de producto por referencia, carrito y pago. El carrito es de cliente (localStorage); el pago se procesa con Stripe Checkout, alojado por Stripe — el servidor de la plantilla nunca ve ni guarda un número de tarjeta, y el precio que se cobra se relee siempre de `products.json` en el servidor, nunca del navegador. No hay backend de pedidos ni persistencia: Stripe es el único registro de lo cobrado, y la plantilla no debe fingir que guarda pedidos propios.
 - Sin CMS, sin base de datos. `products.json` es la única fuente de verdad de contenido.
 - Idioma: español.
 - **Sin definir a propósito:** qué se vende exactamente. El usuario no lo ha fijado. La plantilla se entrega con un catálogo sintético, etiquetado como tal, que el propietario sustituirá. Ninguna decisión estructural puede depender de la categoría concreta.
